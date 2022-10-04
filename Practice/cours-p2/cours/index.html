@@ -11,13 +11,41 @@
 
 <body>
     <div class="click-event box">
-        <h4>Quelle est la capitale de la Suisse?</h4>
+        <h4>What is the capital of Switzerland?</h4>
         <button id="btn-1">Berne</button>
         <button id="btn-2">Zurich</button>
-        <p id="response">La bonne réponse est Berne.</p>
+        <p id="response">The correct answer is Bern.</p>
     </div>
 
     <div class="mousemove"></div>
+
+    <div class="keyPress box">
+        <h2>Press a key on your keyboard</h2>
+        <span id="key"></span>
+    </div>
+
+    <nav>
+        <ul>
+            <li>Accueil</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <form action="" class="box">
+        <input type="text" placeholder="Enter your Name">
+        <select>
+          <option value="">Choose your favorite language</option>
+          <option value="Javascript">Javascript</option>
+          <option value="PHP">PHP</option>
+          <option value="Python">Python</option>
+        </select>
+        <input type="checkbox" id="gcs">
+        <label for="gcs">Accept the GCS</label>
+
+        <input type="submit" value="Validate">
+        <div></div>
+    </form>
 
     <script src="./index.js"></script>
 </body>

@@ -12,7 +12,7 @@ unTexte = "Nouveau texte...";
 console.log(unTexte);
 const prenom = "Martine";
 console.log(prenom);
-let chaine = "Je suis une cj=haine de caractères.";
+let chaine = "Je suis une chaine de caractères.";
 let chiffre = 24;
 let nouvelleChaine = "Le chiffre attendu est : " + chiffre + " degrés.";
 console.log(nouvelleChaine);
