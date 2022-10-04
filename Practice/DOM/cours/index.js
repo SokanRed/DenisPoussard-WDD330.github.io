@@ -154,7 +154,7 @@ form.addEventListener("submit", (e) => {
 // Load Event
 
 window.addEventListener("load", () => {
-    console.log("Loaded Document!");
+    // console.log("Loaded Document!");
 });
 
 //-------------------------------------------------------------------
@@ -167,4 +167,61 @@ boxes.forEach((box) => {
         // console.log(e.target);
         e.target.style.transform = "scale(0.7)";
     });
+});
+
+//----------------------------------------------------------
+// addEventlistener VS onclick
+
+// document.body.onclick = function() {
+//     console.log("Click !");
+// };
+
+// Bubbling (by default addEventlistener is set bubbling)
+document.body.addEventListener(
+    "click",
+    () => {
+        console.log("Click 1 !");
+    },
+    false
+);
+
+// Usecapture
+document.body.addEventListener(
+    "click",
+    () => {
+        console.log("Click 2 !");
+    },
+    true
+);
+
+// ---------------------------------------------------------
+// Stop propagation
+
+/*questionContainer.addEventListener("click", (e) => {
+    alert("Test Alert!");
+    e.stopPropagation();
+// });*/
+
+// removeEventlistener
+
+//----------------------------------------------------------
+// BOM (Browser Object Model)
+
+// console.log(window.innerHeight);
+// console.log(window.scrollY);
+// window.open("http://google.com", "cours js", "height=600, width=800");
+// window.close();
+
+// Events linked to Window
+// alert("Hello!");
+// confirm
+btn2.addEventListener("click", () => {
+    confirm("Do you really want to be wrong ?");
+});
+
+// prompt
+let answer2;
+btn1.addEventListener("click", () => {
+    answer2 = prompt("Enter your name !");
+    questionContainer.innerHTML += "<h3>Bravo " + answer2 + " !!</h3>";
 });
