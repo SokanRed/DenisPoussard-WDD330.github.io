@@ -38,7 +38,7 @@ btn2.addEventListener("click", () => {
 });
 
 // priority : #id > .class > htmltag
-//------------------------------------------------------------------
+// ======================================================
 
 // Mouse Events
 
@@ -70,7 +70,7 @@ answer.addEventListener("mouseover", () => {
     response.style.transform = "rotate(2deg)";
 });
 
-//---------------------------------------------------------
+// ======================================================
 // KeyPress Event
 
 const keyPressContainer = document.querySelector(".keyPress");
@@ -97,7 +97,7 @@ document.addEventListener("keypress", (e) => {
     if (e.key === "Enter") ring(e.key);
 });
 
-//--------------------------------------------------------
+// ======================================================
 // Scroll Event
 
 const nav = document.querySelector("nav");
@@ -111,7 +111,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-//-------------------------------------------------------
+// ======================================================
 // Form Events
 
 const inputName = document.querySelector('input[type="text"]');
@@ -150,14 +150,14 @@ form.addEventListener("submit", (e) => {
     }
 });
 
-//-------------------------------------------------------------------
+// ======================================================
 // Load Event
 
 window.addEventListener("load", () => {
     // console.log("Loaded Document!");
 });
 
-//-------------------------------------------------------------------
+// ======================================================
 // ForEach
 
 const boxes = document.querySelectorAll(".box");
@@ -169,7 +169,7 @@ boxes.forEach((box) => {
     });
 });
 
-//----------------------------------------------------------
+// ======================================================
 // addEventlistener VS onclick
 
 // document.body.onclick = function() {
@@ -194,7 +194,7 @@ document.body.addEventListener(
     true
 );
 
-// ---------------------------------------------------------
+// ======================================================
 // Stop propagation
 
 /*questionContainer.addEventListener("click", (e) => {
@@ -204,7 +204,7 @@ document.body.addEventListener(
 
 // removeEventlistener
 
-//----------------------------------------------------------
+// ======================================================
 // BOM (Browser Object Model)
 
 // console.log(window.innerHeight);
@@ -224,4 +224,55 @@ let answer2;
 btn1.addEventListener("click", () => {
     answer2 = prompt("Enter your name !");
     questionContainer.innerHTML += "<h3>Bravo " + answer2 + " !!</h3>";
+});
+
+// --------------------------
+// Timer, countdown
+setTimeout(() => {
+    // logique à excécuter
+    questionContainer.style.borderRadius = "300px";
+}, 2000);
+
+/*let interval = setInterval(() => {
+    document.body.innerHTML += `
+    <div class='box'>
+        <h2> New Box !</h2>
+    </div>
+    `;
+}, 1000);
+
+document.body.addEventListener("click", (e) => {
+    e.target.remove();
+    clearInterval(interval);
+});*/
+
+// --------------------------
+// Location
+/*console.log(location.href);
+console.log(location.host);
+console.log(location.pathname);
+console.log(location.search);
+location.replace("http://sokanred.art");
+window.onload = () => {
+    location.href = "http://twitter.fr";
+};*/
+
+// --------------------------
+// Navigator
+// console.log(navigator.userAgent);
+// Geolocation
+// https://developer.mozilla.org/fr/docs/Web/API/Geolocation/getCurrentPosition
+
+// --------------------------
+//  History
+// console.log(history);
+// window.history.back();
+// history.go(-2);
+
+// ======================================================
+// Set Property
+window.addEventListener("mousemove", (e) => {
+    // console.log(e);
+    nav.style.setProperty("--x", e.layerX + "px");
+    nav.style.setProperty("--y", e.layerY + "px");
 });
