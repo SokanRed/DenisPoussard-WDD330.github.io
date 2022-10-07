@@ -25,7 +25,7 @@ function updateClock() {
     minuteE1.innerText = m;
     secondE1.innerText = s;
     // console.log(ampm);
-    ampmE1.innerText = "ampm";
+    ampmE1.innerText = ampm;
     setTimeout(() => {
         updateClock();
     }, 1000);
