@@ -64,7 +64,7 @@ questionContainer.addEventListener("mouseenter", () => {
 });
 questionContainer.addEventListener("mouseout", () => {
     questionContainer.style.opacity = "1";
-    questionContainer.style.background = "green";
+    questionContainer.style.background = "teal";
 });
 answer.addEventListener("mouseover", () => {
     response.style.transform = "rotate(2deg)";
@@ -271,8 +271,8 @@ window.onload = () => {
 
 // ======================================================
 // Set Property
-window.addEventListener("mousemove", (e) => {
-    // console.log(e);
-    nav.style.setProperty("--x", e.layerX + "px");
-    nav.style.setProperty("--y", e.layerY + "px");
-});
+// window.addEventListener("mousemove", (e) => {
+//     // console.log(e);
+//     nav.style.setProperty("--x", e.layerX + "px");
+//     nav.style.setProperty("--y", e.layerY + "px");
+// });
