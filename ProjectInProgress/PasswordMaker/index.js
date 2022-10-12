@@ -30,14 +30,9 @@ function generatePassword() {
     passwordOutput.value = password;
 
     passwordOutput.select();
+    // document.execCommand("copy");
     navigator.clipboard.writeText(passwordOutput.value);
 
-    // alert("text copied : " + passwordOutput.value);
-    // passwordOutput = getSelection(passwordOutput.select());
-    // console.log(passwordOutput);
-    // console.log(document.getSelection(passwordOutput));
-    // console.log(window.getSelection(passwordOutput));
-    // document.execCommand("copy");
     generateButton.textContent = "Paste it wherever you need it!";
     setTimeout(() => {
         generateButton.textContent = "Generate Password";
