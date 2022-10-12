@@ -6,7 +6,7 @@ const dataSymbols = "()][{}+*/-_],;:!?./§#&$£%";
 const rangeValue = document.getElementById("password-length");
 // console.log(rangeValue);
 // console.log(rangeValue.value);
-const passwordOutput = document.getElementById("password-output");
+let passwordOutput = document.getElementById("password-output");
 
 function generatePassword() {
     // console.log("I generate a password");
@@ -30,11 +30,18 @@ function generatePassword() {
     passwordOutput.value = password;
 
     passwordOutput.select();
+    navigator.clipboard.writeText(passwordOutput.value);
+
+    // alert("text copied : " + passwordOutput.value);
+    // passwordOutput = getSelection(passwordOutput.select());
+    // console.log(passwordOutput);
+    // console.log(document.getSelection(passwordOutput));
+    // console.log(window.getSelection(passwordOutput));
     // document.execCommand("copy");
-    // generateButton.textContent = "Copy !";
-    // setTimeout(() => {
-    //     generateButton.textContent = "Generate Password";
-    // }, 2000);
+    generateButton.textContent = "Paste it wherever you need it!";
+    setTimeout(() => {
+        generateButton.textContent = "Generate Password";
+    }, 5000);
 }
 
 generateButton.addEventListener("click", generatePassword);
