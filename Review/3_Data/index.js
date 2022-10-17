@@ -337,8 +337,7 @@ let mail = "sokanfenghuang@gmail.com";
 // // All letters
 // console.log(mail.match(/[a-z]/));
 
-// console.log(mail.match(/^[\w-_]/ + @[\w - ] + \.[a - z] { 2, 4 }
-//     $ / i));
+// console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z] {2,4}$/i));
 
 let separator = 25168984318;
 
