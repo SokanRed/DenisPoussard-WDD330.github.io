@@ -62,3 +62,29 @@ const values = Object.values(obj);
 
 const nestedArray = Object.entries(obj);
 console.log(nestedArray);
+
+const obj2 = {
+    size: "1m80",
+    weight: "75kg",
+};
+
+// ------------ Merge Objects ---------------------------------------
+const fusion = Object.assign({}, obj, obj2);
+console.log(fusion);
+
+// ------------ Prevent Modifications -------------------------------
+// const newObj = Object.freeze(obj);
+const newObj = Object.seal(obj);
+
+// ==================================================================
+// ============ Build Object ========================================
+// ==================================================================
+
+// function constructor
+function User(pseudo, town) {
+    this.pseudo = pseudo;
+    this.town = town;
+}
+
+const user1 = new User("SokanRed", "Paris");
+console.log(user1);
