@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/53193baae8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- =================== Title ===================== -->
+        <h1>Todos</h1>
+
+        <!-- ================ To Do List =================== -->
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
+
+        <!-- ============= Counter and Filters ============= -->
+        <div class="filter-todo">
+            <span class="counter">tasks</span>
+            <button type="button" class="filter-button all-btn">All</button>
+            <button type="button" class="filter-button active-btn">Active</button>
+            <button type="button" class="filter-button completed-btn">Completed</button>
+        </div>
+
+        <!-- ================ Todos Input ================== -->
+        <form action="">
+            <input type="text" class="todo-input">
+            <button type="submit" class="todo-button">
+              <i class="fa-regular fa-square-plus"></i>
+            </button>
+        </form>
+    </div>
+
+
+    <script src="./ToDos.js"></script>
+</body>
+
+</html>
