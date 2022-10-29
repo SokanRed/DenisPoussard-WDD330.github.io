@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Week 01</title>
+
+    <link rel="stylesheet" href="./practice.css">
+</head>
+
+<body>
+    <section class="section2">
+        <h2>Section 2 | Make it Nice</h2>
+        <div class="firstEvent">
+            <button onclick="showCongratulation(this)">Click me!</button>
+            <div id="result_displayS2"></div>
+        </div>
+    </section>
+
+    <section class="section3">
+        <h2>Section 3 | Remembering User's Info</h2>
+        <div class="storyWinter">
+            <h3>Story Editor</h3>
+            Story Name : <input id="name_input">
+            <div>
+                <button onclick="loadStory()">Find and Edit it</button>
+                <button onclick="saveStory()">Save it</button>
+                <button onclick="displayStory()">Display it</button>
+            </div>
+
+            <textarea id="story_editor" placeholder="Write a totally awesome story here."></textarea>
+            <div id="story_display"></div>
+        </div>
+    </section>
+
+    <section class="section4">
+        <h2>Section 4 | Making Choices</h2>
+        <div class="evenOrOdd">
+            <h3>Even or Odd ???</h3>
+            Enter a Number : <input id="number_input">
+            <button onclick="checkNumber()">Check it!</button>
+            <div id="result_displayS4"></div>
+
+        </div>
+    </section>
+
+    <section class="section5">
+        <h2>Section 5 | Groups and Loops</h2>
+        <div class="GroupLoop">
+            <h3>Group Loop</h3>
+            <h4>Here is a list of numbers. Are they Even or Odd Numbers???</h4>
+            <div id="array"></div>
+            <button onclick="checkAnotherNumber()">Check it!</button>
+            <div id="result_displayS5"></div>
+            <h4>A journal App. | Note It!</h4>
+            <div id="note_entry_area">
+                Description : <input id="description_input">
+                <textarea id="note_editor" placeholder="Note it down. Don't forget."></textarea>
+                <button onclick="saveNote()">Save</button>
+                <button onclick="showAllNotes()">Show Notes</button>
+            </div>
+            <div id="all_notes_display"></div>
+        </div>
+    </section>
+
+
+    <script src="practice.js"></script>
+</body>
+
+</html>
