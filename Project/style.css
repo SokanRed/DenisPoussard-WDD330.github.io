@@ -1,0 +1,37 @@
+body {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: lightyellow;
+}
+
+.header {
+    background-color: blue;
+    text-align: center;
+    color: lightyellow;
+    padding: 15px;
+}
+
+.personal_project {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 1050px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.project {
+    border: solid 2px blue;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    border: solid 1px blue;
+}
+
+.subtitle {
+    background-color: blue;
+    color: lightyellow;
+    text-align: center;
+}

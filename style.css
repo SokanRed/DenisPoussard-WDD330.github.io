@@ -1,10 +1,40 @@
-.display_week {
-    /* width: 600px; */
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr 3fr;
+body {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: lightyellow;
 }
 
-.button,
+.header {
+    background-color: blue;
+    text-align: center;
+    color: lightyellow;
+    padding: 15px;
+}
+
+.display_week {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    column-gap: 5px;
+    row-gap: 5px;
+    margin: 20px auto;
+}
+
+.week_title,
+.description_title {
+    display: flex;
+    justify-content: center;
+    border: solid 2px blue;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+}
+
 .description {
-    border: solid 1px darkblue;
+    padding-left: 15px;
+    border: solid 2px blue;
 }
