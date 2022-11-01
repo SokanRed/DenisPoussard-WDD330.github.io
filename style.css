@@ -27,11 +27,22 @@ body {
     border: solid 2px blue;
 }
 
-.button {
+.button-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    color: lightyellow;
+    /* justify-content: center; */
     background-color: blue;
+}
+
+.button {
+    background-color: azure;
+    color: blue;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 12px;
+    border-radius: 4px;
 }
 
 .description {

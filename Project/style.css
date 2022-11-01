@@ -11,6 +11,15 @@ body {
     padding: 15px;
 }
 
+.button {
+    background-color: azure;
+    color: blue;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
 .personal_project {
     margin: 0 auto;
     margin-top: 20px;
