@@ -11,6 +11,10 @@ body {
     padding: 15px;
 }
 
+.navigation {
+    text-align: right;
+}
+
 .button {
     background-color: azure;
     color: blue;

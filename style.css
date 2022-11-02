@@ -11,6 +11,10 @@ body {
     padding: 15px;
 }
 
+.navigation {
+    text-align: right;
+}
+
 .display_week {
     width: 1200px;
     display: grid;
