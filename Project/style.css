@@ -30,7 +30,12 @@ body {
 }
 
 .project {
+    background-color: blue;
     border: solid 2px blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
 }
 
 img {
