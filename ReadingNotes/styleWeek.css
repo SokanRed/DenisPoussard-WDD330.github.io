@@ -25,6 +25,25 @@ body {
     text-align: center;
 }
 
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
 .notes {
     background-color: lightyellow;
+    padding-left: 10px;
+}
+
+.sidebar {
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.footer {
+    color: lightyellow;
+    text-align: center;
 }
