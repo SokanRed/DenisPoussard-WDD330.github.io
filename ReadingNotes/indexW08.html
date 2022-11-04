@@ -26,10 +26,83 @@
                 <h2 class="start">&#9660 Chapter 8 | CSS3 Transforms and Transitions</h2>
                 <div class="dropdown-content">
                     <ul>
-                        <li>Transforms</li>
-                        <li>Transitions</li>
-                        <li>Animations</li>
-                        <li>Moving On</li>
+                        <li class="subtitle">Transforms <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transforms/Using_CSS_transforms" class="reference">mdn CSS Transforms</a></li>
+                        <p>The CSS3 <i>transform</i> lets translate, rotate, scale and/or skew any element on the page.</p>
+                        <dl class="example">
+                            <dt>Translate</dt>
+                            <dd>transform: translateX(45px);</dd>
+                            <dd>transform: translateY(-30px);</dd>
+                            <dt>Rotate</dt>
+                            <dd>transform: rotate(10deg)</dd>
+                            <dt>Scale</dt>
+                            <dd>transform: scale(1.5, 0.25);</dd>
+                            <dt>Skew</dt>
+                            <dd>transform: skew(15deg, 4deg);</dd>
+                        </dl>
+                        <li class="subtitle">Transitions <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions" class="reference">mdn CSS Transitions</a> </li>
+                        <p>Steps to create a simple transition using only CSS : </p>
+                        <ol>
+                            <li>Declare the original state of the element</li>
+                            <li>Declare the final state of the element (example, a <i>:hover state</i>)</li>
+                            <li>Include the transition functions in the default style declaration</li>
+                        </ol>
+                        <h4>General Rule is : "If there is a valid midpoint, it can be transitioned"</h4>
+                        <p>Exception to this rule is visibility</p>
+                        <p>The list of properties that can be animated is found at :
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">Animated Properties</a></p>
+                        <h4>Remember of Supporting Older Browsers</h4>
+                        <p>The <i>transition-duration</i> sets how long the transition will take.</p>
+                        <p>The <i>transition-timing-function</i> lets control the pace of the transition.</p>
+                        <Useful>Timing function can be describe more precisely by defining <i>cubic-bezier</i> function. Useful link :
+                            <a href="https://cubic-bezier.com/#.17,.67,.83,.67">cubic-bezier</a></p>
+                            <p>Another document to set the timing function and time to watch it:
+                                <a href="http://estelle.github.io/animation/files/cubicbezierprint.html">Animation Cubic Bezier</a></p>
+                            <p>The <i>transition-delay</i> Property introduces a delay before the transition begins.</p>
+                            <li class="subtitle">Animations
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations" class="reference">mdn CSS Animations</a>
+                            </li>
+                            <p>CSS animations, unlike transitions, allows to control each step of an animation via keyframes.</p>
+                            <p>For an animation called <i>myAnimation</i>, the
+                                <i>@keyframes</i> rule would look like this (do not quote the animation name):</p>
+                            <dl class="example">
+                                <dt>@-webkit-keyframes myAnimation {</dt>
+                                <dd><i>/* put animation keyframes here */</i></dd>
+                                <dt>}</dt>
+                                <dt>@keyframes myAnimation {</dt>
+                                <dd><i>/* put animation keyframes here */</i></dd>
+                                <dt>}</dt>
+                            </dl>
+                            <p>Few simple animations :</p>
+                            <dl class="example">
+                                <dt>@keyframes moveRight {</dt>
+                                <dd>from {</dd>
+                                <dd>transform: translateX(-50%);</dd>
+                                <dd>}</dd>
+                                <dd>to {</dd>
+                                <dd>transform: translateX(50%);</dd>
+                                <dd>}</dd>
+                                <dt>}</dt>
+                            </dl>
+                            <dl class="example">
+                                <dt>@keyframes appearDisappear {</dt>
+                                <dd>0%, 100% {</dd>
+                                <dd>opacity: 0;</dd>
+                                <dd>}</dd>
+                                <dd>20%, 80% {</dd>
+                                <dd>opacity: 1;</dd>
+                                <dd>}</dd>
+                                <dt>}</dt>
+                            </dl>
+                            <dl class="example">
+                                <dt>@keyframes bgMove {</dt>
+                                <dd>100% {</dd>
+                                <dd>background-position: 120% 0;</dd>
+                                <dd>}</dd>
+                                <dt>}</dt>
+                            </dl>
+                            <li class="subtitle">Moving On</li>
+                            <h4>Remember : "Just Because You Can, Doesn't Mean You Should"</h4>
+                            <p>Use animations and transitions where it makes sense, enhancing the user experience—and skip it everywhere else.</p>
                     </ul>
                 </div>
             </div>
@@ -37,24 +110,46 @@
                 <h2 class="start">&#9660 Chapter 12 | Canvas, SVG, and Drag and Drop</h2>
                 <div class="dropdown-content">
                     <ul>
-                        <li>Canvas</li>
-                        <li>SVG</li>
-                        <li>Drag and Drop</li>
-                        <li>That’s All, Folks!</li>
+                        <li class="subtitle">Canvas <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" class="reference">mdn Canvas API</a></li>
+                        <p>The Canvas API provides a means for drawing graphics via JavaScript and the HTML <i>canvas</i> element. Among other things, it can be used for animation, game graphics, data visualization, photo manipulation, and real-time video
+                            processing.
+                        </p>
+                        <p>Further Reading :
+                            <a href="https://dev.opera.com/articles/html5-canvas-basics/">"HTML5 Canvas -- the Basics" at Dev.Opera</a> &
+                            <a href="https://developer.apple.com/safari/resources/#documentation/AudioVideo/Conceptual/HTML-canvas-guide/Introduction/Introduction.html">Safari's HTML Canvas Guide</a> </p>
+                        <h4>Comments : </h4>
+                        <p>Every time you finish drawing a shape, the canvas no longer has access to that shape. Still, canvas does allow you to save the images you create to a PNG or JPEG file. There’s also no access to what’s drawn on the canvas via the
+                            DOM. Because of this, canvas is much faster than SVG.
+                        </p>
+                        <li class="subtitle">SVG <a href="https://developer.mozilla.org/en-US/docs/Web/SVG" class="reference">mdn SVG</a></li>
+                        <p>SVG stands for Scalable Vector Graphics, a specific file format to describe vector graphics using XML.</p>
+                        <p>XML stands for eXtensible Markup Language.</p>
+                        <p>Drawing a circle in SVG is arguably easier than drawing a circle with canvas.</p>
+                        <p>Image editors to help <a href="https://inkscape.org">Inkscape Draw Freely</a> &
+                            <a href="https://openclipart.org">OpenClipArt</a></p>
+                        <h4>Comments :</h4>
+                        <p>SVG is accessible via the DOM. You can use Adobe Illustrator and obtain the SVG code instantly</p>
+                        <p>In summary, if you need to paint pixels to the screen and have no concerns about the ability to retrieve and modify your shapes, canvas is probably the better choice. If, on the other hand, you need to be able to access and change
+                            specific aspects of your graphics, SVG might be more appropriate.</p>
+                        <li class="subtitle">Drag and Drop <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API" class="reference">mdn HTML Drag and Drop API</a></li>
+                        <p>The Drag and Drop API allows to specify that certain elements are draggable, and then specify what should happen when these draggable elements are dragged over or dropped onto others elements on the page.</p>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="sidebar">
             <h2>Code of the Week</h2>
-            <!-- <a href="" class="button" target="_blank">Practice</a> -->
+            <h3>Project</h3>
+            <a href="../Project/AnimatedLetter/index.html" class="button" target="_blank">Animated Letters</a>
         </div>
     </section>
     <div class="footer">
         <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+        <hr>
         <h2>Teacher : Johan Baer</h2>
+        <hr>
     </div>
-
+    <div id="bonjour"></div>
 </body>
 
 </html>

@@ -1,3 +1,5 @@
+// alert('bonjour');
+
 function Week(number, link) {
     this.number = number,
         this.link = link

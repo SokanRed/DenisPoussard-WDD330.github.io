@@ -1,7 +1,7 @@
 body {
-    width: 1200px;
+    width: 1050px;
     margin: 0 auto;
-    background-color: lightyellow;
+    background-color: darkblue;
 }
 
 .header {
@@ -50,6 +50,11 @@ img {
 
 .subtitle {
     background-color: blue;
+    color: lightyellow;
+    text-align: center;
+}
+
+.footer {
     color: lightyellow;
     text-align: center;
 }

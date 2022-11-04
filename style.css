@@ -1,7 +1,7 @@
 body {
     width: 1200px;
     margin: 0 auto;
-    background-color: lightyellow;
+    background-color: darkblue;
 }
 
 .header {
@@ -32,12 +32,12 @@ body {
 }
 
 .button-container {
+    background-color: lightgreen;
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: lightyellow;
-    /* justify-content: center; */
-    background-color: blue;
+    color: darkblue;
+    padding-bottom: 10px;
 }
 
 .button {
@@ -49,7 +49,18 @@ body {
     border-radius: 4px;
 }
 
-.description {
+.description,
+.description_title {
+    background-color: lightyellow;
     padding-left: 15px;
     border: solid 2px blue;
+}
+
+.week_title {
+    background-color: lightgreen;
+}
+
+.footer {
+    color: lightyellow;
+    text-align: center;
 }
