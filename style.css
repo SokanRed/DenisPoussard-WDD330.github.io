@@ -49,6 +49,11 @@ body {
     border-radius: 4px;
 }
 
+.button_title {
+    font-size: xx-large;
+    margin: 15px;
+}
+
 .description,
 .description_title {
     background-color: lightyellow;
