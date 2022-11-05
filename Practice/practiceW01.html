@@ -7,20 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practice Week 01</title>
 
-    <link rel="stylesheet" href="./practice.css">
+    <link rel="stylesheet" href="./practiceW01.css">
 </head>
 
 <body>
+    <header class="header">
+        <h1>Doing Stuff With Web Things</h1>
+        <div class="github">
+            <a href="https://github.com/yenrab/doing_stuff_with_web_things" class="pdf" target="_blank">Doing Stuff With Web Things (pdf)</a>
+        </div>
+    </header>
+
+    <!-- ====================================== Section 1 ============================================== -->
+    <section class="section1">
+        <h2>Section 1 | Functions and Events (p16)</h2>
+
+        <div class="functions&events"></div>
+
+    </section>
+
+    <!-- ====================================== Section 2 ============================================== -->
     <section class="section2">
-        <h2>Section 2 | Make it Nice</h2>
+        <h2>Section 2 | Make it Nice (p25)</h2>
         <div class="firstEvent">
-            <button onclick="showCongratulation(this)">Click me!</button>
+            <button onclick="showCongratulations(this)">Click me!</button>
             <div id="result_displayS2"></div>
         </div>
     </section>
+    <script>
+        function showCongratulations(theButtonClicked) {
+            document.getElementById("result_displayS2").innerHTML =
+                "<h2>Congratulations, you did it!</h2><p>You got the page to update!</p>";
+            theButtonClicked.innerHTML = "Click Me Again!";
+        }
+    </script>
 
+    <!-- ====================================== Section 3 ============================================== -->
     <section class="section3">
-        <h2>Section 3 | Remembering User's Info</h2>
+        <h2>Section 3 | Remembering User's Info (p35)</h2>
         <div class="storyWinter">
             <h3>Story Editor</h3>
             Story Name : <input id="name_input">
@@ -34,9 +58,28 @@
             <div id="story_display"></div>
         </div>
     </section>
+    <script>
+        function loadStory() {
+            let storyName = document.getElementById("name_input").value;
+            let storyHTML = localStorage.getItem(storyName);
+            document.getElementById("story_editor").value = storyHTML;
+        }
 
+        function saveStory() {
+            let storyName = document.getElementById("name_input").value;
+            let storyHTML = document.getElementById("story_editor");
+            localStorage.setItem(storyName, storyHTML);
+        }
+
+        function displayStory() {
+            let storyHTML = document.getElementById("story_editor").value;
+            document.getElementById("story_display").innerHTML = storyHTML;
+        }
+    </script>
+
+    <!-- ====================================== Section 4 ============================================== -->
     <section class="section4">
-        <h2>Section 4 | Making Choices</h2>
+        <h2>Section 4 | Making Choices (p46)</h2>
         <div class="evenOrOdd">
             <h3>Even or Odd ???</h3>
             Enter a Number : <input id="number_input">
@@ -45,9 +88,23 @@
 
         </div>
     </section>
+    <script>
+        function checkNumber() {
+            let numberAsText = document.getElementById("number_input").value;
+            let remainder = numberAsText % 2;
+            if (remainder === 0) {
+                document.getElementById("result_displayS4").innerHTML =
+                    numberAsText + " is even.";
+            } else {
+                document.getElementById("result_displayS4").innerHTML =
+                    numberAsText + " is odd.";
+            }
+        }
+    </script>
 
+    <!-- ====================================== Section 5 ============================================== -->
     <section class="section5">
-        <h2>Section 5 | Groups and Loops</h2>
+        <h2>Section 5 | Groups and Loops (p64)</h2>
         <div class="GroupLoop">
             <h3>Group Loop</h3>
             <h4>Here is a list of numbers. Are they Even or Odd Numbers???</h4>
@@ -64,9 +121,152 @@
             <div id="all_notes_display"></div>
         </div>
     </section>
+    <script>
+        // ----------------- Even or Odd Numbers ---------------------------
+        function checkAnotherNumber() {
+            let someNumbers = [25, 11, -2, 14, "What?? This isn't a number", -1, -10];
 
+            for (let i = 0; i < 7; i++) {
+                let numberAsText2 = someNumbers[i];
+                let aNumberIndexi = parseInt(numberAsText2);
+                if (numberAsText2 != "" && !isNaN(aNumberIndexi)) {
+                    let remainder2 = Math.abs(aNumberIndexi % 2);
+                    if (aNumberIndexi != 0 && remainder2 == 0) {
+                        document.getElementById("result_displayS5").innerHTML +=
+                            "<p>" + aNumberIndexi + " is even.</p>";
+                    } else if (aNumberIndexi != 0 && remainder2 == 1) {
+                        document.getElementById("result_displayS5").innerHTML +=
+                            "<p>" + aNumberIndexi + " is odd.</p>";
+                    } else {
+                        document.getElementById("result_displayS5").innerHTML +=
+                            "<p>0 is neither even nor odd.</p>";
+                    }
+                } else {
+                    document.getElementById("result_displayS5").innerHTML +=
+                        '<p>"' + someNumbers[4] + '" is not a number.</p>';
+                }
+            }
+        }
+        let fewNumbers = [25, 11, -2, 14, "What?? This isn't a number", -1, -10];
+        let array = "";
+        for (let i = 0; i < 7; i++) {
+            array = document.getElementById("array").innerHTML +=
+                "<p> " + fewNumbers[i] + ",</p>";
+        }
 
-    <script src="practice.js"></script>
+        // ------------------- Application | Note It --------------------------
+        function saveNote() {
+            let currentDateAndTime = new Date();
+            let aNoteDescription = document.getElementById("description_input").value;
+            let aNoteText = document.getElementById("note_editor").value;
+            let aCompleteNote =
+                currentDateAndTime.toLocaleString() + "--" + aNoteDescription;
+            aCompleteNote += "<p>" + aNoteText + "</p>";
+            let storedNotesString = localStorage.getItem("all_notes");
+            let allNotes = JSON.parse(storedNotesString);
+            if (allNotes == null) {
+                allNotes = [];
+            }
+            allNotes.push(aCompleteNote);
+            let allNotesString = JSON.stringify(allNotes);
+            localStorage.setItem("all_notes", allNotesString);
+        }
+
+        function showAllNotes() {
+            let storedNotesString = localStorage.getItem("allNotes");
+            let allNotes = JSON.parse(storedNotesString);
+            if (allNotes != null) {
+                let noteDisplayer = document.getElementById("all_notes_display");
+                noteDisplayer.innerHTML = null;
+                let numberOfNotes = allNotes.length;
+                for (let i = 0; i < numberOfNotes; i++) {
+                    let aNote = allNotes[i];
+                    noteDisplayer.innerHTML += "<hr><p>" + aNote + "</p>";
+                }
+            }
+        }
+    </script>
+
+    <!-- ====================================== Section 6 ============================================== -->
+    <section class="section6" onload="showAllCustomers()">
+        <h2>Section 6 | Representing Things (p91)</h2>
+        <div id="customer_entry_area">
+            <h2 class="customer-title">Our Clothing Customers</h2>
+            <input class="inputS6" id="name_input" placeholder="Name"></input>
+            <input class="inputS6" id="age_input" placeholder="Age"></input>
+            <input class="inputS6" id="inseam_input" placeholder="Inseam"></input>
+            <br>
+            <img src="add_customer.png" onclick="addAndSaveCustomer()">
+        </div>
+        <div id="all_customers_display"></div>
+    </section>
+
+    <script>
+        function addAndSaveCustomer() {
+            let aName = document.getElementById("name_input").value
+            let anAge = document.getElementById("age_input").value * 1
+            let anInseam = document.getElementById("inseam_input").value * 1
+            let aClothingCustomer = {
+                'name': aName,
+                'age': anAge,
+                'inseam': anInseam
+            }
+            let allCustomers = null
+            let storedCustomersString = localStorage["all_Customers"]
+            if (storedCustomersString == null) {
+                allCustomers = []
+            } else {
+                allCustomers = JSON.parse(storedCustomersString)
+            }
+            allCustomers.push(aClothingCustomer)
+            let allCustomersString = JSON.stringify(allCustomers)
+            localStorage["all_customers"] = allCustomersString
+            showAllCustomers()
+
+            document.getElementById("name_input").value = null
+            document.getElementById("age_input").value = null
+            document.getElementById("inseam_input").value = null
+        }
+
+        function showAllCustomers() {
+            let storedCustomersString = localStorage["all_customers"]
+            if (storedCustomersString != null) {
+                let allCustomers = JSON.parse(storedCustomersString)
+                let customerDisplayer = document.getElementById("all_customers_display")
+                customerDisplayer.innerHTML = null
+                let numberOfCustomers = allCustomers.length
+                for (let i = 0; i < allCustomers.length; i++) {
+                    let aClothingCustomer = allCustomers[i]
+                    customerDisplayer.innerHTML += "<hr><p> Customer: " +
+                        aClothingCustomer["name"] + "</p>" +
+                        "<p>Age: " + aClothingCustomer["age"] +
+                        "</p>" + "<p>Inseam: " +
+                        aClothingCustomer["inseam"] + "</p>"
+                }
+            }
+        }
+    </script>
+
+    <!-- ====================================== Section 7 ============================================== -->
+    <section class="section7">
+        <h2>Section 7 | Where Next ? (p101)</h2>
+        <div class="where-next">
+            <dl>
+                <dt><a href="https://www.w3schools.com/js/js_whereto.asp">Putting JavaScript in its own file</a></dt>
+                <dt><a href="https://www.w3schools.com/html/html_css.asp">Putting CSS in its own file</a></dt>
+                <dt><a href="https://www.w3schools.com/css/css3_transitions.asp">Using CSS to move around stuff on the pages</a></dt>
+            </dl>
+        </div>
+    </section>
+    <script>
+    </script>
+
+    <div class="footer">
+        <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+        <hr>
+        <h2>Teacher : Johan Baer</h2>
+        <hr>
+    </div>
 </body>
 
 </html>
