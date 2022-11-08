@@ -22,31 +22,69 @@
     <h2 class="book-title">From "Novive to Ninja"</h2>
     <section class="main">
         <div class="notes">
-            <h2>Chapter 09 The windows Object</h2>
-            <ul>
-                <li>Browser </li>
-                <li>The Browser Object Model</li>
-                <li>The Browser History</li>
-                <li>Controlling Windows</li>
-                <li>Screen Information</li>
-                <li>The Document Object</li>
-                <li>Timing Functions</li>
-                <li>setInterval()</li>
-                <li>Animation</li>
-                <li>Quiz Ninja Project</li>
-            </ul>
-        </div>
-        <div class="notes">
-            <h2>Chapter 14 HTML5 APIs</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>The data- Attribute</li>
-                <li>HTML5 APIs</li>
-                <li>Other APIs</li>
-                <li>Drawing with Canvas</li>
-                <li>Shims and Polyfills</li>
-                <li>Quiz Ninja Project</li>
-            </ul>
+            <div class="dropdown">
+                <h2 class="start">&#9660 Chapter 09 | The windows Object</h2>
+                <div class="dropdown-content">
+                    <ul>
+                        <p>Every JavaScript environment has a global object. Any variables that are created in the global scope are actually properties of this object, and any functions are methods of it. In a browser environment the global object is the
+                            window object, which represents the browser window that contains a web page.</p>
+                        <li class="subtitle">The Browser Object Model</li>
+                        <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen. We can find out the dimensions of the screen it is viewed on, and which pages
+                            have been visited before the current page.</p>
+                        <li class="subtitle">The Browser History</li>
+                        <p>The <i>window.history</i> property can be used to access information about any previously visited pages in the current browser session.</p>
+                        <p>The <i>window.history.length</i> property shows how many pages have been visited before arriving at the current page.</p>
+                        <p>The <i>window.history.go()</i> method can be used to go to a specific page, where 0 is the current page</p>
+                        <p>There are also the <i>window.history.forward()</i> and <i>window.history.back()</i> methods that can be used to navigate forwards and backwards by one page respectively, just like using the browser’s forward and back buttons.</p>
+                        <li class="subtitle">Controlling Windows</li>
+                        <p>A new window can be opened using the <i>window.open()</i> method. This takes the URL of the page to be opened as its first parameter, the window title as its second parameter, and a list of attributes as the third parameter. This
+                            can also be assigned to a variable, so the window can then be referenced later in the code.</p>
+                        <p>The <i>close()</i> method can be used to close a window, assuming you have a reference to it.</p>
+                        <p>It is possible to move a window using the <i>window.moveTo()</i> method. This takes two parameters that are the X and Y coordinates of the screen that the window is to be moved to.</p>
+                        <p>A window resized using the <i>window.resizeTo()</i> method. This takes two parameters that specify the width and height of the resized window’s dimensions.</p>
+                        <li class="subtitle">Screen Information</li>
+                        <p>The <i>window.screen</i> object contains information about the screen the browser is displayed on. You can find out the height and width of the screen in pixels using the <i>height</i> and <i>width</i> properties respectively</p>
+                        <p>The <i>availHeight</i> and <i>availWidth</i> can be used to find the <i>height</i> and <i></i>width of the screen, excluding any operating system menus</p>
+                        <li class="subtitle">The Document Object</li>
+                        <p>Each <i>window</i> object contains a <i>document</i> object. This object has properties and methods that deal with the page that has been loaded into the window.</p>
+                        <h4>Cookies</h4>
+                        <p>Cookies are small files that are saved locally on a user’s computer. A restriction of cookies is that they can only be read by a web page from the same domain that set them. Cookies take the form of a text file that contain a list
+                            of name/value pairs separated by semicolons.</p>
+                        <dd>
+                            <li>Creating Cookies by using the <i>document.cookie</i> property.</li>
+                            <li>Changing Cookies Values by reassigning it to <i>document.cookie</i> using the same name but a different value.</li>
+                            <li>Reading Cookies: Simply enter <i>document.cookie:</i>.</li>
+                            <li>Cookies Expiry Dates (Do not rely on it)</li>
+                            <li>The Path and Domaine of Cookies: By default, cookies can only be read by pages inside the same directory and domain as the file was set. This is for security reasons so that access to the cookie is limited. The path can be
+                                changed so that any page in the root directory can read the cookie. It’s done by adding the string ; path=/ to the end of the cookie when it is set</li>
+                            <li>Secure Cookies: Adding the string <i>; secure</i> to the end of a cookie will ensure it’s only transmitted over a secure HTTPS network</li>
+                            <li>Delete Cookies: To remove a cookie, you need to set it to expire at a time in the past</li>
+                        </dd>
+                        <li class="subtitle">Timing Functions</li>
+                        <p>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions at regular intervals. The <i>window.setTimeout()</i> method accepts a callback to a function as its
+                            first parameter and a number of milliseconds as its second parameter. </p>
+                        <li class="subtitle">setInterval()</li>
+                        <p>The <i>window.setInterval()</i> method works in a similar way to <i>window.setTimeout()</i>, except that it will repeatedly invoke the callback function after every given number of milliseconds.</p>
+                        <li class="subtitle">Animation</li>
+                        <p>The <i>setTimeOut()</i> and <i>setInterval()</i> methods can be used to animate elements on a web page. </p>
+                        <li class="subtitle">Quiz Ninja Project</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="dropdown">
+                <h2 class="start">&#9660 Chapter 14 | HTML5 APIs</h2>
+                <div class="dropdown-content">
+                    <ul>
+                        <li class="subtitle">HTML5</li>
+                        <li class="subtitle">The data- Attribute</li>
+                        <li class="subtitle">HTML5 APIs</li>
+                        <li class="subtitle">Other APIs</li>
+                        <li class="subtitle">Drawing with Canvas</li>
+                        <li class="subtitle">Shims and Polyfills</li>
+                        <li class="subtitle">Quiz Ninja Project</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="sidebar">
             <h2>Code of the Week</h2>
