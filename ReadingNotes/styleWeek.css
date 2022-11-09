@@ -37,8 +37,7 @@ body {
 
 .notes {
     background-color: lightyellow;
-    padding-left: 10px;
-    padding-bottom: 10px;
+    padding: 10px 40px 10px 10px;
 }
 
 .subtitle {
@@ -49,8 +48,14 @@ body {
     font-size: large;
 }
 
+i,
 .example {
-    padding-left: 40px;
+    background-color: teal;
+    color: white;
+}
+
+.example {
+    padding: 5px 0px 5px 40px;
 }
 
 .sidebar {
@@ -83,7 +88,7 @@ body {
     width: 120%;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border: 2px solid #F20209;
-    padding: 12px 16px;
+    padding: 15px 40px;
     z-index: 1;
 }
 

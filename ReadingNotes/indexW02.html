@@ -19,6 +19,7 @@
             <a href="../Challenge/index.html" class="button">Challenges</a>
         </div>
     </header>
+
     <h2 class="book-title">From "Novice to Ninja"</h2>
     <section class="main">
         <div class="notes">
@@ -52,55 +53,74 @@
                     </ul>
                 </div>
             </div>
+
             <div class="dropdown">
                 <h2 class="start">&#9660 Chapter 3 | Arrays, Logic, and Loops</h2>
                 <div class="dropdown-content">
                     <ul>
                         <li class="subtitle">Arrays | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays" class="reference">mdn Array</a></li>
                         <p>An array is an ordered list of values. To create an array literal, simply write a pair of square brackets:</p>
-                        <dd>const myArray = [];</dd>
+                        <dl class="example">const myArray = [];</dl>
+
                         <h4>Initializing an Array</h4>
-                        <dd>const heroes = [];</dd>
+                        <dl class="example">const heroes = [];</dl>
+
                         <h4>Adding Values to Arrays</h4>
-                        <dd>heroes[0] = 'Superman';</dd>
+                        <dl class="example">heroes[0] = 'Superman';</dl>
+
                         <h4>Creating Array Literals</h4>
-                        <dd>const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];</dd>
-                        <dd>§ ['Captain America', 'Iron Man', 'Thor', 'Hulk']</dd>
+                        <dl class="example">
+                            <dt>const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];</dt>
+                            <dt>&gt;['Captain America', 'Iron Man', 'Thor', 'Hulk']</dt>
+                        </dl>
+
                         <h4>Removing Values from Arrays</h4>
-                        <dd>delete avengers[3]; (will delete the item 'Hulk' from the array</dd>
+                        <dl class="example">delete avengers[3]; (will delete the item 'Hulk' from the array</dl>
+
                         <h4>Destructuring Arrays</h4>
                         <p>Destructuring an array is the concept of taking values out of an array and presenting them as individual values.</p>
-                        <dd>const [x,y] = [1,2]; (x = 1 & y = 2)</dd>
+                        <dl class="example">const [x,y] = [1,2]; (x = 1 & y = 2)</dl>
+
                         <h4>Array Properties and Methods</h4>
-                        <dd>avengers.length;</dd>
+                        <dl class="example">avengers.length;</dl>
+
                         <h4>Pop, Push, Shift, and Unshift</h4>
-                        <dd>avengers.pop(); (will remove the last item from the array)</dd>
-                        <dd>avengers.shift(); (will remove the first item from the array</dd>
-                        <dd>vengers.push('Thor'); (will append a new item to the end of the array)</dd>
-                        <dd>avengers.unshift('Captain America'); (will append a new item at the beginnig of the array)</dd>
+                        <dl class="example">
+                            <dt>avengers.pop(); (will remove the last item from the array)</dt>
+                            <dt>avengers.shift(); (will remove the first item from the array</dt>
+                            <dt>vengers.push('Thor'); (will append a new item to the end of the array)</dt>
+                            <dt>avengers.unshift('Captain America'); (will append a new item at the beginnig of the array)</dt>
+                        </dl>
+
                         <h4>Merging Arrays</h4>
                         <p>The <i>concat()</i> method can be used to merge an array with one or more arrays</p>
+
                         <h4>The <i>join()</i> Method</h4>
                         <p>The <i>join()</i> method can be used to turn the array into a string that comprises all the items in the array, separated by commas. You can choose a separator other than a comma by placing it inside the parentheses</p>
-                        <dd>avengers.join(); or avengers.join(' & ');</dd>
+                        <dl class="example">avengers.join(); or avengers.join(' & ');</dl>
+
                         <h4>Slicing and Splicing</h4>
                         <p>The <i>slice()</i> method creates a subarray; effectively chopping out a slice of an original array, starting at one position and finishing at another. For example, if we wanted to find the 3rd and 4th item in our array we would
                             use the following code. (Note-This operation is non-destructive ― no items are actually removed from the original array)</p>
                         <p>The <i>splice()</i> method removes items from an array then inserts new items in their place. (Note-This is a destructive operation as it changes the value of the array</p>
-                        <dd>avengers.splice(3, 1, 'Scarlet Witch');</dd>
+                        <dt class="example">avengers.splice(3, 1, 'Scarlet Witch');</dt>
                         <p>The first number in the parentheses tells us the index at which to start the splice. The second number tells us how many items to remove from the array.</p>
                         <p>The <i>splice()</i> method can also be used to insert values into an array at a specific index without removing any items, by indicating that zero items are to be removed.</p>
-                        <dd>avengers.splice(4,0,'Quicksilver');</dd>
+                        <dt class="example">avengers.splice(4,0,'Quicksilver');</dt>
                         <p>The <i>splice()</i> method is a particularly flexible method as it can be used to insert or remove values from an array. Be careful, though, as <i>splice()</i> is a destructive method which means it changes the array permanently.</p>
+
                         <h4>Reverse</h4>
                         <p>We can reverse the order of an array using the <i>reverse()</i> method. (Notes-This changes the order of the array permanently)</p>
+
                         <h4>Sort</h4>
                         <p>We can sort the order of an array using the <i>sort()</i> method. (Notes-This changes the order of the array permanently)</p>
+
                         <h4>Finding if a Value is in an Array</h4>
                         <p>We can use the <i>indexOf()</i> method to find the first occurrence of a value in an array. If the item is in the array, it will return the index of the first occurrence of that item.</p>
                         <p>ES6 also introduced the <i>includes()</i> method. This returns a boolean value depending on whether the array contains a particular element or not.</p>
                         <p>You can also add an extra parameter to indicate which index to start the search from : </p>
-                        <dd>avengers.includes('Black Widow', 1); (Will start the search from the second element in the array)</dd>
+                        <dt class="example">avengers.includes('Black Widow', 1); (Will start the search from the second element in the array)</dt>
+
                         <h4>Multidimensional Arrays</h4>
                         <p>You can even have an array of arrays, known as a multidimensional array.</p>
                         <li class="subtitle">Sets | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="reference">mdn Set</a></li>
@@ -115,6 +135,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="dropdown">
                 <h2 class="start">&#9660 Chapter 4 | Functions | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" class="reference">mdn Functions</a></h2>
                 <div class="dropdown-content">
@@ -126,20 +147,23 @@
                             <dd> console.log('Hello World!');</dd>
                             <dt>}</dt>
                         </dl>
+
                         <h4>Function Expressions</h4>
                         <dl class="example">
                             <dt>const goodbye = function bye(){</dt>
                             <dd>console.log('Goodbye World!');</dd>
                             <dt>};</dt>
                         </dl>
+
                         <h4><i>function()</i> Constructor</h4>
                         <dd>const hi = new Function('console.log("Hi World!");');</dd>
                         <li class="subtitle">Invoking a Function</li>
                         <p>Invoking a function is to run the code inside the function’s body. To invoke a function, simply enter its name, followed by parentheses. This is how we’d invoke the hello function:</p>
                         <dl class="example">
                             <dt>hello();</dt>
-                            <dt>§ 'Hello world!'</dt>
+                            <dt>&gt; 'Hello world!'</dt>
                         </dl>
+
                         <li class="subtitle">Return Values</li>
                         <p>All functions return a value, which can be specified using the return statement, which comes after the return keyword. A function that doesn’t explicitly return anything (such as all the examples we have seen so far) will return
                             undefined by default. The function in this example will return the string 'Howdy World!':</p>
@@ -147,6 +171,7 @@
                             <dt>function howdy(){</dt>
                             <dd>return 'Howdy World!';</dd>
                             <dt>}</dt></dl>
+
                         <li class="subtitle">Parameters and Arguments</li>
                         <p>Parameters and arguments are terms that are often used interchangeably to represent values provided for the function as an input. There is a subtle difference though: any parameters a function needs are set when the function is
                             defined. When a function is invoked, it is provided with arguments. In this example, x is a parameter and 4 is an argument:</p>
@@ -155,17 +180,20 @@
                             <dd>return x*x;</dd>
                             <dt>}</dt>
                             <dt>square(4);</dt>
-                            <dt>§ 16</dt>
+                            <dt>&gt; 16</dt>
                         </dl>
                         <p>You can use as many parameters as you like when defining functions. Make sure that the number of arguments matches the number of parameters.</p>
+
                         <h4>Arrow Function</h4>
-                        <dd>const square = x => x*x;</dd>
+                        <dt class="example">const square = x => x*x;</dt>
+
                         <li class="subtitle">Callbacks</li>
                         <li class="subtitle">Array Iterators</li>
                         <li class="subtitle">Quiz Ninja Project</li>
                     </ul>
                 </div>
             </div>
+
             <div class="dropdown">
                 <h2 class="start">&#9660 Question</h2>
                 <div class="dropdown-content">
