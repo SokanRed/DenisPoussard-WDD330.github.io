@@ -156,12 +156,12 @@
                         </dl>
 
                         <h4><i>function()</i> Constructor</h4>
-                        <dd>const hi = new Function('console.log("Hi World!");');</dd>
+                        <dl class="example">const hi = new Function('console.log("Hi World!");');</dl>
                         <li class="subtitle">Invoking a Function</li>
                         <p>Invoking a function is to run the code inside the function’s body. To invoke a function, simply enter its name, followed by parentheses. This is how we’d invoke the hello function:</p>
                         <dl class="example">
                             <dt>hello();</dt>
-                            <dt>&gt; 'Hello world!'</dt>
+                            <dt>&gt;&gt; 'Hello world!'</dt>
                         </dl>
 
                         <li class="subtitle">Return Values</li>
@@ -170,8 +170,8 @@
                         <dl class="example">
                             <dt>function howdy(){</dt>
                             <dd>return 'Howdy World!';</dd>
-                            <dt>}</dt></dl>
-
+                            <dt>}</dt>
+                        </dl>
                         <li class="subtitle">Parameters and Arguments</li>
                         <p>Parameters and arguments are terms that are often used interchangeably to represent values provided for the function as an input. There is a subtle difference though: any parameters a function needs are set when the function is
                             defined. When a function is invoked, it is provided with arguments. In this example, x is a parameter and 4 is an argument:</p>
@@ -180,15 +180,125 @@
                             <dd>return x*x;</dd>
                             <dt>}</dt>
                             <dt>square(4);</dt>
-                            <dt>&gt; 16</dt>
+                            <dt>&gt;&gt; 16</dt>
                         </dl>
                         <p>You can use as many parameters as you like when defining functions. Make sure that the number of arguments matches the number of parameters.</p>
 
                         <h4>Arrow Function</h4>
-                        <dt class="example">const square = x => x*x;</dt>
+                        <dl class="example">const square = x => x*x;</dl>
+                        <ul>Arrow functions have a number of advantages over other ways of declaring functions:
+                            <li>They are much less verbose than normal function declarations.</li>
+                            <li> Single parameters don't need putting into parentheses.</li>
+                            <li>The body of the function doesn't need placing inside a block if it's only one line.</li>
+                            <li>The <i>return</i> keyword isn't required if the return statement is the only statement in the body of the function.</li>
+                            <li>They don't bind their own value of <i>this</i> to the function.</li>
+                        </ul>
+                        <dl class="example">
+                            <dt>const add = (x,y) => x + y;</dt>
+                            <dt>const hello = () => alert('Hello World!');</dt>
+                        </dl>
+
+                        <h4>Function Hoisting</h4>
+                        <p>Hoisting is the JavaScript interpreter’s action of moving all variable and function declarations to the top of the current scope, regardless of where they are defined. Functions that are defined using a function declaration are
+                            automatically hoisted, meaning they can be invoked before they have been defined.</p>
+
+                        <h4>Variable Hoisting</h4>
+                        <p>Variable declarations that use the <i>var</i> keyword are automatically moved to the top of the current scope. It’s better practice to use <i>const</i> and <i>let</i> to declare any variables at the beginning of a block so hoisting
+                            is unnecessary.</p>
 
                         <li class="subtitle">Callbacks</li>
+                        <p>A functions can also be given as a parameter to another function. A function that is passed as an argument to another is known as a callback.</p>
+
                         <li class="subtitle">Array Iterators</li>
+                        <p>Arrays have a number of methods that utilize callbacks to make them more flexible.</p>
+
+                        <h4><i>forEach()</i></h4>
+                        <p>A <i>for</i> loop could be used to loop through each value in an array. An alternative is to use the <i>forEach()</i> method. This will loop through the array and invoke a callback function using each value as an argument. The
+                            callback function takes three parameters, the first represents the value in the array, the second represents the current index and the third represent the array that the callback is being called on.</p>
+                        <dl class="example">
+                            <dt>const colors = ['Red', 'Green', 'Blue']</dt>
+                            <dt>colors.forEach( (color,index) =></dt>
+                            <dd>console.log(`Color at position ${index} is ${color}`) );</dd>
+                            <dt>&gt;&gt; "Color at position 0 is Red"</dt>
+                            <dt>&gt;&gt; "Color at position 1 is Green"</dt>
+                            <dt>&gt;&gt; "Color at position 2 is Blue"</dt>
+                        </dl>
+
+                        <h4><i>map()</i></h4>
+                        <p>It is often used to process data returned from databases in array form, such as adding HTML tags to plain text. It returns a new array that replaces each value with the return value of the callback function.</p>
+                        <dl class="example">
+                            <dt>[1,2,3].map( square )</dt>
+                            <dt>&gt;&gt; [1, 4, 9]</dt>
+                        </dl>
+                        <p>An anonymous function can also be used as a callback:</p>
+                        <dl class="example">
+                            <dt>[1,2,3].map( x => 2 * x);</dt>
+                            <dt>&gt; &gt; [2,4,6]</dt>
+                        </dl>
+                        <p>The next example takes each item in the array and places them in uppercase inside paragraph HTML tags:</p>
+                        <dl class="example">
+                            <dt>['red','green','blue'].map( color => `&lt;p&gt; ${color.toUpperCase()}&lt;/p&gt;` );</dt>
+                            <dt>&gt;&gt; ['&lt;p&gt;RED&lt;/p&gt;', '&lt;p&gt;GREEN&lt;/p&gt;', '&lt;p&gt;BLUE&lt;/p&gt;']</dt>
+                        </dl>
+
+                        <h4><i>Reduce()</i></h4>
+                        <p>The <i>reduce()</i> method is another method that iterates over each value in the array, but this time it cumulatively combines each result to return just a single value.</p>
+                        <dl class="example">
+                            <dt>[1,2,3,4,5].reduce( (acc,val) => prev + val );</dt>
+                            <dt>&gt;&gt; 15</dt>
+                        </dl>
+                        <p>Another example could be to calculate the average word length in a sentence: 1)The sentence can be converted into an array using the <i>split()</i> method, 2)Now we can use the reduce() function to calculate the total number of
+                            letters in the sentence, by starting the count at 0 and adding on the length of each word in each step, and 3) a simple division sum tells us the average word.</p>
+                        <dl class="example">
+                            <dt>const sentence = 'The quick brown fox jumped over the lazy dog'</dt>
+                            <dt>&gt;&gt; 'The quick brown fox jumped over the lazy dog'</dt>
+                            <dt>const words = sentence.split();</dt>
+                            <dt>&gt;&gt; ['The', 'quick', 'brown', 'fox', 'jumped', 'over', 'the', 'lazy', 'dog']</dt>
+                            <dt>const total = words.reduce( (acc,word) => acc + word.length,0 );</dt>
+                            <dt>&gt;&gt; 36</dt>
+                            <dt>length: const average = total/words.length;</dt>
+                            <dt>&gt;&gt; 4</dt>
+                        </dl>
+
+                        <h4><i>Filter()</i></h4>
+                        <p>The <i>filter()</i> method returns a new array that only contains items from the original array that return true when passed to the callback.</p>
+                        <dl class="example">
+                            <dt>const numbers = [ 2, 7, 6, 5, 11, 23, 12 ]</dt>
+                            <dt>numbers.filter(x => x%2 === 0 ); // this returns true if the number is even</dt>
+                            <dt>&gt;&gt; [ 2, 6, 12 ]</dt>
+                        </dl>
+
+                        <h4>Chaining Iterators Together</h4>
+                        <p>The various iterator functions can be used in combination to create some powerful transformations of data stored in arrays. For example, we can calculate the sum of square numbers using the <i>map()</i> method to square each number
+                            in the array and then chain the <i>reduce()</i> method on the end to add the results together:</p>
+                        <dl class="example">
+                            <dt>[1,2,3].map( x => x*x ).reduce((acc,x) => acc + x );</dt>
+                            <dt>&gt;&gt; 14</dt>
+                        </dl>
+                        <p>Another more complex example could be used to take an array of orders, apply a sales tax to them using <i>map()</i> and then use <i>reduce()</i> to find the total:</p>
+                        <dl class="example">
+                            <dt>const sales = [ 100, 230, 55];</dt>
+                            <dt>totalAfterTaxSales = sales.map( (amount) => amount * 1.15 ).reduce( (acc,val) => acc + val );</dt>
+                            <dt>&gt;&gt; 442.75</dt>
+                        </dl>
+
+                        <h4>Improving the <i>mean()</i> Function</h4>
+                        <dl class="example">
+                            <dt>function mean(array,callback) {</dt>
+                            <dd>if (callback) {</dd>
+                            <dd>array.map( callback );</dd>
+                            <dd>}</dd>
+                            <dd>const total = array.reduce((a, b) => a + b);</dd>
+                            <dd>return total/array.length;</dd>
+                            <dt>}</dt>
+                            <dt>mean([2,5,7,11,4]); // this should just calculate the mean</dt>
+                            <dt>&gt;&gt; 5.8</dt>
+                            <dt>mean([2,5,7,11,4],x => 2*x); // An anonymous arrow function is used to double all the numbers before calculating the mean</dt>
+                            <dt>&gt;&gt; 11.6</dt>
+                            <dt>mean([2,5,7,11,4],square); // The square function is used as a callback to square all the numbers before calculating the mean:</dt>
+                            <dt>&gt;&gt; 43</dt>
+                        </dl>
+
                         <li class="subtitle">Quiz Ninja Project</li>
                     </ul>
                 </div>
