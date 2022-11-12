@@ -23,42 +23,175 @@
     <h2 class="book-title">From "Novice to Ninja"</h2>
     <section class="main">
         <div class="notes">
+
+            <!----------------------------------------- Chapter 2 | Programming Basics ------------------------------------------------------>
+
             <div class="dropdown">
                 <h2 class="start">&#9660 Chapter 2 | Programming Basics</h2>
                 <div class="dropdown-content">
                     <ul>
                         <li class="subtitle">Comments</li>
-                        <li class="subtitle">JavaScript Grammar</li>
+                        <p>It makes it easier for anybody reading your code to understand what’s going on, and that includes you!</p>
+
+                        <li class="subtitle">JavaScript Grammar | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types" class="reference" target="_blank">mdn Grammar and types</a></li>
+                        <p>A JavaScript program is made up of a series of statements. Each statement ends with a new line or semicolon.</p>
+
                         <li class="subtitle">Reserved Words</li>
-                        <li class="subtitle">Primitive Data Types</li>
-                        <li class="subtitle">Variables</li>
+                        <p>The following words are reserved for use by the JavaScript language and cannot be used to name variables or function parameters and object properties :</p>
+                        <dl class="example">abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements, import, in
+                            instanceof, int, interface, let, long, native, new, null, package, private, protected, public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void, while,
+                            with, yield</dl>
+
+                        <li class="subtitle">Primitive Data Types <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" class="reference" target="_blank">mdn Primitive</a></li>
+                        <p>JavaScript has seven different data types. Six of them are primitive data types :</p>
+                        <ul>
+                            <li>String</li>
+                            <li>Symbol</li>
+                            <li>Number</li>
+                            <li>Boolean</li>
+                            <li>Undefined (<i>Undefined</i> is the value given to variables that have not been assigned a value.)</li>
+                            <li>Null (<i>Null</i> means 'no value'.)</li>
+
+                        </ul>
+                        <p>JavaScript has a special operator called <i>typeof</i> for finding out the type of a value.</p>
+
+                        <li class="subtitle">Variables | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables" class="reference" target="_blank">mdn Storing the information you need -- Variables</a></li>
+                        <p>Variables are used in programming languages to refer to a value stored in memory.</p>
+                        <h4>Declaring and Assigning</h4>
+                        <p>Variables have to be declared before they can be used. The keyword <i>const</i> is used when the variable will not be reassigned to another value, whereas <i>let</i> is used if the variable might be reassigned later in the program.
+                            To assign a value to a constant or variable, we use the <i>=</i> operator.</p>
+                        <dl class="example">
+                            <dt>const name = 'Alexa'; // This won't be assigned to another string</dt>
+                            <dt>let score = 0; // This value may change during the program</dt>
+                        </dl>
+                        <p>You can even declare and assign multiple variables at the same time if you separate them with commas.</p>
+                        <h4>Scope</h4>
+                        <p>Using <i>const</i> and <i>let</i> to declare variables means they are block scoped, so their value only exists inside the block they are declared in. Scope is an important concept in programming. It refers to where a constant or
+                            variable is accessible by the program. There are two common scopes that are often referred to in programs: global scope and local scope.</p>
+                        <h4>Global Scope</h4>
+                        <p>Any variable declared outside of a block is said to have global scope. However, it is not considered good practice. A ninja programmer will try to keep the number of global variables to a minimum.</p>
+                        <h4>Local Scope</h4>
+                        <p>In ES6, blocks can be used to create a local scope. This means that any variables defined inside a block using the <i>let</i> or <i>const</i> will only be available inside that block and not be accessible outside of that block.</p>
+
                         <li class="subtitle">Naming Constants & Variables</li>
+                        <p>When naming constants and variables, you should try to give them sensible names that describe what the variable represents; hence, answer is a better variable name than x.</p>
+                        <p>When using multiple words for constant and variable names there are two conventions:
+                            <dl>
+                                <dt>Camel case starts with a lowercase letter and then each new word is capitalized:</dt>
+                                <dd><i>firstNameAndLastName</i></dd>
+                                <dt>Underscore separates each new word with an underscore:</dt>
+                                <dd><i>first_name_and_last_name</i></dd>
+                            </dl>
+                        </p>
+
                         <li class="subtitle">Direct Assignment and Assignment By Reference</li>
-                        <li class="subtitle">String</li>
-                        <li class="subtitle">String Properties and Methods</li>
+                        <p>When you assign a primitive value to a variable, any changes you make are made directly to that value:</p>
+                        <dl class="example">
+                            <dt>const a = 1;</dt>
+                            <dt>let b = a; // a = 1, b = 1</dt>
+                            <dt>b = 2; // a = 1, b = 2</dt>
+                        </dl>
+                        <p>But if you assign a non-primitive value to a variable, then this is done by reference, so any changes that are subsequently made will affect all references to that object:</p>
+                        <dl class="example">
+                            <dt>const c = { value: 1 };</dt>
+                            <dt>let d = c; // c.value = 1, d.value = 1</dt>
+                            <dt>d.value = 2; // c.value = 2, d.value = 2</dt>
+                        </dl>
+
+                        <li class="subtitle">String | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="reference" target="_blank">mdn String</a></li>
+                        <p>A string is a collection of characters, such as letters and symbols. We can create a string literal by writing a group of characters inside quote marks like this: <i> 'hello' </i>.</p>
+
                         <li class="subtitle">Template Literals</li>
-                        <li class="subtitle">Symbols</li>
-                        <li class="subtitle">Numbers</li>
-                        <li class="subtitle">Numbers Methods</li>
+                        <li class="subtitle">Symbols | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol" class="reference" target="_blank">mdn Symbol</a></li>
+
+                        <li class="subtitle">Numbers | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="reference" target="_blank">mdn Number</a></li>
+                        <p>Numbers can be integers (whole numbers, such as 3) or floating point numbers (often referred to as just 'decimals' or 'floats', such as 3.14159).</p>
+                        <h4>Octal and Hexadecimal Numbers</h4>
+                        <p>If a number starts with a 0x, it is considered to be in hexadecimal (base 16) notation. If a number starts with a zero, followed by the letter o, then it is considered to be in octal (base 8) notation.</p>
+                        <h4>Exponential Notation</h4>
+                        <p>Numbers can also be represented in exponential notation, which is shorthand for "multiply by 10 to the power of". This referred to as "scientific notation" or "standard form".</p>
+                        <h4>Arithmetic Operations</h4>
+                        <p>All the usual arithmetic operations can be carried out in JavaScript. Addition <i>+</i>, Subtraction <i>-</i>, Multiplication <i>*</i>, Division <i>/</i>, Exponentiation <i>**</i>, and the remainder of division using the <i>%</i>                            operator.</p>
+
                         <li class="subtitle">Changing the Value of Variables</li>
+                        <p>f a variable has been assigned a numerical value, it can be increased using the compound assignment operator, <i>+=</i>. There are equivalent compound assignment operators for all the operators.</p>
+                        <h4>Incrementing Values</h4>
+                        <p>If you only want to increment a value by 1, you can use the ++ operator. This goes either directly before or after the variable. There is also a -- operator that works in the same way.</p>
+                        <h4>Infinity</h4>
+                        <p>Infinity is a special error value in JavaScript that is used to represent any number that is too big for the language to deal with. The biggest number that JavaScript can handle is 1.7976931348623157e+308.</p>
+                        <h4>NaN</h4>
+                        <p>NaN is an error value that is short for "Not a Number".</p>
+                        <h4>Checking a Value is a Number</h4>
+                        <p>You can check if a value is a number that can be used by using the <i>Number.isFinite()</i> method. This will return true if the value is a number that isn't <i>Infinity</i>, <i>-Infinity</i> or <i>NaN</i></p>
+
                         <li class="subtitle">Type Coercion</li>
+                        <p>Type coercion happens when the operands of an operator are of different types. In this case, JavaScript will attempt to convert one operand to an equivalent value of the other operand's type.</p>
+
                         <li class="subtitle">Converting Between Strings and Numbers</li>
-                        <li class="subtitle">Undefined</li>
-                        <li class="subtitle">Null</li>
+                        <h4>Converting Strings to Numbers</h4>
+                        <p>The best way to change a string to a number is to use the Number method. This will convert the string form of a number into an actual number. <i>Number('23');</i></p>
+                        <h4>Converting Numbers to Strings</h4>
+                        <p>The preferred way of changing a number to a string is to use the String function. <i>String(3);</i></p>
+                        <h4>Parsing Numbers</h4>
+                        <p>There is also a useful function called parseInt() that can be used to convert a string representation of a numerical value back into a number. You can specify the base of the number you are trying to convert.</p>
+                        <dl class="example">
+                            <dt>parseInt('1010',2); // converts from binary, back to decimal</dt>
+                            <dt>&gt;&gt; 10</dt>
+                        </dl>
+                        <p>If a string starts with a number, the parseInt function will use this number and ignore any letters that come afterwards:</p>
+                        <dl class="example">
+                            <dt>const address = '221B Baker Street';</dt>
+                            <dt>parseInt(address, 10)</dt>
+                            <dt>&gt;&gt; 221</dt>
+                        </dl>
+
                         <li class="subtitle">Booleans</li>
+                        <p>There are only two Boolean values: <i> true</i> and <i> false</i>. To find the Boolean value of something, you can use the <i> Boolean</i> function</p>
+                        <p>Only 9 values are always false and these are known as falsy values:</p>
+                        <ul>
+                            <li> "" // double quoted empty string literal</li>
+                            <li> '' // single quoted empty string literal</li>
+                            <li> `` // empty template literal</li>
+                            <li> 0</li>
+                            <li> -0 // considered different to 0 by JavaScript!</li>
+                            <li> NaN</li>
+                            <li> false</li>
+                            <li> null</li>
+                            <li> undefined</li>
+                        </ul>
+
                         <li class="subtitle">Logical Operators</li>
+                        <h4>! (Logical NOT)</h4>
+                        <p>Placing the ! operator in front of a value will convert it to a Boolean and return the opposite value.</p>
+                        <h4>&& (Logical AND)</h4>
+                        <p>The logical AND operator works on two or more values (the operands) and only evaluates to true if all the operands are truthy.</p>
+                        <h4>|| (Logical OR)</h4>
+                        <p>The logical OR operator also works on two or more operands, but evaluates to true if any of the operands are true.</p>
+
                         <li class="subtitle">Bitwise Operators</li>
-                        <li class="subtitle">Comparison</li>
-                        <li class="subtitle">Quiz Ninja Project</li>
+                        <p>Bitwise operators work with operands that are 32-bit integers. These are numbers written in binary (base two) that have 32 digits made up of just 0 s and 1 s.</p>
+
+                        <li class="subtitle">Comparison | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" class="reference" target="_blank">mdn Equality comparaisons and sameness</a></li>
+                        <h4>Equality</h4>
+                        <p>We used the <i>=</i> operator to assign a value to a variable. So , it cannot be used for comparison. The <i>==</i> can be used, unfortunately there are some slight problems. The hard, or strict, equality operator, <i>===</i>,
+                            tests for equality but only returns true if and only if they are of the same data type</p>
+                        <h4>Inequaility</h4>
+                        <p>We can check if two values are not equal using the inequality operator. There is a soft inequality operator, <i>!=</i> and a hard inequality operator, <i>!==</i>. These work in a similar way to the soft and hard equality operators</p>
+                        <h4>Greater Than and Less Than</h4>
+                        <p>We can check if a value is greater than another using the <i>></i> operator. You can also use the "less than" <i>&it;</i> operator in a similar way. If you want to check if a value is greater than or equal to another value, you
+                            can use the <i>>=</i> operator.</p>
+
                     </ul>
                 </div>
             </div>
+
+            <!--------------------------------------------- Chapter 3 | Arrays, Logic, and Loops ------------------------------------------------->
 
             <div class="dropdown">
                 <h2 class="start">&#9660 Chapter 3 | Arrays, Logic, and Loops</h2>
                 <div class="dropdown-content">
                     <ul>
-                        <li class="subtitle">Arrays | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays" class="reference">mdn Array</a></li>
+                        <li class="subtitle">Arrays | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays" class="reference" target="_blank">mdn Array</a></li>
                         <p>An array is an ordered list of values. To create an array literal, simply write a pair of square brackets:</p>
                         <dl class="example">const myArray = [];</dl>
 
@@ -123,21 +256,23 @@
 
                         <h4>Multidimensional Arrays</h4>
                         <p>You can even have an array of arrays, known as a multidimensional array.</p>
-                        <li class="subtitle">Sets | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="reference">mdn Set</a></li>
+                        <li class="subtitle">Sets | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="reference" target="_blank">mdn Set</a></li>
                         <p>A set is a data structure that represents a collection of unique values, so it cannot include any duplicate values. Sets offer a useful way to keep track of data without having to check if any values have been duplicated. It's
                             also quick and easy to check if a particular value is in a set, which can be a slow operation if an array is used.</p>
                         <li class="subtitle">Converting Sets to Arrays</li>
-                        <li class="subtitle">Maps | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" class="reference">mdn Map</a></li>
+                        <li class="subtitle">Maps | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" class="reference" target="_blank">mdn Map</a></li>
                         <li class="subtitle">Converting Maps to Arrays</li>
-                        <li class="subtitle">Logic | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND" class="reference">mdn Logical</a></li>
-                        <li class="subtitle">Loops | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code" class="reference">mdn Looping Code</a></li>
-                        <li class="subtitle">Quiz Ninja Project</li>
+                        <li class="subtitle">Logic | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND" class="reference" target="_blank">mdn Logical</a></li>
+                        <li class="subtitle">Loops | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code" class="reference" target="_blank">mdn Looping Code</a></li>
+
                     </ul>
                 </div>
             </div>
 
+            <!---------------------------------- Chapter 4 | Functions ---------------------------------------->
+
             <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 4 | Functions | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" class="reference">mdn Functions</a></h2>
+                <h2 class="start">&#9660 Chapter 4 | Functions | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" class="reference" target="_blank">mdn Functions</a></h2>
                 <div class="dropdown-content">
                     <ul>
                         <li class="subtitle">Defining a Function</li>
@@ -299,10 +434,11 @@
                             <dt>&gt;&gt; 43</dt>
                         </dl>
 
-                        <li class="subtitle">Quiz Ninja Project</li>
                     </ul>
                 </div>
             </div>
+
+            <!------------------------------------------------ Question ----------------------------------------------------------------->
 
             <div class="dropdown">
                 <h2 class="start">&#9660 Question</h2>
