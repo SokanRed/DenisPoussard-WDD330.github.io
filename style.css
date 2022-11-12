@@ -77,6 +77,10 @@ body {
     justify-content: space-around;
 }
 
+q {
+    color: blue;
+}
+
 .footer {
     color: lightyellow;
     text-align: center;
