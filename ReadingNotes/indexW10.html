@@ -20,26 +20,119 @@
         </div>
     </header>
     <h2 class="book-title">From MDN</h2>
-    <!-- <section class="main">
+    <section class="main">
         <div class="notes">
-            <h2>Chapter 10 Testing and Debugging</h2>
-            <ul>
-                <li>Errors, Exceptions, and Warnings</li>
-                <li>The Importance of Testing and Debugging</li>
-                <li>Strict Mode</li>
-                <li>Feature Detection</li>
-                <li>Debugging in the Browser</li>
-                <li>Error Objects</li>
-                <li>Tests</li>
-                <li>Quiz Ninja Project</li>
-            </ul>
+
+            <!----------------------------------------- Validation Forms ------------------------------------------------>
+
+            <div class="dropdown">
+                <h2>&#9660 Validation Forms | <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation" class="reference" target="_blank">mdn Client-side validation</a></h2>
+                <div class="dropdown-content">
+                    <p>Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation, and helps ensure data submitted matches the requirements
+                        set forth in the various form controls.</p>
+                    <ul>
+                        <li class="subtitle">What is form validation?</li>
+                        <p>We want to make filling out web forms as easy as possible. However, there are three main reasons to insist on validating our forms:</p>
+                        <ul>
+                            <li>We want to get the right data, in the right format. Our applications won't work properly if our users' data is stored in the wrong format, is incorrect, or is omitted altogether.</li>
+                            <li>We want to protect our users' data. Forcing our users to enter secure passwords makes it easier to protect their account information.</li>
+                            <li>We want to protect ourselves. There are many ways that malicious users can misuse unprotected forms to damage the application.</li>
+                        </ul>
+                        <p class="warning">&#9888; Warning: Never trust data passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user can still alter the network request.</p>
+                        <li class="subtitle">Different types of client-side validation</li>
+                        <p>There are two different types of client-side validation : 1) Built-in form validation uses HTML form validation features. 2) JavaScript validation is coded using JavaScript.</p>
+
+                        <li class="subtitle">Using built-in form validation</li>
+                        <p>One of the most significant features of <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types" target="_blank">modern form controls</a> is the ability to validate most user data without relying on JavaScript.
+                            This is done by using validation attributes on form elements :</p>
+                        <ul>
+                            <li><i>required</i>: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+                            <li><i>minlength</i> and <i>maxlength</i>: Specifies the minimum and maximum length of textual data (strings).</li>
+                            <li><i>min</i> and <i>max</i>: Specifies the minimum and maximum values of numerical input types.</li>
+                            <li><i>type</i>: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
+                            <li><i>pattern</i>: Specifies a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">regular expression</a> that defines a pattern the entered data needs to follow.</li>
+                        </ul>
+                        <p>When an element is valid, the following things are true:</p>
+                        <ul>
+                            <li>The element matches the <i>:valid</i> CSS pseudo-class, which lets you apply a specific style to valid elements.</li>
+                            <If>If the user tries to send the data, the browser will submit the form.</li>
+                        </ul>
+                        <p>When an element is invalid, the following things are true:</p>
+                        <ul>
+                            <li>The element matches the <i>:invalid</i> CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., <i>:out-of-range</i>) depending on the error, which lets you apply a specific style to invalid elements.</li>
+                            <li>If the user tries to send the data, the browser will block the form and display an error message.</li>
+                        </ul>
+
+                        <a href="indexW10Ex01.html" target="_blank">Here is a full example to show usage of HTML's built-in validation features.</a>
+                        <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation#validation-related_attributes" target="_blank">Validation-related attributes</a> for a complete list of attributes that can be used to constrain
+                            input values and the input types that support them.</p>
+
+                        <li class="subtitle">Validating forms using JavaScript</li>
+
+                        <p>You must use JavaScript if you want to take control over the look and feel of native error messages.</p>
+
+                        <h4>The Constraint Validation API | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation" class="reference" target="_blank">mdn Constraint validation API</a></h4>
+                        <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:</p>
+                        <ul>
+                            <li><i>HTMLButtonElement</i> (represents a <i>&lt;button&gt;</i> element)</li>
+                            <li><i>HTMLFieldSetElement</i> (represents a <i>&lt;fieldset&gt;</i> element)</li>
+                            <li><i>HTMLInputElement</i> (represents an <i>&lt;input&gt;</i> element)</li>
+                            <li><i>HTMLOutputElement</i> (represents an <i>&lt;output&gt;</i> element)</li>
+                            <li><i>HTMLSelectElement</i> (represents a <i>&lt;select&gt;</i> element)</li>
+                            <li><i>HTMLTextAreaElement</i> (represents a <i>&lt;textarea&gt;</i> element)</li>
+                        </ul>
+                        <p>The Constraint validation API makes the following properties available on the above elements.</p>
+                        <ul>
+                            <li><i>validationMessage</i>: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the
+                                element's value satisfies its constraints (is valid), this will return an empty string.</li>
+                            <li><i>validity</i>: Returns a ValidityState object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState"
+                                    target="_blank">ValidityState</a> reference page.</li>
+                            <li><i>willValidate</i>: Returns true if the element will be validated when the form is submitted; false otherwise.</li>
+                        </ul>
+                        <p>The Constraint Validation API also makes the following methods available on the above elements and the <i>form</i> element.</p>
+                        <ul>
+                            <li><i>checkValidity()</i>: Returns true if the element's value has no validity problems; false otherwise. If the element is invalid, this method also fires an invalid event on the element.</li>
+                            <li><i>reportValidity()</i>: Reports invalid field(s) using events. Useful in combination with preventDefault() in an onSubmit event handler</li>
+                            <li><i>setCustomValidity(message)</i>: Adds a custom error message to the element; if you set a custom error message, the element is considered to be invalid, and the specified error is displayed. This lets you use JavaScript code
+                                to establish a validation failure other than those offered by the standard HTML validation constraints. The message is shown to the user when reporting the problem.</li>
+                        </ul>
+
+                        <h4>Implementing a customized error message |
+                            <a href="indexW10Ex02.html" target="_blank">Detail Example</a>
+                        </h4>
+
+                        <h4>Validating forms without a built-in API</h4>
+                        <p>In some cases, such as <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_build_custom_form_controls" target="_blank">custom controls</a> , you won't be able to or won't want to use the Constraint Validation API.
+                            To validate a form, ask yourself a few questions: 1) What kind of validation should I perform? 2) What should I do if the form doesn't validate? 3) How can I help the user to correct invalid data?</p>
+                        <a href="indexW10Ex03.html" target="_blank">An example that doesn't use the constraint validation API</a>
+                    </ul>
+                </div>
+            </div>
+
+            <!-------------------------------------- Using Fetch --------------------------------------------------->
+
+            <div class="dropdown">
+                <h2>&#9660 Using Fetch | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" class="reference" target="_blank">mdn Using the Fetch API</a></h2>
+                <div class="dropdown-content">
+                    <ul>
+                        <li>Errors, Exceptions, and Warnings</li>
+                        <li>The Importance of Testing and Debugging</li>
+                        <li>Strict Mode</li>
+                        <li>Feature Detection</li>
+                        <li>Debugging in the Browser</li>
+                        <li>Error Objects</li>
+                        <li>Tests</li>
+                        <li>Quiz Ninja Project</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="sidebar">
             <h2>Code of the Week</h2>
-            <a href="" class="button" target="_blank">Practice</a>
+            <!-- <a href="" class="button" target="_blank">Practice</a> -->
             <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
         </div>
-    </section> -->
+    </section>
     <div class="footer">
         <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
         <hr>

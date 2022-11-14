@@ -95,3 +95,10 @@ i,
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.warning {
+    background-color: red;
+    color: white;
+    border: 2px solid #F20209;
+    padding: 8px;
+}
