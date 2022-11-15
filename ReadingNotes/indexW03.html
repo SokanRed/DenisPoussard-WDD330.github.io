@@ -26,19 +26,109 @@
             <!------------------------------------------ Chapter 5 | Objects ------------------------------------------->
 
             <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 5 | Objects</h2>
+                <h2 class="start">&#9660 Chapter 5 | Objects <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="reference" target="_blank">mdn Object</a></h2>
                 <div class="dropdown-content">
                     <ul>
                         <li class="subtitle">Object Literals</li>
+                        <p>An object in JavaScript is a self-contained set of related values and functions. They act as a collection of named properties that map to any JavaScript value such as strings, numbers, booleans, arrays and functions. If a property’s
+                            value is a function, it is known as a method. Here is an example of an object literal that describes the Man of Steel:</p>
+                        <dl class="example">
+                            <dt>const superman = {</dt>
+                            <dd>name: 'Superman',</dd>
+                            <dd>'real name': 'Clark Kent',</dd>
+                            <dd>height: 75,</dd>
+                            <dd>weight: 235,</dd>
+                            <dd>hero: true,</dd>
+                            <dd>villain: false,</dd>
+                            <dd>allies: ['Batman','Supergirl','Superboy'],</dd>
+                            <dd>fly() {</dd>
+                            <dd style="padding-left: 40px;">return 'Up, up and away!';</dd>
+                            <dd>}</dd>
+                            <dt>};</dt>
+                        </dl>
+
                         <li class="subtitle">Creating Objects</li>
+                        <p>To create an object literal, simply enter a pair of curly braces. The following example creates an empty object that is assigned to the variable spiderman:</p>
+                        <dl class="example">const spiderman = {};</dl>
+                        <p>ES6 provided a shorthand method of creating objects if a property key is the same as a variable name that the property value is assigned to:</p>
+                        <dl class="example">
+                            <dt>const name = 'Iron Man';</dt>
+                            <dt>const realName = 'Tony Stark';</dt>
+                            <dt></dt>
+                            <dt>const ironMan = { name: name, realName: realName }; // long way</dt>
+                            <dt></dt>
+                            <dt>const ironMan = { name, realName }; // short ES6 way</dt>
+                        </dl>
+
+                        <h4>Accessing Properties</h4>
+                        <p>You can access the properties of an object using the dot notation : <i>superman.name</i>. You can also access an object’s properties using bracket notation : <i>superman['name']</i>.</p>
+                        <h4>Computed Properties</h4>
+                        <p>The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code can be placed inside square brackets and the property key will be the return value of that code.</p>
+
                         <li class="subtitle">Calling Methods</li>
+                        <p>To call an object’s method we can also use dot or bracket notation. Calling a method is the same as invoking a function, so parentheses need to be placed after the method name.</p>
+
                         <li class="subtitle">Checking if Properties or Methods Exist</li>
+                        <p>The in operator can be used to check whether an object has a particular property <i>'city' in superman;</i>. </p>
+
                         <li class="subtitle">Finding all the Properties of an Object</li>
+                        <p>We can loop through all of an object’s properties and methods by using a for in loop.</p>
+                        <dl class="example">
+                            <dt>for(const key in superman) {</dt>
+                            <dd>console.log(key + ": " + superman[key]);</dd>
+                            <dt>}</dt>
+                        </dl>
+
+                        <h4>Adding Properties</h4>
+                        <p>New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property : <i>superman.city = 'Metropolis';</i>.</p>
+                        <h4>Changing Properties</h4>
+                        <p>The value of an object’s properties can be change at any time using assignment : <i>superman['real name'] = 'Kal-El';</i>.</p>
+
                         <li class="subtitle">Removing Properties</li>
+                        <p>Any property can be removed from an object using the <i>delete</i> operator : <i>delete superman.fly</i>.</p>
+
                         <li class="subtitle">Nesting Objects</li>
+                        <p>It’s even possible for an object to contain other objects. These are known as nested objects.</p>
+
+                        <h4>Objects as Parameters to Functions</h4>
+                        <p>An object literal can be passed as a parameter to a function. This is useful when there are a large number of parameters, as it allows the arguments to be provided by name and in any order. This means you don't have to remember
+                            the order to enter them when invoking a function.</p>
+                        <dl class="example">
+                            <dt>function greet({greeting,name,age}) {</dt>
+                            <dd>return `${greeting}! My name is ${name} and I am ${age} years old.`;</dd>
+                            <dt>}</dt>
+                        </dl>
+
+                        <h4><i>this</i></h4>
+                        <p>The keyword <i>this</i> refers to the object that it is within. It can be used inside methods to gain access to the object’s properties.</p>
+
                         <li class="subtitle">Namespacing</li>
+                        <p>Naming collisions occur when the same variable or function name is used for different purposes by code sharing the same scope. A solution to this problem is to use the object literal pattern to create a namespace for groups of
+                            related functions.</p>
+
                         <li class="subtitle">Built-in Objects</li>
+                        <h4>JSON (JAvaScript Object Notation) | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" class="reference">mdn JSON</a></h4>
+                        <p>JSON is a string representation of the object literal notation with a couple of key differences :</p>
+                        <ol>
+                            <li>Property names must be double-quoted</li>
+                            <li>Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</li>
+                            <li>Functions are not permitted values</li>
+                        </ol>
+                        <dl class="example">const batman = '{"name": "Batman","real name": "Bruce Wayne","height": 74, "weight": 210, "hero": true, "villain": false, "allies": ["Robin","Batgirl","Superman"]}'</dl>
+                        <p>The <i>parse()</i> method takes a string of data in JSON format and returns a JavaScript object. The <i>stringify()</i> method does the opposite, taking a JavaScript object and returning a string of JSON data</p>
+
+                        <h4>The <i>Math</i> Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" class="reference" target="_blank">mdn Math</a></h4>
+                        <h4>The Date Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="reference" target="_blank">mdn Date</a></h4>
+                        <h4>The <i>RegExp</i> Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" class="reference" target="_blank">mdn RegExp</a></h4>
+
                         <li class="subtitle">Character Groups</li>
+                        <p>Groups of characters can be placed together inside square brackets. This character group represents any one of the characters inside the brackets.</p>
+                        <ul class="example">
+                            <li><i>const vowels = /[aeiou]/</i> (This expression matches any vowel)</li>
+                            <li><i>/[A-Z]/</i> (A sequence of characters can also be represented by placing a dash [ - ] between the first and last characters)</li>
+                            <li><i>/[0-9]/</i> (This representes the digits 0-9)</li>
+                            <li><i>/[^A-Z]/</i> (The ^ character is placed at the start of the sequence of characters with the brackets, it negates the sequence)</li>
+                        </ul>
                     </ul>
                 </div>
             </div>
@@ -63,7 +153,7 @@
             <!------------------------------------ Chapter 7 | Events -------------------------------------------------->
 
             <div class="dropdown">
-                <h2 class="start">&#9660 </h2>
+                <h2 class="start">&#9660 Chapter 7 | Events</h2>
                 <div class="dropdown-content">
                     <ul>
                         <li class="subtitle">Event Listeners</li>
