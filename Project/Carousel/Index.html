@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        body {
+            background-color: darkblue;
+        }
+        
+        img {
+            width: 500px;
+            height: 500px;
+            border: solid 5px lightyellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <img name="slide">
+
+    <script>
+        let i = 0;
+        let images = ['img01.jpg', 'img02.jpg', 'img03.jpg', 'img04.jpg', 'img05.jpg', 'img06.jpg', 'img07.jpg', 'img08.jpg']
+        let time = 1500;
+
+        function changeImg() {
+            document.slide.src = images[i];
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            setTimeout("changeImg()", time);
+        }
+
+        window.onload = changeImg;
+    </script>
+</body>
+
+</html>
