@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    background-color: darkblue;
     min-height: 100vh;
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
@@ -22,6 +17,12 @@ body {
     animation: color 30s alternate infinite;
     perspective: 200px;
     transform: translateX(26px);
+}
+
+.text {
+    background-color: lightyellow;
+    margin: 0;
+    padding: 20px;
 }
 
 .word {

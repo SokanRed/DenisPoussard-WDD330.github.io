@@ -1,4 +1,5 @@
 body {
+    background-color: darkblue;
     overflow: hidden;
     min-height: 100vh;
     cursor: crosshair;
@@ -22,10 +23,17 @@ body {
     }
 }
 
-h3 {
+h2 {
     font-size: 10rem;
     text-align: center;
     margin-top: 20px;
-    color: blue;
+    color: lightyellow;
     opacity: 0.5;
+}
+
+h3 {
+    color: lightyellow;
+    position: absolute;
+    padding-left: 20px;
+    bottom: 0;
 }

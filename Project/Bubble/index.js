@@ -1,4 +1,4 @@
-const counterDisplay = document.querySelector("h3");
+const counterDisplay = document.querySelector("h2");
 let counter = 0;
 
 const bubbleMaker = () => {
