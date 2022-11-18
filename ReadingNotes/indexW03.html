@@ -139,13 +139,109 @@
                 <h2 class="start">&#9660 Chapter 6 | The Document Object Model (DOM)
                     <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" class="reference">mdn DOM</a></h2>
                 <div class="dropdown-content">
+                    <p>The Document Object Model (DOM) allows you to access elements of a web page and enable interaction with the page by adding and removing elements, changing the order, content and attributes of elements, and even altering how they are
+                        styled.
+                    </p>
                     <ul>
                         <li class="subtitle">The Document Object Model</li>
+                        <p>We can use JavaScript to access and modify different parts of a web page using a special built-in object called <i>document</i>.</p>
+
+                        <!---------------------------------------------- History of the DOM -->
                         <li class="subtitle">History of the DOM</li>
+                        <p>The World Wide Web Consortium (W3C) started to standardize the process, and created the DOM level 1 in 1998. This introduced a complete model for web pages that allowed every part of them to be navigated.
+                            <br>The DOM level 2 specification was published in 2000 and introduced the popular <i>getElementById()</i> method, which made it much easier to access specific elements on a web page.
+                            <br>The DOM level 3 specification was published in 2004, and since then the W3C has abandoned using levels. The DOM specification is developed as a <a href="https://dom.spec.whatwg.org" target="_blank">living standard</a>.</p>
+
+                        <!---------------------------------------------- An Example Web Page -->
                         <li class="subtitle">An Example Web Page </li>
+                        <p>the DOM also stores any whitespace that is in the HTML document as text nodes.</p>
+
+                        <!------------------------------------------------ Getting Elements -->
                         <li class="subtitle">Getting Elements</li>
+                        <p>The DOM provides several methods that allow us to access any element on a page. These methods will return a node object or a node list, which is an array-like object. These objects can then be assigned to a variable and be inspected
+                            or modified.</p>
+
+                        <h4>Legacy DOM Shortcut Methods</h4>
+                        <p>There are some methods from DOM Level 0 that can still be employed to access commonly used elements. These include:</p>
+                        <dd>
+                            <li><i>Document.body</i> returns the body element of a web page, as we saw in the previous example.</li>
+                            <li><i>Document.images</i> returns a node list of all the images contained in the document.</li>
+                            <li><i>Document.links</i> returns a node list of all the <i>&lt;a&gt;</i> elements and <i>&lt;area&gt;</i> elements that have an <i>href</i> attribute.</li>
+                            <li><i>Document.anchors</i> returns a node list of all the <i>&lt;a&gt;</i> elements that have a <i>name</i> attribute.</li>
+                            <li><i>Document.forms</i> returns a node list of all the forms in the document.</li>
+                        </dd>
+
+                        <h4>Getting An Element By Its ID</h4>
+                        <p>The <i>getElementById()</i> method does exactly what it says on the tin. It returns a reference to the element with a unique id attribute that is given as an argument.</p>
+                        <dl class="example">const h1 = document.getElementById('title');</dl>
+
+                        <h4>Get Elements By Their Tag Name</h4>
+                        <p><i>getElementsByTagName()</i> will return a live node list of all the elements with the tag name that is provided as an argument.</p>
+                        <dl class="example">const listItems = document.getElementsByTagName('li');</dl>
+
+                        <h4>Get Elements By Their Class Name</h4>
+                        <p><i>getElementsByClassName()</i> will return a live node list of all elements that have the class name that is supplied as an argument.</p>
+                        <dl class="example">const heroes = document.getElementsByClassName('hero');</dl>
+
+                        <h4>Query Selectors</h4>
+                        <p>The <i>document.querySelector()</i> method allows you to use CSS notation to find the first element in the document that matches that matches a CSS selector provided as an argument. If no elements match, it will return null.
+                            <br>The <i>document.querySelectorAll()</i> method also uses CSS notation but returns a node list of all the elements in the document that match the CSS query selector. If no elements match, it will return an empty node list.
+                            <br>These are both very powerful methods that can emulate all the methods discussed, as well as allowing more fine-grained control over which element nodes are returned.
+                            <br>(To use this method review CSS query selectors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">mdn CSS Selectors</a>.)</p>
+                        <dl class="example">document.querySelector('#bats'); // Instead of <i>document.getElementById()</i></dl>
+
+                        <h4>Navigating the DOM Tree</h4>
+                        <p>Node objects have a number of properties and methods for navigating around the document tree. Once you have a reference to an element, you can walk along the document tree to find other nodes.
+                            <br>The <i>childNodes</i> property is a list of all the nodes that are children of the node concerned.</p>
+
+                        <h4>Finding the Value of a Node</h4>
+                        <h4>Getting and Setting Attributes</h4>
+                        <p>All HTML elements have a large number of possible attributes such as 'class', 'id', src, and 'href'. The DOM has numerous getter and setter methods that can be used to view, add, remove or modify the value of any of these attributes.</p>
+                        <h5>Getting An Element’s Attributes</h5>
+                        <p>The <i>getAttribute()</i> method returns the value of the attribute provided as an argument.</p>
+
+                        <!---------------------------------------- Setting An Element’s Attributes -->
                         <li class="subtitle">Setting An Element’s Attributes</li>
+                        <p>The <i>setAttribute</i> can change the value of an element’s attributes. It takes two arguments: the attribute that you wish to change, and the new value of that attribute.
+                            <br>If an element does not have an attribute, the setAttribute method can be used to add it to the element.</p>
+                        <dl class="example">wonderWoman.setAttribute('id','amazon'); //The <i>setAttribute</i> method will add the id of 'amazon' to the <i>wonderWoman</i>element</dl>
+
+                        <h4>Creating Dynamic Markup</h4>
+                        <p>So far we’ve looked at how to gain access to different elements of a web page and find out information about them. We’ve also looked at how to change the attributes of elements. In this section, we’re going to learn how to create
+                            new elements and add them to the page, as well as edit elements that already exist and remove any unwanted elements.</p>
+                        <h5>Creating An Element</h5>
+                        <p>The document object has a <i>createElement()</i> method that takes a tag name as a parameter and returns that element.
+                            <br>At the moment, this element is empty. To add some content, we’ll need to create a text node.</p>
+                        <h5>Creating a Text Node</h5>
+                        <p>A text node can be created using the <i>document.createTextNode()</i> method. It takes a parameter, which is a string containing the text that goes in the node.
+                            <br>Now we have an element node and a text node, but they are not linked together ― we need to append the text node to the paragraph node.</p>
+                        <h5>Appending Nodes</h5>
+                        <p>Every node object has an <i>appendChild()</i> method that will add another node (given as an argument) as a child node. We want our newly created text node to be a child node of the list element node. This means that it’s the <i>flash</i>                            object that calls the method, with <i>flashText</i> as its argument</p>
+                        <h5>A Function To Create Elements</h5>
+                        <p>When we created our new list item element, all we specified was the type of tag and the text inside it. These will form the parameters of our function. The function will then perform the two steps we used to create the new element,
+                            and then return that element:</p>
+                        <dl class="example">
+                            <dt>function createElement (tag,text) {</dt>
+                            <dd>const el = document.createElement(tag);</dd>
+                            <dd>el.textContent = text;</dd>
+                            <dd>return el</dd>
+                            <dt>}</dt>
+                        </dl>
+                        <h5>Adding Elements to the Page</h5>
+                        <p>We have already seen the <i>appendChild()</i> method. </p>
+                        <h5>Remove Elements From a Page</h5>
+                        <p>An element can be removed from a page using the <i>removeChild()</i> method.</p>
+                        <h5>Replacing Elements on a Page</h5>
+                        <p>The <i>replaceChild()</i> method can be used to replace one node with another.</p>
+                        <h5><i>innerHTML</i></h5>
+                        <p>The <i>innerHTML</i> element property was standardized as part of the HTML5</p>
+                        <h5>Live Collections</h5>
+                        <p>The node lists returned by the <i>document.getElementsByClassName()</i> and <i>document.getElementsByTagName()</i> methods are live collections that will update to reflect any changes on the page. </p>
+
+                        <!-------------------------------------------------- Updating CSS -->
                         <li class="subtitle">Updating CSS</li>
+                        <p>Every element node has a <i>style</i> property. This can be used to dynamically modify the presentation of any element on a web page.</p>
+
                     </ul>
                 </div>
             </div>
