@@ -30,18 +30,22 @@
                 <h2 class="start">&#9660 Chapter 2 | Programming Basics</h2>
                 <div class="dropdown-content">
                     <ul>
+                        <!------------------------------------ Comments ----------------------------------------------->
                         <li class="subtitle">Comments</li>
                         <p>It makes it easier for anybody reading your code to understand what’s going on, and that includes you!</p>
 
+                        <!--------------------------------JavaScript Grammar --------------------------------------------->
                         <li class="subtitle">JavaScript Grammar | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types" class="reference" target="_blank">mdn Grammar and types</a></li>
                         <p>A JavaScript program is made up of a series of statements. Each statement ends with a new line or semicolon.</p>
 
+                        <!-------------------------------------- Reserved Words ---------------------------------------->
                         <li class="subtitle">Reserved Words</li>
                         <p>The following words are reserved for use by the JavaScript language and cannot be used to name variables or function parameters and object properties :</p>
                         <dl class="example">abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements, import, in
                             instanceof, int, interface, let, long, native, new, null, package, private, protected, public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void, while,
                             with, yield</dl>
 
+                        <!------------------------------ Primitives Data --------------------------------------------->
                         <li class="subtitle">Primitive Data Types <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" class="reference" target="_blank">mdn Primitive</a></li>
                         <p>JavaScript has seven different data types. Six of them are primitive data types :</p>
                         <ul>
@@ -55,6 +59,7 @@
                         </ul>
                         <p>JavaScript has a special operator called <i>typeof</i> for finding out the type of a value.</p>
 
+                        <!------------------------------------------------ Variables -------------------------------------------------------------->
                         <li class="subtitle">Variables | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables" class="reference" target="_blank">mdn Storing the information you need -- Variables</a></li>
                         <p>Variables are used in programming languages to refer to a value stored in memory.</p>
                         <h4>Declaring and Assigning</h4>
@@ -73,6 +78,7 @@
                         <h4>Local Scope</h4>
                         <p>In ES6, blocks can be used to create a local scope. This means that any variables defined inside a block using the <i>let</i> or <i>const</i> will only be available inside that block and not be accessible outside of that block.</p>
 
+                        <!--------------------------------------- Naming Constants & Variables ----------------------------->
                         <li class="subtitle">Naming Constants & Variables</li>
                         <p>When naming constants and variables, you should try to give them sensible names that describe what the variable represents; hence, answer is a better variable name than x.</p>
                         <p>When using multiple words for constant and variable names there are two conventions:
@@ -84,6 +90,7 @@
                             </dl>
                         </p>
 
+                        <!------------------------- Direct Assignment and Assignment By Reference ------------------------->
                         <li class="subtitle">Direct Assignment and Assignment By Reference</li>
                         <p>When you assign a primitive value to a variable, any changes you make are made directly to that value:</p>
                         <dl class="example">
@@ -98,21 +105,28 @@
                             <dt>d.value = 2; // c.value = 2, d.value = 2</dt>
                         </dl>
 
+                        <!------------------------------------------------ String ------------------------------------------->
                         <li class="subtitle">String | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" class="reference" target="_blank">mdn String</a></li>
                         <p>A string is a collection of characters, such as letters and symbols. We can create a string literal by writing a group of characters inside quote marks like this: <i> 'hello' </i>.</p>
 
+                        <!---------------------------------------- Template Literals ---------------------------------------->
                         <li class="subtitle">Template Literals</li>
                         <li class="subtitle">Symbols | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol" class="reference" target="_blank">mdn Symbol</a></li>
 
+                        <!--------------------------------------------- Numbers ------------------------------------------>
                         <li class="subtitle">Numbers | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number" class="reference" target="_blank">mdn Number</a></li>
                         <p>Numbers can be integers (whole numbers, such as 3) or floating point numbers (often referred to as just 'decimals' or 'floats', such as 3.14159).</p>
+
                         <h4>Octal and Hexadecimal Numbers</h4>
                         <p>If a number starts with a 0x, it is considered to be in hexadecimal (base 16) notation. If a number starts with a zero, followed by the letter o, then it is considered to be in octal (base 8) notation.</p>
+
                         <h4>Exponential Notation</h4>
                         <p>Numbers can also be represented in exponential notation, which is shorthand for "multiply by 10 to the power of". This referred to as "scientific notation" or "standard form".</p>
+
                         <h4>Arithmetic Operations</h4>
                         <p>All the usual arithmetic operations can be carried out in JavaScript. Addition <i>+</i>, Subtraction <i>-</i>, Multiplication <i>*</i>, Division <i>/</i>, Exponentiation <i>**</i>, and the remainder of division using the <i>%</i>                            operator.</p>
 
+                        <!--------------------------------- Changing the Value of Variables ------------------------------->
                         <li class="subtitle">Changing the Value of Variables</li>
                         <p>f a variable has been assigned a numerical value, it can be increased using the compound assignment operator, <i>+=</i>. There are equivalent compound assignment operators for all the operators.</p>
                         <h4>Incrementing Values</h4>
@@ -124,9 +138,11 @@
                         <h4>Checking a Value is a Number</h4>
                         <p>You can check if a value is a number that can be used by using the <i>Number.isFinite()</i> method. This will return true if the value is a number that isn't <i>Infinity</i>, <i>-Infinity</i> or <i>NaN</i></p>
 
+                        <!---------------------------------------- Type Coercion -------------------------------------------->
                         <li class="subtitle">Type Coercion</li>
                         <p>Type coercion happens when the operands of an operator are of different types. In this case, JavaScript will attempt to convert one operand to an equivalent value of the other operand's type.</p>
 
+                        <!------------------------- Converting Between Strings and Numbers --------------------------------->
                         <li class="subtitle">Converting Between Strings and Numbers</li>
                         <h4>Converting Strings to Numbers</h4>
                         <p>The best way to change a string to a number is to use the Number method. This will convert the string form of a number into an actual number. <i>Number('23');</i></p>
@@ -145,6 +161,7 @@
                             <dt>&gt;&gt; 221</dt>
                         </dl>
 
+                        <!-------------------------------------- Booleans ----------------------------------------------->
                         <li class="subtitle">Booleans</li>
                         <p>There are only two Boolean values: <i> true</i> and <i> false</i>. To find the Boolean value of something, you can use the <i> Boolean</i> function</p>
                         <p>Only 9 values are always false and these are known as falsy values:</p>
@@ -160,23 +177,30 @@
                             <li> undefined</li>
                         </ul>
 
+                        <!---------------------------------------- Logical Operators ------------------------------------->
                         <li class="subtitle">Logical Operators</li>
                         <h4>! (Logical NOT)</h4>
                         <p>Placing the ! operator in front of a value will convert it to a Boolean and return the opposite value.</p>
+
                         <h4>&& (Logical AND)</h4>
                         <p>The logical AND operator works on two or more values (the operands) and only evaluates to true if all the operands are truthy.</p>
+
                         <h4>|| (Logical OR)</h4>
                         <p>The logical OR operator also works on two or more operands, but evaluates to true if any of the operands are true.</p>
 
+                        <!---------------------------------------- Bitise Operators ----------------------------------------->
                         <li class="subtitle">Bitwise Operators</li>
                         <p>Bitwise operators work with operands that are 32-bit integers. These are numbers written in binary (base two) that have 32 digits made up of just 0 s and 1 s.</p>
 
+                        <!------------------------------------------- Comparison -------------------------------------------->
                         <li class="subtitle">Comparison | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness" class="reference" target="_blank">mdn Equality comparaisons and sameness</a></li>
                         <h4>Equality</h4>
                         <p>We used the <i>=</i> operator to assign a value to a variable. So , it cannot be used for comparison. The <i>==</i> can be used, unfortunately there are some slight problems. The hard, or strict, equality operator, <i>===</i>,
                             tests for equality but only returns true if and only if they are of the same data type</p>
+
                         <h4>Inequaility</h4>
                         <p>We can check if two values are not equal using the inequality operator. There is a soft inequality operator, <i>!=</i> and a hard inequality operator, <i>!==</i>. These work in a similar way to the soft and hard equality operators</p>
+
                         <h4>Greater Than and Less Than</h4>
                         <p>We can check if a value is greater than another using the <i>></i> operator. You can also use the "less than" <i>&it;</i> operator in a similar way. If you want to check if a value is greater than or equal to another value, you
                             can use the <i>>=</i> operator.</p>
@@ -191,6 +215,7 @@
                 <h2 class="start">&#9660 Chapter 3 | Arrays, Logic, and Loops</h2>
                 <div class="dropdown-content">
                     <ul>
+                        <!--------------------------------------------- Arrays ----------------------------------------------->
                         <li class="subtitle">Arrays | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays" class="reference" target="_blank">mdn Array</a></li>
                         <p>An array is an ordered list of values. To create an array literal, simply write a pair of square brackets:</p>
                         <dl class="example">const myArray = [];</dl>
@@ -256,14 +281,159 @@
 
                         <h4>Multidimensional Arrays</h4>
                         <p>You can even have an array of arrays, known as a multidimensional array.</p>
+
+                        <!-------------------------------------------- Sets ----------------------------------------------->
                         <li class="subtitle">Sets | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set" class="reference" target="_blank">mdn Set</a></li>
                         <p>A set is a data structure that represents a collection of unique values, so it cannot include any duplicate values. Sets offer a useful way to keep track of data without having to check if any values have been duplicated. It's
                             also quick and easy to check if a particular value is in a set, which can be a slow operation if an array is used.</p>
+
+                        <h4>Creating Sets</h4>
+                        <p>An empty set is created using the new operator and Set() constructor:</p>
+                        <dl class="example">const list = new Set();</dl>
+
+                        <h4>Adding Values to Sets</h4>
+                        <p>Values can be placed into a set using the add method: (If you try to add a value that is already contained in the set, then the operation is simply ignored.)</p>
+                        <dl class="example">list.add(1); also list.add(2).add(3).add(4); or const numbers = new Set([1,2,3]);</dl>
+
+                        <h4>Set Methods</h4>
+                        <p>The number of values in a set can be found using the <i>size()</i> method
+                            <br>The <i>has()</i> method can be used to check if a value is in a set. This returns a boolean value of <i>true</i> or <i>false</i>.</p>
+
+                        <h4>Removing Values From Sets</h4>
+                        <p>The <i>delete()</i> method can be used to remove a value from a set. This returns a boolean value of <i>true</i> if the value was removed from the set, or <i>false</i> if the value wasn't in the set and couldn't be removed</p>
+
+                        <!----------------------------------- Converting Sets to Arrays ------------------------------------->
                         <li class="subtitle">Converting Sets to Arrays</li>
+                        <p>A set can be converted into an array by placing the set, along with the spread operator directly inside an array literal.</p>
+                        <dl class="example">
+                            <dt>const shoppingSet = new Set().add('Apples').add('Bananas').add('Beans');</dt>
+                            <dt>shoppingSet</dt>
+                            <dt>&gt;&gt; Set { 'Apples', 'Bananas', 'Beans' }</dt>
+                        </dl>
+                        <p>Then we convert it into an array:</p>
+                        <dl class="example">
+                            <dt>const shoppingArray = [...shoppingSet]</dt>
+                            <dt>shoppingArray</dt>
+                            <dt>&gt;&gt; [ 'Apples', 'Bananas', 'Beans' ]</dt>
+                        </dl>
+                        <p>It's also possible to use the Array.from() method to convert a set into an array:</p>
+                        <dl class="example">
+                            <dt>const shoppingSet = new Set().add('Apples').add('Bananas').add('Beans');</dt>
+                            <dt>const shoppingArray = Array.from(shoppingSet);</dt>
+                        </dl>
+
+                        <!--------------------------------------------- Maps ------------------------------------------------->
                         <li class="subtitle">Maps | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map" class="reference" target="_blank">mdn Map</a></li>
+                        <p>Maps were another data structure introduced in the ES6 specification. They are a convenient way of keeping a list of key and value pairs.
+                            <br>At first glance, maps appear to be similar to JavaScript objects, but they have some noticeable differences:</p>
+                        <dd>
+                            <li>Objects are limited to using strings for key values, whereas maps can use any data type as a key.</li>
+                            <li>There is no efficient way to find the number of key-value pairs an object has, whereas this is easy to do with maps using the <i>size</i> property.</li>
+                            <li>Objects have methods that can be called and prototypes that can be used to create a chain of inheritance, whereas maps are solely focused on the storage and retrieval of key-value pairs.</li>
+                            <li>The value of an object's properties can be accessed directly, whereas maps restrict you to using the <i>get()</i> method to retrieve any values.</li>
+                        </dd>
+
+                        <h4>Creating Maps</h4>
+                        <p>An empty map object can be created using the new operator and <i>Map()</i> constructor:</p>
+                        <dl class="example">const romanNumerals = new Map();</dl>
+
+                        <h4>Adding Entries To Maps</h4>
+                        <p>The <i>set()</i> method can be used to add a key and value pair to a map. The first value is the key and the second is the value:</p>
+                        <dl class="example">romanNumerals.set(1,'I'); | &gt;&gt; Map { 1 => 'I' }</dl>
+
+                        <h4>Map Methods</h4>
+                        <p>To look up a value, we can use the <i>get()</i> method
+                            <br>The <i>has()</i> method can be used to check if a particular key is in a map. This returns a boolean value of <i>true</i> or <i>false</i>
+                            <br>A map can be created with multiple values by using a nested array as a parameter.
+                            <br>The number of key and value pairs in a map can be found by querying the <i>size</i> property.</p>
+                        <h4>Removing Entries From Maps</h4>
+                        <p>The <i>delete()</i> method can be used to remove a key and value pair from a map. This returns a boolean value of <i>true</i> if the value was removed or <i>false</i> if it wasn't in the map. To delete a specific value, you need
+                            to specify the key in parentheses.
+                            <br>The <i>clear()</i> method will remove all key and value pairs from a map.</p>
+
+                        <!---------------------------------- Converting Maps to Arrays ------------------------------------------>
                         <li class="subtitle">Converting Maps to Arrays</li>
+                        <p>Maps can be converted into a nested array of key-value pairs in a similar way to sets; using either the spread operator: <i>[...romanNumerals]</i>... or the <i>Array.from()</i> method</p>
+
+                        <!---------------------------------------------- Logic ----------------------------------------------------->
                         <li class="subtitle">Logic | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND" class="reference" target="_blank">mdn Logical</a></li>
+                        <p>In this section, we’ll begin to look at logical conditions that allow you to control the flow of a program by running different blocks of code, depending on the results of certain operations.</p>
+
+                        <h4><i>if</i> Statements</h4>
+                        <p>An if statement has the following structure:</p>
+                        <dl class="example">
+                            <dt>if (condition) {</dt>
+                            <dt>// code to run if condition is true</dt>
+                            <dt>}</dt>
+                        </dl>
+
+                        <h4><i>else</i> Statements</h4>
+                        <p>The <i>else</i> keyword can be used to add an alternative block of code to run if the condition is false. An <i>if ... else</i> statement looks like this:</p>
+                        <dl class="example">
+                            <dt>if (condition) {</dt>
+                            <dt>// code to run if condition is true</dt>
+                            <dt>} else {</dt>
+                            <dt>// code to run if condition is false</dt>
+                            <dt>}</dt>
+                        </dl>
+
+                        <h4>Ternary Operator</h4>
+                        <p>A shorthand way of writing an <i>if ... else</i> statement is to use the ternary operator, <i>?</i>, which takes three operands in the following format:</p>
+                        <dl class="example">condition ? (//code to run if condition is true) : (//code to run if condition is false)</dl>
+
+                        <h4><i>switch</i> Statements</h4>
+                        <p>You can actually string lots of <i>if</i> and <i>else</i> statements together to make a logical decision tree.
+                            <br>The <i>switch</i> operator can be used to make your code easier to follow when there are lots of conditions to test.</p>
+                        <p>The value you are comparing goes in parentheses after the <i>switch</i> operator. A case keyword is then used for each possible value that can occur. After each case statement is the code that that needs to be run if that case
+                            occurs.
+                            <br>It is important to finish each <i>case</i> block with the <i>break</i> keyword, as this stops any more of the case blocks being executed. Without a break statement, the program will "fall through" and continue to evaluate
+                            subsequent case blocks.
+                            <br>The <i>default</i> keyword is used at the end for any code than needs to be run if none of the cases are true.</p>
+
+                        <!--------------------------------------------- Loops ------------------------------------------------------->
                         <li class="subtitle">Loops | <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code" class="reference" target="_blank">mdn Looping Code</a></li>
+                        <p>Loops will repeat a piece of code over and over again according to certain conditions.</p>
+
+                        <h4><i>while</i> Loops</h4>
+                        <p>We’ll start by looking at a while loop. This will repeatedly run a block of code while a certain condition is true, and takes the following structure:</p>
+                        <dl class="example">
+                            <dt>while (condition) {</dt>
+                            <dt>// do something</dt>
+                            <dt>}</dt>
+                        </dl>
+
+                        <h4><i>do ... while</i> Loops</h4>
+                        <p>A <i>do ... while</i> loop is similar to a <i>while</i> loop. The only difference is that the condition comes after the block of code:</p>
+                        <dl class="example">
+                            <dt>do {</dt>
+                            <dd>do something</dd>
+                            <dt>} while(condition)</dt>
+                        </dl>
+
+                        <h4><i>for</i>Loops</h4>
+                        <p><i>for</i> loops are probably the most commonly type of loop used in JavaScript, and take the following form:</p>
+                        <dl class="example">for (initialization ; condition ; after) { do something }</dl>
+
+                        <h4>Nested <i>for</i> Loops</h4>
+                        <p>You can place a loop inside another loop to create a nested loop. It will have an inner loop that will run all the way through before the next step of the outer loop occurs.</p>
+                        <dl class="example">
+                            <dt>for(let i=1 ; j<13 ; i++){</dt>
+                            <dt>for(let i=1 ; j<13 ; j++){</dt>
+                            <dd>console.log(`${j} multiplied by ${i} is ${i*j}`);</dd>
+                            <dd>}</dd>
+                            <dt>}</dt>
+                        </dl>
+                        <p>The outer loop counts up from <i>i=1</i> to <i>i=12</i>. For every iteration of the outer loop, the inner loop counts up from <i>j=1</i> to <i>j=12</i>. This means that it starts in the first iteration with <i>i = 1</i> and <i>j = 1</i>,
+                            producing the following output that is logged to the console:</p>
+
+                        <h4>Looping over Arrays</h4>
+                        <p>A <i>for</i> loop can be used to iterate over each value in an array.</p>
+
+                        <h4>Looping over Sets</h4>
+                        <p>Sets are enumerable, which means they have methods that allow you to loop over each value in the set. The loop will iterate over each value in the same order they were added to the set.</p>
+
+                        <h4>Looping over Maps</h4>
+                        <p>Maps are also enumerable, so it's also possible to loop over a map in a similar way to a set. The loop will iterate over each key-value pair in the same order as they were added to the map.</p>
 
                     </ul>
                 </div>
