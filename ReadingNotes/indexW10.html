@@ -31,6 +31,7 @@
                     <p>Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation, and helps ensure data submitted matches the requirements
                         set forth in the various form controls.</p>
                     <ul>
+                        <!--------------------------------------- What is form validation? -------------------------------->
                         <li class="subtitle">What is form validation?</li>
                         <p>We want to make filling out web forms as easy as possible. However, there are three main reasons to insist on validating our forms:</p>
                         <ul>
@@ -42,6 +43,7 @@
                         <li class="subtitle">Different types of client-side validation</li>
                         <p>There are two different types of client-side validation : 1) Built-in form validation uses HTML form validation features. 2) JavaScript validation is coded using JavaScript.</p>
 
+                        <!---------------------------------- Using built-in form validation ------------------------------->
                         <li class="subtitle">Using built-in form validation</li>
                         <p>One of the most significant features of <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types" target="_blank">modern form controls</a> is the ability to validate most user data without relying on JavaScript.
                             This is done by using validation attributes on form elements :</p>
@@ -62,13 +64,12 @@
                             <li>The element matches the <i>:invalid</i> CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., <i>:out-of-range</i>) depending on the error, which lets you apply a specific style to invalid elements.</li>
                             <li>If the user tries to send the data, the browser will block the form and display an error message.</li>
                         </ul>
-
                         <a href="indexW10Ex01.html" target="_blank">Here is a full example to show usage of HTML's built-in validation features.</a>
                         <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation#validation-related_attributes" target="_blank">Validation-related attributes</a> for a complete list of attributes that can be used to constrain
                             input values and the input types that support them.</p>
 
+                        <!------------------------------------------ Validating forms using JavaScript -------------------------------->
                         <li class="subtitle">Validating forms using JavaScript</li>
-
                         <p>You must use JavaScript if you want to take control over the look and feel of native error messages.</p>
 
                         <h4>The Constraint Validation API | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation" class="reference" target="_blank">mdn Constraint validation API</a></h4>
@@ -125,7 +126,9 @@
                         body but instead returns a promise that resolves with a Response object. The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to
                         extract the JSON body content from the Response object, we use the <i>json()</i> method, which returns a second promise that resolves with the result of parsing the response body text as JSON.</p>
                     <ul>
-                        <li>Supplying request options</li>
+
+                        <!------------------------------------------- Supplying request options ------------------------------>
+                        <li class="subtitle">Supplying request options</li>
                         <p>The <i>fetch()</i> method can optionally accept a second parameter, an init object that allows you to control a number of different settings:</p>
                         <dl class="example">
                             <dt>// Example POST method implementation:</dt>
