@@ -41,7 +41,9 @@ body {
 }
 
 .subtitle {
+    background-color: lightgreen;
     font-size: x-large;
+    padding: 5px 10px;
 }
 
 .reference {

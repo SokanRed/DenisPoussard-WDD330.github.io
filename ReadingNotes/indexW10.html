@@ -32,7 +32,7 @@
                         set forth in the various form controls.</p>
                     <ul>
                         <!--------------------------------------- What is form validation? -------------------------------->
-                        <li class="subtitle">What is form validation?</li>
+                        <ol class="subtitle">What is form validation?</ol>
                         <p>We want to make filling out web forms as easy as possible. However, there are three main reasons to insist on validating our forms:</p>
                         <ul>
                             <li>We want to get the right data, in the right format. Our applications won't work properly if our users' data is stored in the wrong format, is incorrect, or is omitted altogether.</li>
@@ -44,7 +44,7 @@
                         <p>There are two different types of client-side validation : 1) Built-in form validation uses HTML form validation features. 2) JavaScript validation is coded using JavaScript.</p>
 
                         <!---------------------------------- Using built-in form validation ------------------------------->
-                        <li class="subtitle">Using built-in form validation</li>
+                        <ol class="subtitle">Using built-in form validation</ol>
                         <p>One of the most significant features of <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types" target="_blank">modern form controls</a> is the ability to validate most user data without relying on JavaScript.
                             This is done by using validation attributes on form elements :</p>
                         <ul>
@@ -69,7 +69,7 @@
                             input values and the input types that support them.</p>
 
                         <!------------------------------------------ Validating forms using JavaScript -------------------------------->
-                        <li class="subtitle">Validating forms using JavaScript</li>
+                        <ol class="subtitle">Validating forms using JavaScript</ol>
                         <p>You must use JavaScript if you want to take control over the look and feel of native error messages.</p>
 
                         <h4>The Constraint Validation API | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation" class="reference" target="_blank">mdn Constraint validation API</a></h4>
@@ -129,7 +129,7 @@
                     <ul>
 
                         <!------------------------------------------- Supplying request options ------------------------------>
-                        <li class="subtitle">Supplying request options</li>
+                        <ol class="subtitle">Supplying request options</ol>
                         <p>The <i>fetch()</i> method can optionally accept a second parameter, an init object that allows you to control a number of different settings:</p>
                         <dl class="example">
                             <dt>// Example POST method implementation:</dt>
@@ -157,7 +157,7 @@
                         </dl>
 
                         <!------------------------------------ Sending a request with credentials included ----------------------------------->
-                        <li class="subtitle">Sending a request with credentials included</li>
+                        <ol class="subtitle">Sending a request with credentials included</ol>
                         <p>To cause browsers to send a request with credentials included on both same-origin and cross-origin calls, add <i>credentials: 'include'</i> to the <i>init</i> object you pass to the <i>fetch()</i> method.</p>
                         <dl class="example">
                             <dt>fetch('https://example.com', {</dt>
@@ -166,38 +166,38 @@
                         </dl>
 
                         <!--------------------------------------------------- Uploading JSON data ------------------------------------------------>
-                        <li class="subtitle">Uploading JSON data</li>
+                        <ol class="subtitle">Uploading JSON data</ol>
                         <p>Use <i>fetch()</i> to POST JSON-encoded data.</p>
 
                         <!----------------------------------------------------- Uploading a file ------------------------------------------------->
-                        <li class="subtitle">Uploading a file</li>
+                        <ol class="subtitle">Uploading a file</ol>
                         <p>Files can be uploaded using an HTML <i>&lt;input type="file" /&gt;</i> input element, <i>FormData()</i> and <i>fetch()</i>.</p>
 
                         <!------------------------------------------------ Uploading multiple files ---------------------------------------------->
-                        <li class="subtitle">Uploading multiple files</li>
+                        <ol class="subtitle">Uploading multiple files</ol>
                         <p>Files can be uploaded using an HTML <i>&lt;input type="file" multiple /&gt;</i> input element, <i>FormData()</i> and <i>fetch()</i>.</p>
 
                         <!-------------------------------------------- Processing a text file line by line --------------------------------------->
-                        <li class="subtitle">Processing a text file line by line</li>
+                        <ol class="subtitle">Processing a text file line by line</ol>
                         <p>The chunks that are read from a response are not broken neatly at line boundaries and are Uint8Arrays, not strings. If you want to fetch a text file and process it line by line, it is up to you to handle these complications.</p>
 
                         <!------------------------------------------- Checking that the fetch was successful ------------------------------------->
-                        <li class="subtitle">Checking that the fetch was successful</li>
+                        <ol class="subtitle">Checking that the fetch was successful</ol>
                         <p>A <i>fetch()</i> promise will reject with a <i>TypeError</i> when a network error is encountered or CORS is misconfigured on the server-side, although this usually means permission issues or similar — a 404 does not constitute
                             a network error, for example. An accurate check for a successful <i>fetch()</i> would include checking that the promise resolved, then checking that the <i>Response.ok</i> property has a value of true.</p>
 
                         <!--------------------------------------------- Supplying your own request object ---------------------------------------->
-                        <li class="subtitle">Supplying your own request object | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/Request" class="reference" target="_blank"> mdn Request()</a></li>
+                        <ol class="subtitle">Supplying your own request object | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/Request" class="reference" target="_blank"> mdn Request()</a></ol>
                         <p>Instead of passing a path to the resource you want to request into the <i>fetch()</i> call, you can create a request object using the <i>Request()</i> constructor, and pass that in as a <i>fetch()</i> method argument
                             <br><i>Request()</i> accepts exactly the same parameters as the <i>fetch()</i> method. You can even pass in an existing request object to create a copy of it</p>
 
                         <!---------------------------------------------------------- Headers ----------------------------------------------------->
-                        <li class="subtitle">Headers |
-                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Headers" class="reference" target="_blank"></a> mdn Headers</li>
+                        <ol class="subtitle">Headers |
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Headers" class="reference" target="_blank"></a> mdn Headers</ol>
                         <p>The <i>Headers</i> interface allows you to create your own headers object via the <i>Headers()</i> constructor. A headers object is a simple multi-map of names to values</p>
 
                         <!------------------------------------------------------ Response objects ------------------------------------------------>
-                        <li class="subtitle">Response objects | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" class="reference" target="_blank"> mdn Response</a></li>
+                        <ol class="subtitle">Response objects | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" class="reference" target="_blank"> mdn Response</a></ol>
                         <p>As you have seen above, <i>Response</i> instances are returned when <i>fetch()</i> promises are resolved.
                             <br>The most common response properties you'll use are:</p>
                         <dl>
@@ -207,7 +207,7 @@
                         </dl>
 
                         <!------------------------------------------------------------ Body ------------------------------------------------------>
-                        <li class="subtitle">Body</li>
+                        <ol class="subtitle">Body</ol>
                         <p>Both requests and responses may contain body data. A body is an instance of any of the following types : <i>ArrayBuffer,, TypedArray (Uint8Array and friends), DataView, Blob, File, String (or a string literal), URLSearchParams, FormData</i>
                             <br>The <i>Request</i> and <i>Response</i> interfaces share the following methods to extract a body. These all return a promise that is eventually resolved with the actual content.</p>
                         <dl>
@@ -219,11 +219,11 @@
                         </dl>
 
                         <!---------------------------------------------------- Feature detection -------------------------------------------------->
-                        <li class="subtitle">Feature detection</li>
+                        <ol class="subtitle">Feature detection</ol>
                         <p>Fetch API support can be detected by checking for the existence of <i>Headers, Request, Response or fetch() on the Window or Worker</i> scope</p>
 
                         <!----------------------------------------------------- Specifications ---------------------------------------------------->
-                        <li class="subtitle">Specifications</li>
+                        <ol class="subtitle">Specifications</ol>
                         <a href="https://fetch.spec.whatwg.org/#fetch-method" class="reference" target="_blank">Fetch Standard # fetch-method</a>
 
                     </ul>

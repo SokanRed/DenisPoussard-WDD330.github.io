@@ -32,28 +32,28 @@
                         <p>Every JavaScript environment has a global object. Any variables that are created in the global scope are actually properties of this object, and any functions are methods of it. In a browser environment the global object is the
                             window object, which represents the browser window that contains a web page.</p>
 
-                        <li class="subtitle">The Browser Object Model</li>
+                        <ol class="subtitle">The Browser Object Model</ol>
                         <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen. We can find out the dimensions of the screen it is viewed on, and which pages
                             have been visited before the current page.</p>
 
-                        <li class="subtitle">The Browser History</li>
+                        <ol class="subtitle">The Browser History</ol>
                         <p>The <i>window.history</i> property can be used to access information about any previously visited pages in the current browser session.</p>
                         <p>The <i>window.history.length</i> property shows how many pages have been visited before arriving at the current page.</p>
                         <p>The <i>window.history.go()</i> method can be used to go to a specific page, where 0 is the current page</p>
                         <p>There are also the <i>window.history.forward()</i> and <i>window.history.back()</i> methods that can be used to navigate forwards and backwards by one page respectively, just like using the browser’s forward and back buttons.</p>
 
-                        <li class="subtitle">Controlling Windows</li>
+                        <ol class="subtitle">Controlling Windows</ol>
                         <p>A new window can be opened using the <i>window.open()</i> method. This takes the URL of the page to be opened as its first parameter, the window title as its second parameter, and a list of attributes as the third parameter. This
                             can also be assigned to a variable, so the window can then be referenced later in the code.</p>
                         <p>The <i>close()</i> method can be used to close a window, assuming you have a reference to it.</p>
                         <p>It is possible to move a window using the <i>window.moveTo()</i> method. This takes two parameters that are the X and Y coordinates of the screen that the window is to be moved to.</p>
                         <p>A window resized using the <i>window.resizeTo()</i> method. This takes two parameters that specify the width and height of the resized window’s dimensions.</p>
 
-                        <li class="subtitle">Screen Information</li>
+                        <ol class="subtitle">Screen Information</ol>
                         <p>The <i>window.screen</i> object contains information about the screen the browser is displayed on. You can find out the height and width of the screen in pixels using the <i>height</i> and <i>width</i> properties respectively</p>
                         <p>The <i>availHeight</i> and <i>availWidth</i> can be used to find the <i>height</i> and <i></i>width of the screen, excluding any operating system menus</p>
 
-                        <li class="subtitle">The Document Object</li>
+                        <ol class="subtitle">The Document Object</ol>
                         <p>Each <i>window</i> object contains a <i>document</i> object. This object has properties and methods that deal with the page that has been loaded into the window.</p>
                         <h4>Cookies</h4>
                         <p>Cookies are small files that are saved locally on a user’s computer. A restriction of cookies is that they can only be read by a web page from the same domain that set them. Cookies take the form of a text file that contain a list
@@ -69,14 +69,14 @@
                             <li>Delete Cookies: To remove a cookie, you need to set it to expire at a time in the past</li>
                         </dd>
 
-                        <li class="subtitle">Timing Functions</li>
+                        <ol class="subtitle">Timing Functions</ol>
                         <p>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions at regular intervals. The <i>window.setTimeout()</i> method accepts a callback to a function as its
                             first parameter and a number of milliseconds as its second parameter. </p>
 
-                        <li class="subtitle">setInterval()</li>
+                        <ol class="subtitle">setInterval()</ol>
                         <p>The <i>window.setInterval()</i> method works in a similar way to <i>window.setTimeout()</i>, except that it will repeatedly invoke the callback function after every given number of milliseconds.</p>
 
-                        <li class="subtitle">Animation</li>
+                        <ol class="subtitle">Animation</ol>
                         <p>The <i>setTimeOut()</i> and <i>setInterval()</i> methods can be used to animate elements on a web page. </p>
                     </ul>
                 </div>
@@ -88,18 +88,18 @@
                 <h2 class="start">&#9660 Chapter 14 | HTML5 APIs</h2>
                 <div class="dropdown-content">
                     <dl>
-                        <li class="subtitle">HTML5</li>
+                        <ol class="subtitle">HTML5</ol>
                         <p>The W3C plans to develop future versions of HTML5 much more frequently than previously, using smaller version increments. HTML 5.1 has already become the latest standard, and HTML 5.2 is in development.</p>
 
-                        <li class="subtitle">The <i>data-</i> Attribute | <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*" class="reference">mdn data-</a></li>
+                        <ol class="subtitle">The <i>data-</i> Attribute | <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*" class="reference">mdn data-</a></ol>
                         <p>The <i>data-</i> attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser. They’re also private to a page, so are not intended to be used by an external service – their sole purpose
                             is to be used by a JavaScript program. This means they’re perfect for adding data that can be used as a hook that the program utilizes to access information about a particular element on the page.</p>
 
-                        <li class="subtitle">HTML5 APIs</li>
+                        <ol class="subtitle">HTML5 APIs</ol>
                         <p>The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries, geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers
                             access, and control new features that appear in the latest devices.</p>
-                        <li class="subtitle">Other APIs</li>
 
+                        <ol class="subtitle">Other APIs</ol>
                         <h4>Web Storage | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API">mdn Web Storage API</a></h4>
                         <p>If a browser supports the Web Storage API, the <i>window</i> object will have a property called <i>localStorage</i>, which is a native object with a number of properties and methods used to store data. The information is saved
                             in the form of key-value pairs, and the values can only be strings. There is also a <i>sessionStorage</i> object that works in the same way, although the data is only saved for the current session.</p>
@@ -140,7 +140,7 @@
 
                         <h4>Multimedia</h4>
 
-                        <li class="subtitle">Drawing with Canvas | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" class="reference">mdn Drawing Shapes with Canvas</a></li>
+                        <ol class="subtitle">Drawing with Canvas | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" class="reference">mdn Drawing Shapes with Canvas</a></ol>
                         <p>The <i>canvas</i> element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript. A <i>canvas</i> element is a rectangular element on the web page. It has a coordinate system that starts at (0,0)
                             in the top-left corner. To add a <i>canvas</i> element to a page, the <i>canvas</i> tag is used specifying a <i>height</i> and <i>width</i>. Anything placed inside the tag will only display if the canvas element is unsupported:</p>
                         <dl class="example">&lt;canvas id='canvas' width='400' height='400'&gt; Sorry, but your browser does not support the canvas element &lt; /canvas &gt;</dl>
@@ -151,7 +151,7 @@
                         <dl class="example">const context = canvasElement.getContext('2d');</dl>
                         <p>Now we have a reference to the context, we can access its methods and draw onto the canvas.</p>
 
-                        <li class="subtitle">Shims and Polyfills</li>
+                        <ol class="subtitle">Shims and Polyfills</ol>
                         <p>The terms shim and polyfill are often used interchangeably. The main difference between them is that a shim is a piece of code that adds some missing functionality to a browser, although the implementation method may differ slightly
                             from the standard API. A polyfill is a shim that achieves the same functionality, while also using the API commands that would be used if the feature was supported natively. <br> A comprehensive
                             <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills">list of shims and polyfills</a> is maintained by the Modernizr team.</p>

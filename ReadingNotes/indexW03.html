@@ -29,7 +29,7 @@
                 <h2 class="start">&#9660 Chapter 5 | Objects <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="reference" target="_blank">mdn Object</a></h2>
                 <div class="dropdown-content">
                     <ul>
-                        <li class="subtitle">Object Literals</li>
+                        <ol class="subtitle">Object Literals</ol>
                         <p>An object in JavaScript is a self-contained set of related values and functions. They act as a collection of named properties that map to any JavaScript value such as strings, numbers, booleans, arrays and functions. If a property’s
                             value is a function, it is known as a method. Here is an example of an object literal that describes the Man of Steel:</p>
                         <dl class="example">
@@ -47,7 +47,7 @@
                             <dt>};</dt>
                         </dl>
 
-                        <li class="subtitle">Creating Objects</li>
+                        <ol class="subtitle">Creating Objects</ol>
                         <p>To create an object literal, simply enter a pair of curly braces. The following example creates an empty object that is assigned to the variable spiderman:</p>
                         <dl class="example">const spiderman = {};</dl>
                         <p>ES6 provided a shorthand method of creating objects if a property key is the same as a variable name that the property value is assigned to:</p>
@@ -65,13 +65,13 @@
                         <h4>Computed Properties</h4>
                         <p>The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code can be placed inside square brackets and the property key will be the return value of that code.</p>
 
-                        <li class="subtitle">Calling Methods</li>
+                        <ol class="subtitle">Calling Methods</ol>
                         <p>To call an object’s method we can also use dot or bracket notation. Calling a method is the same as invoking a function, so parentheses need to be placed after the method name.</p>
 
-                        <li class="subtitle">Checking if Properties or Methods Exist</li>
+                        <ol class="subtitle">Checking if Properties or Methods Exist</ol>
                         <p>The in operator can be used to check whether an object has a particular property <i>'city' in superman;</i>. </p>
 
-                        <li class="subtitle">Finding all the Properties of an Object</li>
+                        <ol class="subtitle">Finding all the Properties of an Object</ol>
                         <p>We can loop through all of an object’s properties and methods by using a for in loop.</p>
                         <dl class="example">
                             <dt>for(const key in superman) {</dt>
@@ -84,10 +84,10 @@
                         <h4>Changing Properties</h4>
                         <p>The value of an object’s properties can be change at any time using assignment : <i>superman['real name'] = 'Kal-El';</i>.</p>
 
-                        <li class="subtitle">Removing Properties</li>
+                        <ol class="subtitle">Removing Properties</ol>
                         <p>Any property can be removed from an object using the <i>delete</i> operator : <i>delete superman.fly</i>.</p>
 
-                        <li class="subtitle">Nesting Objects</li>
+                        <ol class="subtitle">Nesting Objects</ol>
                         <p>It’s even possible for an object to contain other objects. These are known as nested objects.</p>
 
                         <h4>Objects as Parameters to Functions</h4>
@@ -102,11 +102,13 @@
                         <h4><i>this</i></h4>
                         <p>The keyword <i>this</i> refers to the object that it is within. It can be used inside methods to gain access to the object’s properties.</p>
 
-                        <li class="subtitle">Namespacing</li>
+                        <!----------------------------------------------------- Namespacing ------------------------------------------------------------>
+                        <ol class="subtitle">Namespacing</ol>
                         <p>Naming collisions occur when the same variable or function name is used for different purposes by code sharing the same scope. A solution to this problem is to use the object literal pattern to create a namespace for groups of
                             related functions.</p>
 
-                        <li class="subtitle">Built-in Objects</li>
+                        <!--------------------------------------------- Built-in Objects ----------------------------------------------------------->
+                        <ol class="subtitle">Built-in Objects</ol>
                         <h4>JSON (JAvaScript Object Notation) | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" class="reference">mdn JSON</a></h4>
                         <p>JSON is a string representation of the object literal notation with a couple of key differences :</p>
                         <ol>
@@ -121,7 +123,8 @@
                         <h4>The Date Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="reference" target="_blank">mdn Date</a></h4>
                         <h4>The <i>RegExp</i> Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" class="reference" target="_blank">mdn RegExp</a></h4>
 
-                        <li class="subtitle">Character Groups</li>
+                        <!---------------------------------------------- Character Groups ------------------------------------------------------->
+                        <ol class="subtitle">Character Groups</ol>
                         <p>Groups of characters can be placed together inside square brackets. This character group represents any one of the characters inside the brackets.</p>
                         <ul class="example">
                             <li><i>const vowels = /[aeiou]/</i> (This expression matches any vowel)</li>
@@ -143,21 +146,21 @@
                         styled.
                     </p>
                     <ul>
-                        <li class="subtitle">The Document Object Model</li>
+                        <ol class="subtitle">The Document Object Model</ol>
                         <p>We can use JavaScript to access and modify different parts of a web page using a special built-in object called <i>document</i>.</p>
 
                         <!---------------------------------------------- History of the DOM -------------------------------------------------->
-                        <li class="subtitle">History of the DOM</li>
+                        <ol class="subtitle">History of the DOM</ol>
                         <p>The World Wide Web Consortium (W3C) started to standardize the process, and created the DOM level 1 in 1998. This introduced a complete model for web pages that allowed every part of them to be navigated.
                             <br>The DOM level 2 specification was published in 2000 and introduced the popular <i>getElementById()</i> method, which made it much easier to access specific elements on a web page.
                             <br>The DOM level 3 specification was published in 2004, and since then the W3C has abandoned using levels. The DOM specification is developed as a <a href="https://dom.spec.whatwg.org" target="_blank">living standard</a>.</p>
 
                         <!---------------------------------------------- An Example Web Page -------------------------------------------------->
-                        <li class="subtitle">An Example Web Page </li>
+                        <ol class="subtitle">An Example Web Page </ol>
                         <p>the DOM also stores any whitespace that is in the HTML document as text nodes.</p>
 
                         <!------------------------------------------------ Getting Elements -------------------------------------------------->
-                        <li class="subtitle">Getting Elements</li>
+                        <ol class="subtitle">Getting Elements</ol>
                         <p>The DOM provides several methods that allow us to access any element on a page. These methods will return a node object or a node list, which is an array-like object. These objects can then be assigned to a variable and be inspected
                             or modified.</p>
 
@@ -201,7 +204,7 @@
                         <p>The <i>getAttribute()</i> method returns the value of the attribute provided as an argument.</p>
 
                         <!---------------------------------------- Setting An Element’s Attributes ---------------------------------------->
-                        <li class="subtitle">Setting An Element’s Attributes</li>
+                        <ol class="subtitle">Setting An Element’s Attributes</ol>
                         <p>The <i>setAttribute</i> can change the value of an element’s attributes. It takes two arguments: the attribute that you wish to change, and the new value of that attribute.
                             <br>If an element does not have an attribute, the setAttribute method can be used to add it to the element.</p>
                         <dl class="example">wonderWoman.setAttribute('id','amazon'); //The <i>setAttribute</i> method will add the id of 'amazon' to the <i>wonderWoman</i>element</dl>
@@ -239,7 +242,7 @@
                         <p>The node lists returned by the <i>document.getElementsByClassName()</i> and <i>document.getElementsByTagName()</i> methods are live collections that will update to reflect any changes on the page. </p>
 
                         <!-------------------------------------------------- Updating CSS --------------------------------------------->
-                        <li class="subtitle">Updating CSS</li>
+                        <ol class="subtitle">Updating CSS</ol>
                         <p>Every element node has a <i>style</i> property. This can be used to dynamically modify the presentation of any element on a web page.</p>
 
                     </ul>
@@ -252,16 +255,16 @@
                 <h2 class="start">&#9660 Chapter 7 | Events <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events" class="reference">mdn Introduction to events</a></h2>
                 <div class="dropdown-content">
                     <ul>
-                        <li class="subtitle">Event Listeners</li>
+                        <ol class="subtitle">Event Listeners</ol>
                         <p>The recommended way of dealing with events, and the current standard, is to use event listeners.
                             <br>The <i>addEventListener()</i> method is called on a node object, the node to which the event listener is being applied. The <i>addEventListener()</i> method can also be called without a node, in which case it is applied
                             to the global object, usually the whole browser window.</p>
-                        <li class="subtitle">Example Code | <a href="indexW03Ex01.html">Events Examples</a></li>
-                        <li class="subtitle">The Event Object</li>
-                        <li class="subtitle">Types of Events</li>
-                        <li class="subtitle">Removing Event Listeners</li>
-                        <li class="subtitle">Stopping Default Behavior</li>
-                        <li class="subtitle">Event Propagation</li>
+                        <ol class="subtitle">Example Code | <a href="indexW03Ex01.html">Events Examples</a></ol>
+                        <ol class="subtitle">The Event Object</ol>
+                        <ol class="subtitle">Types of Events</ol>
+                        <ol class="subtitle">Removing Event Listeners</ol>
+                        <ol class="subtitle">Stopping Default Behavior</ol>
+                        <ol class="subtitle">Event Propagation</ol>
                     </ul>
                 </div>
             </div>
