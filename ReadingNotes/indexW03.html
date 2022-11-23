@@ -255,16 +255,99 @@
                 <h2 class="start">&#9660 Chapter 7 | Events <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events" class="reference">mdn Introduction to events</a></h2>
                 <div class="dropdown-content">
                     <ul>
+                        <!----------------------------------- Event Listeners ---------------------------------------------->
                         <ol class="subtitle">Event Listeners</ol>
                         <p>The recommended way of dealing with events, and the current standard, is to use event listeners.
                             <br>The <i>addEventListener()</i> method is called on a node object, the node to which the event listener is being applied. The <i>addEventListener()</i> method can also be called without a node, in which case it is applied
                             to the global object, usually the whole browser window.</p>
-                        <ol class="subtitle">Example Code | <a href="indexW03Ex01.html">Events Examples</a></ol>
+                        <!------------------------------------- Example Code ----------------------------------------------->
+                        <ol class="subtitle">Example Code</ol>
+                        <p style="padding-left: 40px;"><a href="indexW03Ex01.html">Events Examples</a></p>
+                        <!----------------------------------- The Event Object --------------------------------------------->
                         <ol class="subtitle">The Event Object</ol>
+                        <p>Whenever an event handler is triggered by an event, the callback function is called. This function is automatically passed an event object as a parameter that contains information about the event.</p>
+                        <dl class="example">
+                            <dt>function doSomething(event){</dt>
+                            <dd>console.log(event.type);</dd>
+                            <dt>}</dt>
+                        </dl>
+                        <p>The parameter does not have to be called <i>event</i>. It can be given any legal variable name, although calling it <i>event</i> can make it easier to read the code. Many developers often abbreviate it to just <i>e</i>.</p>
+
+                        <!-------------------------------------- Types of Events --------------------------------------------->
                         <ol class="subtitle">Types of Events</ol>
+                        <p>There are several types of events, ranging from when a video has finished playing to when a resource has completed downloading. You can see a
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank"> full list on the Events page of the Mozilla Developer Network.</a></p>
+                        <h4>The event Target</h4>
+                        <p>The <i>target</i> property returns a reference to the node that fired the event.</p>
+                        <h4>Coordinates of an Event</h4>
+                        <ul>There are a variety of ways to find the position of where a mouse event occurs.
+                            <li>The <i>screenX</i> and <i>screenY</i> properties show the number of pixels from the left and top of the screen respectively where the event took place.</li>
+                            <li>The <i>clientX</i> and <i>clientY</i> properties show the number of pixels from the left and top of the client that is being used (usually the browser window).</li>
+                            <li>The <i>pageX</i> and <i>pageY</i> properties show the number of pixels from the left and top, respectively, where the event took place in the document. This property takes account of whether the page has been scrolled.</li>
+                        </ul>
+                        <p>we’re going to focus on some of the more common events that occur using the mouse, the keyboard and touch.</p>
+
+                        <h4>Mouse Events</h4>
+                        <p>We already mentionned the <i>click</i> event that occurs when a mouse button is clicked. There are also the <i>mousedown</i> and <i>mouseup</i> events. These both occur before a <i>click</i> event is fired.</p>
+                        <dl class="example">
+                            <dt>const clickParagraph = document.getElementById('click');</dt>
+                            <br>
+                            <dt>clickParagraph.addEventListener('click',() => console.log('click') );</dt>
+                            <dt>clickParagraph.addEventListener('mousedown',() => console.log('down') );</dt>
+                            <dt>clickParagraph.addEventListener('mouseup',() => console.log('up') );</dt>
+                        </dl>
+                        <p>There is also the <i>dblclick</i> event, which occurs when the user doubleclicks on the element to which the event listener is attached.</p>
+                        <p class="warning">&#9888; You should be very cautious of attaching both a <i>click</i> and <i>doubleclick</i> event to the same element. This is because it’s impossible to tell if a click is the first click of a doubleclick or just a single click.
+                            This means that a <i>doubleclick</i> event will always cause the <i>click</i> event to fire.</p>
+                        <p>The <i>mouseover</i> event occurs when the mouse pointer is placed over the element to which the event listener is attached, while the <i>mouseout</i> event occurs when the mouse pointer moves away from an element. The <i>mousemove</i>                            event occurs whenever the mouse moves. It will only occur while the cursor is over the element to which it’s applied.</p>
+
+                        <h4>Keyboard Events</h4>
+                        <p>Three events that occur when a user presses a key are: <i>keydown, keypress</i> and <i>keyup</i>. When a user presses a key, the events occur in that order. They are not tied to any particular key, although the information about
+                            which key was pressed is a property of the event object.</p>
+                        <ol>
+                            <li>The <i>keydown</i> event occurs when a key is pressed and will continue to occur if the key is held down.</li>
+                            <li>The <i>keypress</i> event occurs after a <i>keydown</i> event but before a <i>keyup</i> event. The <i>keypress</i> event only occurs for keys that produce character input (plus the 'Delete' key). This means that it’s the most
+                                reliable way to find out the character that was pressed on the keyboard.</li>
+                            <li>The <i>keyup</i> event occurs when a key is released.</li>
+                        </ol>
+                        <p>Pressing the modifier keys such as Shift, Ctrl, Alt and meta (Cmd on Mac) will fire the <i>keydown</i> and <i>keyup</i> events, but not the <i>keypress</i> event as they don't produce any characters on the screen. The name of the
+                            modifier <i>key</i> is still returned by the key property. </p>
+
+                        <h4>Touch Events</h4>
+                        <p>Many modern devices now support touch events. These are used on smartphones and tablets, as well as touch-screen monitors, satellite navigators and trackpads. Touch events are usually made with a finger, but can also be by stylus
+                            or another part of the body. There are a number of touch events that cover many types of touch interactions. <strong>It’s important to support mouse events as well as touch events, so non-touch devices are also supported.</strong></p>
+
+                        <!------------------------------------------------ Removing Event Listeners -------------------------------------------->
                         <ol class="subtitle">Removing Event Listeners</ol>
+                        <p>An event listener can be removed using the <i>removeEventListener()</i> method. The adds a <i>click</i> event listener to a paragraph element, but then removes it in the callback function named <i>remove</i>. This means it will
+                            only be called once (try clicking on it again and nothing happens).</p>
+
+                        <!----------------------------------------------- Stopping Default Behavior --------------------------------------------->
                         <ol class="subtitle">Stopping Default Behavior</ol>
+                        <p>Some elements have default behavior associated with certain events. For example, when a user clicks on a link, the browser redirects to the address in the <i>href</i> attribute and a form is submitted when the user clicks on the
+                            Submit button. <i>preventDefault()</i> is a method of the <i>event</i> object that can be used inside the callback function to stop the default behavior happening.</p>
+
+                        <!--------------------------------------------------- Event Propagation ----------------------------------------->
                         <ol class="subtitle">Event Propagation</ol>
+                        <p>When you click on an element, you are actually clicking on all the elements it’s nested inside of. To illustrate this, add the following piece of HTML to the events.html file:</p>
+                        <dl class="example">
+                            <dt>&lt;ul id='list'>&gt;</dt>
+                            <dd>&lt;li>one&lt;/li>&gt;</dd>
+                            <dd>&lt;li>two&lt;/li>&gt;</dd>
+                            <dd>&lt;li>three&lt;/li>&gt;</dd>
+                            <dt>&lt;/ul>&gt;</dt>
+                        </dl>
+                        <p>If you click on one of the <i>&lt;li&gt;</i> elements, you’re also clicking on the <i>&lt;ul&gt;</i>, <i>&lt;body&gt;, and <i>&lt;html&gt;</i> elements. An event is said to propagate as it moves from one element to another.
+                            <br>Event propagation is the order that the events fire on each element. There are two forms of event propagation: bubbling and capturing.
+                            <br>Bubbling is when the event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node.
+                            <br>Capturing starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on.
+                            <br>More about event propagation : <a href="https://www.sitepoint.com/event-bubbling-javascript/" target="_blank">article on SitePoint</a>
+                        </p>
+
+                        <!--------------------------------------------------- Event Delegation ---------------------------------------->
+                        <ol class="subtitle">Event Delegation</ol>
+                        <p>Event delegation can be used to attach an event listener to a parent element in order to capture events that are triggered by its child elements.</p>
+
                     </ul>
                 </div>
             </div>
