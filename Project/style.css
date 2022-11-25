@@ -28,6 +28,11 @@ h2 a {
     border-radius: 4px;
 }
 
+.code {
+    color: white;
+    padding-bottom: 10px;
+}
+
 .personal_project {
     margin: 0 auto;
     margin-top: 20px;

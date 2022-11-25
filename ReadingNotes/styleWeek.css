@@ -40,6 +40,10 @@ body {
     padding: 10px 40px 10px 10px;
 }
 
+p {
+    text-indent: 40px;
+}
+
 .subtitle {
     background-color: lightgreen;
     font-size: x-large;
@@ -58,6 +62,13 @@ i,
 
 .example {
     padding: 5px 0px 5px 40px;
+}
+
+h4 {
+    text-align: center;
+    color: darkblue;
+    text-decoration-line: underline;
+    text-decoration-color: darkblue;
 }
 
 .sidebar {
