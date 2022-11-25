@@ -3,6 +3,10 @@ body {
     overflow: hidden;
 }
 
+#code {
+    z-index: 100;
+}
+
 #canvas1 {
     position: absolute;
     top: 0;

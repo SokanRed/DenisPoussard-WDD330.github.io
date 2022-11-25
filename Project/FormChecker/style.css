@@ -9,6 +9,10 @@
 
 body {
     background-color: darkblue;
+}
+
+.main {
+    background-color: darkblue;
     min-height: 100vh;
     display: flex;
     justify-content: center;

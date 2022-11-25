@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 body {
     background-color: darkblue;
+}
+
+.main {
+    background-color: darkblue;
     min-height: 100vh;
     font-family: 'Josefin Sans', sans-serif;
     display: flex;

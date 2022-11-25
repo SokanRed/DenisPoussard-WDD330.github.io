@@ -10,27 +10,29 @@
 </head>
 
 <body>
-    <div class="app">
-        <input type="text" id="password-output" value="Password Generator" readonly>
+    <a style="color: white" href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/PasswordMaker" id="code" target="_blank">Code Pages on GitHub</a>
+    <section class="main">
+        <div class="app">
+            <input type="text" id="password-output" value="Password Generator" readonly>
 
-        <div class="range-container">
-            <input type="range" id="password-length" min="4" max="24" value="8" oninput="document.getElementById('display-password-length').value=this.value">
-            <input type="text" id="display-password-length" value="8" readonly>
+            <div class="range-container">
+                <input type="range" id="password-length" min="4" max="24" value="8" oninput="document.getElementById('display-password-length').value=this.value">
+                <input type="text" id="display-password-length" value="8" readonly>
+            </div>
+            <div class="checkbox-container">
+                <input type="checkbox" id="lowercase" checked>
+                <label for="lowercase">a-z</label>
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">A-Z</label>
+                <input type="checkbox" id="numbers">
+                <label for="numbers">0-9</label>
+                <input type="checkbox" id="symbols">
+                <label for="symbols">!-?</label>
+            </div>
+            <button id="generateButton">Generate Password</button>
         </div>
-        <div class="checkbox-container">
-            <input type="checkbox" id="lowercase" checked>
-            <label for="lowercase">a-z</label>
-            <input type="checkbox" id="uppercase">
-            <label for="uppercase">A-Z</label>
-            <input type="checkbox" id="numbers">
-            <label for="numbers">0-9</label>
-            <input type="checkbox" id="symbols">
-            <label for="symbols">!-?</label>
-        </div>
-        <button id="generateButton">Generate Password</button>
+    </section>
 
-
-    </div>
 
     <script src="./index.js"></script>
 </body>
