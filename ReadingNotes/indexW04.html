@@ -37,6 +37,11 @@
 
                         <!---------------------------------- A Searching Example --------------------------------------------------->
                         <ol class="subtitle">A Searching Example</ol>
+                        <p>This form has a <i>name</i> attribute of <i>search</i>, and contains two controls: an input field where a user can enter a search phrase, and a button to submit the form. The form can also be submitted by pressing Enter.</p>
+                        <p>The <i>action</i> attribute is the URL that the form will be submitted to so it can be processed on the server side. The input field also has a <i>name</i> attribute of <i>searchInput</i> that is used to access the information
+                            inside it.</p>
+
+                        <h4>Accessing Form Elements</h4>
 
                         <!------------------------------------- Input Fields ------------------------------------------------------->
                         <ol class="subtitle">Input Fields</ol>
@@ -119,6 +124,34 @@
                     <ul>
                         <!------------------------------------ Modular JavaScript ------------------------------------------------>
                         <ol class="subtitle">Modular JavaScript</ol>
+                        <p>A module is a self-contained piece of code that provides functions and methods that can then be used in other files and by other modules. This helps to keep code organized in separate, reusable files, which improves code maintainability.
+                            The code in a module should have a single purpose, and group together functions with distinct functionality.</p>
+
+                        <h4>ES6 Modules</h4>
+                        <p>There are a few important points about modules that are worth keeping in mind:</p>
+                        <ul>
+                            <li>All code in modules is always in strict mode without the need for 'use strict' and there is no way to opt out of this.</li>
+                            <li>A module has its own global scope, so any variables created in the top-level of a module can only be accessed within that module.</li>
+                            <li>The value of this in the top level of a module is undefined, rather than the global object.</li>
+                            <li>You can't use HTML-style comments in modules (although this isn't very common in any JavaScript program these days).</li>
+                        </ul>
+                        <p>For example, a very simple Pi module would have the following code saved in a file called 'pi.js':<br> <i>&lt;&lt; export const PI = 3.1415926;</i></p>
+                        <p>This would then be imported into your main JavaScript file, main.js using the following code:<br> <i>&lt;&lt; import { PI } from './pi.js';</i></p>
+                        <p>Functions can also be exported from a module.</p>
+
+                        <h4>Default Exports</h4>
+                        <p>Default exports refer to a single variable, function or class in a module that can be imported without having to be explicitly named. The syntax for default exports is purposely easier to read because this is how modules were designed
+                            to be used.
+                            <p class="warning">&#9888; Don't Use More Than One Default Export. <br>Having more than one default export will result in a syntax error.</p>
+
+
+                            <h4>Node.js Modules</h4>
+                            <p>A Common JS module is created in a separate file, and the module.exports method is used to make any functions available to other files, in a similar way to ES6 modules. For example, we could create a module for squaring numbers
+                                using the following code inside a file called squareFunction.js: <br><i>&lt;&lt; module.exports = x =>  x * x;</i></p>
+                            <p>This is simply the <i>square()</i> function we saw earlier in the chapter written as an anonymous function that’s assigned to <i>module.exports</i> as if it was a variable. To use the module, it needs to then be required inside
+                                the another JS file (or from within the Node REPL). This is done using the <i>require()</i> method. This takes the file that contains the module as an argument and returns the function that was exported:<br><i>&lt;&lt; const square = require('./squareFunction');</i></p>
+                            <p>The function that was exported in the module is now assigned to the variable <i>square</i>, which is then used to call the function in the usual way: <br><i>&lt;&lt; square(6);</i></p>
+
                     </ul>
                 </div>
             </div>
@@ -127,11 +160,11 @@
             <h2>Code of the Week</h2>
 
             <a href="../Project/AutoTextTyping/index.html" class="button" target="_blank">Auto Text Typing</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/AutoTextTyping" target="_blank">Code Pages on GitHub</a>
+            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/AutoTextTyping" class="code" target="_blank">Code Pages on GitHub</a>
             <a href="../Project/PasswordMaker/index.html" class="button" target="_blank">Password Generator</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/PasswordMaker" target="_blank">Code Pages on GitHub</a>
+            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/PasswordMaker" class="code" target="_blank">Code Pages on GitHub</a>
             <a href="../Project/FormChecker/index.html" class="button" target="_blank">Form Checker</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/FormChecker" target="_blank">Code Pages on GitHub</a>
+            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/FormChecker" class="code" target="_blank">Code Pages on GitHub</a>
             <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
         </div>
     </section>
