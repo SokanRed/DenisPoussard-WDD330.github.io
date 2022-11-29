@@ -141,16 +141,47 @@
 
                         <h4>Default Exports</h4>
                         <p>Default exports refer to a single variable, function or class in a module that can be imported without having to be explicitly named. The syntax for default exports is purposely easier to read because this is how modules were designed
-                            to be used.
-                            <p class="warning">&#9888; Don't Use More Than One Default Export. <br>Having more than one default export will result in a syntax error.</p>
+                            to be used.</p>
+                        <p class="warning">&#9888; Don't Use More Than One Default Export. <br>Having more than one default export will result in a syntax error.</p>
 
 
-                            <h4>Node.js Modules</h4>
-                            <p>A Common JS module is created in a separate file, and the module.exports method is used to make any functions available to other files, in a similar way to ES6 modules. For example, we could create a module for squaring numbers
-                                using the following code inside a file called squareFunction.js: <br><i>&lt;&lt; module.exports = x =>  x * x;</i></p>
-                            <p>This is simply the <i>square()</i> function we saw earlier in the chapter written as an anonymous function that’s assigned to <i>module.exports</i> as if it was a variable. To use the module, it needs to then be required inside
-                                the another JS file (or from within the Node REPL). This is done using the <i>require()</i> method. This takes the file that contains the module as an argument and returns the function that was exported:<br><i>&lt;&lt; const square = require('./squareFunction');</i></p>
-                            <p>The function that was exported in the module is now assigned to the variable <i>square</i>, which is then used to call the function in the usual way: <br><i>&lt;&lt; square(6);</i></p>
+                        <h4>Node.js Modules</h4>
+                        <p>A Common JS module is created in a separate file, and the module.exports method is used to make any functions available to other files, in a similar way to ES6 modules. For example, we could create a module for squaring numbers
+                            using the following code inside a file called squareFunction.js: <br><i>&lt;&lt; module.exports = x =>  x * x;</i></p>
+                        <p>This is simply the <i>square()</i> function we saw earlier in the chapter written as an anonymous function that’s assigned to <i>module.exports</i> as if it was a variable. To use the module, it needs to then be required inside
+                            the another JS file (or from within the Node REPL). This is done using the <i>require()</i> method. This takes the file that contains the module as an argument and returns the function that was exported:<br><i>&lt;&lt; const square = require('./squareFunction');</i></p>
+                        <p>The function that was exported in the module is now assigned to the variable <i>square</i>, which is then used to call the function in the usual way: <br><i>&lt;&lt; square(6);</i></p>
+
+
+                        <!-------------------------------------------- MVC Frameworks ---------------------------------------------->
+                        <ol class="subtitle">MVC Frameworks</ol>
+                        <p>MVC (Model-View-Controller) separates an application into three distinct, independent components that interact with each other:</p>
+                        <ul>
+                            <li>Models are objects that implement the functionality for creating, reading, updating and deleting (known as CRUD tasks) specific pieces of information about the application, as well as any other associated logic and behavior.
+                                In a to-do list application, for example, there would be a task model providing methods to access all the information about the tasks such as names, due dates and completed tasks. This data will often be stored in a database
+                                or some other container.</li>
+                            <li>Views provide a visual representation of the model showing all the relevant information. In a web application, this would be the HTML displayed on a web page. Views also provide a way for users to interact with an application,
+                                usually via forms. In a to-do list application, the views would display the tasks as an HTML list with checkboxes that a user could tick to say a task had been completed.</li>
+                            <li>Controllers link models and views together by communicating between them. They respond to events, which are usually inputs from a user (entering some data into a form, for example), process the information, then update the
+                                model and view accordingly. In a to-do list application, the controller functions would respond to the event of a user clicking on a check box and then inform the model that a task had been completed. The model would then
+                                update the information about that task.</li>
+                        </ul>
+
+                        <h4>A Quick List Example</h4>
+                        <p><a href="./indexW04Ex15-01.html" target="_blank">MVC Example</a> Watch comments in the Javascript file: <a href="">MVC JS file</a> </p>
+
+                        <h4>MV* Frameworks</h4>
+                        <p>One of the main features of MVC frameworks is data binding, which is the process of linking the model and view together. As a result, a large amount of boilerplate controller code is not needed as the framework takes care of it
+                            all in the background for you.</p>
+                        <p>The views are simply web pages written in HTML, although it is common to use templating languages so dynamic data can be inserted into the page:</p>
+                        <ul>
+                            <li><a href="http://aurelia.io">Aurelia</a> is a modern framework that uses ES6, and focuses on letting you write dynamic web applications while keeping the implementation details in the background.</li>
+                            <li><a href="https://angular.io">Angular</a> is a powerful framework by Google to make creating dynamic web applications easier. This is done by extending the HTML language using custom <i>ng-</i> attributes.</li>
+                            <li><a href="https://emberjs.com">Ember</a> is a framework designed to make building large web applications easier. It does this by using common conventions that avoid the need for lots of set-up code, though it can become more
+                                difficult if you don’t follow these conventions.
+                            </li>
+                        </ul>
+                        <p>The website <a href="https://todomvc.com" target="_blank">TodoMVC</a> has lots of examples of to-do list applications written in many of the popular MVC frameworks.</p>
 
                     </ul>
                 </div>
