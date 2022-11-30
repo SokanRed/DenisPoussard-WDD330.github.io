@@ -45,6 +45,7 @@ p {
 }
 
 .subtitle {
+    font-weight: normal;
     background-color: lightgreen;
     font-size: x-large;
     padding: 5px 10px;
@@ -65,11 +66,12 @@ i,
 }
 
 h4 {
+    background-color: lightblue;
     font-size: large;
-    text-align: center;
+    font-weight: normal;
+    padding-left: 40px;
     color: darkblue;
-    text-decoration-line: underline;
-    text-decoration-color: darkblue;
+    padding: 5px auto;
 }
 
 .sidebar {
