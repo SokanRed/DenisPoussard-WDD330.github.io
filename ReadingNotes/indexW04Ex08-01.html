@@ -16,7 +16,20 @@
 
 
 
-    <script src="mainW04Ex08-01.js"></script>
+    <script>
+        // Focus Event
+        const input = form.elements.searchInput;
+
+        input.addEventListener('focus', () => alert('focused'), false);
+
+        // submit the form
+        const form = document.forms['search'];
+        form.addEventListener('submit', search, false);
+
+        function search() {
+            alert(' Form Submitted');
+        }
+    </script>
 
 </body>
 

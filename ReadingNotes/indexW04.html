@@ -38,25 +38,121 @@
                         information in a form on the 'front end' before it is sent to the server using JavaScript.</p>
 
                     <!---------------------------------- A Searching Example --------------------------------------------------->
-                    <h3 class="subtitle">A Searching Example</h3>
+                    <h3 class="subtitle">A Searching <a href="./indexW04Ex08-01.html" target="_blank">Example</a> | <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/indexW04Ex08-01.html" target="_blank">Code of the Page</a></h3>
+                    <dl class="example">
+                        <dt>&lt;body></dt>
+                        <dd>&lt;form name='search' action='/search'></dd>
+                        <dd style="padding-left: 40px">&lt;input name='searchInput'></dd>
+                        <dd style="padding-left: 40px">&lt;button type='submit'>Search&lt;/button>
+                        </dd>
+                        <dd>&lt;/form></dd>
+                        <dt>&lt;/body></dt>
+                    </dl>
                     <p>This form has a <i>name</i> attribute of <i>search</i>, and contains two controls: an input field where a user can enter a search phrase, and a button to submit the form. The form can also be submitted by pressing Enter.</p>
                     <p>The <i>action</i> attribute is the URL that the form will be submitted to so it can be processed on the server side. The input field also has a <i>name</i> attribute of <i>searchInput</i> that is used to access the information inside
                         it.
                     </p>
 
                     <h4>Accessing Form Elements</h4>
+                    <p>The legacy DOM had a useful property called <i>document.forms</i> that returns an HTML collection of all the forms in the document in the order they appear in the markup. Even though there is only one form in our example, a collection
+                        will still be returned, so we have to use index notation to return the first (and only) form object, like so: <i>const form = document.forms[0];</i></p>
+                    <p>This is the equivalent of using the following method that we learned in chapter 6 (Week 03): <br><i>const form = document.getElementsByTagname('form')[0];</i></p>
+                    <p>Instead of using a numerical index, we can use the <i>name</i> attribute to identify a form:<br><i>const form = document.forms.search;</i></p>
+                    <p>Be careful referencing elements in this way, however. Better parctice would be using square bracket notation:<br><i>const form = document.forms['search'];</i></p>
+                    <p>A form object also has a method called elements that returns an HTML collection of all the <i>elements</i> contained in the form. In this case the form contains two controls: an input element and a button element: <br><i>const [input,button] = form.elements;</i></p>
+                    <p>We can also access the form controls using their 'name' attributes as if it was a property of the form object. So, for example, the input field has a name attribute of searchInput and can be accessed using this code: <br><i>const input = form.searchInput</i></p>
+                    <p>The square bracket notation can also be used instead (again, this is useful if there are any naming clashes with existing property and method names, or if the name is an invalid variable name): <br><i>const input = form['searchInput']</i></p>
+
+                    <h4>Form Properties and Methods</h4>
+                    <p>Form objects have a number of useful properties and methods that can be used to interact with the form.</p>
+                    <p>The <i>form.submit()</i> method will submit the form automatically. Note that submitting a form using this method won’t trigger the form <i>submit</i> event that's covered in the next section.</p>
+                    <p>A form can be submitted manually by the user employing a button or input element with a type attribute of <i>submit</i>, or even an input element with a <i>type</i> attribute of <i>image</i>:</p>
+                    <dl class="example">
+                        <dt>&lt;button type='submit'&gt;Submit&lt;/button&gt;</dt>
+                        <dt>&lt;input type='submit' value='Submit'&gt;</dt>
+                        <dt>&lt;input type='image' src='button.png'&gt;</dt>
+                    </dl>
+                    <p>The <i>form.reset()</i> method will reset all the form controls back to their initial values specified in the HTML.</p>
+                    <p>A button with a <i>type</i> attribute of <i>reset</i> can also be used to do this without the need for additional scripting:<br><i>&lt;button type='reset'&gt;Reset&lt;/button&gt;</i></p>
+                    <p class="warning">&#9888;Reset buttons are generally considered poor for usability, as they are too easy to click and then wipe out all the data that’s been entered. So think very carefully before using one in a form.</p>
+                    <p>The <i>form.action</i> property can be used to set the <i>action</i> attribute of a form, so it’s sent to a different URL to be processed on the server:<br><i>form.action = '/an/other.url'</i></p>
+
+                    <h4>Form Events</h4>
+                    <p>Forms trigger a number of events like those discussed in the chapter 07 (Week03). Some of these events are exclusive to forms.</p>
+                    <p>The <i>focus</i> event occurs when an element is focused on. In the case of an <i>&lt;input&gt;</i> element, this is when the cursor is placed inside the element.<br><i>input.addEventListener('focus', () => alert('focused'), false);</i></p>
+                    <p>The blur event occurs when the user moves the focus away from the form element.<br><i>input.addEventListener('blur', () => alert('blurred'), false);</i></p>
+
+                    <h4>Submitting a Form</h4>
+                    <p>Possibly the most important form event is the <i>submit</i> event, occurring when the form is submitted. Usually this will send the content of the form to the server to be processed, but we can use JavaScript to intercept the form
+                        before it’s sent by adding a <i>submit</i> event listener</p>
+
+                    <h4>Retrieving and Changing Values From a Form</h4>
+                    <p>Text input element objects have a <i>value</i> property that can be used to retrieve the text inside the field. We can use this to report back what the user has searched for.</p>
+
+                    <h4>Form Controls</h4>
+                    <p>Some common types of form control are:</p>
+                    <ul>
+                        <li><i>&lt;input&gt;</i> fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
+                        <li><i>&lt;select&gt;</i> menus for drop-down lists of options</li>
+                        <li><i>&lt;textarea&gt;</i> elements for longer text entry</li>
+                        <li><i>&lt;button&gt;</i> elements for submitting and resetting forms</li>
+                    </ul>
 
                     <!------------------------------------- Input Fields ------------------------------------------------------->
                     <h3 class="subtitle">Input Fields</h3>
+                    <p>Input fields are the most common types of form control, but there are several categories of input field</p>
+
+                    <h4>Text Input Fields</h4>
+                    <p>The default type of input field is <i>text</i>, which is used for entering a short piece of text, such as a username. The <i>type='text'</i> attribute isn’t required, but it is advisable to use it as it makes the intended purpose of
+                        the field explicit, helping with maintenance, readability and future-proofing.</p>
+
+                    <h4>Password Input Fields</h4>
+                    <p><i>input type='password'</i> is used to enter passwords or secret information. This works in the same way as an input field with <i>type='text'</i>, except the characters are concealed as they are entered so they’re unable to be read
+                        on the screen.</p>
+
+                    <h4>Checkbox Input Fields</h4>
+                    <p>Check boxes are created using input fields with <i>type='checkbox'</i>. They are used to select different options that can be checked (true) or left unchecked (false). The user can select more than one checkbox from a list.</p>
+
+                    <h4>Radio Button Input Fields</h4>
+                    <p>Radio buttons are created using input fields with <i>type='radio'</i>. Like checkboxes they allow users to check (true), but they provide an exclusive choice of options, so only one option can be selected.</p>
+
+                    <h4>Hidden Input Fields</h4>
+                    <p>Hidden fields can be created using input fields with <i>type='hidden'</i>. These are not displayed by the browser, but have a 'value' attribute that can contain information that is submitted with the form. They are often used to send
+                        information such as settings or information that the user has already provided.</p>
+
+                    <h4>File Input Fields</h4>
+                    <p>A file input field can be created using input fields with <i>type='file'</i>. These are used to upload files, and most browsers will provide a browse button or similar that lets users select a file from their file system.</p>
+
+                    <h4>Other Input Types</h4>
+                    <p>There are lots of new input types included in HTML5, such as <i>number</i>, <i>tel</i> and <i>color</i>. As browsers start to support these, they will implement different user-interface elements depending on the input type. So a number
+                        field might use a slider, whereas a date field will show a calendar. They will also validate automatically, so an email input field will show an error message if there’s no valid email address.</p>
+
+                    <h4>Select Drop-Down List</h4>
+                    <p>Select drop-down lists can be used to select one or more options from a list of values. The 'multiple' attribute is required if more than one option is to be selected.</p>
+
+                    <h4>Text Areas</h4>
+                    <p>A <i>&lt;textarea&gt;</i> element is used to enter long pieces of text over multiple lines such as a comment or blog post. They work in much the same way as input fields. We access them using the 'name' attribute, and use the <i>value</i>                        property to see what text was entered.</p>
+
+                    <h4>Buttons</h4>
+                    <p>The default type is 'submit', which is why we didn’t have to specify the type in the search example at the start of the chapter. Another type we’ve already seen is 'reset', which will reset all the form fields to their initial settings.</p>
 
                     <!------------------------------------ I Need a Hero! ------------------------------------------------------>
-                    <h3 class="subtitle">I Need a Hero!</h3>
+                    <!-- <h3 class="subtitle">I Need a Hero!</h3> -->
 
                     <!---------------------------------- Form Validation ------------------------------------------------------->
                     <h3 class="subtitle">Form Validation</h3>
+                    <p>Form validation is the process of checking whether a user has entered the information into a form correctly. Examples of the types of validation that occur include ensuring that:</p>
+                    <ul>
+                        <li>A required field is completed</li>
+                        <li>An email address is valid</li>
+                        <li>A number is entered when numerical data is required</li>
+                        <li>A password is at least a minimum number of characters</li>
+                    </ul>
 
                     <!------------------------------- Disabling the Submit Button ---------------------------------------------->
                     <h3 class="subtitle">Disabling the Submit Button</h3>
+                    <p>Another useful technique that can aid usability is to disable the submit button if there are errors on the form. If the submit button is disabled then no action is taken when it’s clicked. Most browsers will also display it in a lighter
+                        color to indicate that it cannot be clicked on. This prevents users from submitting a form containing any errors. A submit button can be disable by added the <i>disabled</i> attribute to the <i>&lt;input&gt;</i> element.</p>
 
                 </div>
             </div>
@@ -71,51 +167,258 @@
 
                     <!------------------------------------ Object-Oriented Programming ---------------------------------------->
                     <h3 class="subtitle">Object-Oriented Programming</h3>
+                    <p>Object-oriented programming is often used to model representations of objects in the real world. There are three main concepts in OOP: encapsulation, polymorphism and inheritance.</p>
+
+                    <h4>Encapsulation</h4>
+                    <p>In OOP, this involves keeping all the programming logic inside an object and making methods available to implement the functionality, without the outside world needing to know how it’s done.</p>
+
+                    <h4>Polymorphism</h4>
+                    <p>In OOP, this means various objects can share the same method, but also have the ability to override shared methods with a more specific implementation.</p>
+
+                    <h4>Inheritance</h4>
+                    <p>In OOP, this means we can take an object that already exists and inherit all its properties and methods. We can then improve on its functionality by adding new properties and methods.</p>
+
+                    <h4>Classes</h4>
+                    <p>JavaScript didn't have classes before ES6, and used the concept of using actual objects as the blueprint for creating more objects. This is known as a prototype-based language. Even though ES6 now supports classes, it still uses this
+                        prototypal inheritance model in the background.</p>
+
 
                     <!------------------------------------ Constructor Functions ---------------------------------------------->
                     <h3 class="subtitle">Constructor Functions</h3>
+                    <p>In the objects chapter (chapter 7 week03) earlier in the book, we saw it was possible to create new objects using the object literal notation. At the end of the chapter we created a dice object:</p>
+                    <dl class="example">
+                        <dt>const dice = {</dt>
+                        <dd>sides: 6,</dd>
+                        <dd>roll() {</dd>
+                        <dd style="padding-left: 40px;">return Math.floor(this.sides * Math.random() + 1)</dd>
+                        <dd>}</dd>
+                        <dt>}</dt>
+                    </dl>
+                    <p>An alternative way to create objects is to use a constructor function. This is a function that defines the properties and methods of an object. Here is the <i>dice</i> example rewritten as a constructor function:</p>
+                    <dl class="example">
+                        <dt>const Dice = function(sides=6){</dt>
+                        <dd>this.sides = sides;</dd>
+                        <dd>this.roll = function() {</dd>
+                        <dd style="padding-left: 40px;">return Math.floor(this.sides * Math.random() + 1)</dd>
+                        <dd>}</dd>
+                        <dt>}</dt>
+                    </dl>
+                    <p>The keyword <i>this</i> is used to represent the object that will be returned by the constructor function. In the previous example, we use it to set the <i>sides</i> property to the argument that is provided to the constructor function,
+                        or 6, if no argument is provided. It also adds a method called <i>roll()</i>, which returns a random number from 1 up to the number of sides the dice has. We can now create an instance of the dice constructor function using the
+                        <i>new</i> operator.</p>
+                    <dl class="example">
+                        <dt>const redDice = new Dice();</dt>
+                        <dt>&lt;&lt; Dice { sides: 6, roll: [Function] }</dt>
+                    </dl>
+                    <p>This returns an object that was assigned to the variable <i>redDice</i>, which is said to be an instance of the <i>Dice</i> constructor function. We can confirm this using the <i>instanceof</i> operator:</p>
+
+                    <h4>ES6 Class Declarations</h4>
+                    <p>ES6 introduced the new class declaration syntax that does exactly the same thing as a constructor function, but looks much similar to writing a class in a class-based programming language. Here is the dice example again, using a class
+                        declaration:
+                    </p>
+                    <dl class="example">
+                        <dt>class Dice {</dt>
+                        <dd>constructor(sides=6) {</dd>
+                        <dd style="padding-left: 40px;">this.sides = sides;</dd>
+                        <dd>}</dd>
+                        <br>
+                        <dd>roll() {</dd>
+                        <dd style="padding-left: 40px;">return Math.floor(this.sides * Math.random() + 1)</dd>
+                        <dd>}</dd>
+                        <dt>}</dt>
+                    </dl>
+                    <p>By convention, the names of constructor functions or class declarations are capitalized, which is the convention used for classes in class-based programming languages.</p>
+                    <a style="padding-left: 40px" href="https://www.sitepoint.com/object-oriented-javascript-deep-dive-es6-classes/">A Deep Dive into ES6 Classes</a>
+
+                    <h4>The Constructor Property</h4>
+                    <p>All objects have a <i>constructor</i> property that returns the constructor function that created it:</p>
+                    <dl class="example">
+                        <dt>blueDice.constructor</dt>
+                        <dt>&lt;&lt; [Function: Dice]</dt>
+                    </dl>
+                    <p>When an object literal is used to create a new object, we can see that in the background, the <i>Object</i> constructor function is being used:</p>
+                    <dl class="example">
+                        <dt>const literalObject = {};</dt>
+                        <dt>&lt;&lt; {}</dt>
+                        <dt>literalObject.constructor</dt>
+                        <dt>&lt;&lt; [Function: Object]</dt>
+                    </dl>
+                    <p>We can use the <i>constructor</i> property to instantiate a copy of an object, without having to reference the actual constructor function or class declaration directly.</p>
+                    <dl class="example">
+                        <dt>const greenDice = new redDice.constructor(10);</dt>
+                        <br>
+                        <dt>greenDice instanceOf Dice</dt>
+                        <dt>&lt;&lt; true</dt>
+                    </dl>
 
                     <!------------------------------------ Static Methods ----------------------------------------------------->
                     <h3 class="subtitle">Static Methods</h3>
+                    <p>The <i>static</i> keyword can be used in class declarations to create a static method. These are sometimes called class methods in other programming languages. A static method is called by the class directly rather than by instances
+                        of the class.</p>
 
                     <!------------------------------------ Prototypal Inheritance --------------------------------------------->
                     <h3 class="subtitle">Prototypal Inheritance</h3>
+                    <p>JavaScript uses a prototypal inheritance model. This means that every class has a prototype property that is shared by every instance of the class. So any properties or methods of a class’s prototype can be accessed by every object
+                        instantiated by that class.</p>
+
+                    <h4>The Prototype Property</h4>
+                    <p>All classes and constructor functions have a <i>prototype</i> property that returns an object: <br><i>Turtle.prototype; &lt;&lt; Turtle {}</i></p>
+                    <p>All instances of the the Turtle class share all the properties and methods of its prototype. This means they can call any methods of the prototype and access any of its properties. Since the prototype is just an object, we can add
+                        new properties by assignment:<br><i>Turtle.prototype.weapon = 'Hands';  &lt;&lt; 'Hands'</i></p>
+                    <p>We can also add a method to the prototype in a similar way:</p>
+                    <dl class="example">
+                        <dt>Turtle.prototype.attack = function(){</dt>
+                        <dt>return `Feel the power of my ${this.weapon}!`;</dt>
+                        <dt>}</dt>
+                        <dt>&lt;&lt; [Function]</dt>
+                    </dl>
+
+                    <h4>Finding Out the Prototype</h4>
+                    <p>There are a number of ways to find the prototype of an object. One way is to go via the constructor function’s <i>prototype</i> property:<br><i>raph.constructor.prototype; &lt;&lt; Turtle { attack: [Function], weapon: 'Hands' }</i></p>
+                    <p>Another way is to use the <i>Object.getPrototypeOf()</i> method, which takes the object as a parameter:<br><i>Object.getPrototypeOf(raph); &lt;&lt; Turtle { attack: [Function], weapon: 'Hands' }</i></p>
+                    <p>Every object also has a <i>isPrototypeOf()</i> method that returns a boolean to check if it’s the prototype of an instance:<br><i>Turtle.prototype.isPrototypeOf(raph) &lt;&lt; true</i></p>
+
+                    <h4>Own Properties and Prototype Properties</h4>
+                    <p>Prototype properties are shared by every instance of the class</p>
+
+                    <h4>The Prototype Is Live!</h4>
+                    <p>The <i>prototype</i> object is live, so if a new property or method is added to the prototype, any instances of its class will inherit the new properties and methods automatically, even if that instance has already been created.</p>
+
+                    <h4>Overwriting Prototype Properties</h4>
+                    <p>An object instance can overwrite any properties or methods inherited from its prototype by simply assigning a new value to them.</p>
+
+                    <h4>What Should the Prototype Be Used For?</h4>
+                    <p>The prototype can be used to add any new properties and methods after the class has been declared. It should be used to define any properties that will remain the same for every instance of the class.</p>
+                    <p>To summarize, the following points should be considered when using classes and prototypes to create instances:</p>
+                    <ul>
+                        <li>Create a class declaration that deals with any initialization, shared properties and methods.</li>
+                        <li>Any extra methods and properties that need to be augmented to the class declaration after it’s been defined can be added to the prototype. These will be added to all instances, even those that have already been created.</li>
+                        <li>Add any properties or methods that are individual to a particular instance can be augmented using assignment to that object (a mixin could be used to add multiple properties at once, as we’ll see later).</li>
+                        <li>Be careful when overwriting the prototype completely ― the constructor class needs to be reset.</li>
+                    </ul>
 
                     <!------------------------------------ Public and Private Methods ----------------------------------------->
                     <h3 class="subtitle">Public and Private Methods</h3>
+                    <p>By default, an object’s methods are public in JavaScript. Methods and properties are said to be public because they can be queried directly and changed by assignment. The dynamic nature of the language means that an object’s properties
+                        and methods can be changed after it has been created.</p>
+                    <p>For example the <i>_color</i> property can be created as a variable inside the scope of the constructor function inside the class declaration. This makes it impossible to access outside of this scope.</p>
 
                     <!------------------------------------ Inheritance -------------------------------------------------------->
                     <h3 class="subtitle">Inheritance</h3>
+                    <p>The examples we’ve seen so far have all demonstrated inheritance by inheriting properties and methods from the prototype. But the prototype is just another object, so it also has its own prototype, which in turn has its own prototype...
+                        and so on, creating a chain of inheritance.</p>
+                    <a style="padding-left:40px;" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank">mdn Inheritance and the prototype chain</a>
 
                     <!------------------------------------ The Object Constructor --------------------------------------------->
                     <h3 class="subtitle">The Object Constructor</h3>
+                    <p>The prototype of the <i>Object</i> constructor function has a large number of methods that are inherited by all objects.</p>
+
+                    <h4>Enumerable Properties</h4>
+                    <p>Properties of objects in JavaScript are said to be enumerable or non-enumerable. If they aren't enumerable, this means they will not show up when a <i>for-in</i> loop is used to loop through an object’s properties and methods. There
+                        is a method called <i>propertyIsEnumerable()</i> that every object has (because it’s a method of <i>Object.prototype</i>) that can be used to check if a property is enumerable</p>
+
+                    <h4>Inheritance Using <i>extends</i></h4>
+                    <p>A class can inherit from another class using the <i>extends</i> keyword in a class declaration.</p>
 
                     <!------------------------------------ Polymorphism ------------------------------------------------------->
                     <h3 class="subtitle">Polymorphism</h3>
+                    <p>The concept of polymorphism means that different objects can have the same method, but implement it in different ways.</p>
 
                     <!------------------------------------ Adding Methods to Built-in Objects --------------------------------->
                     <h3 class="subtitle">Adding Methods to Built-in Objects</h3>
+                    <p>It is possible to add more methods to the prototype of JavaScript’s built-in objects — such as <i>Number</i>, <i>String</i>, and <i>Array</i> — to add more functionality. This practice is known as monkey-patching, but it’s mostly frowned
+                        upon in the JavaScript community, despite it being an incredibly powerful technique.</p>
+                    <p>As an example, we can add <i>isOdd()</i> and <i>isEven()</i> methods to the Number wrapper object’s prototype. Arrays are powerful objects, but seem to have some basic methods missing in JavaScript that are found in other languages.
+                        We can add a <i>first()</i> and <i>last()</i> methods that return the first and last items in the array. Another useful method that arrays lack is a decent <i>delete()</i> method.</p>
 
                     <!------------------------------------ Property Attributes and Descriptors -------------------------------->
                     <h3 class="subtitle">Property Attributes and Descriptors</h3>
+                    <p>All object properties have the following attributes stored in a property descriptor:</p>
+                    <ul>
+                        <li><i>value</i> ― This is the value of the property and is undefined by default</li>
+                        <li><i>writable</i> ― This boolean value shows whether a property can be changed or not, and is false by default</li>
+                        <li><i>enumerable</i> ― this boolean value shows whether a property will show up when the object is displayed in a for in loop, and is false by default</li>
+                        <li><i>configurable</i> ― this boolean value shows whether you can delete a property or change any of its attributes, and is false by default.</li>
+                    </ul>
+
+                    <h4>Getting and Setting Property Descriptors</h4>
+                    <p>The <i>Object()</i> constructor function has a number of methods for getting and defining property descriptors. We can see these values using the <i>Object.getOwnPropertyDescriptor()</i> method. Instead of using assignment, we can
+                        add properties to an object using the <i>Object.defineProperty()</i> method. This provides more fine-grained control when adding new properties, as it allows each attribute to be set. The first argument is the object to which you
+                        want to add the property, followed by a property descriptor containing the attributes you want to set. Any attributes left out will take the default values.</p>
+
+                    <h4>Getters and Setters</h4>
+                    <p>An object property descriptor can have <i>get()</i> and <i>set()</i> methods instead of a value attribute. All objects must have one or the other, they can't have both. The <i>get()</i> and <i>set()</i> methods can be used to control
+                        how a property is set using assignment and the value that is returned when a property is queried. They are particularly useful if a property relies on the value of another property.</p>
 
                     <!------------------------------------ Creating Objects from Other Objects -------------------------------->
                     <h3 class="subtitle">Creating Objects from Other Objects</h3>
+                    <p>It’s possible to avoid using classes altogether, and create new objects based on another object that acts as a 'blueprint' or prototype instead. The <i>Object()</i> constructor function has a method called <i>create</i> that can be
+                        used to create a new object that is an exact copy of the object that is provided as an argument. The object that is provided as the argument acts as the prototype for the new object.</p>
+
+                    <h4>Object-Based Inheritance</h4>
+                    <p>This method relies on the <i>name</i> and <i>realName</i> properties. It can be a good idea to create default values in the prototype so the method will still work. In this case, we can use names that prompt some real data to be added</p>
+
+                    <h4>Object Prototype Chain</h4>
+                    <p>Creating objects from objects will create a prototype chain. Every time a new object is created using the <i>Object.create()</i> method, the new object inherits all the properties and methods from the parent object, which becomes the
+                        new object’s prototype.</p>
 
                     <!------------------------------------ Mixins ------------------------------------------------------------->
                     <h3 class="subtitle">Mixins</h3>
+                    <p>A mixin is a way of adding properties and methods of some objects to another object without using inheritance. It allows more complex objects to be created by ‘mixing’ basic objects together. Basic mixin functionality is provided by
+                        the <i>Object.assign()</i> method. This will assign to the object provided as the first argument all of the properties from any objects provided as further arguments</p>
+                    <p>To avoid only a shallow copy, we're going to create our own <i>mixin()</i> function that will assign all properties of an object to another object as a deep copy.</p>
+
+                    <h4>Using Mixins to Add Properties</h4>
+                    <p>One use for the <i>mixin()</i> function is to add a large number of properties to an object all at once. Instead of assigning each property, one at a time, we can just mix in an object literal and add both properties at once.</p>
+
+                    <h4>Using Mixins to Create a <i>copy()</i> Function</h4>
+                    <p>Another use of the <i>mixin()</i> function is to create a <i>copy()</i> method that can be used to make an exact, deep copy of an object. The copy function also takes a parameter called <i>target</i>, which is the object to be copied.
+                        The first thing we do is create a new object based on the prototype of the object that we are copying. The <i>mixin()</i> function is then used to add all the properties and methods of the object to this new object, effectively
+                        making an exact copy of itself. We can now use this function to make exact copies of objects</p>
+
+                    <h4>Factory Functions</h4>
+                    <p>Our <i>copy()</i> function can now be used to create a factory function. A factory function is a function that can be used to return an object.</p>
+                    <a style="padding-left: 40px;" href="https://www.sitepoint.com/factory-functions-javascript/">What Are Factory Functions in JavaScript</a>
+
+                    <h4>Using the Mixin Function to Add Modular Functionality</h4>
+                    <p>Inheritance allows us to add functionality to objects by inheriting properties and methods from other objects. While this is useful, it can be undesirable to create a chain of inheritance ― sometimes we just want to add properties
+                        and methods without linking the two objects together. The <i>mixin()</i> function lets us encapsulate properties and methods in an object, then add them to other objects without the overhead of an inheritance chain being created.</p>
 
                     <!------------------------------------ Chaining Functions ------------------------------------------------->
                     <h3 class="subtitle">Chaining Functions</h3>
+                    <p>If a method returns <i>this</i>, its methods can be chained together to form a sequence of method calls that are called one after the other.</p>
 
                     <!------------------------------------ Binding this ------------------------------------------------------->
-                    <h3 class="subtitle">Binding this</h3>
+                    <h3 class="subtitle">Binding <i>this</i></h3>
+                    <p>The value of <i>this</i> points to the object calling a method. It allows us to create generalized methods that refer to properties specific to a particular object. Be aware of a certain problem when a function is nested inside another
+                        function, which can often happen when using methods in objects, especially ones that accept callback functions. The problem is that the value of <i>this</i> loses its scope, and points to the global object inside a nested function.</p>
+
+                    <h4>Use <i>that = this</i></h4>
+                    <p>A common solution is to set the variable <i>that</i> to equal <i>this</i> before the nested function, and refer to <i>that</i> in the nested function instead of <i>this</i>.</p>
+
+                    <h4>Use <i>bind(this)</i></h4>
+                    <p>The <i>bind()</i> method is a method for all functions and is used to set the value of <i>this</i> in the function. If <i>this</i> is provided as an argument to <i>bind()</i> while it’s still in scope, any reference to <i>this</i>                        inside the nested function will be bound to the object calling the original method</p>
+
+                    <h4>Use <i>for-of</i> Instead Of <i>forEach()</i></h4>
+                    <p>ES6 introduced the <i>for-of</i> syntax for arrays and this does not require a nested function to be used, so this remains bound to the object.</p>
+
+                    <h4>Use Arrow Functions</h4>
+                    <p>Arrow functions were introduced in ES6, and one of the advantages of using them is that they don't have their own <i>this</i> context, so <i>this</i> remains bound to the original object making the function call.</p>
 
                     <!------------------------------------ Borrowing Methods from Prototypes ---------------------------------->
                     <h3 class="subtitle">Borrowing Methods from Prototypes</h3>
+                    <p>It’s possible to borrow methods from objects without having to inherit all their properties and methods. This is done by making a reference to the function that you want to borrow (that is, without parentheses so that it isn’t invoked).</p>
+
+                    <h4>Borrowing Array Methods</h4>
+
 
                     <!------------------------------------ Composition Over Inheritance --------------------------------------->
                     <h3 class="subtitle">Composition Over Inheritance</h3>
+                    <p>The 'Gorilla Banana' problem occurs when you need a method from an object, so you inherit from that object. The name comes from a quote by Joe Armstrong, the creator of the Erlang programming language:</p>
+                    <p>"You wanted a banana but what you got was a gorilla holding the banana and the entire jungle."</p>
+                    <p>The problem he describes is that if an object requires a <i>banana()</i> method that belongs to the <i>Gorilla</i> class, you have to inherit the whole class to gain access to that method. But as well as the method you wanted, the
+                        object also inherits a lot of other properties and methods that are not needed, causing it to become unnecessarily bloated. A design pattern that seeks to solve these problems is to use 'composition over inheritance'. This approach
+                        advocates creating small objects that describe single tasks or behaviors and using them as the building blocks for more complex objects.</p>
 
                 </div>
             </div>
@@ -146,7 +449,7 @@
                     <h4>Default Exports</h4>
                     <p>Default exports refer to a single variable, function or class in a module that can be imported without having to be explicitly named. The syntax for default exports is purposely easier to read because this is how modules were designed
                         to be used.</p>
-                    <p class="warning">&#9888; Don't Use More Than One Default Export. <br>Having more than one default export will result in a syntax error.</p>
+                    <p class="warning">&#9888; Don't Use More Than One Default Export. Having more than one will result in a syntax error.</p>
 
 
                     <h4>Node.js Modules</h4>
@@ -169,22 +472,23 @@
                         <li>Controllers link models and views together by communicating between them. They respond to events, which are usually inputs from a user (entering some data into a form, for example), process the information, then update the model
                             and view accordingly. In a to-do list application, the controller functions would respond to the event of a user clicking on a check box and then inform the model that a task had been completed. The model would then update
                             the information about that task.</li>
+                    </ul>
 
-                        <h4>A Quick List Example</h4>
-                        <p><a href="./indexW04Ex15-01.html" target="_blank">MVC Example</a> Watch comments in the Javascript file: <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/mainW04Ex15-01.js" target="_blank">MVC JS file</a>                            </p>
+                    <h4>A Quick List Example</h4>
+                    <p><a href="./indexW04Ex15-01.html" target="_blank">MVC Example</a> Watch comments in the JavaScript file: <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/mainW04Ex15-01.js" target="_blank">MVC JS file</a>                        </p>
 
-                        <h4>MV* Frameworks</h4>
-                        <p>One of the main features of MVC frameworks is data binding, which is the process of linking the model and view together. As a result, a large amount of boilerplate controller code is not needed as the framework takes care of it
-                            all in the background for you.</p>
-                        <p>The views are simply web pages written in HTML, although it is common to use templating languages so dynamic data can be inserted into the page:</p>
-                        <ul>
-                            <li><a href="http://aurelia.io">Aurelia</a> is a modern framework that uses ES6, and focuses on letting you write dynamic web applications while keeping the implementation details in the background.</li>
-                            <li><a href="https://angular.io">Angular</a> is a powerful framework by Google to make creating dynamic web applications easier. This is done by extending the HTML language using custom <i>ng-</i> attributes.</li>
-                            <li><a href="https://emberjs.com">Ember</a> is a framework designed to make building large web applications easier. It does this by using common conventions that avoid the need for lots of set-up code, though it can become more
-                                difficult if you don’t follow these conventions.
-                            </li>
-                        </ul>
-                        <p>The website <a href="https://todomvc.com" target="_blank">TodoMVC</a> has lots of examples of to-do list applications written in many of the popular MVC frameworks.</p>
+                    <h4>MV* Frameworks</h4>
+                    <p>One of the main features of MVC frameworks is data binding, which is the process of linking the model and view together. As a result, a large amount of boilerplate controller code is not needed as the framework takes care of it all
+                        in the background for you.</p>
+                    <p>The views are simply web pages written in HTML, although it is common to use templating languages so dynamic data can be inserted into the page:</p>
+                    <ul>
+                        <li><a href="http://aurelia.io">Aurelia</a> is a modern framework that uses ES6, and focuses on letting you write dynamic web applications while keeping the implementation details in the background.</li>
+                        <li><a href="https://angular.io">Angular</a> is a powerful framework by Google to make creating dynamic web applications easier. This is done by extending the HTML language using custom <i>ng-</i> attributes.</li>
+                        <li><a href="https://emberjs.com">Ember</a> is a framework designed to make building large web applications easier. It does this by using common conventions that avoid the need for lots of set-up code, though it can become more difficult
+                            if you don’t follow these conventions.
+                        </li>
+                    </ul>
+                    <p>The website <a href="https://todomvc.com" target="_blank">TodoMVC</a> has lots of examples of to-do list applications written in many of the popular MVC frameworks.</p>
 
                     </ul>
                 </div>
