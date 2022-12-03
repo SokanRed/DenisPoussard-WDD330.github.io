@@ -141,3 +141,22 @@ h4 {
 .protocol-contain {
     padding: 10px 40px;
 }
+
+
+/* Ressources */
+
+.ressources {
+    background-color: lightblue;
+    padding: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.references {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+q {
+    color: blue;
+}
