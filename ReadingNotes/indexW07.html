@@ -196,6 +196,8 @@
             <div class="dropdown">
                 <h2 class="start">&#9660 Chapter 13 | AJAX</h2>
                 <div class="dropdown-content">
+                    <h2>AJAX <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX" class="reference" target="_blank">mdn AJAX</a></h2>
+                    <a href="https://www.semanticscholar.org/paper/Ajax%3A-A-New-Approach-to-Web-Applications-Garrett/c440ae765ff19ddd3deda24a92ac39cef9570f1e?p2df" target="_blank">Ajax: A New Approach to Web Applications</a>
 
                     <!---------------------------------- Clients and Servers ---------------------------------------------->
                     <h3 class="subtitle">Clients and Servers</h3>
@@ -236,17 +238,84 @@
                     <h4>Response Interface</h4>
                     <p>The Fetch API introduced the Response interface that deals with the object that’s returned when the promise is fulfilled. Response objects have a number of properties and methods that allow us to process the response effectively.</p>
 
+                    <h5>Redirects</h5>
+                    <p>The <i>redirect()</i> method can be used to redirect to another URL. It creates a new promise that resolves to the response from the redirected URL.</p>
+                    <h5>Text Responses</h5>
+                    <p>The <i>text()</i> method takes a stream of text from the response, reads it to completion and then returns a promise that resolves to a USVSting object that can be treated as a string in JavaScript.</p>
+                    <h5>File Responses</h5>
+                    <p>The <i>blob()</i> method is used to read a file of raw data, such as an image or a spreadsheet. Once it has read the whole file, it returns a promise that resolves with a <i>blob</i> object.</p>
+                    <h5>JSON Responses</h5>
+                    <p>JSON is probably the most common format for AJAX responses. The <i>json()</i> method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.</p>
+                    <h5>Creating Response Objects</h5>
+                    <p>Although most of the time you will be dealing with a response object that is returned from a request you make, you can also create your own response objects using a constructor function.</p>
+
+                    <h4>Request Interface</h4>
+                    <p>We can get more fine-grained control over the request being made by providing a <i>Request</i> object as an argument. This allows a number of options to be set about the request. Request objects are created using the <i>Request()</i>                        constructor, and include the following properties:</p>
+                    <ul>
+                        <li> <i>url</i> – The URL of the requested resource (the only property that is required).</li>
+                        <li> <i>method</i> – a string that specifies which HTTP method should be used for the request. By default, this is 'GET'.</li>
+                        <li> <i>headers</i> – This is a Headers object (see later section) that provides details of the request's headers.</li>
+                        <li> <i>mode</i> – Allows you to specify if CORS is used or not. CORS is enabled by default.</li>
+                        <li> <i>cache</i> – Allows you to specify how the request will use the browser's cache. For example, you can force it to request a resource and update the cache with the result, or you can force it to only look in the cache for the
+                            resource.
+                        </li>
+                        <li> <i>credentials</i> – Lets you specify if cookies should be allowed with the request.</li>
+                        <li> <i>redirect</i> – Specifies what to do if the response returns a redirect. There’s a choice of three values: 'follow' (the redirect is followed), 'error' (an error is thrown) or 'manual' (the user has to click on a link to follow
+                            the redirect).</li>
+                    </ul>
+                    <!-- Hypertext Transfer Protocol -->
+                    <div class="protocol">
+                        <h3 class="protocol-title">Hypertext Transfer Protocol</h3>
+                        <div class="protocol-contain">
+                            <p>The Web is built upon the Hypertext Transfer Protocol, or HTTP. When a client (usually a browser) makes a request to a server, it contains information about which HTTP verb to use. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
+                                    target="_blank">HTTP verbs, also known as HTTP methods</a> are the what HTTP uses to tell the server what type of request is being made, which then determines the server will deal with the request.</p>
+                            <p>The five most commonly used verbs when dealing with resources on the web are:</p>
+                            <ul>
+                                <li>GET requests to retrieve resources</li>
+                                <li>POST requests, usually used to create a resource but can actually perform any task</li>
+                                <li>PUT requests to upsert, which means insert a resource or update it entirely</li>
+                                <li>PATCH requests to make partial updates to a resource</li>
+                                <li>DELETE requests to delete a resources.</li>
+                            </ul>
+                            <p>This <a href="https://robm.me.uk/2013/09/http-verbs/" target="_blank">excellent blog post</a> by Rob Miller explains each of these verbs in more depth </p>
+                        </div>
+                    </div>
+                    <!-- Hypertext Transfer Protocol -->
+                    <p>A constructor function is used to create a new Request object. The <i>url</i> property is the first argument, and is required. The second argument is an object made up of any of the other properties. Once the Request object is assigned
+                        to a variable, it can then be used as the parameter of the <i>fetch()</i> method. Alternatively, you can enter the URL and object directly as arguments of the <i>fetch()</i> method, without having to create a Request object.</p>
+
+                    <h4>Headers Interface</h4>
+                    <p>HTTP headers are used to pass on any additional information about a request or response. Typical information contained in headers includes the file-type of the resource, cookie information, authentication information and when the resource
+                        was last modified. The Fetch API introduced a <i>Headers</i> interface, which can be used to create a Headers object, which can then be added as a property of Request and Response objects.</p>
+
+                    <h4>Putting It All Together</h4>
+                    <p>We can use the Headers, Request and Response objects to put together a typical example that sets up the URL, Request and Headers before calling the <i>fetch()</i> method.</p>
+
                     <!---------------------------------- Receiving Information ---------------------------------------------->
                     <h3 class="subtitle">Receiving Information</h3>
+                    <p><a href="./indexW07Ex13-01.html" target="_blank">Example</a> to demonstrate how to update a web page using Ajax.</p>
+                    <p><a href="" target="_blank">HTML file</a> See comments in the <a href="" target="_blank">JavaScript file</a> </p>
 
                     <!---------------------------------- Sending Information ---------------------------------------------->
                     <h3 class="subtitle">Sending Information</h3>
+                    <p>We can also use Ajax to send information. This can be a variety of formats, but is usually a JSON string.</p>
+                    <p>To illustrate this, we're going to create a very simple <a href="./indexW07Ex13-02.html">To Do list application</a> (<a href="" target="_blank">HtML file</a>) that sends information about a task to a server in JSON format, then receives
+                        a response to confirm that the task has been saved on a server.</p>
+                    <p>Unfortunately, we don't have a database to save our tasks to, so we're going to have to use a dummy site called <a href="https://jsonplaceholder.typicode.com" target="_blank">JSONPlaceholder</a> . This spoofs the process of sending
+                        JSON data to a server, then receiving JSON data in response. It has a number of fake APIs that can be used to create fake examples of posts, comments, albums, photos, todos and users. We'll be using the fake todo API.</p>
+                    <p> See comments in the<a href="">JavaScript file</a></p>
 
                     <!---------------------------------- FormDat ---------------------------------------------->
                     <h3 class="subtitle">FormData</h3>
+                    <p>The Fetch API includes the <i>FormData</i> interface, which makes it much easier to submit information in forms using Ajax. A <i>FormData</i> instance is created using a constructor function: <i>const data = new FormData();</i></p>
 
                     <!---------------------------------- A living Standard ---------------------------------------------->
                     <h3 class="subtitle">A living Standard</h3>
+                    <p>The Fetch API is, at the time of writing, what is known as a 'living standard', which means that the specification is being developed 'in the wild'. This means that, despite it being available to use, it’s still subject to change as
+                        developers, browser vendors and end-users provide feedback about how it works. It’s an experimental technology, and new features might get added, or the syntax and behavior of some properties and methods might change in the future.</p>
+                    <p>If you don't want to 'live on the edge', you could consider using a library to take care of Ajax requests. The advantage of this approach is that the library will take care of any implementation details behind the scenes – it will
+                        use the most up-to-date methods, such as the fetch API, if it's supported, and fallback on using older methods, if required.</p>
+                    <p>The jQuery library is a good option for this – it has the generic <i>ajax()</i> method that can be used in a very similar way to the <i>fetch()</i> method.</p>
 
                 </div>
             </div>

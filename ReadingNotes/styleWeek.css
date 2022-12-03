@@ -122,3 +122,22 @@ h4 {
     border: 2px solid #F20209;
     padding: 8px;
 }
+
+.protocol {
+    border: solid 1px blue;
+    border-radius: 20px;
+    background-color: aqua;
+}
+
+.protocol-title {
+    background-color: blue;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    color: white;
+    padding: 10px 10px 10px 40px;
+    margin: 0;
+}
+
+.protocol-contain {
+    padding: 10px 40px;
+}
