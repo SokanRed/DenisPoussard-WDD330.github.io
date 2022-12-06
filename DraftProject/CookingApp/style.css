@@ -13,6 +13,14 @@ body {
     background: rgb(235, 244, 242);
 }
 
+.app {
+    padding-bottom: 15px;
+}
+
+a {
+    color: white;
+}
+
 form {
     position: fixed;
     left: 50%;
