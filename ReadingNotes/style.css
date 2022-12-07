@@ -4,9 +4,6 @@ body {
     background-color: darkblue;
 }
 
-
-/*========================================= Header ======================================= */
-
 .header {
     background-color: blue;
     text-align: center;
@@ -18,6 +15,31 @@ body {
     text-align: right;
 }
 
+.display_week {
+    width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    column-gap: 5px;
+    row-gap: 5px;
+    margin: 20px auto;
+}
+
+.week_title,
+.description_title {
+    display: flex;
+    justify-content: center;
+    border: solid 2px blue;
+}
+
+.button-container {
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: darkblue;
+    padding-bottom: 10px;
+}
+
 .button {
     background-color: azure;
     color: blue;
@@ -27,33 +49,21 @@ body {
     border-radius: 4px;
 }
 
-
-/* ===================================== Central part ======================================= */
-
-.weekButtons {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 25px;
-    justify-content: space-evenly;
-}
-
-.btnWeek {
-    width: 180px;
-    font-size: x-large;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    padding: 15px;
+.button_title {
+    font-size: xx-large;
     margin: 15px;
 }
 
-.btnWeek:hover,
-.button:hover {
-    background-color: orange;
+.description,
+.description_title {
+    background-color: lightyellow;
+    padding-left: 15px;
+    border: solid 2px blue;
 }
 
-
-/* ======================================= Footer ============================================ */
+.week_title {
+    background-color: lightgreen;
+}
 
 .ressources {
     background-color: lightblue;
