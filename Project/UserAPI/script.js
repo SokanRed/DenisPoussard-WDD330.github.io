@@ -32,13 +32,13 @@ const userDisplay = async() => {
     document.body.innerHTML = userData.map(
             (user) =>
             `
-    <div class="card">
-    <img src=${user.picture.large} alt="photo of ${user.name.last}"
-    <h3>${user.name.first} ${user.name.last}</h3>
-    <p>${user.location.city}, ${dateParser(user.dob.date)}</p>
-    <em>Member since : ${dayCalc(user.registered.date)} days</em>
-    </div>
-    `)
+            <div class="card">
+            <img src=${user.picture.large} alt="photo of ${user.name.last}"
+            <h3>${user.name.first} ${user.name.last}</h3>
+            <p>${user.location.city}, (${user.location.country}), ${dateParser(user.dob.date)}</p>
+            <em>Member since : ${dayCalc(user.registered.date)} days</em>
+            </div>
+            `)
         .join("");
 };
 

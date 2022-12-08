@@ -8,6 +8,8 @@ let number = 5;
 let scale = 10;
 
 function drawFlower() {
+
+    console.log(number);
     let angle = number * 2;
     let radius = scale * Math.sqrt(number);
     let positionX = radius * Math.sin(angle) + canvas.width / 2;
@@ -21,14 +23,13 @@ function drawFlower() {
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
-
+    console.log(number);
     number++;
+
 }
 
-function animate() {
-    // draaw each frame
-    // ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+function animate() {
     drawFlower();
     requestAnimationFrame(animate);
 }
