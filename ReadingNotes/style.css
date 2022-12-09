@@ -49,6 +49,10 @@ body {
     border-radius: 4px;
 }
 
+.button:hover {
+    background-color: orange;
+}
+
 .button_title {
     font-size: xx-large;
     margin: 15px;

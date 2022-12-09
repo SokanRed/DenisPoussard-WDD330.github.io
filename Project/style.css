@@ -28,6 +28,10 @@ h2 a {
     border-radius: 4px;
 }
 
+.button:hover {
+    background-color: orange;
+}
+
 .code {
     color: white;
     padding-bottom: 10px;
