@@ -16,6 +16,7 @@
         <div class="navigation">
             <a href="../index.html" class="button" target="_blank">Home</a>
             <a href="./index.html" class="button" target="_blank">Reading Notes</a>
+            <a href="./TeamActivity/index.html" class="button" target="_blank">Team Activity</a>
             <a href="../Project/index.html" class="button" target="_blank">Projects</a>
             <a href="../Challenge/index.html" class="button" target="_blank">Challenges</a>
         </div>
@@ -619,16 +620,17 @@
             <div class="dropdown">
                 <h2 class="start">&#9660 Question</h2>
                 <div class="dropdown-content">
-                    <h2>Question</h2>
+                    <h2 class="dropdown-cont-title">Question</h2>
                     <p>Which value does x have after execution of the following code? <br>
-                        <ul>
-                            <li>> 1 let x = ‘Laurel’;</li>
-                            <li>> 2 let y = ‘Hardy’;</li>
-                            <li>> 3 let z = y;</li>
-                            <li>> 4 y = x;</li>
-                            <li>> 5 x = z;</li>
-                        </ul>Answer : ‘Hardy’ <br>Line 3 | y = ‘Hardy’ <br>Line 4 |The value of y changes (y = ‘Laurel’) <br>Line 3 | z = y (z = ‘Laurel’) <br>Line 5 | x = z (x = ‘Laurel’) <br>But the answer is ‘Hardy’, Is the fact that line 5 goes back to
-                        line 3 to get the answer, don't consider what happens in line 4 ?
+                        <dl>
+                            <dd> 1 > let x = ‘Laurel’;</dd>
+                            <dd> 2 > let y = ‘Hardy’;</dd>
+                            <dd> 3 > let z = y;</dd>
+                            <dd> 4 > y = x;</dd>
+                            <dd> 5 > x = z;</dd>
+                        </dl>Answer : ‘Hardy’<br>
+                        <br>Line 3 | y = ‘Hardy’ <br>Line 4 |The value of y changes (y = ‘Laurel’) <br>Line 3 | z = y (z = ‘Laurel’) <br>Line 5 | x = z (x = ‘Laurel’) <br>But the answer is ‘Hardy’, Is the fact that line 5 goes back to line 3 to get the
+                        answer, doesn't consider what happens in line 4 ?
                     </p>
                     <h2>Answer</h2> line 4 (y = x) does not change the value of z, even if the value of y changed
                 </div>
