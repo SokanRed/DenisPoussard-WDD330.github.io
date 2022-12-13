@@ -6,62 +6,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Home</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style2.css">
 </head>
 
 <body>
-    <header class="header">
-        <h1>WDD 330 Development: Web Frontend Development II</h1>
-        <h2>----- Portfolio | Home -----</h2>
-        <div class="navigation">
-            <a href="./ReadingNotes/index.html" class="button" target="_blank">Reading Notes</a>
-            <a href="./TeamActivity/index.html" class="button" target="_blank">Team Activity</a>
-            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Project/index.html" class="button" target="_blank">Projects</a>
-            <a href="./Challenge/index.html" class="button" target="_blank">Challenges</a>
+    <!-- Navigation Latteral -->
+    <div id="nav-latteral">
+        <div id="nav-close" class="nav-button">
+            <ion-icon name="close"></ion-icon>
         </div>
-    </header>
-
-    <div class="weekButtons">
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW01.html" class="btnWeek" id="btnWeek1" target="_blank">Week 01</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW02.html" class="btnWeek" id="btnWeek2" target="_blank">Week 02</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW03.html" class="btnWeek" id="btnWeek3" target="_blank">Week 03</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW04.html" class="btnWeek" id="btnWeek4" target="_blank">Week 04</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW05.html" class="btnWeek" id="btnWeek5" target="_blank">Week 05</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW06.html" class="btnWeek" id="btnWeek6" target="_blank">Week 06</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW07.html" class="btnWeek" id="btnWeek7" target="_blank">Week 07</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW08.html" class="btnWeek" id="btnWeek8" target="_blank">Week 08</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW09.html" class="btnWeek" id="btnWeek9" target="_blank">Week 09</a>
-        <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW10.html" class="btnWeek" id="btnWeek10" target="_blank">Week 10</a>
-    </div>
-
-    <div class="ressources">
-        <h2>Ressources :</h2>
-        <div class="references">
-            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
-            <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
-            <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
-            <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
-            <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
-            <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
-        </div>
-        <h2><q>Pratice is the Secret of Success.</q></h2>
-        <div class="references">
-            <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
-            <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
-            <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
-            <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
+        <div class="nav-links">
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/" target="_blank">
+                    <ion-icon name="home"></ion-icon>Home</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/index.html" target="_blank">
+                    <ion-icon name="create"></ion-icon>Reading Notes</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/TeamActivity/index.html" target="_blank">
+                    <ion-icon name="people"></ion-icon>Team Activity</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Project/index.html" target="_blank">
+                    <ion-icon name="construct"></ion-icon>
+                    </ion-icon>Projects</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Challenge/index.html" target="_blank">
+                    <ion-icon name="barbell"></ion-icon>Challenges</a>
+            </div>
         </div>
     </div>
+    <div id="nav-wrapper"></div>
+    <nav>
+        <div id="nav-open" class="nav-button">
+            <ion-icon name="reorder-three"></ion-icon>
+        </div>
+    </nav>
+    <!-- Navigation Latteral -->
 
-    <div class="footer">
-        <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
-        <hr>
-        <h2>Teacher : Johan Baer</h2>
-        <hr>
-    </div>
+    <main>
+        <header class="header">
+            <h1>WDD 330 Development: Web Frontend Development II</h1>
+            <h2>----- Portfolio | Home -----</h2>
+        </header>
 
+        <img src="fotis.jpg" alt="">
 
-    <script src="./script.js"></script>
+        <div class="weekButtons">
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW01.html" class="btnWeek" id="btnWeek1" target="_blank">Week 01</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW02.html" class="btnWeek" id="btnWeek2" target="_blank">Week 02</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW03.html" class="btnWeek" id="btnWeek3" target="_blank">Week 03</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW04.html" class="btnWeek" id="btnWeek4" target="_blank">Week 04</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW05.html" class="btnWeek" id="btnWeek5" target="_blank">Week 05</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW06.html" class="btnWeek" id="btnWeek6" target="_blank">Week 06</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW07.html" class="btnWeek" id="btnWeek7" target="_blank">Week 07</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW08.html" class="btnWeek" id="btnWeek8" target="_blank">Week 08</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW09.html" class="btnWeek" id="btnWeek9" target="_blank">Week 09</a>
+            <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW10.html" class="btnWeek" id="btnWeek10" target="_blank">Week 10</a>
+        </div>
+
+        <div class="ressources">
+            <h2>Ressources :</h2>
+            <div class="references">
+                <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
+                <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
+                <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
+                <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
+                <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
+                <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
+            </div>
+            <h2><q>Pratice is the Secret of Success.</q></h2>
+            <div class="references">
+                <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
+                <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
+                <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
+                <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+            <hr>
+            <h2>Teacher : Johan Baer</h2>
+            <hr>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
