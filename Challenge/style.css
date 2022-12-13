@@ -1,0 +1,219 @@
+body {
+    width: 1050px;
+    margin: 0 auto;
+    background-color: darkblue;
+    position: relative;
+}
+
+
+/* Nav lateral */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: aqua;
+    z-index: 1;
+}
+
+main {
+    width: 100%;
+    overflow: auto;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* main::-webkit-scrollbar {
+    background-color: aquamarine;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: blue;
+} */
+
+#nav-latteral {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: aqua;
+    z-index: 3;
+    height: 100%;
+    width: max-content;
+    transition: all 0.1s ease;
+}
+
+#nav-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    opacity: .6;
+    z-index: 2;
+    display: none;
+}
+
+#nav-wrapper.active {
+    display: block;
+}
+
+#nav-close {
+    margin-bottom: 50px;
+}
+
+.nav-links {
+    padding: 10px 45px 10px 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+}
+
+.nav-link {
+    cursor: pointer;
+    font-size: 20px;
+    color: darkblue;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: orange;
+}
+
+.nav-link ion-icon {
+    margin-right: 15px;
+}
+
+.nav-link,
+.nav-button {
+    transition: all 0.2s ease;
+}
+
+.nav-button {
+    color: darkblue;
+    font-size: 50px;
+    cursor: pointer;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: bisque;
+    color: orange;
+}
+
+
+/* header */
+
+h1,
+h2,
+h3 {
+    padding: 15px;
+}
+
+.header {
+    background-color: blue;
+    text-align: center;
+    color: lightyellow;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+h2 a {
+    color: white;
+}
+
+.button {
+    background-color: azure;
+    color: blue;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 12px;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: orange;
+    color: darkblue;
+}
+
+.code {
+    color: white;
+    padding-bottom: 10px;
+}
+
+.challenges {
+    margin: 20px auto;
+    width: 1000px;
+    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.project {
+    background-color: blue;
+    border: solid 2px blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    border: solid 1px blue;
+}
+
+.subtitle {
+    background-color: blue;
+    color: lightyellow;
+    text-align: center;
+}
+
+
+/* footer */
+
+.footer {
+    color: lightyellow;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ressources {
+    background-color: lightblue;
+    padding: 5px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.references {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+q {
+    color: blue;
+}

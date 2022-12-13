@@ -1,0 +1,109 @@
+body {
+    background-color: darkblue;
+    overflow: hidden;
+    position: relative;
+}
+
+a {
+    color: white;
+}
+
+main {
+    background-image: url(gael.jpg);
+    color: darkblue;
+    width: 400px;
+    height: 600px;
+    margin: 20px auto;
+    border: solid 2px white;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+main::-webkit-scrollbar {
+    background-color: aquamarine;
+    width: 4px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: blue;
+}
+
+.filter-container {
+    position: fixed;
+    top: 510px;
+    width: 380px;
+    background-color: orange;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+h2 {
+    background-color: aquamarine;
+    color: darkblue;
+    text-align: center;
+    padding: 10px;
+}
+
+.title {
+    margin: 0;
+}
+
+input {
+    margin: 10px auto;
+    display: block;
+    font-size: 1.4rem;
+    text-align: center;
+    transition: 0.2s;
+}
+
+input:focus {
+    border-radius: 30px;
+    background: rgb(238, 238, 238);
+}
+
+.range-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="range"] {
+    width: 250px;
+    margin: 0 10px 10px 0;
+}
+
+.range-container span {
+    font-size: 1.2rem;
+    transform: translateY(-3px);
+}
+
+.btnSort:hover {
+    background-color: blue;
+    color: yellow;
+}
+
+.countries-container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card {
+    flex: 1 0 20%;
+    min-width: 260px;
+    background: darkblue;
+    margin: 5px;
+    color: white;
+    border-radius: 20px;
+    padding: 20px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+img {
+    height: 100px;
+    width: 160px;
+    object-fit: cover;
+    border: solid 1px white;
+}
