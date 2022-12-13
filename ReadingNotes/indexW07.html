@@ -10,358 +10,400 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1>WDD 330 Development: Web Frontend Development II</h1>
-        <h2>Reading Notes | Week 07</h2>
-        <div class="navigation">
-            <a href="../index.html" class="button" target="_blank">Home</a>
-            <a href="./index.html" class="button" target="_blank">Reading Notes</a>
-            <a href="../Project/index.html" class="button" target="_blank">Projects</a>
-            <a href="../Challenge/index.html" class="button" target="_blank">Challenges</a>
+    <!-- Navigation Latteral -->
+    <div id="nav-latteral">
+        <div id="nav-close" class="nav-button">
+            <ion-icon name="close"></ion-icon>
         </div>
-    </header>
-    <h2 class="book-title">From "Novice to Ninja"</h2>
-    <section class="main">
-        <div class="notes">
+        <div class="nav-links">
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/" target="_blank">
+                    <ion-icon name="home"></ion-icon>Home</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/index.html" target="_blank">
+                    <ion-icon name="create"></ion-icon>Reading Notes</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/TeamActivity/index.html" target="_blank">
+                    <ion-icon name="people"></ion-icon>Team Activity</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Project/index.html" target="_blank">
+                    <ion-icon name="construct"></ion-icon>
+                    </ion-icon>Projects</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Challenge/index.html" target="_blank">
+                    <ion-icon name="barbell"></ion-icon>Challenges</a>
+            </div>
+        </div>
+    </div>
+    <div id="nav-wrapper"></div>
+    <nav>
+        <div id="nav-open" class="nav-button">
+            <ion-icon name="reorder-three"></ion-icon>
+        </div>
+    </nav>
+    <!-- Navigation Latteral -->
 
-            <!-------------------------------- Chapter 11 | Further Functions ---------------------------------------------->
+    <main>
+        <header class="header">
+            <h1>WDD 330 Development: Web Frontend Development II</h1>
+            <h2>Reading Notes | Week 07</h2>
+        </header>
+        <h2 class="book-title">From "Novice to Ninja"</h2>
+        <section class="main">
+            <div class="notes">
 
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 11 | Further Functions</h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">Further Functions</h2>
+                <!-------------------------------- Chapter 11 | Further Functions ---------------------------------------------->
 
-                    <!---------------------------------- Function Properties and Methods ---------------------------------------------->
-                    <h3 class="subtitle">Function Properties and Methods</h3>
-                    <p>The fact that functions are first-class objects means they can have properties and methods themselves.</p>
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 11 | Further Functions</h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">Further Functions</h2>
 
-                    <h4>Call and Apply Methods</h4>
-                    <p>The <i>call()</i> method can be used to set the value of <i>this</i> inside a function to an object that is provided as the first argument.</p>
+                        <!---------------------------------- Function Properties and Methods ---------------------------------------------->
+                        <h3 class="subtitle">Function Properties and Methods</h3>
+                        <p>The fact that functions are first-class objects means they can have properties and methods themselves.</p>
 
-                    <h4>Custom Properties</h4>
-                    <p>There is nothing to stop you adding your own properties to functions in the same way that you can add properties to any object in JavaScript. A useful feature of this is that it provides result caching, or memoization.</p>
+                        <h4>Call and Apply Methods</h4>
+                        <p>The <i>call()</i> method can be used to set the value of <i>this</i> inside a function to an object that is provided as the first argument.</p>
 
-                    <!---------------------------------- Immediately Invoked Function Expressions ---------------------------------------------->
-                    <h3 class="subtitle">Immediately Invoked Function Expressions</h3>
-                    <p>An Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing parentheses at the end of the function
-                        definition (remember we use parentheses to invoke a function). The function also has to be made into an expression, which is done by placing the whole declaration inside parentheses, as in this example:</p>
-                    <dl class="example">
-                        <dt>(function(){</dt>
-                        <dt>const temp = 'World';</dt>
-                        <dt>console.log(`Hello ${temp}`);</dt>
-                        <dt>})();</dt>
-                        <dt>&lt;&lt; 'Hello World'</dt>
-                    </dl>
-                    <p>IIFEs are a useful way of performing a task while keeping any variables wrapped up within the scope of the function. This means the global namespace is not polluted with lots of variable names.</p>
+                        <h4>Custom Properties</h4>
+                        <p>There is nothing to stop you adding your own properties to functions in the same way that you can add properties to any object in JavaScript. A useful feature of this is that it provides result caching, or memoization.</p>
 
-                    <h4>Temporary Variables</h4>
-                    <p>There is no way to remove a variable from a scope once it’s been declared. Placing any code that uses the temporary variable inside an IIFE will ensure it’s only available while the IIFE is invoked, then it will disappear.</p>
+                        <!---------------------------------- Immediately Invoked Function Expressions ---------------------------------------------->
+                        <h3 class="subtitle">Immediately Invoked Function Expressions</h3>
+                        <p>An Immediately Invoked Function Expression – or IIFE – (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing parentheses at the end of the
+                            function definition (remember we use parentheses to invoke a function). The function also has to be made into an expression, which is done by placing the whole declaration inside parentheses, as in this example:</p>
+                        <dl class="example">
+                            <dt>(function(){</dt>
+                            <dt>const temp = 'World';</dt>
+                            <dt>console.log(`Hello ${temp}`);</dt>
+                            <dt>})();</dt>
+                            <dt>&lt;&lt; 'Hello World'</dt>
+                        </dl>
+                        <p>IIFEs are a useful way of performing a task while keeping any variables wrapped up within the scope of the function. This means the global namespace is not polluted with lots of variable names.</p>
 
-                    <h4>Initialization Code</h4>
-                    <p>An IIFE can be used to set up any initialization code that there’ll be no need for again. Because the code is only run once, there’s no need to create any reusable, named functions, and all the variables will also be temporary.</p>
+                        <h4>Temporary Variables</h4>
+                        <p>There is no way to remove a variable from a scope once it’s been declared. Placing any code that uses the temporary variable inside an IIFE will ensure it’s only available while the IIFE is invoked, then it will disappear.</p>
 
-                    <h4>Safe Use of Strict Mode</h4>
-                    <p>One of the problems with simply placing <i>'use strict'</i> at the beginning of a file is that it will enforce strict mode on all the JavaScript in the file, and if you’re using other people’s code, there’s no guarantee that they’ve
-                        coded in strict mode. To avoid this, the recommended way to use strict mode is to place all your code inside an IIFE</p>
-                    <dl class="example">
-                        <dt>(function() {</dt>
-                        <dd>'use strict';</dd>
-                        <br>
-                        <dt>// All your code would go inside this function</dt>
-                        <br>
-                        <dt>})();</dt>
-                    </dl>
+                        <h4>Initialization Code</h4>
+                        <p>An IIFE can be used to set up any initialization code that there’ll be no need for again. Because the code is only run once, there’s no need to create any reusable, named functions, and all the variables will also be temporary.</p>
 
-                    <h4>Creating Self-contained Code Blocks</h4>
-                    <p>An IIFE can be used to enclose a block of code inside its own private scope so it doesn’t interfere with any other part of the program. Using IIFEs in this way means code can be added or removed separately.</p>
+                        <h4>Safe Use of Strict Mode</h4>
+                        <p>One of the problems with simply placing <i>'use strict'</i> at the beginning of a file is that it will enforce strict mode on all the JavaScript in the file, and if you’re using other people’s code, there’s no guarantee that they’ve
+                            coded in strict mode. To avoid this, the recommended way to use strict mode is to place all your code inside an IIFE</p>
+                        <dl class="example">
+                            <dt>(function() {</dt>
+                            <dd>'use strict';</dd>
+                            <br>
+                            <dt>// All your code would go inside this function</dt>
+                            <br>
+                            <dt>})();</dt>
+                        </dl>
 
-                    <!---------------------------------- Functions that Define and Rewrite Themselves ---------------------------------------------->
-                    <h3 class="subtitle">Functions that Define and Rewrite Themselves</h3>
-                    <p>The dynamic nature of JavaScript means that a function is able to not only call itself, but define itself, and even redefine itself. This is done by assigning an anonymous function to a variable that has the same name as the function.</p>
+                        <h4>Creating Self-contained Code Blocks</h4>
+                        <p>An IIFE can be used to enclose a block of code inside its own private scope so it doesn’t interfere with any other part of the program. Using IIFEs in this way means code can be added or removed separately.</p>
 
-                    <h4>Init-Time Branching</h4>
-                    <p>This technique can be used with the feature detection that we discussed in the last chapter to create functions that rewrite themselves, known as init-time branching. This enables the functions to work more effectively in the browser,
-                        and avoid checking for features every time they’re invoked.</p>
+                        <!---------------------------------- Functions that Define and Rewrite Themselves ---------------------------------------------->
+                        <h3 class="subtitle">Functions that Define and Rewrite Themselves</h3>
+                        <p>The dynamic nature of JavaScript means that a function is able to not only call itself, but define itself, and even redefine itself. This is done by assigning an anonymous function to a variable that has the same name as the function.</p>
 
-                    <!---------------------------------- Recursive Functions ---------------------------------------------->
-                    <h3 class="subtitle">Recursive Functions</h3>
-                    <p>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use when iterative processes are involved. A common example is a function that calculates the factorial of a number:</p>
-                    <dl class="example">
-                        <dt>function factorial(n) {</dt>
-                        <dd>if (n === 0) {</dd>
-                        <dd style="padding-left: 40px;">return 1;</dd>
-                        <dd>} else {</dd>
-                        <dd style="padding-left: 40px;">return n * factorial(n - 1);</dd>
-                        <dd>}</dd>
-                        <dt>}</dt>
-                    </dl>
+                        <h4>Init-Time Branching</h4>
+                        <p>This technique can be used with the feature detection that we discussed in the last chapter to create functions that rewrite themselves, known as init-time branching. This enables the functions to work more effectively in the browser,
+                            and avoid checking for features every time they’re invoked.</p>
 
-                    <!---------------------------------- Callbacks ---------------------------------------------->
-                    <h3 class="subtitle">Callbacks</h3>
-                    <p>We covered callbacks in <a href="./indexW02.html">Chapter 4</a> . You’ll recall that they’re functions passed to other functions as arguments and then invoked inside the function they are passed to.</p>
+                        <!---------------------------------- Recursive Functions ---------------------------------------------->
+                        <h3 class="subtitle">Recursive Functions</h3>
+                        <p>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use when iterative processes are involved. A common example is a function that calculates the factorial of a number:</p>
+                        <dl class="example">
+                            <dt>function factorial(n) {</dt>
+                            <dd>if (n === 0) {</dd>
+                            <dd style="padding-left: 40px;">return 1;</dd>
+                            <dd>} else {</dd>
+                            <dd style="padding-left: 40px;">return n * factorial(n - 1);</dd>
+                            <dd>}</dd>
+                            <dt>}</dt>
+                        </dl>
 
-                    <h4>Event-driven Asynchronous Programming</h4>
-                    <p>Callbacks can be used to facilitate event-driven asynchronous programming. JavaScript is a single-threaded environment, which means only one piece of code will ever be processed at a time.</p>
+                        <!---------------------------------- Callbacks ---------------------------------------------->
+                        <h3 class="subtitle">Callbacks</h3>
+                        <p>We covered callbacks in <a href="./indexW02.html">Chapter 4</a> . You’ll recall that they’re functions passed to other functions as arguments and then invoked inside the function they are passed to.</p>
 
-                    <h4>Callback Hell</h4>
-                    <p>The increase in the use of asynchronous programming in JavaScript has meant that more and more callbacks are being used. This can result in messy and confusing 'spaghetti code'. This is when more than one callback is used in the same
-                        function, resulting in a large number of nested blocks that are difficult to comprehend.</p>
-                    <p>Callback hell is the term used to refer to this tangled mess of code, and it's such a common issue that it even <a href="http://callbackhell.com" target="_blank">has its own website!</a> </p>
+                        <h4>Event-driven Asynchronous Programming</h4>
+                        <p>Callbacks can be used to facilitate event-driven asynchronous programming. JavaScript is a single-threaded environment, which means only one piece of code will ever be processed at a time.</p>
 
-                    <h4>Promises</h4>
-                    <p>A promise represents the future result of an asynchronous operation. Promises don't do anything that can't already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that can result from
-                        using multiple callbacks.</p>
+                        <h4>Callback Hell</h4>
+                        <p>The increase in the use of asynchronous programming in JavaScript has meant that more and more callbacks are being used. This can result in messy and confusing 'spaghetti code'. This is when more than one callback is used in the
+                            same function, resulting in a large number of nested blocks that are difficult to comprehend.</p>
+                        <p>Callback hell is the term used to refer to this tangled mess of code, and it's such a common issue that it even <a href="http://callbackhell.com" target="_blank">has its own website!</a> </p>
 
-                    <h4>Chaining Multiple Promises</h4>
+                        <h4>Promises</h4>
+                        <p>A promise represents the future result of an asynchronous operation. Promises don't do anything that can't already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that can result from
+                            using multiple callbacks.</p>
 
-                    <h4>Async Functions</h4>
+                        <h4>Chaining Multiple Promises</h4>
 
-                    <h4>Generalized Functions</h4>
+                        <h4>Async Functions</h4>
 
-                    <h4>Functions That Return Functions</h4>
+                        <h4>Generalized Functions</h4>
+
+                        <h4>Functions That Return Functions</h4>
 
 
-                    <!---------------------------------- Closures ---------------------------------------------->
-                    <h3 class="subtitle">Closures</h3>
-                    <p>Closures are one of JavaScript’s most powerful features, but they can be difficult to get your head around initially.</p>
+                        <!---------------------------------- Closures ---------------------------------------------->
+                        <h3 class="subtitle">Closures</h3>
+                        <p>Closures are one of JavaScript’s most powerful features, but they can be difficult to get your head around initially.</p>
 
-                    <h4>Function Scope</h4>
-                    <p>A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program. One of the key principles in creating closures is that an 'inner' function,
-                        which is declared inside another function, has full access to all of the variables declared inside the scope of the function in which it’s declared (the 'outer' function).</p>
+                        <h4>Function Scope</h4>
+                        <p>A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program. One of the key principles in creating closures is that an 'inner' function,
+                            which is declared inside another function, has full access to all of the variables declared inside the scope of the function in which it’s declared (the 'outer' function).</p>
 
-                    <h4>Returning Functions</h4>
-                    <p>A closure is formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function.</p>
+                        <h4>Returning Functions</h4>
+                        <p>A closure is formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function.</p>
 
-                    <!-- <h4>A Practical Example</h4>
+                        <!-- <h4>A Practical Example</h4>
 
                     <h4>A Counter Example</h4> -->
 
-                    <h4>Generators</h4>
-                    <p>ES6 introduced support for generators. These are special functions used to produce iterators that maintain the state of a value. To define a generator function, an asterisk symbol (*) is placed after the function declaration, like
-                        so:
-                    </p>
-                    <dl class="example">
-                        <dt>function* exampleGenerator() {</dt>
-                        <dd>// code for the generator goes here</dd>
-                        <dd>}</dd>
-                    </dl>
+                        <h4>Generators</h4>
+                        <p>ES6 introduced support for generators. These are special functions used to produce iterators that maintain the state of a value. To define a generator function, an asterisk symbol (*) is placed after the function declaration, like
+                            so:
+                        </p>
+                        <dl class="example">
+                            <dt>function* exampleGenerator() {</dt>
+                            <dd>// code for the generator goes here</dd>
+                            <dd>}</dd>
+                        </dl>
 
 
-                    <!---------------------------------- Functional Programming ---------------------------------------------->
-                    <h3 class="subtitle">Functional Programming</h3>
-                    <p>The ability to pass functions as arguments, return them from other functions, and use anonymous functions and closures, are all fundamental elements of functional programming that JavaScript excels at. Functional programming is a programming
-                        paradigm.
-                    </p>
+                        <!---------------------------------- Functional Programming ---------------------------------------------->
+                        <h3 class="subtitle">Functional Programming</h3>
+                        <p>The ability to pass functions as arguments, return them from other functions, and use anonymous functions and closures, are all fundamental elements of functional programming that JavaScript excels at. Functional programming is
+                            a programming paradigm.
+                        </p>
 
-                    <h4>Pure Functions</h4>
-                    <p>A key aspect of functional programming is its use of pure functions. A pure function is a function that adheres to the following rules:</p>
-                    <ol>
-                        <li>1) The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.</li>
-                        <li>2) There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data.</li>
-                        <li>3) Referential transparency. Given the same arguments, a pure function will always return the same result.</li>
-                    </ol>
-                    <p>In order to follow these rules, any pure function must have:</p>
-                    <ul>
-                        <li>At least one argument; otherwise the return value must depend on something other than the arguments of the function, breaking the first rule</li>
-                        <li>A return value; otherwise there’s no point in the function (unless it has changed something else in the program – in which case, it’s broken the 'no side-effects' rule).</li>
-                    </ul>
+                        <h4>Pure Functions</h4>
+                        <p>A key aspect of functional programming is its use of pure functions. A pure function is a function that adheres to the following rules:</p>
+                        <ol>
+                            <li>1) The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.</li>
+                            <li>2) There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying
+                                data.
+                            </li>
+                            <li>3) Referential transparency. Given the same arguments, a pure function will always return the same result.</li>
+                        </ol>
+                        <p>In order to follow these rules, any pure function must have:</p>
+                        <ul>
+                            <li>At least one argument; otherwise the return value must depend on something other than the arguments of the function, breaking the first rule</li>
+                            <li>A return value; otherwise there’s no point in the function (unless it has changed something else in the program – in which case, it’s broken the 'no side-effects' rule).</li>
+                        </ul>
 
-                    <h4>Higher-Order Functions</h4>
-                    <p>Higher-order functions are functions that accept another function as an argument, or return another function as a result, or both.</p>
+                        <h4>Higher-Order Functions</h4>
+                        <p>Higher-order functions are functions that accept another function as an argument, or return another function as a result, or both.</p>
 
-                    <h4>Currying</h4>
-                    <p>A function is said to be curried when not all arguments have been supplied to the function, so it returns another function that retains the arguments already provided, and expects the remaining arguments that were omitted when the
-                        original function was called. A final result is only returned once all the expected arguments have eventually been provided. Currying relies on higher-order functions that are able to return partially applied functions. All curried
-                        functions are higher-order functions because they return a function, but not all higher-order functions are curried.</p>
+                        <h4>Currying</h4>
+                        <p>A function is said to be curried when not all arguments have been supplied to the function, so it returns another function that retains the arguments already provided, and expects the remaining arguments that were omitted when
+                            the original function was called. A final result is only returned once all the expected arguments have eventually been provided. Currying relies on higher-order functions that are able to return partially applied functions.
+                            All curried functions are higher-order functions because they return a function, but not all higher-order functions are curried.</p>
 
-                    <h4>A General Curry Function</h4>
-                    <p>In the last example, we hard-coded the <i>multiplier()</i> function so it could be curried. It’s possible to use a <i>curry()</i> function to take any function and allow it to be partially applied. The curry function is the following:</p>
-                    <dl class="example">
-                        <dt>function curry(func,...oldArgs) {</dt>
-                        <dd>return function(...newArgs) {</dd>
-                        <dd style="padding-left: 40px;"> const allArgs = [...oldArgs,...newArgs];</dd>
-                        <dd style="padding-left: 40px;"> return func(...allArgs);</dd>
-                        <dd>}</dd>
-                        <dt>}</dt>
-                    </dl>
+                        <h4>A General Curry Function</h4>
+                        <p>In the last example, we hard-coded the <i>multiplier()</i> function so it could be curried. It’s possible to use a <i>curry()</i> function to take any function and allow it to be partially applied. The curry function is the following:</p>
+                        <dl class="example">
+                            <dt>function curry(func,...oldArgs) {</dt>
+                            <dd>return function(...newArgs) {</dd>
+                            <dd style="padding-left: 40px;"> const allArgs = [...oldArgs,...newArgs];</dd>
+                            <dd style="padding-left: 40px;"> return func(...allArgs);</dd>
+                            <dd>}</dd>
+                            <dt>}</dt>
+                        </dl>
 
-                    <!---------------------------------- Getting Functional ---------------------------------------------->
-                    <h3 class="subtitle">Getting Functional</h3>
-                    <p>Advocates of functional programming can be quite partisan about its benefits. But even adopting some of its principles, such as keeping functions as pure as possible, and keeping changes in state to a minimum, will help improve the
-                        standard of your programming.</p>
+                        <!---------------------------------- Getting Functional ---------------------------------------------->
+                        <h3 class="subtitle">Getting Functional</h3>
+                        <p>Advocates of functional programming can be quite partisan about its benefits. But even adopting some of its principles, such as keeping functions as pure as possible, and keeping changes in state to a minimum, will help improve
+                            the standard of your programming.</p>
 
-                </div>
-            </div>
-
-            <!--------------------------------- Chapter 13 | AJAX ------------------------------------------------->
-
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 13 | AJAX</h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">AJAX <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX" class="reference" target="_blank">mdn AJAX</a></h2>
-                    <a href="https://www.semanticscholar.org/paper/Ajax%3A-A-New-Approach-to-Web-Applications-Garrett/c440ae765ff19ddd3deda24a92ac39cef9570f1e?p2df" target="_blank">Ajax: A New Approach to Web Applications</a>
-
-                    <!---------------------------------- Clients and Servers ---------------------------------------------->
-                    <h3 class="subtitle">Clients and Servers</h3>
-                    <p>The web of computers known as the internet can be separated into two parts: clients and servers. A client, such as a web browser, will request a resource (usually a web page) from a server, which processes the request and sends back
-                        a response to the client.</p>
-                    <p>JavaScript was originally designed as a client-side scripting language, meaning that it ran locally in the browser, adding dynamic features to the web page that was returned from the server. Ajax allows JavaScript to request resources
-                        from a server on behalf of the client. The resources requested are usually JSON data or small fragments of text or HTML rather than a whole web page. Consequently, a server is required when requesting resources using Ajax. Typically
-                        this involves using a server-side language, such as PHP, Ruby, Node.js, or .NET to serve the data response following an Ajax request (usually from a back-end database).</p>
-
-                    <!---------------------------------- A brief History of Ajax ---------------------------------------------->
-                    <h3 class="subtitle">A brief History of Ajax</h3>
-                    <p>The term 'Ajax' was coined by Jesse James Garrett in 2005 in the article <a href="https://web.archive.org/web/20080702075113/http://www.adaptivepath.com/ideas/essays/archives/000385.php" target="_blank">“Ajax: A New Approach to Web Applications,”</a>                        where he referred to techniques being used by Google in its recent web applications. Ajax was a neat acronym that referred to the different parts of the process being used: Asynchronous JavaScript and XML:</p>
-                    <ul>
-                        <li><strong>Asynchronous</strong> | When a request for data is sent, the program doesn’t have to stop and wait for the response. It can carry on running, waiting for an event to fire when a response is received. By using callbacks
-                            to manage this, programs are able to run in an efficient way, avoiding lag as data is transferred back and forth.</li>
-                        <li><strong>JavaScript</strong> | JavaScript was always considered a 'front-end' language, not used to communicate with the server. Ajax enabled JavaScript to send requests and receive responses from a server, allowing content to be
-                            updated in real time.</li>
-                        <li><strong>XML</strong> | When the term Ajax was originally coined, XML documents were often used to return data. Many different types of data can be sent, but by far the most commonly used in Ajax nowadays is JSON, which is more
-                            lightweight and easier to parse than XML. JSON also has the advantage of being natively supported in JavaScript</li>
-                    </ul>
-                    <p>The explosion in the use of public APIs also means that Ajax is used more than ever to transport data back and forth between sites. An application programming interface (API) is a collection of methods that allows external access to
-                        another program or service. Many websites allow controlled access to their data via public APIs.</p>
-
-                    <!---------------------------------- The Fetch API ---------------------------------------------->
-                    <h3 class="subtitle">The Fetch API</h3>
-                    <p>The XMLHttpRequest object was finally standardized by the WHATWG and W3C as part of the HTML5 specification, despite it originally being implemented by Microsoft many years earlier, and already available in most browsers. It has since
-                        been superseded by the Fetch API, which is currently a living standard for requesting and sending data asynchronously across a network. The Fetch API uses promises to avoid callback hell, and also streamlines a number of concepts
-                        that had become cumbersome when using the XMLHttpRequest object.</p>
-
-                    <h4>Basic Usage</h4>
-                    <p>The Fetch API provides a global <i>fetch()</i> method that only has one mandatory argument, which is the URL of the resource you wish to fetch. A very basic example would look something like the following piece of code:</p>
-                    <dl class="example">
-                        <dt>fetch('https://example.com/data')</dt>
-                        <dt>.then( // code that handles the response )</dt>
-                        <dt>.catch( // code that runs if the server returns an error )</dt>
-                    </dl>
-
-                    <h4>Response Interface</h4>
-                    <p>The Fetch API introduced the Response interface that deals with the object that’s returned when the promise is fulfilled. Response objects have a number of properties and methods that allow us to process the response effectively.</p>
-
-                    <h5>Redirects</h5>
-                    <p>The <i>redirect()</i> method can be used to redirect to another URL. It creates a new promise that resolves to the response from the redirected URL.</p>
-                    <h5>Text Responses</h5>
-                    <p>The <i>text()</i> method takes a stream of text from the response, reads it to completion and then returns a promise that resolves to a USVSting object that can be treated as a string in JavaScript.</p>
-                    <h5>File Responses</h5>
-                    <p>The <i>blob()</i> method is used to read a file of raw data, such as an image or a spreadsheet. Once it has read the whole file, it returns a promise that resolves with a <i>blob</i> object.</p>
-                    <h5>JSON Responses</h5>
-                    <p>JSON is probably the most common format for AJAX responses. The <i>json()</i> method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.</p>
-                    <h5>Creating Response Objects</h5>
-                    <p>Although most of the time you will be dealing with a response object that is returned from a request you make, you can also create your own response objects using a constructor function.</p>
-
-                    <h4>Request Interface</h4>
-                    <p>We can get more fine-grained control over the request being made by providing a <i>Request</i> object as an argument. This allows a number of options to be set about the request. Request objects are created using the <i>Request()</i>                        constructor, and include the following properties:</p>
-                    <ul>
-                        <li> <i>url</i> – The URL of the requested resource (the only property that is required).</li>
-                        <li> <i>method</i> – a string that specifies which HTTP method should be used for the request. By default, this is 'GET'.</li>
-                        <li> <i>headers</i> – This is a Headers object (see later section) that provides details of the request's headers.</li>
-                        <li> <i>mode</i> – Allows you to specify if CORS is used or not. CORS is enabled by default.</li>
-                        <li> <i>cache</i> – Allows you to specify how the request will use the browser's cache. For example, you can force it to request a resource and update the cache with the result, or you can force it to only look in the cache for the
-                            resource.
-                        </li>
-                        <li> <i>credentials</i> – Lets you specify if cookies should be allowed with the request.</li>
-                        <li> <i>redirect</i> – Specifies what to do if the response returns a redirect. There’s a choice of three values: 'follow' (the redirect is followed), 'error' (an error is thrown) or 'manual' (the user has to click on a link to follow
-                            the redirect).</li>
-                    </ul>
-                    <!-- Hypertext Transfer Protocol -->
-                    <div class="protocol">
-                        <h3 class="protocol-title">Hypertext Transfer Protocol</h3>
-                        <div class="protocol-contain">
-                            <p>The Web is built upon the Hypertext Transfer Protocol, or HTTP. When a client (usually a browser) makes a request to a server, it contains information about which HTTP verb to use. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
-                                    target="_blank">HTTP verbs, also known as HTTP methods</a> are the what HTTP uses to tell the server what type of request is being made, which then determines the server will deal with the request.</p>
-                            <p>The five most commonly used verbs when dealing with resources on the web are:</p>
-                            <ul>
-                                <li>GET requests to retrieve resources</li>
-                                <li>POST requests, usually used to create a resource but can actually perform any task</li>
-                                <li>PUT requests to upsert, which means insert a resource or update it entirely</li>
-                                <li>PATCH requests to make partial updates to a resource</li>
-                                <li>DELETE requests to delete a resources.</li>
-                            </ul>
-                            <p>This <a href="https://robm.me.uk/2013/09/http-verbs/" target="_blank">excellent blog post</a> by Rob Miller explains each of these verbs in more depth </p>
-                        </div>
                     </div>
-                    <!-- Hypertext Transfer Protocol -->
-                    <p>A constructor function is used to create a new Request object. The <i>url</i> property is the first argument, and is required. The second argument is an object made up of any of the other properties. Once the Request object is assigned
-                        to a variable, it can then be used as the parameter of the <i>fetch()</i> method. Alternatively, you can enter the URL and object directly as arguments of the <i>fetch()</i> method, without having to create a Request object.</p>
+                </div>
 
-                    <h4>Headers Interface</h4>
-                    <p>HTTP headers are used to pass on any additional information about a request or response. Typical information contained in headers includes the file-type of the resource, cookie information, authentication information and when the resource
-                        was last modified. The Fetch API introduced a <i>Headers</i> interface, which can be used to create a Headers object, which can then be added as a property of Request and Response objects.</p>
+                <!--------------------------------- Chapter 13 | AJAX ------------------------------------------------->
 
-                    <h4>Putting It All Together</h4>
-                    <p>We can use the Headers, Request and Response objects to put together a typical example that sets up the URL, Request and Headers before calling the <i>fetch()</i> method.</p>
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 13 | AJAX</h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">AJAX <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX" class="reference" target="_blank">mdn AJAX</a></h2>
+                        <a href="https://www.semanticscholar.org/paper/Ajax%3A-A-New-Approach-to-Web-Applications-Garrett/c440ae765ff19ddd3deda24a92ac39cef9570f1e?p2df" target="_blank">Ajax: A New Approach to Web Applications</a>
 
-                    <!---------------------------------- Receiving Information ---------------------------------------------->
-                    <h3 class="subtitle">Receiving Information</h3>
-                    <p><a href="./indexW07Ex13-01.html" target="_blank">Example</a> to demonstrate how to update a web page using Ajax.</p>
-                    <p>(<a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/indexW07Ex13-01.html" target="_blank">HTML file</a>) See comments in the <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/mainW07Ex13-01.js"
-                            target="_blank"> JavaScript file</a> </p>
+                        <!---------------------------------- Clients and Servers ---------------------------------------------->
+                        <h3 class="subtitle">Clients and Servers</h3>
+                        <p>The web of computers known as the internet can be separated into two parts: clients and servers. A client, such as a web browser, will request a resource (usually a web page) from a server, which processes the request and sends
+                            back a response to the client.</p>
+                        <p>JavaScript was originally designed as a client-side scripting language, meaning that it ran locally in the browser, adding dynamic features to the web page that was returned from the server. Ajax allows JavaScript to request resources
+                            from a server on behalf of the client. The resources requested are usually JSON data or small fragments of text or HTML rather than a whole web page. Consequently, a server is required when requesting resources using Ajax.
+                            Typically this involves using a server-side language, such as PHP, Ruby, Node.js, or .NET to serve the data response following an Ajax request (usually from a back-end database).</p>
 
-                    <!---------------------------------- Sending Information ---------------------------------------------->
-                    <h3 class="subtitle">Sending Information</h3>
-                    <p>We can also use Ajax to send information. This can be a variety of formats, but is usually a JSON string.</p>
-                    <p>To illustrate this, we're going to create a very simple <a href="./indexW07Ex13-02.html" target="_blank">To Do list application</a> (<a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/indexW07Ex13-02.html"
-                            target="_blank">HTML file</a>) that sends information about a task to a server in JSON format, then receives a response to confirm that the task has been saved on a server.</p>
-                    <p>Unfortunately, we don't have a database to save our tasks to, so we're going to have to use a dummy site called <a href="https://jsonplaceholder.typicode.com" target="_blank">JSONPlaceholder</a> . This spoofs the process of sending
-                        JSON data to a server, then receiving JSON data in response. It has a number of fake APIs that can be used to create fake examples of posts, comments, albums, photos, todos and users. We'll be using the fake todo API.</p>
-                    <p> See comments in the <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/mainW07Ex13-02.js" target="_blank"> JavaScript file</a></p>
+                        <!---------------------------------- A brief History of Ajax ---------------------------------------------->
+                        <h3 class="subtitle">A brief History of Ajax</h3>
+                        <p>The term 'Ajax' was coined by Jesse James Garrett in 2005 in the article <a href="https://web.archive.org/web/20080702075113/http://www.adaptivepath.com/ideas/essays/archives/000385.php" target="_blank">“Ajax: A New Approach to Web Applications,”</a>                            where he referred to techniques being used by Google in its recent web applications. Ajax was a neat acronym that referred to the different parts of the process being used: Asynchronous JavaScript and XML:</p>
+                        <ul>
+                            <li><strong>Asynchronous</strong> | When a request for data is sent, the program doesn’t have to stop and wait for the response. It can carry on running, waiting for an event to fire when a response is received. By using callbacks
+                                to manage this, programs are able to run in an efficient way, avoiding lag as data is transferred back and forth.</li>
+                            <li><strong>JavaScript</strong> | JavaScript was always considered a 'front-end' language, not used to communicate with the server. Ajax enabled JavaScript to send requests and receive responses from a server, allowing content
+                                to be updated in real time.</li>
+                            <li><strong>XML</strong> | When the term Ajax was originally coined, XML documents were often used to return data. Many different types of data can be sent, but by far the most commonly used in Ajax nowadays is JSON, which is more
+                                lightweight and easier to parse than XML. JSON also has the advantage of being natively supported in JavaScript</li>
+                        </ul>
+                        <p>The explosion in the use of public APIs also means that Ajax is used more than ever to transport data back and forth between sites. An application programming interface (API) is a collection of methods that allows external access
+                            to another program or service. Many websites allow controlled access to their data via public APIs.</p>
 
-                    <!---------------------------------- FormDat ---------------------------------------------->
-                    <h3 class="subtitle">FormData</h3>
-                    <p>The Fetch API includes the <i>FormData</i> interface, which makes it much easier to submit information in forms using Ajax. A <i>FormData</i> instance is created using a constructor function: <i>const data = new FormData();</i></p>
+                        <!---------------------------------- The Fetch API ---------------------------------------------->
+                        <h3 class="subtitle">The Fetch API</h3>
+                        <p>The XMLHttpRequest object was finally standardized by the WHATWG and W3C as part of the HTML5 specification, despite it originally being implemented by Microsoft many years earlier, and already available in most browsers. It has
+                            since been superseded by the Fetch API, which is currently a living standard for requesting and sending data asynchronously across a network. The Fetch API uses promises to avoid callback hell, and also streamlines a number
+                            of concepts that had become cumbersome when using the XMLHttpRequest object.</p>
 
-                    <!---------------------------------- A living Standard ---------------------------------------------->
-                    <h3 class="subtitle">A living Standard</h3>
-                    <p>The Fetch API is, at the time of writing, what is known as a 'living standard', which means that the specification is being developed 'in the wild'. This means that, despite it being available to use, it’s still subject to change as
-                        developers, browser vendors and end-users provide feedback about how it works. It’s an experimental technology, and new features might get added, or the syntax and behavior of some properties and methods might change in the future.</p>
-                    <p>If you don't want to 'live on the edge', you could consider using a library to take care of Ajax requests. The advantage of this approach is that the library will take care of any implementation details behind the scenes – it will
-                        use the most up-to-date methods, such as the fetch API, if it's supported, and fallback on using older methods, if required.</p>
-                    <p>The jQuery library is a good option for this – it has the generic <i>ajax()</i> method that can be used in a very similar way to the <i>fetch()</i> method.</p>
+                        <h4>Basic Usage</h4>
+                        <p>The Fetch API provides a global <i>fetch()</i> method that only has one mandatory argument, which is the URL of the resource you wish to fetch. A very basic example would look something like the following piece of code:</p>
+                        <dl class="example">
+                            <dt>fetch('https://example.com/data')</dt>
+                            <dt>.then( // code that handles the response )</dt>
+                            <dt>.catch( // code that runs if the server returns an error )</dt>
+                        </dl>
 
+                        <h4>Response Interface</h4>
+                        <p>The Fetch API introduced the Response interface that deals with the object that’s returned when the promise is fulfilled. Response objects have a number of properties and methods that allow us to process the response effectively.</p>
+
+                        <h5>Redirects</h5>
+                        <p>The <i>redirect()</i> method can be used to redirect to another URL. It creates a new promise that resolves to the response from the redirected URL.</p>
+                        <h5>Text Responses</h5>
+                        <p>The <i>text()</i> method takes a stream of text from the response, reads it to completion and then returns a promise that resolves to a USVSting object that can be treated as a string in JavaScript.</p>
+                        <h5>File Responses</h5>
+                        <p>The <i>blob()</i> method is used to read a file of raw data, such as an image or a spreadsheet. Once it has read the whole file, it returns a promise that resolves with a <i>blob</i> object.</p>
+                        <h5>JSON Responses</h5>
+                        <p>JSON is probably the most common format for AJAX responses. The <i>json()</i> method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.</p>
+                        <h5>Creating Response Objects</h5>
+                        <p>Although most of the time you will be dealing with a response object that is returned from a request you make, you can also create your own response objects using a constructor function.</p>
+
+                        <h4>Request Interface</h4>
+                        <p>We can get more fine-grained control over the request being made by providing a <i>Request</i> object as an argument. This allows a number of options to be set about the request. Request objects are created using the <i>Request()</i>                            constructor, and include the following properties:</p>
+                        <ul>
+                            <li> <i>url</i> – The URL of the requested resource (the only property that is required).</li>
+                            <li> <i>method</i> – a string that specifies which HTTP method should be used for the request. By default, this is 'GET'.</li>
+                            <li> <i>headers</i> – This is a Headers object (see later section) that provides details of the request's headers.</li>
+                            <li> <i>mode</i> – Allows you to specify if CORS is used or not. CORS is enabled by default.</li>
+                            <li> <i>cache</i> – Allows you to specify how the request will use the browser's cache. For example, you can force it to request a resource and update the cache with the result, or you can force it to only look in the cache for
+                                the resource.
+                            </li>
+                            <li> <i>credentials</i> – Lets you specify if cookies should be allowed with the request.</li>
+                            <li> <i>redirect</i> – Specifies what to do if the response returns a redirect. There’s a choice of three values: 'follow' (the redirect is followed), 'error' (an error is thrown) or 'manual' (the user has to click on a link to
+                                follow the redirect).</li>
+                        </ul>
+                        <!-- Hypertext Transfer Protocol -->
+                        <div class="protocol">
+                            <h3 class="protocol-title">Hypertext Transfer Protocol</h3>
+                            <div class="protocol-contain">
+                                <p>The Web is built upon the Hypertext Transfer Protocol, or HTTP. When a client (usually a browser) makes a request to a server, it contains information about which HTTP verb to use. <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods"
+                                        target="_blank">HTTP verbs, also known as HTTP methods</a> are the what HTTP uses to tell the server what type of request is being made, which then determines the server will deal with the request.</p>
+                                <p>The five most commonly used verbs when dealing with resources on the web are:</p>
+                                <ul>
+                                    <li>GET requests to retrieve resources</li>
+                                    <li>POST requests, usually used to create a resource but can actually perform any task</li>
+                                    <li>PUT requests to upsert, which means insert a resource or update it entirely</li>
+                                    <li>PATCH requests to make partial updates to a resource</li>
+                                    <li>DELETE requests to delete a resources.</li>
+                                </ul>
+                                <p>This <a href="https://robm.me.uk/2013/09/http-verbs/" target="_blank">excellent blog post</a> by Rob Miller explains each of these verbs in more depth </p>
+                            </div>
+                        </div>
+                        <!-- Hypertext Transfer Protocol -->
+                        <p>A constructor function is used to create a new Request object. The <i>url</i> property is the first argument, and is required. The second argument is an object made up of any of the other properties. Once the Request object is
+                            assigned to a variable, it can then be used as the parameter of the <i>fetch()</i> method. Alternatively, you can enter the URL and object directly as arguments of the <i>fetch()</i> method, without having to create a Request
+                            object.
+                        </p>
+
+                        <h4>Headers Interface</h4>
+                        <p>HTTP headers are used to pass on any additional information about a request or response. Typical information contained in headers includes the file-type of the resource, cookie information, authentication information and when the
+                            resource was last modified. The Fetch API introduced a <i>Headers</i> interface, which can be used to create a Headers object, which can then be added as a property of Request and Response objects.</p>
+
+                        <h4>Putting It All Together</h4>
+                        <p>We can use the Headers, Request and Response objects to put together a typical example that sets up the URL, Request and Headers before calling the <i>fetch()</i> method.</p>
+
+                        <!---------------------------------- Receiving Information ---------------------------------------------->
+                        <h3 class="subtitle">Receiving Information</h3>
+                        <p><a href="./indexW07Ex13-01.html" target="_blank">Example</a> to demonstrate how to update a web page using Ajax.</p>
+                        <p>(<a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/indexW07Ex13-01.html" target="_blank">HTML file</a>) See comments in the <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/mainW07Ex13-01.js"
+                                target="_blank"> JavaScript file</a> </p>
+
+                        <!---------------------------------- Sending Information ---------------------------------------------->
+                        <h3 class="subtitle">Sending Information</h3>
+                        <p>We can also use Ajax to send information. This can be a variety of formats, but is usually a JSON string.</p>
+                        <p>To illustrate this, we're going to create a very simple <a href="./indexW07Ex13-02.html" target="_blank">To Do list application</a> (<a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/indexW07Ex13-02.html"
+                                target="_blank">HTML file</a>) that sends information about a task to a server in JSON format, then receives a response to confirm that the task has been saved on a server.</p>
+                        <p>Unfortunately, we don't have a database to save our tasks to, so we're going to have to use a dummy site called <a href="https://jsonplaceholder.typicode.com" target="_blank">JSONPlaceholder</a> . This spoofs the process of sending
+                            JSON data to a server, then receiving JSON data in response. It has a number of fake APIs that can be used to create fake examples of posts, comments, albums, photos, todos and users. We'll be using the fake todo API.</p>
+                        <p> See comments in the <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/blob/main/ReadingNotes/mainW07Ex13-02.js" target="_blank"> JavaScript file</a></p>
+
+                        <!---------------------------------- FormDat ---------------------------------------------->
+                        <h3 class="subtitle">FormData</h3>
+                        <p>The Fetch API includes the <i>FormData</i> interface, which makes it much easier to submit information in forms using Ajax. A <i>FormData</i> instance is created using a constructor function: <i>const data = new FormData();</i></p>
+
+                        <!---------------------------------- A living Standard ---------------------------------------------->
+                        <h3 class="subtitle">A living Standard</h3>
+                        <p>The Fetch API is, at the time of writing, what is known as a 'living standard', which means that the specification is being developed 'in the wild'. This means that, despite it being available to use, it’s still subject to change
+                            as developers, browser vendors and end-users provide feedback about how it works. It’s an experimental technology, and new features might get added, or the syntax and behavior of some properties and methods might change in
+                            the future.</p>
+                        <p>If you don't want to 'live on the edge', you could consider using a library to take care of Ajax requests. The advantage of this approach is that the library will take care of any implementation details behind the scenes – it will
+                            use the most up-to-date methods, such as the fetch API, if it's supported, and fallback on using older methods, if required.</p>
+                        <p>The jQuery library is a good option for this – it has the generic <i>ajax()</i> method that can be used in a very similar way to the <i>fetch()</i> method.</p>
+
+                    </div>
+                </div>
+                <div class="week-flip">
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW06.html" class="flip">
+                        <ion-icon name="chevron-back-outline"></ion-icon> Week 06</a>
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW08.html" class="flip">Week 08 <ion-icon name="chevron-forward-outline"></ion-icon></a>
                 </div>
             </div>
-            <div class="week-flip">
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW06.html" class="flip"><strong>&lt;</strong> Week 06</a>
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW08.html" class="flip">Week 08 <strong>&gt;</strong></a>
+
+            <div class="sidebar">
+                <h2>Code of the Week</h2>
+
+                <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
+            </div>
+        </section>
+
+        <br>
+        <div class="ressources">
+            <h2>Ressources :</h2>
+            <div class="references">
+                <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
+                <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
+                <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
+                <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
+                <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
+                <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
+            </div>
+            <h2><q>Pratice is the Secret of Success.</q></h2>
+            <div class="references">
+                <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
+                <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
+                <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
+                <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
             </div>
         </div>
 
-        <div class="sidebar">
-            <h2>Code of the Week</h2>
-
-            <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
+        <div class="footer">
+            <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+            <hr>
+            <h2>Teacher : Johan Baer</h2>
+            <hr>
         </div>
-    </section>
+    </main>
 
-    <br>
-    <div class="ressources">
-        <h2>Ressources :</h2>
-        <div class="references">
-            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
-            <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
-            <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
-            <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
-            <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
-            <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
-        </div>
-        <h2><q>Pratice is the Secret of Success.</q></h2>
-        <div class="references">
-            <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
-            <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
-            <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
-            <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
-        </div>
-    </div>
-
-    <div class="footer">
-        <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
-        <hr>
-        <h2>Teacher : Johan Baer</h2>
-        <hr>
-    </div>
-
+    <script src="../js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

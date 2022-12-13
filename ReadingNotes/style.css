@@ -1,7 +1,139 @@
 body {
     width: 1200px;
+    height: 100vh;
     margin: 0 auto;
     background-color: darkblue;
+    position: relative;
+}
+
+
+/* Nav lateral */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: aqua;
+    z-index: 1;
+}
+
+main {
+    width: 100%;
+    overflow: auto;
+}
+
+img {
+    width: 100%;
+}
+
+
+/* main::-webkit-scrollbar {
+    background-color: aquamarine;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: blue;
+} */
+
+#nav-latteral {
+    height: 100vh;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: aqua;
+    z-index: 3;
+    transition: all 0.1s ease;
+}
+
+#nav-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: aquamarine;
+    opacity: .6;
+    z-index: 2;
+    display: none;
+}
+
+#nav-wrapper.active {
+    display: block;
+}
+
+#nav-close {
+    margin-bottom: 50px;
+}
+
+.nav-links {
+    padding: 10px 45px 10px 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: orange;
+}
+
+.nav-link {
+    cursor: pointer;
+    font-size: 20px;
+    color: darkblue;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: orange;
+}
+
+.nav-link ion-icon {
+    margin-right: 15px;
+}
+
+.nav-link,
+.nav-button {
+    transition: all 0.2s ease;
+}
+
+.nav-button {
+    font-size: 40px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.nav-button:hover {
+    background-color: bisque;
+    color: orange;
+}
+
+
+/* header */
+
+h1,
+h2,
+h3 {
+    padding: 15px;
+}
+
+h4 {
+    padding: 10px;
 }
 
 .header {
@@ -9,10 +141,7 @@ body {
     text-align: center;
     color: lightyellow;
     padding: 15px;
-}
-
-.navigation {
-    text-align: right;
+    margin-top: 50px;
 }
 
 .display_week {
@@ -51,6 +180,7 @@ body {
 
 .button:hover {
     background-color: orange;
+    color: darkblue;
 }
 
 .button_title {
@@ -68,6 +198,9 @@ body {
 .week_title {
     background-color: lightgreen;
 }
+
+
+/* Footer */
 
 .ressources {
     background-color: lightblue;
@@ -88,4 +221,5 @@ q {
 .footer {
     color: lightyellow;
     text-align: center;
+    margin-bottom: 20px;
 }

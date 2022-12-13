@@ -10,200 +10,237 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1>WDD 330 Development: Web Frontend Development II</h1>
-        <h2>Reading Notes | Week 09</h2>
-        <div class="navigation">
-            <a href="../index.html" class="button" target="_blank">Home</a>
-            <a href="./index.html" class="button" target="_blank">Reading Notes</a>
-            <a href="../Project/index.html" class="button" target="_blank">Projects</a>
-            <a href="../Challenge/index.html" class="button" target="_blank">Challenges</a>
+    <!-- Navigation Latteral -->
+    <div id="nav-latteral">
+        <div id="nav-close" class="nav-button">
+            <ion-icon name="close"></ion-icon>
         </div>
-    </header>
-    <h2 class="book-title">From "Novive to Ninja"</h2>
-    <section class="main">
-        <div class="notes">
+        <div class="nav-links">
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/" target="_blank">
+                    <ion-icon name="home"></ion-icon>Home</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/index.html" target="_blank">
+                    <ion-icon name="create"></ion-icon>Reading Notes</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/TeamActivity/index.html" target="_blank">
+                    <ion-icon name="people"></ion-icon>Team Activity</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Project/index.html" target="_blank">
+                    <ion-icon name="construct"></ion-icon>
+                    </ion-icon>Projects</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Challenge/index.html" target="_blank">
+                    <ion-icon name="barbell"></ion-icon>Challenges</a>
+            </div>
+        </div>
+    </div>
+    <div id="nav-wrapper"></div>
+    <nav>
+        <div id="nav-open" class="nav-button">
+            <ion-icon name="reorder-three"></ion-icon>
+        </div>
+    </nav>
+    <!-- Navigation Latteral -->
 
-            <!--------------------------------------------------------- Chapter 09 | The Window Object ---------------------------------------------->
+    <main>
+        <header class="header">
+            <h1>WDD 330 Development: Web Frontend Development II</h1>
+            <h2>Reading Notes | Week 09</h2>
+        </header>
+        <h2 class="book-title">From "Novive to Ninja"</h2>
+        <section class="main">
+            <div class="notes">
 
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 09 | The Window Object</h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">The Window Object</h2>
+                <!--------------------------------------------------------- Chapter 09 | The Window Object ---------------------------------------------->
 
-                    <p>Every JavaScript environment has a global object. Any variables that are created in the global scope are actually properties of this object, and any functions are methods of it. In a browser environment the global object is the window
-                        object, which represents the browser window that contains a web page.</p>
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 09 | The Window Object</h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">The Window Object</h2>
 
-                    <h3 class="subtitle">The Browser Object Model</h3>
-                    <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen. We can find out the dimensions of the screen it is viewed on, and which pages have
-                        been visited before the current page.</p>
+                        <p>Every JavaScript environment has a global object. Any variables that are created in the global scope are actually properties of this object, and any functions are methods of it. In a browser environment the global object is the
+                            window object, which represents the browser window that contains a web page.</p>
 
-                    <h3 class="subtitle">The Browser History</h3>
-                    <p>The <i>window.history</i> property can be used to access information about any previously visited pages in the current browser session.</p>
-                    <p>The <i>window.history.length</i> property shows how many pages have been visited before arriving at the current page.</p>
-                    <p>The <i>window.history.go()</i> method can be used to go to a specific page, where 0 is the current page</p>
-                    <p>There are also the <i>window.history.forward()</i> and <i>window.history.back()</i> methods that can be used to navigate forwards and backwards by one page respectively, just like using the browser’s forward and back buttons.</p>
+                        <h3 class="subtitle">The Browser Object Model</h3>
+                        <p>The Browser Object Model (or BOM for short) is a collection of properties and methods that contain information about the browser and computer screen. We can find out the dimensions of the screen it is viewed on, and which pages
+                            have been visited before the current page.</p>
 
-                    <h3 class="subtitle">Controlling Windows</h3>
-                    <p>A new window can be opened using the <i>window.open()</i> method. This takes the URL of the page to be opened as its first parameter, the window title as its second parameter, and a list of attributes as the third parameter. This can
-                        also be assigned to a variable, so the window can then be referenced later in the code.</p>
-                    <p>The <i>close()</i> method can be used to close a window, assuming you have a reference to it.</p>
-                    <p>It is possible to move a window using the <i>window.moveTo()</i> method. This takes two parameters that are the X and Y coordinates of the screen that the window is to be moved to.</p>
-                    <p>A window resized using the <i>window.resizeTo()</i> method. This takes two parameters that specify the width and height of the resized window’s dimensions.</p>
+                        <h3 class="subtitle">The Browser History</h3>
+                        <p>The <i>window.history</i> property can be used to access information about any previously visited pages in the current browser session.</p>
+                        <p>The <i>window.history.length</i> property shows how many pages have been visited before arriving at the current page.</p>
+                        <p>The <i>window.history.go()</i> method can be used to go to a specific page, where 0 is the current page</p>
+                        <p>There are also the <i>window.history.forward()</i> and <i>window.history.back()</i> methods that can be used to navigate forwards and backwards by one page respectively, just like using the browser’s forward and back buttons.</p>
 
-                    <h3 class="subtitle">Screen Information</h3>
-                    <p>The <i>window.screen</i> object contains information about the screen the browser is displayed on. You can find out the height and width of the screen in pixels using the <i>height</i> and <i>width</i> properties respectively</p>
-                    <p>The <i>availHeight</i> and <i>availWidth</i> can be used to find the <i>height</i> and <i></i>width of the screen, excluding any operating system menus</p>
+                        <h3 class="subtitle">Controlling Windows</h3>
+                        <p>A new window can be opened using the <i>window.open()</i> method. This takes the URL of the page to be opened as its first parameter, the window title as its second parameter, and a list of attributes as the third parameter. This
+                            can also be assigned to a variable, so the window can then be referenced later in the code.</p>
+                        <p>The <i>close()</i> method can be used to close a window, assuming you have a reference to it.</p>
+                        <p>It is possible to move a window using the <i>window.moveTo()</i> method. This takes two parameters that are the X and Y coordinates of the screen that the window is to be moved to.</p>
+                        <p>A window resized using the <i>window.resizeTo()</i> method. This takes two parameters that specify the width and height of the resized window’s dimensions.</p>
 
-                    <h3 class="subtitle">The Document Object</h3>
-                    <p>Each <i>window</i> object contains a <i>document</i> object. This object has properties and methods that deal with the page that has been loaded into the window.</p>
-                    <h4>Cookies</h4>
-                    <p>Cookies are small files that are saved locally on a user’s computer. A restriction of cookies is that they can only be read by a web page from the same domain that set them. Cookies take the form of a text file that contain a list
-                        of name/value pairs separated by semicolons.</p>
-                    <dd>
-                        <li>Creating Cookies by using the <i>document.cookie</i> property.</li>
-                        <li>Changing Cookies Values by reassigning it to <i>document.cookie</i> using the same name but a different value.</li>
-                        <li>Reading Cookies: Simply enter <i>document.cookie:</i>.</li>
-                        <li>Cookies Expiry Dates (Do not rely on it)</li>
-                        <li>The Path and Domaine of Cookies: By default, cookies can only be read by pages inside the same directory and domain as the file was set. This is for security reasons so that access to the cookie is limited. The path can be changed
-                            so that any page in the root directory can read the cookie. It’s done by adding the string ; path=/ to the end of the cookie when it is set</li>
-                        <li>Secure Cookies: Adding the string <i>; secure</i> to the end of a cookie will ensure it’s only transmitted over a secure HTTPS network</li>
-                        <li>Delete Cookies: To remove a cookie, you need to set it to expire at a time in the past</li>
-                    </dd>
+                        <h3 class="subtitle">Screen Information</h3>
+                        <p>The <i>window.screen</i> object contains information about the screen the browser is displayed on. You can find out the height and width of the screen in pixels using the <i>height</i> and <i>width</i> properties respectively</p>
+                        <p>The <i>availHeight</i> and <i>availWidth</i> can be used to find the <i>height</i> and <i></i>width of the screen, excluding any operating system menus</p>
 
-                    <h3 class="subtitle">Timing Functions</h3>
-                    <p>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions at regular intervals. The <i>window.setTimeout()</i> method accepts a callback to a function as its first
-                        parameter and a number of milliseconds as its second parameter. </p>
+                        <h3 class="subtitle">The Document Object</h3>
+                        <p>Each <i>window</i> object contains a <i>document</i> object. This object has properties and methods that deal with the page that has been loaded into the window.</p>
+                        <h4>Cookies</h4>
+                        <p>Cookies are small files that are saved locally on a user’s computer. A restriction of cookies is that they can only be read by a web page from the same domain that set them. Cookies take the form of a text file that contain a list
+                            of name/value pairs separated by semicolons.</p>
+                        <dd>
+                            <li>Creating Cookies by using the <i>document.cookie</i> property.</li>
+                            <li>Changing Cookies Values by reassigning it to <i>document.cookie</i> using the same name but a different value.</li>
+                            <li>Reading Cookies: Simply enter <i>document.cookie:</i>.</li>
+                            <li>Cookies Expiry Dates (Do not rely on it)</li>
+                            <li>The Path and Domaine of Cookies: By default, cookies can only be read by pages inside the same directory and domain as the file was set. This is for security reasons so that access to the cookie is limited. The path can be
+                                changed so that any page in the root directory can read the cookie. It’s done by adding the string ; path=/ to the end of the cookie when it is set</li>
+                            <li>Secure Cookies: Adding the string <i>; secure</i> to the end of a cookie will ensure it’s only transmitted over a secure HTTPS network</li>
+                            <li>Delete Cookies: To remove a cookie, you need to set it to expire at a time in the past</li>
+                        </dd>
 
-                    <h3 class="subtitle">setInterval()</h3>
-                    <p>The <i>window.setInterval()</i> method works in a similar way to <i>window.setTimeout()</i>, except that it will repeatedly invoke the callback function after every given number of milliseconds.</p>
+                        <h3 class="subtitle">Timing Functions</h3>
+                        <p>The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing functions at regular intervals. The <i>window.setTimeout()</i> method accepts a callback to a function as its
+                            first parameter and a number of milliseconds as its second parameter. </p>
 
-                    <h3 class="subtitle">Animation</h3>
-                    <p>The <i>setTimeOut()</i> and <i>setInterval()</i> methods can be used to animate elements on a web page. </p>
+                        <h3 class="subtitle">setInterval()</h3>
+                        <p>The <i>window.setInterval()</i> method works in a similar way to <i>window.setTimeout()</i>, except that it will repeatedly invoke the callback function after every given number of milliseconds.</p>
 
+                        <h3 class="subtitle">Animation</h3>
+                        <p>The <i>setTimeOut()</i> and <i>setInterval()</i> methods can be used to animate elements on a web page. </p>
+
+                    </div>
+                </div>
+
+                <!---------------------------------------------------------- Chapter 14 | HTML5 APIs --------------------------------------------------->
+
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 14 | HTML5 APIs</h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">HTML5 APIs</h2>
+
+                        <h3 class="subtitle">HTML5</h3>
+                        <p>The W3C plans to develop future versions of HTML5 much more frequently than previously, using smaller version increments. HTML 5.1 has already become the latest standard, and HTML 5.2 is in development.</p>
+
+                        <h3 class="subtitle">The <i>data-</i> Attribute | <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*" class="reference" target="_blank">mdn data-</a></h3>
+                        <p>The <i>data-</i> attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser. They’re also private to a page, so are not intended to be used by an external service – their sole purpose
+                            is to be used by a JavaScript program. This means they’re perfect for adding data that can be used as a hook that the program utilizes to access information about a particular element on the page.</p>
+
+                        <h3 class="subtitle">HTML5 APIs</h3>
+                        <p>The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries, geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers
+                            access, and control new features that appear in the latest devices.</p>
+
+                        <h3 class="subtitle">Other APIs</h3>
+                        <h4>Web Storage | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" target="_blank">mdn Web Storage API</a></h4>
+                        <p>If a browser supports the Web Storage API, the <i>window</i> object will have a property called <i>localStorage</i>, which is a native object with a number of properties and methods used to store data. The information is saved
+                            in the form of key-value pairs, and the values can only be strings. There is also a <i>sessionStorage</i> object that works in the same way, although the data is only saved for the current session.</p>
+                        <p></p>Here is a basic example of storing information. To save a value locally, use:
+                        <dl class="example">localStorage.setItem('name', 'Walter White');</dl>
+                        <p>To illustrate that it’s being saved locally, try completely closing your browser, reopening it, and entering the following code in the console:</p>
+                        <dl class="example">
+                            <dt>localStorage.getItem('name');</dt>
+                            <dt>&gt;&gt; "Walter White"</dt>
+                        </dl>
+                        <p>Rather than using the <i>getItem()</i> and <i>setItem()</i> methods, assignment can be used instead. In the next example, we simply reference <i>localStorage.name</i> as if it was a variable to change its value:</p>
+                        <dl class="example">
+                            <dt>localStorage.name = 'Heisenberg';</dt>
+                            <dt>console.log(localStorage.name);</dt>
+                            <dt>&gt;&gt; "Heisenberg";</dt>
+                        </dl>
+                        <p>To remove an entry from local storage, use the <i>removeItem</i> method:</p>
+                        <dl class="example">localStorage.removeItem('name');</dl>
+                        <p>Alternatively, this can be done using the <i>delete</i> operator:</p>
+                        <dl class="example">delete localStorage.name;</dl>
+                        <p>To completely remove everything stored in local storage, use the <i>clear()</i> method:</p>
+                        <dl class="example">localStorage.clear();</dl>
+                        <p>The event object sent by the event listener to the callback has a number of properties that provide information about the updated item:</p>
+                        <ul>
+                            <li><i>key</i> tells us the key of the item that changed</li>
+                            <li><i>newValue</i> tells us the new value to which it has been changed</li>
+                            <li><i>oldValue</i> tells us the previous value before it was changed</li>
+                            <li><i>storageArea</i> tells us if it is stored in local or session storage.</li>
+                        </ul>
+                        <p>For example, we could save the hero object that we created using a form in Chapter 8 by adding the following line of code to the end of the <i>makeHero()</i> function:</p>
+                        <dl class="example">localStorage.setItem('superman', JSON.stringify(hero);</dl>
+                        <p>This will save the <i>hero</i> object as a JSON string using the string 'superman' as the key. To retrieve the superhero as a JavaScript object:</p>
+                        <dl class="example">superman = JSON.parse(localStorage.getItem('superman'));</dl>
+
+                        <h4>Geolocation | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation" target="_blank">mdn Geolocation</a></h4>
+
+                        <h4>Web Worker | <a href="https://developer.mozilla.org/fr/docs/Web/API/Web_Workers_API" target="_blank">mdn API Web Workers</a></h4>
+
+                        <h4>Multimedia</h4>
+
+                        <h3 class="subtitle">Drawing with Canvas | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" class="reference" target="_blank">mdn Drawing Shapes with Canvas</a></h3>
+                        <p>The <i>canvas</i> element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript. A <i>canvas</i> element is a rectangular element on the web page. It has a coordinate system that starts at (0,0)
+                            in the top-left corner. To add a <i>canvas</i> element to a page, the <i>canvas</i> tag is used specifying a <i>height</i> and <i>width</i>. Anything placed inside the tag will only display if the canvas element is unsupported:</p>
+                        <dl class="example">&lt;canvas id='canvas' width='400' height='400'&gt; Sorry, but your browser does not support the canvas element &lt; /canvas &gt;</dl>
+                        <p>This canvas can now be accessed in a JavaScript program using the <i>document.getElementById()</i> method:</p>
+                        <dl class="example">const canvasElement = document.getElementById('canvas');</dl>
+                        <p>The next step is to access the context of the canvas. This is an object that contains all the methods used to draw onto the canvas. We'll be using a 2-D context, but it’s also possible to render in 3-D using <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL">| mdn WebGL</a>.
+                            The <i>getContext()</i> method is used to access the context:</p>
+                        <dl class="example">const context = canvasElement.getContext('2d');</dl>
+                        <p>Now we have a reference to the context, we can access its methods and draw onto the canvas.</p>
+
+                        <h3 class="subtitle">Shims and Polyfills</h3>
+                        <p>The terms shim and polyfill are often used interchangeably. The main difference between them is that a shim is a piece of code that adds some missing functionality to a browser, although the implementation method may differ slightly
+                            from the standard API. A polyfill is a shim that achieves the same functionality, while also using the API commands that would be used if the feature was supported natively. <br> A comprehensive
+                            <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills" target="_blank">list of shims and polyfills</a> is maintained by the Modernizr team.</p>
+                    </div>
+                </div>
+                <div class="week-flip">
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW08.html" class="flip">
+                        <ion-icon name="chevron-back-outline"></ion-icon> Week 08</a>
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW10.html" class="flip">Week 10 <ion-icon name="chevron-forward-outline"></ion-icon></a>
                 </div>
             </div>
 
-            <!---------------------------------------------------------- Chapter 14 | HTML5 APIs --------------------------------------------------->
+            <div class="sidebar">
+                <h2>Code of the Week</h2>
 
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 14 | HTML5 APIs</h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">HTML5 APIs</h2>
-
-                    <h3 class="subtitle">HTML5</h3>
-                    <p>The W3C plans to develop future versions of HTML5 much more frequently than previously, using smaller version increments. HTML 5.1 has already become the latest standard, and HTML 5.2 is in development.</p>
-
-                    <h3 class="subtitle">The <i>data-</i> Attribute | <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*" class="reference" target="_blank">mdn data-</a></h3>
-                    <p>The <i>data-</i> attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser. They’re also private to a page, so are not intended to be used by an external service – their sole purpose
-                        is to be used by a JavaScript program. This means they’re perfect for adding data that can be used as a hook that the program utilizes to access information about a particular element on the page.</p>
-
-                    <h3 class="subtitle">HTML5 APIs</h3>
-                    <p>The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries, geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers
-                        access, and control new features that appear in the latest devices.</p>
-
-                    <h3 class="subtitle">Other APIs</h3>
-                    <h4>Web Storage | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API" target="_blank">mdn Web Storage API</a></h4>
-                    <p>If a browser supports the Web Storage API, the <i>window</i> object will have a property called <i>localStorage</i>, which is a native object with a number of properties and methods used to store data. The information is saved in the
-                        form of key-value pairs, and the values can only be strings. There is also a <i>sessionStorage</i> object that works in the same way, although the data is only saved for the current session.</p>
-                    <p></p>Here is a basic example of storing information. To save a value locally, use:
-                    <dl class="example">localStorage.setItem('name', 'Walter White');</dl>
-                    <p>To illustrate that it’s being saved locally, try completely closing your browser, reopening it, and entering the following code in the console:</p>
-                    <dl class="example">
-                        <dt>localStorage.getItem('name');</dt>
-                        <dt>&gt;&gt; "Walter White"</dt>
-                    </dl>
-                    <p>Rather than using the <i>getItem()</i> and <i>setItem()</i> methods, assignment can be used instead. In the next example, we simply reference <i>localStorage.name</i> as if it was a variable to change its value:</p>
-                    <dl class="example">
-                        <dt>localStorage.name = 'Heisenberg';</dt>
-                        <dt>console.log(localStorage.name);</dt>
-                        <dt>&gt;&gt; "Heisenberg";</dt>
-                    </dl>
-                    <p>To remove an entry from local storage, use the <i>removeItem</i> method:</p>
-                    <dl class="example">localStorage.removeItem('name');</dl>
-                    <p>Alternatively, this can be done using the <i>delete</i> operator:</p>
-                    <dl class="example">delete localStorage.name;</dl>
-                    <p>To completely remove everything stored in local storage, use the <i>clear()</i> method:</p>
-                    <dl class="example">localStorage.clear();</dl>
-                    <p>The event object sent by the event listener to the callback has a number of properties that provide information about the updated item:</p>
-                    <ul>
-                        <li><i>key</i> tells us the key of the item that changed</li>
-                        <li><i>newValue</i> tells us the new value to which it has been changed</li>
-                        <li><i>oldValue</i> tells us the previous value before it was changed</li>
-                        <li><i>storageArea</i> tells us if it is stored in local or session storage.</li>
-                    </ul>
-                    <p>For example, we could save the hero object that we created using a form in Chapter 8 by adding the following line of code to the end of the <i>makeHero()</i> function:</p>
-                    <dl class="example">localStorage.setItem('superman', JSON.stringify(hero);</dl>
-                    <p>This will save the <i>hero</i> object as a JSON string using the string 'superman' as the key. To retrieve the superhero as a JavaScript object:</p>
-                    <dl class="example">superman = JSON.parse(localStorage.getItem('superman'));</dl>
-
-                    <h4>Geolocation | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation" target="_blank">mdn Geolocation</a></h4>
-
-                    <h4>Web Worker | <a href="https://developer.mozilla.org/fr/docs/Web/API/Web_Workers_API" target="_blank">mdn API Web Workers</a></h4>
-
-                    <h4>Multimedia</h4>
-
-                    <h3 class="subtitle">Drawing with Canvas | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" class="reference" target="_blank">mdn Drawing Shapes with Canvas</a></h3>
-                    <p>The <i>canvas</i> element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript. A <i>canvas</i> element is a rectangular element on the web page. It has a coordinate system that starts at (0,0)
-                        in the top-left corner. To add a <i>canvas</i> element to a page, the <i>canvas</i> tag is used specifying a <i>height</i> and <i>width</i>. Anything placed inside the tag will only display if the canvas element is unsupported:</p>
-                    <dl class="example">&lt;canvas id='canvas' width='400' height='400'&gt; Sorry, but your browser does not support the canvas element &lt; /canvas &gt;</dl>
-                    <p>This canvas can now be accessed in a JavaScript program using the <i>document.getElementById()</i> method:</p>
-                    <dl class="example">const canvasElement = document.getElementById('canvas');</dl>
-                    <p>The next step is to access the context of the canvas. This is an object that contains all the methods used to draw onto the canvas. We'll be using a 2-D context, but it’s also possible to render in 3-D using <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL">| mdn WebGL</a>.
-                        The <i>getContext()</i> method is used to access the context:</p>
-                    <dl class="example">const context = canvasElement.getContext('2d');</dl>
-                    <p>Now we have a reference to the context, we can access its methods and draw onto the canvas.</p>
-
-                    <h3 class="subtitle">Shims and Polyfills</h3>
-                    <p>The terms shim and polyfill are often used interchangeably. The main difference between them is that a shim is a piece of code that adds some missing functionality to a browser, although the implementation method may differ slightly
-                        from the standard API. A polyfill is a shim that achieves the same functionality, while also using the API commands that would be used if the feature was supported natively. <br> A comprehensive
-                        <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills" target="_blank">list of shims and polyfills</a> is maintained by the Modernizr team.</p>
-                </div>
+                <a href="../Project/UserAPI/index.html" class="button" target="_blank">User API</a>
+                <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/UserAPI" class="code" target="_blank">Code Pages on GitHub</a>
+                <a href="../Project/CountryApp/index.html" class="button" target="_blank">Country App</a>
+                <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/CountryApp" class="code" target="_blank">Code Pages on GitHub</a>
+                <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
             </div>
-            <div class="week-flip">
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW08.html" class="flip"><strong>&lt;</strong> Week 08</a>
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW10.html" class="flip">Week 10 <strong>&gt;</strong></a>
+        </section>
+
+        <br>
+        <div class="ressources">
+            <h2>Ressources :</h2>
+            <div class="references">
+                <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
+                <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
+                <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
+                <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
+                <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
+                <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
+            </div>
+            <h2><q>Pratice is the Secret of Success.</q></h2>
+            <div class="references">
+                <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
+                <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
+                <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
+                <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
             </div>
         </div>
 
-        <div class="sidebar">
-            <h2>Code of the Week</h2>
-
-            <a href="../Project/UserAPI/index.html" class="button" target="_blank">User API</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/UserAPI" class="code" target="_blank">Code Pages on GitHub</a>
-            <a href="../Project/CountryApp/index.html" class="button" target="_blank">Country App</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/CountryApp" class="code" target="_blank">Code Pages on GitHub</a>
-            <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
+        <div class="footer">
+            <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+            <hr>
+            <h2>Teacher : Johan Baer</h2>
+            <hr>
         </div>
-    </section>
+    </main>
 
-    <br>
-    <div class="ressources">
-        <h2>Ressources :</h2>
-        <div class="references">
-            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
-            <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
-            <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
-            <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
-            <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
-            <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
-        </div>
-        <h2><q>Pratice is the Secret of Success.</q></h2>
-        <div class="references">
-            <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
-            <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
-            <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
-            <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
-        </div>
-    </div>
-
-    <div class="footer">
-        <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
-        <hr>
-        <h2>Teacher : Johan Baer</h2>
-        <hr>
-    </div>
-
+    <script src="../js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

@@ -10,396 +10,435 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1>WDD 330 Development: Web Frontend Development II</h1>
-        <h2>Reading Notes | Week 03</h2>
-        <div class="navigation">
-            <a href="../index.html" class="button" target="_blank">Home</a>
-            <a href="./index.html" class="button" target="_blank">Reading Notes</a>
-            <a href="../Project/index.html" class="button" target="_blank">Projects</a>
-            <a href="../Challenge/index.html" class="button" target="_blank">Challenges</a>
+    <!-- Navigation Latteral -->
+    <div id="nav-latteral">
+        <div id="nav-close" class="nav-button">
+            <ion-icon name="close"></ion-icon>
         </div>
-    </header>
-    <h2 class="book-title">From "Novice to Ninja"</h2>
-    <section class="main">
-        <div class="notes">
-
-            <!------------------------------------------ Chapter 5 | Objects ------------------------------------------->
-
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 5 | Objects </h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">Objects <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="reference" target="_blank">mdn Objects</a></h2>
-
-
-                    <!------------------------------------------ Object Literals -------------------------------------------------------->
-                    <h3 class="subtitle">Object Literals</h3>
-                    <p>An object in JavaScript is a self-contained set of related values and functions. They act as a collection of named properties that map to any JavaScript value such as strings, numbers, booleans, arrays and functions. If a property’s
-                        value is a function, it is known as a method. Here is an example of an object literal that describes the Man of Steel:</p>
-                    <dl class="example">
-                        <dt>const superman = {</dt>
-                        <dd>name: 'Superman',</dd>
-                        <dd>'real name': 'Clark Kent',</dd>
-                        <dd>height: 75,</dd>
-                        <dd>weight: 235,</dd>
-                        <dd>hero: true,</dd>
-                        <dd>villain: false,</dd>
-                        <dd>allies: ['Batman','Supergirl','Superboy'],</dd>
-                        <dd>fly() {</dd>
-                        <dd style="padding-left: 40px;">return 'Up, up and away!';</dd>
-                        <dd>}</dd>
-                        <dt>};</dt>
-                    </dl>
-
-                    <h3 class="subtitle">Creating Objects</h3>
-                    <p>To create an object literal, simply enter a pair of curly braces. The following example creates an empty object that is assigned to the variable spiderman:</p>
-                    <dl class="example">const spiderman = {};</dl>
-                    <p>ES6 provided a shorthand method of creating objects if a property key is the same as a variable name that the property value is assigned to:</p>
-                    <dl class="example">
-                        <dt>const name = 'Iron Man';</dt>
-                        <dt>const realName = 'Tony Stark';</dt>
-                        <dt></dt>
-                        <dt>const ironMan = { name: name, realName: realName }; // long way</dt>
-                        <dt></dt>
-                        <dt>const ironMan = { name, realName }; // short ES6 way</dt>
-                    </dl>
-
-                    <h4>Accessing Properties</h4>
-                    <p>You can access the properties of an object using the dot notation : <i>superman.name</i>. You can also access an object’s properties using bracket notation : <i>superman['name']</i>.</p>
-                    <h4>Computed Properties</h4>
-                    <p>The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code can be placed inside square brackets and the property key will be the return value of that code.</p>
-
-                    <h3 class="subtitle">Calling Methods</h3>
-                    <p>To call an object’s method we can also use dot or bracket notation. Calling a method is the same as invoking a function, so parentheses need to be placed after the method name.</p>
-
-                    <h3 class="subtitle">Checking if Properties or Methods Exist</h3>
-                    <p>The in operator can be used to check whether an object has a particular property <i>'city' in superman;</i>. </p>
-
-                    <h3 class="subtitle">Finding all the Properties of an Object</h3>
-                    <p>We can loop through all of an object’s properties and methods by using a for in loop.</p>
-                    <dl class="example">
-                        <dt>for(const key in superman) {</dt>
-                        <dd>console.log(key + ": " + superman[key]);</dd>
-                        <dt>}</dt>
-                    </dl>
-
-                    <h4>Adding Properties</h4>
-                    <p>New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property : <i>superman.city = 'Metropolis';</i>.</p>
-                    <h4>Changing Properties</h4>
-                    <p>The value of an object’s properties can be change at any time using assignment : <i>superman['real name'] = 'Kal-El';</i>.</p>
-
-                    <h3 class="subtitle">Removing Properties</h3>
-                    <p>Any property can be removed from an object using the <i>delete</i> operator : <i>delete superman.fly</i>.</p>
-
-                    <h3 class="subtitle">Nesting Objects</h3>
-                    <p>It’s even possible for an object to contain other objects. These are known as nested objects.</p>
-
-                    <h4>Objects as Parameters to Functions</h4>
-                    <p>An object literal can be passed as a parameter to a function. This is useful when there are a large number of parameters, as it allows the arguments to be provided by name and in any order. This means you don't have to remember the
-                        order to enter them when invoking a function.</p>
-                    <dl class="example">
-                        <dt>function greet({greeting,name,age}) {</dt>
-                        <dd>return `${greeting}! My name is ${name} and I am ${age} years old.`;</dd>
-                        <dt>}</dt>
-                    </dl>
-
-                    <h4><i>this</i></h4>
-                    <p>The keyword <i>this</i> refers to the object that it is within. It can be used inside methods to gain access to the object’s properties.</p>
-
-                    <!----------------------------------------------------- Namespacing ------------------------------------------------------------>
-                    <h3 class="subtitle">Namespacing</h3>
-                    <p>Naming collisions occur when the same variable or function name is used for different purposes by code sharing the same scope. A solution to this problem is to use the object literal pattern to create a namespace for groups of related
-                        functions.
-                    </p>
-
-                    <!--------------------------------------------- Built-in Objects ----------------------------------------------------------->
-                    <h3 class="subtitle">Built-in Objects</h3>
-                    <h4>JSON (JavaScript Object Notation) | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" class="reference" target="_blank">mdn JSON</a></h4>
-                    <p>JSON is a string representation of the object literal notation with a couple of key differences :</p>
-                    <ol>
-                        <li>Property names must be double-quoted</li>
-                        <li>Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</li>
-                        <li>Functions are not permitted values</li>
-                    </ol>
-                    <dl class="example">const batman = '{"name": "Batman","real name": "Bruce Wayne","height": 74, "weight": 210, "hero": true, "villain": false, "allies": ["Robin","Batgirl","Superman"]}'</dl>
-                    <p>The <i>parse()</i> method takes a string of data in JSON format and returns a JavaScript object. The <i>stringify()</i> method does the opposite, taking a JavaScript object and returning a string of JSON data</p>
-
-                    <h4>The <i>Math</i> Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" class="reference" target="_blank">mdn Math</a></h4>
-                    <h4>The Date Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="reference" target="_blank">mdn Date</a></h4>
-                    <h4>The <i>RegExp</i> Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" class="reference" target="_blank">mdn RegExp</a></h4>
-
-                    <!---------------------------------------------- Character Groups ------------------------------------------------------->
-                    <h3 class="subtitle">Character Groups</h3>
-                    <p>Groups of characters can be placed together inside square brackets. This character group represents any one of the characters inside the brackets.</p>
-                    <ul class="example">
-                        <li><i>const vowels = /[aeiou]/</i> (This expression matches any vowel)</li>
-                        <li><i>/[A-Z]/</i> (A sequence of characters can also be represented by placing a dash [ - ] between the first and last characters)</li>
-                        <li><i>/[0-9]/</i> (This representes the digits 0-9)</li>
-                        <li><i>/[^A-Z]/</i> (The ^ character is placed at the start of the sequence of characters with the brackets, it negates the sequence)</li>
-                    </ul>
-
-                </div>
+        <div class="nav-links">
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/" target="_blank">
+                    <ion-icon name="home"></ion-icon>Home</a>
             </div>
-
-            <!------------------------------- Chapter 6 | The Document Object Model (DOM) --------------------------------->
-
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 6 | The Document Object Model</h2>
-
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">DOM <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" class="reference" target="_blank">mdn Document Object Model</a></h2>
-                    <p>The Document Object Model (DOM) allows you to access elements of a web page and enable interaction with the page by adding and removing elements, changing the order, content and attributes of elements, and even altering how they are
-                        styled.
-                    </p>
-
-                    <h3 class="subtitle">The Document Object Model</h3>
-                    <p>We can use JavaScript to access and modify different parts of a web page using a special built-in object called <i>document</i>.</p>
-
-                    <!---------------------------------------------- History of the DOM -------------------------------------------------->
-                    <h3 class="subtitle">History of the DOM</h3>
-                    <p>The World Wide Web Consortium (W3C) started to standardize the process, and created the DOM level 1 in 1998. This introduced a complete model for web pages that allowed every part of them to be navigated.
-                        <br>The DOM level 2 specification was published in 2000 and introduced the popular <i>getElementById()</i> method, which made it much easier to access specific elements on a web page.
-                        <br>The DOM level 3 specification was published in 2004, and since then the W3C has abandoned using levels. The DOM specification is developed as a <a href="https://dom.spec.whatwg.org" target="_blank">living standard</a>.</p>
-
-                    <!---------------------------------------------- An Example Web Page -------------------------------------------------->
-                    <h3 class="subtitle">An Example Web Page </h3>
-                    <p>the DOM also stores any whitespace that is in the HTML document as text nodes.</p>
-
-                    <!------------------------------------------------ Getting Elements -------------------------------------------------->
-                    <h3 class="subtitle">Getting Elements</h3>
-                    <p>The DOM provides several methods that allow us to access any element on a page. These methods will return a node object or a node list, which is an array-like object. These objects can then be assigned to a variable and be inspected
-                        or modified.</p>
-
-                    <h4>Legacy DOM Shortcut Methods</h4>
-                    <p>There are some methods from DOM Level 0 that can still be employed to access commonly used elements. These include:</p>
-                    <dd>
-                        <li><i>Document.body</i> returns the body element of a web page, as we saw in the previous example.</li>
-                        <li><i>Document.images</i> returns a node list of all the images contained in the document.</li>
-                        <li><i>Document.links</i> returns a node list of all the <i>&lt;a&gt;</i> elements and <i>&lt;area&gt;</i> elements that have an <i>href</i> attribute.</li>
-                        <li><i>Document.anchors</i> returns a node list of all the <i>&lt;a&gt;</i> elements that have a <i>name</i> attribute.</li>
-                        <li><i>Document.forms</i> returns a node list of all the forms in the document.</li>
-                    </dd>
-
-                    <h4>Getting An Element By Its ID</h4>
-                    <p>The <i>getElementById()</i> method does exactly what it says on the tin. It returns a reference to the element with a unique id attribute that is given as an argument.</p>
-                    <dl class="example">const h1 = document.getElementById('title');</dl>
-
-                    <h4>Get Elements By Their Tag Name</h4>
-                    <p><i>getElementsByTagName()</i> will return a live node list of all the elements with the tag name that is provided as an argument.</p>
-                    <dl class="example">const listItems = document.getElementsByTagName('li');</dl>
-
-                    <h4>Get Elements By Their Class Name</h4>
-                    <p><i>getElementsByClassName()</i> will return a live node list of all elements that have the class name that is supplied as an argument.</p>
-                    <dl class="example">const heroes = document.getElementsByClassName('hero');</dl>
-
-                    <h4>Query Selectors</h4>
-                    <p>The <i>document.querySelector()</i> method allows you to use CSS notation to find the first element in the document that matches that matches a CSS selector provided as an argument. If no elements match, it will return null.</p>
-                    <p>The <i>document.querySelectorAll()</i> method also uses CSS notation but returns a node list of all the elements in the document that match the CSS query selector. If no elements match, it will return an empty node list.</p>
-                    <p>These are both very powerful methods that can emulate all the methods discussed, as well as allowing more fine-grained control over which element nodes are returned.</p>
-                    <p>(To use this method review CSS query selectors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">mdn CSS Selectors</a>.)</p>
-                    <dl class="example">document.querySelector('#bats'); // Instead of <i>document.getElementById()</i></dl>
-
-                    <h4>Navigating the DOM Tree</h4>
-                    <p>Node objects have a number of properties and methods for navigating around the document tree. Once you have a reference to an element, you can walk along the document tree to find other nodes.
-                        <br>The <i>childNodes</i> property is a list of all the nodes that are children of the node concerned.</p>
-
-                    <h4>Finding the Value of a Node</h4>
-                    <h4>Getting and Setting Attributes</h4>
-                    <p>All HTML elements have a large number of possible attributes such as 'class', 'id', src, and 'href'. The DOM has numerous getter and setter methods that can be used to view, add, remove or modify the value of any of these attributes.</p>
-                    <h5>Getting An Element’s Attributes</h5>
-                    <p>The <i>getAttribute()</i> method returns the value of the attribute provided as an argument.</p>
-
-                    <!---------------------------------------- Setting An Element’s Attributes ---------------------------------------->
-                    <h3 class="subtitle">Setting An Element’s Attributes</h3>
-                    <p>The <i>setAttribute</i> can change the value of an element’s attributes. It takes two arguments: the attribute that you wish to change, and the new value of that attribute.
-                        <br>If an element does not have an attribute, the setAttribute method can be used to add it to the element.</p>
-                    <dl class="example">wonderWoman.setAttribute('id','amazon'); //The <i>setAttribute</i> method will add the id of 'amazon' to the <i>wonderWoman</i>element</dl>
-
-                    <h4>Creating Dynamic Markup</h4>
-                    <p>So far we’ve looked at how to gain access to different elements of a web page and find out information about them. We’ve also looked at how to change the attributes of elements. In this section, we’re going to learn how to create new
-                        elements and add them to the page, as well as edit elements that already exist and remove any unwanted elements.</p>
-                    <h5>Creating An Element</h5>
-                    <p>The document object has a <i>createElement()</i> method that takes a tag name as a parameter and returns that element.
-                        <br>At the moment, this element is empty. To add some content, we’ll need to create a text node.</p>
-                    <h5>Creating a Text Node</h5>
-                    <p>A text node can be created using the <i>document.createTextNode()</i> method. It takes a parameter, which is a string containing the text that goes in the node.
-                        <br>Now we have an element node and a text node, but they are not linked together ― we need to append the text node to the paragraph node.</p>
-                    <h5>Appending Nodes</h5>
-                    <p>Every node object has an <i>appendChild()</i> method that will add another node (given as an argument) as a child node. We want our newly created text node to be a child node of the list element node. This means that it’s the <i>flash</i>                        object that calls the method, with <i>flashText</i> as its argument</p>
-                    <h5>A Function To Create Elements</h5>
-                    <p>When we created our new list item element, all we specified was the type of tag and the text inside it. These will form the parameters of our function. The function will then perform the two steps we used to create the new element,
-                        and then return that element:</p>
-                    <dl class="example">
-                        <dt>function createElement (tag,text) {</dt>
-                        <dd>const el = document.createElement(tag);</dd>
-                        <dd>el.textContent = text;</dd>
-                        <dd>return el</dd>
-                        <dt>}</dt>
-                    </dl>
-                    <h5>Adding Elements to the Page</h5>
-                    <p>We have already seen the <i>appendChild()</i> method. </p>
-                    <h5>Remove Elements From a Page</h5>
-                    <p>An element can be removed from a page using the <i>removeChild()</i> method.</p>
-                    <h5>Replacing Elements on a Page</h5>
-                    <p>The <i>replaceChild()</i> method can be used to replace one node with another.</p>
-                    <h5><i>innerHTML</i></h5>
-                    <p>The <i>innerHTML</i> element property was standardized as part of the HTML5</p>
-                    <h5>Live Collections</h5>
-                    <p>The node lists returned by the <i>document.getElementsByClassName()</i> and <i>document.getElementsByTagName()</i> methods are live collections that will update to reflect any changes on the page. </p>
-
-                    <!-------------------------------------------------- Updating CSS --------------------------------------------->
-                    <h3 class="subtitle">Updating CSS</h3>
-                    <p>Every element node has a <i>style</i> property. This can be used to dynamically modify the presentation of any element on a web page.</p>
-                    git add
-                </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/index.html" target="_blank">
+                    <ion-icon name="create"></ion-icon>Reading Notes</a>
             </div>
-
-            <!------------------------------------ Chapter 7 | Events -------------------------------------------------->
-
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 7 | Events </h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">Events <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events" class="reference" target="_blank">mdn Introduction to events</a></h2>
-
-                    <!----------------------------------- Event Listeners ---------------------------------------------->
-                    <h3 class="subtitle">Event Listeners</h3>
-                    <p>The recommended way of dealing with events, and the current standard, is to use event listeners.
-                        <br>The <i>addEventListener()</i> method is called on a node object, the node to which the event listener is being applied. The <i>addEventListener()</i> method can also be called without a node, in which case it is applied to
-                        the global object, usually the whole browser window.</p>
-
-                    <!------------------------------------- Example Code ----------------------------------------------->
-                    <h3 class="subtitle">Example Code</h3>
-                    <p style="padding-left: 40px;"><a href="indexW03Ex01.html" target="_blank">Events Examples</a></p>
-
-                    <!----------------------------------- The Event Object --------------------------------------------->
-                    <h3 class="subtitle">The Event Object</h3>
-                    <p>Whenever an event handler is triggered by an event, the callback function is called. This function is automatically passed an event object as a parameter that contains information about the event.</p>
-                    <dl class="example">
-                        <dt>function doSomething(event){</dt>
-                        <dd>console.log(event.type);</dd>
-                        <dt>}</dt>
-                    </dl>
-                    <p>The parameter does not have to be called <i>event</i>. It can be given any legal variable name, although calling it <i>event</i> can make it easier to read the code. Many developers often abbreviate it to just <i>e</i>.</p>
-
-                    <!-------------------------------------- Types of Events --------------------------------------------->
-                    <h3 class="subtitle">Types of Events</h3>
-                    <p>There are several types of events, ranging from when a video has finished playing to when a resource has completed downloading. You can see a
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank"> full list on the Events page of the Mozilla Developer Network.</a></p>
-
-                    <h4>The event Target</h4>
-                    <p>The <i>target</i> property returns a reference to the node that fired the event.</p>
-                    <h4>Coordinates of an Event</h4>
-                    <ul>There are a variety of ways to find the position of where a mouse event occurs.
-                        <li>The <i>screenX</i> and <i>screenY</i> properties show the number of pixels from the left and top of the screen respectively where the event took place.</li>
-                        <li>The <i>clientX</i> and <i>clientY</i> properties show the number of pixels from the left and top of the client that is being used (usually the browser window).</li>
-                        <li>The <i>pageX</i> and <i>pageY</i> properties show the number of pixels from the left and top, respectively, where the event took place in the document. This property takes account of whether the page has been scrolled.</li>
-                    </ul>
-                    <p>we’re going to focus on some of the more common events that occur using the mouse, the keyboard and touch.</p>
-
-                    <h4>Mouse Events</h4>
-                    <p>We already mentionned the <i>click</i> event that occurs when a mouse button is clicked. There are also the <i>mousedown</i> and <i>mouseup</i> events. These both occur before a <i>click</i> event is fired.</p>
-                    <dl class="example">
-                        <dt>const clickParagraph = document.getElementById('click');</dt>
-                        <br>
-                        <dt>clickParagraph.addEventListener('click',() => console.log('click') );</dt>
-                        <dt>clickParagraph.addEventListener('mousedown',() => console.log('down') );</dt>
-                        <dt>clickParagraph.addEventListener('mouseup',() => console.log('up') );</dt>
-                    </dl>
-                    <p>There is also the <i>dblclick</i> event, which occurs when the user doubleclicks on the element to which the event listener is attached.</p>
-                    <p class="warning">&#9888; You should be very cautious of attaching both a <i>click</i> and <i>doubleclick</i> event to the same element. This is because it’s impossible to tell if a click is the first click of a doubleclick or just a single click. This
-                        means that a <i>doubleclick</i> event will always cause the <i>click</i> event to fire.</p>
-                    <p>The <i>mouseover</i> event occurs when the mouse pointer is placed over the element to which the event listener is attached, while the <i>mouseout</i> event occurs when the mouse pointer moves away from an element. The <i>mousemove</i>                        event occurs whenever the mouse moves. It will only occur while the cursor is over the element to which it’s applied.</p>
-
-                    <h4>Keyboard Events</h4>
-                    <p>Three events that occur when a user presses a key are: <i>keydown, keypress</i> and <i>keyup</i>. When a user presses a key, the events occur in that order. They are not tied to any particular key, although the information about which
-                        key was pressed is a property of the event object.</p>
-                    <ol>
-                        <li>The <i>keydown</i> event occurs when a key is pressed and will continue to occur if the key is held down.</li>
-                        <li>The <i>keypress</i> event occurs after a <i>keydown</i> event but before a <i>keyup</i> event. The <i>keypress</i> event only occurs for keys that produce character input (plus the 'Delete' key). This means that it’s the most reliable
-                            way to find out the character that was pressed on the keyboard.</li>
-                        <li>The <i>keyup</i> event occurs when a key is released.</li>
-                    </ol>
-                    <p>Pressing the modifier keys such as Shift, Ctrl, Alt and meta (Cmd on Mac) will fire the <i>keydown</i> and <i>keyup</i> events, but not the <i>keypress</i> event as they don't produce any characters on the screen. The name of the modifier
-                        <i>key</i> is still returned by the key property. </p>
-
-                    <h4>Touch Events</h4>
-                    <p>Many modern devices now support touch events. These are used on smartphones and tablets, as well as touch-screen monitors, satellite navigators and trackpads. Touch events are usually made with a finger, but can also be by stylus or
-                        another part of the body. There are a number of touch events that cover many types of touch interactions. <strong>It’s important to support mouse events as well as touch events, so non-touch devices are also supported.</strong></p>
-
-                    <!------------------------------------------------ Removing Event Listeners -------------------------------------------->
-                    <h3 class="subtitle">Removing Event Listeners</h3>
-                    <p>An event listener can be removed using the <i>removeEventListener()</i> method. The adds a <i>click</i> event listener to a paragraph element, but then removes it in the callback function named <i>remove</i>. This means it will only
-                        be called once (try clicking on it again and nothing happens).</p>
-
-                    <!----------------------------------------------- Stopping Default Behavior --------------------------------------------->
-                    <h3 class="subtitle">Stopping Default Behavior</h3>
-                    <p>Some elements have default behavior associated with certain events. For example, when a user clicks on a link, the browser redirects to the address in the <i>href</i> attribute and a form is submitted when the user clicks on the Submit
-                        button. <i>preventDefault()</i> is a method of the <i>event</i> object that can be used inside the callback function to stop the default behavior happening.</p>
-
-                    <!--------------------------------------------------- Event Propagation ----------------------------------------->
-                    <h3 class="subtitle">Event Propagation</h3>
-                    <p>When you click on an element, you are actually clicking on all the elements it’s nested inside of. To illustrate this, add the following piece of HTML to the events.html file:</p>
-                    <dl class="example">
-                        <dt>&lt;ul id='list'>&gt;</dt>
-                        <dd>&lt;li>one&lt;/li>&gt;</dd>
-                        <dd>&lt;li>two&lt;/li>&gt;</dd>
-                        <dd>&lt;li>three&lt;/li>&gt;</dd>
-                        <dt>&lt;/ul>&gt;</dt>
-                    </dl>
-                    <p>If you click on one of the <i>&lt;li&gt;</i> elements, you’re also clicking on the <i>&lt;ul&gt;</i>, <i>&lt;body&gt;</i>, and <i>&lt;html&gt;</i> elements. An event is said to propagate as it moves from one element to another.</p>
-                    <p>Event propagation is the order that the events fire on each element. There are two forms of event propagation: bubbling and capturing.</p>
-                    <p>Bubbling is when the event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node.</p>
-                    <p>Capturing starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on.</p>
-                    <p>More about event propagation : <a href="https://www.sitepoint.com/event-bubbling-javascript/" target="_blank">article on SitePoint</a></p>
-
-                    <!--------------------------------------------------- Event Delegation ---------------------------------------->
-                    <h3 class="subtitle">Event Delegation</h3>
-                    <p>Event delegation can be used to attach an event listener to a parent element in order to capture events that are triggered by its child elements.</p>
-
-                </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/TeamActivity/index.html" target="_blank">
+                    <ion-icon name="people"></ion-icon>Team Activity</a>
             </div>
-            <div class="week-flip">
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW02.html" class="flip"><strong>&lt;</strong> Week 02</a>
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW04.html" class="flip">Week 04 <strong>&gt;</strong></a>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Project/index.html" target="_blank">
+                    <ion-icon name="construct"></ion-icon>
+                    </ion-icon>Projects</a>
             </div>
-        </div>
-        <div class="sidebar">
-            <h2>Code of the Week</h2>
-
-            <a href="../Project/Calculator/" class="button" target="_blank">Calculator</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/Calculator" class="code" target="_blank">Code Pages on GitHub</a>
-            <a href="../Project/Bubble/" class="button" target="_blank">Bubbles</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/Bubble" class="code" target="_blank">Code Pages on GitHub</a>
-            <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
-        </div>
-    </section>
-
-    <br>
-    <div class="ressources">
-        <h2>Ressources :</h2>
-        <div class="references">
-            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
-            <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
-            <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
-            <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
-            <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
-            <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
-        </div>
-        <h2><q>Pratice is the Secret of Success.</q></h2>
-        <div class="references">
-            <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
-            <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
-            <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
-            <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Challenge/index.html" target="_blank">
+                    <ion-icon name="barbell"></ion-icon>Challenges</a>
+            </div>
         </div>
     </div>
+    <div id="nav-wrapper"></div>
+    <nav>
+        <div id="nav-open" class="nav-button">
+            <ion-icon name="reorder-three"></ion-icon>
+        </div>
+    </nav>
+    <!-- Navigation Latteral -->
 
-    <div class="footer">
-        <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
-        <hr>
-        <h2>Teacher : Johan Baer</h2>
-        <hr>
-    </div>
+    <main>
+        <header class="header">
+            <h1>WDD 330 Development: Web Frontend Development II</h1>
+            <h2>Reading Notes | Week 03</h2>
+        </header>
+        <h2 class="book-title">From "Novice to Ninja"</h2>
+        <section class="main">
+            <div class="notes">
+
+                <!------------------------------------------ Chapter 5 | Objects ------------------------------------------->
+
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 5 | Objects </h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">Objects <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="reference" target="_blank">mdn Objects</a></h2>
+
+
+                        <!------------------------------------------ Object Literals -------------------------------------------------------->
+                        <h3 class="subtitle">Object Literals</h3>
+                        <p>An object in JavaScript is a self-contained set of related values and functions. They act as a collection of named properties that map to any JavaScript value such as strings, numbers, booleans, arrays and functions. If a property’s
+                            value is a function, it is known as a method. Here is an example of an object literal that describes the Man of Steel:</p>
+                        <dl class="example">
+                            <dt>const superman = {</dt>
+                            <dd>name: 'Superman',</dd>
+                            <dd>'real name': 'Clark Kent',</dd>
+                            <dd>height: 75,</dd>
+                            <dd>weight: 235,</dd>
+                            <dd>hero: true,</dd>
+                            <dd>villain: false,</dd>
+                            <dd>allies: ['Batman','Supergirl','Superboy'],</dd>
+                            <dd>fly() {</dd>
+                            <dd style="padding-left: 40px;">return 'Up, up and away!';</dd>
+                            <dd>}</dd>
+                            <dt>};</dt>
+                        </dl>
+
+                        <h3 class="subtitle">Creating Objects</h3>
+                        <p>To create an object literal, simply enter a pair of curly braces. The following example creates an empty object that is assigned to the variable spiderman:</p>
+                        <dl class="example">const spiderman = {};</dl>
+                        <p>ES6 provided a shorthand method of creating objects if a property key is the same as a variable name that the property value is assigned to:</p>
+                        <dl class="example">
+                            <dt>const name = 'Iron Man';</dt>
+                            <dt>const realName = 'Tony Stark';</dt>
+                            <dt></dt>
+                            <dt>const ironMan = { name: name, realName: realName }; // long way</dt>
+                            <dt></dt>
+                            <dt>const ironMan = { name, realName }; // short ES6 way</dt>
+                        </dl>
+
+                        <h4>Accessing Properties</h4>
+                        <p>You can access the properties of an object using the dot notation : <i>superman.name</i>. You can also access an object’s properties using bracket notation : <i>superman['name']</i>.</p>
+                        <h4>Computed Properties</h4>
+                        <p>The ability to create objects with computed property keys was introduced in ES6. This means that JavaScript code can be placed inside square brackets and the property key will be the return value of that code.</p>
+
+                        <h3 class="subtitle">Calling Methods</h3>
+                        <p>To call an object’s method we can also use dot or bracket notation. Calling a method is the same as invoking a function, so parentheses need to be placed after the method name.</p>
+
+                        <h3 class="subtitle">Checking if Properties or Methods Exist</h3>
+                        <p>The in operator can be used to check whether an object has a particular property <i>'city' in superman;</i>. </p>
+
+                        <h3 class="subtitle">Finding all the Properties of an Object</h3>
+                        <p>We can loop through all of an object’s properties and methods by using a for in loop.</p>
+                        <dl class="example">
+                            <dt>for(const key in superman) {</dt>
+                            <dd>console.log(key + ": " + superman[key]);</dd>
+                            <dt>}</dt>
+                        </dl>
+
+                        <h4>Adding Properties</h4>
+                        <p>New properties and methods can be added to objects at any time in a program. This is done by simply assigning a value to the new property : <i>superman.city = 'Metropolis';</i>.</p>
+                        <h4>Changing Properties</h4>
+                        <p>The value of an object’s properties can be change at any time using assignment : <i>superman['real name'] = 'Kal-El';</i>.</p>
+
+                        <h3 class="subtitle">Removing Properties</h3>
+                        <p>Any property can be removed from an object using the <i>delete</i> operator : <i>delete superman.fly</i>.</p>
+
+                        <h3 class="subtitle">Nesting Objects</h3>
+                        <p>It’s even possible for an object to contain other objects. These are known as nested objects.</p>
+
+                        <h4>Objects as Parameters to Functions</h4>
+                        <p>An object literal can be passed as a parameter to a function. This is useful when there are a large number of parameters, as it allows the arguments to be provided by name and in any order. This means you don't have to remember
+                            the order to enter them when invoking a function.</p>
+                        <dl class="example">
+                            <dt>function greet({greeting,name,age}) {</dt>
+                            <dd>return `${greeting}! My name is ${name} and I am ${age} years old.`;</dd>
+                            <dt>}</dt>
+                        </dl>
+
+                        <h4><i>this</i></h4>
+                        <p>The keyword <i>this</i> refers to the object that it is within. It can be used inside methods to gain access to the object’s properties.</p>
+
+                        <!----------------------------------------------------- Namespacing ------------------------------------------------------------>
+                        <h3 class="subtitle">Namespacing</h3>
+                        <p>Naming collisions occur when the same variable or function name is used for different purposes by code sharing the same scope. A solution to this problem is to use the object literal pattern to create a namespace for groups of
+                            related functions.
+                        </p>
+
+                        <!--------------------------------------------- Built-in Objects ----------------------------------------------------------->
+                        <h3 class="subtitle">Built-in Objects</h3>
+                        <h4>JSON (JavaScript Object Notation) | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" class="reference" target="_blank">mdn JSON</a></h4>
+                        <p>JSON is a string representation of the object literal notation with a couple of key differences :</p>
+                        <ol>
+                            <li>Property names must be double-quoted</li>
+                            <li>Permitted values are double-quoted strings, numbers, true, false, null, arrays and objects</li>
+                            <li>Functions are not permitted values</li>
+                        </ol>
+                        <dl class="example">const batman = '{"name": "Batman","real name": "Bruce Wayne","height": 74, "weight": 210, "hero": true, "villain": false, "allies": ["Robin","Batgirl","Superman"]}'</dl>
+                        <p>The <i>parse()</i> method takes a string of data in JSON format and returns a JavaScript object. The <i>stringify()</i> method does the opposite, taking a JavaScript object and returning a string of JSON data</p>
+
+                        <h4>The <i>Math</i> Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" class="reference" target="_blank">mdn Math</a></h4>
+                        <h4>The Date Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" class="reference" target="_blank">mdn Date</a></h4>
+                        <h4>The <i>RegExp</i> Object | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" class="reference" target="_blank">mdn RegExp</a></h4>
+
+                        <!---------------------------------------------- Character Groups ------------------------------------------------------->
+                        <h3 class="subtitle">Character Groups</h3>
+                        <p>Groups of characters can be placed together inside square brackets. This character group represents any one of the characters inside the brackets.</p>
+                        <ul class="example">
+                            <li><i>const vowels = /[aeiou]/</i> (This expression matches any vowel)</li>
+                            <li><i>/[A-Z]/</i> (A sequence of characters can also be represented by placing a dash [ - ] between the first and last characters)</li>
+                            <li><i>/[0-9]/</i> (This representes the digits 0-9)</li>
+                            <li><i>/[^A-Z]/</i> (The ^ character is placed at the start of the sequence of characters with the brackets, it negates the sequence)</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!------------------------------- Chapter 6 | The Document Object Model (DOM) --------------------------------->
+
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 6 | The Document Object Model</h2>
+
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">DOM <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" class="reference" target="_blank">mdn Document Object Model</a></h2>
+                        <p>The Document Object Model (DOM) allows you to access elements of a web page and enable interaction with the page by adding and removing elements, changing the order, content and attributes of elements, and even altering how they
+                            are styled.
+                        </p>
+
+                        <h3 class="subtitle">The Document Object Model</h3>
+                        <p>We can use JavaScript to access and modify different parts of a web page using a special built-in object called <i>document</i>.</p>
+
+                        <!---------------------------------------------- History of the DOM -------------------------------------------------->
+                        <h3 class="subtitle">History of the DOM</h3>
+                        <p>The World Wide Web Consortium (W3C) started to standardize the process, and created the DOM level 1 in 1998. This introduced a complete model for web pages that allowed every part of them to be navigated.
+                            <br>The DOM level 2 specification was published in 2000 and introduced the popular <i>getElementById()</i> method, which made it much easier to access specific elements on a web page.
+                            <br>The DOM level 3 specification was published in 2004, and since then the W3C has abandoned using levels. The DOM specification is developed as a <a href="https://dom.spec.whatwg.org" target="_blank">living standard</a>.</p>
+
+                        <!---------------------------------------------- An Example Web Page -------------------------------------------------->
+                        <h3 class="subtitle">An Example Web Page </h3>
+                        <p>the DOM also stores any whitespace that is in the HTML document as text nodes.</p>
+
+                        <!------------------------------------------------ Getting Elements -------------------------------------------------->
+                        <h3 class="subtitle">Getting Elements</h3>
+                        <p>The DOM provides several methods that allow us to access any element on a page. These methods will return a node object or a node list, which is an array-like object. These objects can then be assigned to a variable and be inspected
+                            or modified.</p>
+
+                        <h4>Legacy DOM Shortcut Methods</h4>
+                        <p>There are some methods from DOM Level 0 that can still be employed to access commonly used elements. These include:</p>
+                        <dd>
+                            <li><i>Document.body</i> returns the body element of a web page, as we saw in the previous example.</li>
+                            <li><i>Document.images</i> returns a node list of all the images contained in the document.</li>
+                            <li><i>Document.links</i> returns a node list of all the <i>&lt;a&gt;</i> elements and <i>&lt;area&gt;</i> elements that have an <i>href</i> attribute.</li>
+                            <li><i>Document.anchors</i> returns a node list of all the <i>&lt;a&gt;</i> elements that have a <i>name</i> attribute.</li>
+                            <li><i>Document.forms</i> returns a node list of all the forms in the document.</li>
+                        </dd>
+
+                        <h4>Getting An Element By Its ID</h4>
+                        <p>The <i>getElementById()</i> method does exactly what it says on the tin. It returns a reference to the element with a unique id attribute that is given as an argument.</p>
+                        <dl class="example">const h1 = document.getElementById('title');</dl>
+
+                        <h4>Get Elements By Their Tag Name</h4>
+                        <p><i>getElementsByTagName()</i> will return a live node list of all the elements with the tag name that is provided as an argument.</p>
+                        <dl class="example">const listItems = document.getElementsByTagName('li');</dl>
+
+                        <h4>Get Elements By Their Class Name</h4>
+                        <p><i>getElementsByClassName()</i> will return a live node list of all elements that have the class name that is supplied as an argument.</p>
+                        <dl class="example">const heroes = document.getElementsByClassName('hero');</dl>
+
+                        <h4>Query Selectors</h4>
+                        <p>The <i>document.querySelector()</i> method allows you to use CSS notation to find the first element in the document that matches that matches a CSS selector provided as an argument. If no elements match, it will return null.</p>
+                        <p>The <i>document.querySelectorAll()</i> method also uses CSS notation but returns a node list of all the elements in the document that match the CSS query selector. If no elements match, it will return an empty node list.</p>
+                        <p>These are both very powerful methods that can emulate all the methods discussed, as well as allowing more fine-grained control over which element nodes are returned.</p>
+                        <p>(To use this method review CSS query selectors <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">mdn CSS Selectors</a>.)</p>
+                        <dl class="example">document.querySelector('#bats'); // Instead of <i>document.getElementById()</i></dl>
+
+                        <h4>Navigating the DOM Tree</h4>
+                        <p>Node objects have a number of properties and methods for navigating around the document tree. Once you have a reference to an element, you can walk along the document tree to find other nodes.
+                            <br>The <i>childNodes</i> property is a list of all the nodes that are children of the node concerned.</p>
+
+                        <h4>Finding the Value of a Node</h4>
+                        <h4>Getting and Setting Attributes</h4>
+                        <p>All HTML elements have a large number of possible attributes such as 'class', 'id', src, and 'href'. The DOM has numerous getter and setter methods that can be used to view, add, remove or modify the value of any of these attributes.</p>
+                        <h5>Getting An Element’s Attributes</h5>
+                        <p>The <i>getAttribute()</i> method returns the value of the attribute provided as an argument.</p>
+
+                        <!---------------------------------------- Setting An Element’s Attributes ---------------------------------------->
+                        <h3 class="subtitle">Setting An Element’s Attributes</h3>
+                        <p>The <i>setAttribute</i> can change the value of an element’s attributes. It takes two arguments: the attribute that you wish to change, and the new value of that attribute.
+                            <br>If an element does not have an attribute, the setAttribute method can be used to add it to the element.</p>
+                        <dl class="example">wonderWoman.setAttribute('id','amazon'); //The <i>setAttribute</i> method will add the id of 'amazon' to the <i>wonderWoman</i>element</dl>
+
+                        <h4>Creating Dynamic Markup</h4>
+                        <p>So far we’ve looked at how to gain access to different elements of a web page and find out information about them. We’ve also looked at how to change the attributes of elements. In this section, we’re going to learn how to create
+                            new elements and add them to the page, as well as edit elements that already exist and remove any unwanted elements.</p>
+                        <h5>Creating An Element</h5>
+                        <p>The document object has a <i>createElement()</i> method that takes a tag name as a parameter and returns that element.
+                            <br>At the moment, this element is empty. To add some content, we’ll need to create a text node.</p>
+                        <h5>Creating a Text Node</h5>
+                        <p>A text node can be created using the <i>document.createTextNode()</i> method. It takes a parameter, which is a string containing the text that goes in the node.
+                            <br>Now we have an element node and a text node, but they are not linked together ― we need to append the text node to the paragraph node.</p>
+                        <h5>Appending Nodes</h5>
+                        <p>Every node object has an <i>appendChild()</i> method that will add another node (given as an argument) as a child node. We want our newly created text node to be a child node of the list element node. This means that it’s the <i>flash</i>                            object that calls the method, with <i>flashText</i> as its argument</p>
+                        <h5>A Function To Create Elements</h5>
+                        <p>When we created our new list item element, all we specified was the type of tag and the text inside it. These will form the parameters of our function. The function will then perform the two steps we used to create the new element,
+                            and then return that element:</p>
+                        <dl class="example">
+                            <dt>function createElement (tag,text) {</dt>
+                            <dd>const el = document.createElement(tag);</dd>
+                            <dd>el.textContent = text;</dd>
+                            <dd>return el</dd>
+                            <dt>}</dt>
+                        </dl>
+                        <h5>Adding Elements to the Page</h5>
+                        <p>We have already seen the <i>appendChild()</i> method. </p>
+                        <h5>Remove Elements From a Page</h5>
+                        <p>An element can be removed from a page using the <i>removeChild()</i> method.</p>
+                        <h5>Replacing Elements on a Page</h5>
+                        <p>The <i>replaceChild()</i> method can be used to replace one node with another.</p>
+                        <h5><i>innerHTML</i></h5>
+                        <p>The <i>innerHTML</i> element property was standardized as part of the HTML5</p>
+                        <h5>Live Collections</h5>
+                        <p>The node lists returned by the <i>document.getElementsByClassName()</i> and <i>document.getElementsByTagName()</i> methods are live collections that will update to reflect any changes on the page. </p>
+
+                        <!-------------------------------------------------- Updating CSS --------------------------------------------->
+                        <h3 class="subtitle">Updating CSS</h3>
+                        <p>Every element node has a <i>style</i> property. This can be used to dynamically modify the presentation of any element on a web page.</p>
+                        git add
+                    </div>
+                </div>
+
+                <!------------------------------------ Chapter 7 | Events -------------------------------------------------->
+
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 7 | Events </h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">Events <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events" class="reference" target="_blank">mdn Introduction to events</a></h2>
+
+                        <!----------------------------------- Event Listeners ---------------------------------------------->
+                        <h3 class="subtitle">Event Listeners</h3>
+                        <p>The recommended way of dealing with events, and the current standard, is to use event listeners.
+                            <br>The <i>addEventListener()</i> method is called on a node object, the node to which the event listener is being applied. The <i>addEventListener()</i> method can also be called without a node, in which case it is applied
+                            to the global object, usually the whole browser window.</p>
+
+                        <!------------------------------------- Example Code ----------------------------------------------->
+                        <h3 class="subtitle">Example Code</h3>
+                        <p style="padding-left: 40px;"><a href="indexW03Ex01.html" target="_blank">Events Examples</a></p>
+
+                        <!----------------------------------- The Event Object --------------------------------------------->
+                        <h3 class="subtitle">The Event Object</h3>
+                        <p>Whenever an event handler is triggered by an event, the callback function is called. This function is automatically passed an event object as a parameter that contains information about the event.</p>
+                        <dl class="example">
+                            <dt>function doSomething(event){</dt>
+                            <dd>console.log(event.type);</dd>
+                            <dt>}</dt>
+                        </dl>
+                        <p>The parameter does not have to be called <i>event</i>. It can be given any legal variable name, although calling it <i>event</i> can make it easier to read the code. Many developers often abbreviate it to just <i>e</i>.</p>
+
+                        <!-------------------------------------- Types of Events --------------------------------------------->
+                        <h3 class="subtitle">Types of Events</h3>
+                        <p>There are several types of events, ranging from when a video has finished playing to when a resource has completed downloading. You can see a
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank"> full list on the Events page of the Mozilla Developer Network.</a></p>
+
+                        <h4>The event Target</h4>
+                        <p>The <i>target</i> property returns a reference to the node that fired the event.</p>
+                        <h4>Coordinates of an Event</h4>
+                        <ul>There are a variety of ways to find the position of where a mouse event occurs.
+                            <li>The <i>screenX</i> and <i>screenY</i> properties show the number of pixels from the left and top of the screen respectively where the event took place.</li>
+                            <li>The <i>clientX</i> and <i>clientY</i> properties show the number of pixels from the left and top of the client that is being used (usually the browser window).</li>
+                            <li>The <i>pageX</i> and <i>pageY</i> properties show the number of pixels from the left and top, respectively, where the event took place in the document. This property takes account of whether the page has been scrolled.</li>
+                        </ul>
+                        <p>we’re going to focus on some of the more common events that occur using the mouse, the keyboard and touch.</p>
+
+                        <h4>Mouse Events</h4>
+                        <p>We already mentionned the <i>click</i> event that occurs when a mouse button is clicked. There are also the <i>mousedown</i> and <i>mouseup</i> events. These both occur before a <i>click</i> event is fired.</p>
+                        <dl class="example">
+                            <dt>const clickParagraph = document.getElementById('click');</dt>
+                            <br>
+                            <dt>clickParagraph.addEventListener('click',() => console.log('click') );</dt>
+                            <dt>clickParagraph.addEventListener('mousedown',() => console.log('down') );</dt>
+                            <dt>clickParagraph.addEventListener('mouseup',() => console.log('up') );</dt>
+                        </dl>
+                        <p>There is also the <i>dblclick</i> event, which occurs when the user doubleclicks on the element to which the event listener is attached.</p>
+                        <p class="warning">&#9888; You should be very cautious of attaching both a <i>click</i> and <i>doubleclick</i> event to the same element. This is because it’s impossible to tell if a click is the first click of a doubleclick or just a single click.
+                            This means that a <i>doubleclick</i> event will always cause the <i>click</i> event to fire.</p>
+                        <p>The <i>mouseover</i> event occurs when the mouse pointer is placed over the element to which the event listener is attached, while the <i>mouseout</i> event occurs when the mouse pointer moves away from an element. The <i>mousemove</i>                            event occurs whenever the mouse moves. It will only occur while the cursor is over the element to which it’s applied.</p>
+
+                        <h4>Keyboard Events</h4>
+                        <p>Three events that occur when a user presses a key are: <i>keydown, keypress</i> and <i>keyup</i>. When a user presses a key, the events occur in that order. They are not tied to any particular key, although the information about
+                            which key was pressed is a property of the event object.</p>
+                        <ol>
+                            <li>The <i>keydown</i> event occurs when a key is pressed and will continue to occur if the key is held down.</li>
+                            <li>The <i>keypress</i> event occurs after a <i>keydown</i> event but before a <i>keyup</i> event. The <i>keypress</i> event only occurs for keys that produce character input (plus the 'Delete' key). This means that it’s the most
+                                reliable way to find out the character that was pressed on the keyboard.</li>
+                            <li>The <i>keyup</i> event occurs when a key is released.</li>
+                        </ol>
+                        <p>Pressing the modifier keys such as Shift, Ctrl, Alt and meta (Cmd on Mac) will fire the <i>keydown</i> and <i>keyup</i> events, but not the <i>keypress</i> event as they don't produce any characters on the screen. The name of the
+                            modifier
+                            <i>key</i> is still returned by the key property. </p>
+
+                        <h4>Touch Events</h4>
+                        <p>Many modern devices now support touch events. These are used on smartphones and tablets, as well as touch-screen monitors, satellite navigators and trackpads. Touch events are usually made with a finger, but can also be by stylus
+                            or another part of the body. There are a number of touch events that cover many types of touch interactions. <strong>It’s important to support mouse events as well as touch events, so non-touch devices are also supported.</strong></p>
+
+                        <!------------------------------------------------ Removing Event Listeners -------------------------------------------->
+                        <h3 class="subtitle">Removing Event Listeners</h3>
+                        <p>An event listener can be removed using the <i>removeEventListener()</i> method. The adds a <i>click</i> event listener to a paragraph element, but then removes it in the callback function named <i>remove</i>. This means it will
+                            only be called once (try clicking on it again and nothing happens).</p>
+
+                        <!----------------------------------------------- Stopping Default Behavior --------------------------------------------->
+                        <h3 class="subtitle">Stopping Default Behavior</h3>
+                        <p>Some elements have default behavior associated with certain events. For example, when a user clicks on a link, the browser redirects to the address in the <i>href</i> attribute and a form is submitted when the user clicks on the
+                            Submit button. <i>preventDefault()</i> is a method of the <i>event</i> object that can be used inside the callback function to stop the default behavior happening.</p>
+
+                        <!--------------------------------------------------- Event Propagation ----------------------------------------->
+                        <h3 class="subtitle">Event Propagation</h3>
+                        <p>When you click on an element, you are actually clicking on all the elements it’s nested inside of. To illustrate this, add the following piece of HTML to the events.html file:</p>
+                        <dl class="example">
+                            <dt>&lt;ul id='list'>&gt;</dt>
+                            <dd>&lt;li>one&lt;/li>&gt;</dd>
+                            <dd>&lt;li>two&lt;/li>&gt;</dd>
+                            <dd>&lt;li>three&lt;/li>&gt;</dd>
+                            <dt>&lt;/ul>&gt;</dt>
+                        </dl>
+                        <p>If you click on one of the <i>&lt;li&gt;</i> elements, you’re also clicking on the <i>&lt;ul&gt;</i>, <i>&lt;body&gt;</i>, and <i>&lt;html&gt;</i> elements. An event is said to propagate as it moves from one element to another.</p>
+                        <p>Event propagation is the order that the events fire on each element. There are two forms of event propagation: bubbling and capturing.</p>
+                        <p>Bubbling is when the event fires on the element clicked on first, then bubbles up the document tree, firing an event on each parent element until it reaches the root node.</p>
+                        <p>Capturing starts by firing an event on the root element, then propagates downwards, firing an event on each child element until it reaches the target element that was clicked on.</p>
+                        <p>More about event propagation : <a href="https://www.sitepoint.com/event-bubbling-javascript/" target="_blank">article on SitePoint</a></p>
+
+                        <!--------------------------------------------------- Event Delegation ---------------------------------------->
+                        <h3 class="subtitle">Event Delegation</h3>
+                        <p>Event delegation can be used to attach an event listener to a parent element in order to capture events that are triggered by its child elements.</p>
+
+                    </div>
+                </div>
+                <div class="week-flip">
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW02.html" class="flip">
+                        <ion-icon name="chevron-back-outline"></ion-icon> Week 02</a>
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW04.html" class="flip">Week 04 <ion-icon name="chevron-forward-outline"></ion-icon></a>
+                </div>
+            </div>
+            <div class="sidebar">
+                <h2>Code of the Week</h2>
+
+                <a href="../Project/Calculator/" class="button" target="_blank">Calculator</a>
+                <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/Calculator" class="code" target="_blank">Code Pages on GitHub</a>
+                <a href="../Project/Bubble/" class="button" target="_blank">Bubbles</a>
+                <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/Bubble" class="code" target="_blank">Code Pages on GitHub</a>
+                <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
+            </div>
+        </section>
+
+        <br>
+        <div class="ressources">
+            <h2>Ressources :</h2>
+            <div class="references">
+                <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
+                <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
+                <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
+                <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
+                <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
+                <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
+            </div>
+            <h2><q>Pratice is the Secret of Success.</q></h2>
+            <div class="references">
+                <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
+                <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
+                <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
+                <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+            <hr>
+            <h2>Teacher : Johan Baer</h2>
+            <hr>
+        </div>
+    </main>
+
+    <script src="../js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

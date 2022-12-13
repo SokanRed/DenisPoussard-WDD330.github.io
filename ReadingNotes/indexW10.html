@@ -10,267 +10,305 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1>WDD 330 Development: Web Frontend Development II</h1>
-        <h2>Reading Notes | Week 10</h2>
-        <div class="navigation">
-            <a href="../index.html" class="button" target="_blank">Home</a>
-            <a href="./index.html" class="button" target="_blank">Reading Notes</a>
-            <a href="../Project/index.html" class="button" target="_blank">Projects</a>
-            <a href="../Challenge/index.html" class="button" target="_blank">Challenges</a>
+    <!-- Navigation Latteral -->
+    <div id="nav-latteral">
+        <div id="nav-close" class="nav-button">
+            <ion-icon name="close"></ion-icon>
         </div>
-    </header>
-    <h2 class="book-title">From MDN</h2>
-    <section class="main">
-        <div class="notes">
+        <div class="nav-links">
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/" target="_blank">
+                    <ion-icon name="home"></ion-icon>Home</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/index.html" target="_blank">
+                    <ion-icon name="create"></ion-icon>Reading Notes</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/TeamActivity/index.html" target="_blank">
+                    <ion-icon name="people"></ion-icon>Team Activity</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Project/index.html" target="_blank">
+                    <ion-icon name="construct"></ion-icon>
+                    </ion-icon>Projects</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Challenge/index.html" target="_blank">
+                    <ion-icon name="barbell"></ion-icon>Challenges</a>
+            </div>
+        </div>
+    </div>
+    <div id="nav-wrapper"></div>
+    <nav>
+        <div id="nav-open" class="nav-button">
+            <ion-icon name="reorder-three"></ion-icon>
+        </div>
+    </nav>
+    <!-- Navigation Latteral -->
 
-            <!----------------------------------------- Validation Forms ------------------------------------------------>
+    <main>
+        <header class="header">
+            <h1>WDD 330 Development: Web Frontend Development II</h1>
+            <h2>Reading Notes | Week 10</h2>
+        </header>
+        <h2 class="book-title">From MDN</h2>
+        <section class="main">
+            <div class="notes">
 
-            <div class="dropdown">
-                <h2>&#9660 Validation Forms</h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">Validation Forms <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation" class="reference" target="_blank">mdn Client-side validation</a></h2>
-                    <p>Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation, and helps ensure data submitted matches the requirements
-                        set forth in the various form controls.</p>
+                <!----------------------------------------- Validation Forms ------------------------------------------------>
 
-                    <!--------------------------------------- What is form validation? -------------------------------->
-                    <h3 class="subtitle">What is form validation?</h3>
-                    <p>We want to make filling out web forms as easy as possible. However, there are three main reasons to insist on validating our forms:</p>
-                    <ul>
-                        <li>We want to get the right data, in the right format. Our applications won't work properly if our users' data is stored in the wrong format, is incorrect, or is omitted altogether.</li>
-                        <li>We want to protect our users' data. Forcing our users to enter secure passwords makes it easier to protect their account information.</li>
-                        <li>We want to protect ourselves. There are many ways that malicious users can misuse unprotected forms to damage the application.</li>
-                    </ul>
-                    <p class="warning">&#9888; Warning: Never trust data passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user can still alter the network request.</p>
+                <div class="dropdown">
+                    <h2>&#9660 Validation Forms</h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">Validation Forms <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation" class="reference" target="_blank">mdn Client-side validation</a></h2>
+                        <p>Before submitting data to the server, it is important to ensure all required form controls are filled out, in the correct format. This is called client-side form validation, and helps ensure data submitted matches the requirements
+                            set forth in the various form controls.</p>
 
-                    <!--------------------------- Different types of client-side validation --------------------------------->
-                    <h3 class="subtitle">Different types of client-side validation</h3>
-                    <p>There are two different types of client-side validation : 1) Built-in form validation uses HTML form validation features. 2) JavaScript validation is coded using JavaScript.</p>
+                        <!--------------------------------------- What is form validation? -------------------------------->
+                        <h3 class="subtitle">What is form validation?</h3>
+                        <p>We want to make filling out web forms as easy as possible. However, there are three main reasons to insist on validating our forms:</p>
+                        <ul>
+                            <li>We want to get the right data, in the right format. Our applications won't work properly if our users' data is stored in the wrong format, is incorrect, or is omitted altogether.</li>
+                            <li>We want to protect our users' data. Forcing our users to enter secure passwords makes it easier to protect their account information.</li>
+                            <li>We want to protect ourselves. There are many ways that malicious users can misuse unprotected forms to damage the application.</li>
+                        </ul>
+                        <p class="warning">&#9888; Warning: Never trust data passed to your server from the client. Even if your form is validating correctly and preventing malformed input on the client-side, a malicious user can still alter the network request.</p>
 
-                    <!---------------------------------- Using built-in form validation ------------------------------->
-                    <h3 class="subtitle">Using built-in form validation</h3>
-                    <p>One of the most significant features of <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types" target="_blank">modern form controls</a> is the ability to validate most user data without relying on JavaScript.
-                        This is done by using validation attributes on form elements :</p>
-                    <ul>
-                        <li><i>required</i>: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
-                        <li><i>minlength</i> and <i>maxlength</i>: Specifies the minimum and maximum length of textual data (strings).</li>
-                        <li><i>min</i> and <i>max</i>: Specifies the minimum and maximum values of numerical input types.</li>
-                        <li><i>type</i>: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
-                        <li><i>pattern</i>: Specifies a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">regular expression</a> that defines a pattern the entered data needs to follow.</li>
-                    </ul>
-                    <p>When an element is valid, the following things are true:</p>
-                    <ul>
-                        <li>The element matches the <i>:valid</i> CSS pseudo-class, which lets you apply a specific style to valid elements.</li>
-                        <If>If the user tries to send the data, the browser will submit the form.</li>
-                    </ul>
-                    <p>When an element is invalid, the following things are true:</p>
-                    <ul>
-                        <li>The element matches the <i>:invalid</i> CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., <i>:out-of-range</i>) depending on the error, which lets you apply a specific style to invalid elements.</li>
-                        <li>If the user tries to send the data, the browser will block the form and display an error message.</li>
-                    </ul>
-                    <a href="indexW10Ex01.html" target="_blank">Here is a full example to show usage of HTML's built-in validation features.</a>
-                    <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation#validation-related_attributes" target="_blank">Validation-related attributes</a> for a complete list of attributes that can be used to constrain
-                        input values and the input types that support them.</p>
+                        <!--------------------------- Different types of client-side validation --------------------------------->
+                        <h3 class="subtitle">Different types of client-side validation</h3>
+                        <p>There are two different types of client-side validation : 1) Built-in form validation uses HTML form validation features. 2) JavaScript validation is coded using JavaScript.</p>
 
-                    <!------------------------------------------ Validating forms using JavaScript -------------------------------->
-                    <h3 class="subtitle">Validating forms using JavaScript</h3>
-                    <p>You must use JavaScript if you want to take control over the look and feel of native error messages.</p>
+                        <!---------------------------------- Using built-in form validation ------------------------------->
+                        <h3 class="subtitle">Using built-in form validation</h3>
+                        <p>One of the most significant features of <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types" target="_blank">modern form controls</a> is the ability to validate most user data without relying on JavaScript.
+                            This is done by using validation attributes on form elements :</p>
+                        <ul>
+                            <li><i>required</i>: Specifies whether a form field needs to be filled in before the form can be submitted.</li>
+                            <li><i>minlength</i> and <i>maxlength</i>: Specifies the minimum and maximum length of textual data (strings).</li>
+                            <li><i>min</i> and <i>max</i>: Specifies the minimum and maximum values of numerical input types.</li>
+                            <li><i>type</i>: Specifies whether the data needs to be a number, an email address, or some other specific preset type.</li>
+                            <li><i>pattern</i>: Specifies a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">regular expression</a> that defines a pattern the entered data needs to follow.</li>
+                        </ul>
+                        <p>When an element is valid, the following things are true:</p>
+                        <ul>
+                            <li>The element matches the <i>:valid</i> CSS pseudo-class, which lets you apply a specific style to valid elements.</li>
+                            <If>If the user tries to send the data, the browser will submit the form.</li>
+                        </ul>
+                        <p>When an element is invalid, the following things are true:</p>
+                        <ul>
+                            <li>The element matches the <i>:invalid</i> CSS pseudo-class, and sometimes other UI pseudo-classes (e.g., <i>:out-of-range</i>) depending on the error, which lets you apply a specific style to invalid elements.</li>
+                            <li>If the user tries to send the data, the browser will block the form and display an error message.</li>
+                        </ul>
+                        <a href="indexW10Ex01.html" target="_blank">Here is a full example to show usage of HTML's built-in validation features.</a>
+                        <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation#validation-related_attributes" target="_blank">Validation-related attributes</a> for a complete list of attributes that can be used to constrain
+                            input values and the input types that support them.</p>
 
-                    <h4>The Constraint Validation API | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation" class="reference" target="_blank">mdn Constraint validation API</a></h4>
-                    <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:</p>
-                    <ul>
-                        <li><i>HTMLButtonElement</i> (represents a <i>&lt;button&gt;</i> element)</li>
-                        <li><i>HTMLFieldSetElement</i> (represents a <i>&lt;fieldset&gt;</i> element)</li>
-                        <li><i>HTMLInputElement</i> (represents an <i>&lt;input&gt;</i> element)</li>
-                        <li><i>HTMLOutputElement</i> (represents an <i>&lt;output&gt;</i> element)</li>
-                        <li><i>HTMLSelectElement</i> (represents a <i>&lt;select&gt;</i> element)</li>
-                        <li><i>HTMLTextAreaElement</i> (represents a <i>&lt;textarea&gt;</i> element)</li>
-                    </ul>
-                    <p>The Constraint validation API makes the following properties available on the above elements.</p>
-                    <ul>
-                        <li><i>validationMessage</i>: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the element's
-                            value satisfies its constraints (is valid), this will return an empty string.</li>
-                        <li><i>validity</i>: Returns a ValidityState object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState"
-                                target="_blank">ValidityState</a> reference page.</li>
-                        <li><i>willValidate</i>: Returns true if the element will be validated when the form is submitted; false otherwise.</li>
-                    </ul>
-                    <p>The Constraint Validation API also makes the following methods available on the above elements and the <i>form</i> element.</p>
-                    <ul>
-                        <li><i>checkValidity()</i>: Returns true if the element's value has no validity problems; false otherwise. If the element is invalid, this method also fires an invalid event on the element.</li>
-                        <li><i>reportValidity()</i>: Reports invalid field(s) using events. Useful in combination with preventDefault() in an onSubmit event handler</li>
-                        <li><i>setCustomValidity(message)</i>: Adds a custom error message to the element; if you set a custom error message, the element is considered to be invalid, and the specified error is displayed. This lets you use JavaScript code
-                            to establish a validation failure other than those offered by the standard HTML validation constraints. The message is shown to the user when reporting the problem.</li>
-                    </ul>
+                        <!------------------------------------------ Validating forms using JavaScript -------------------------------->
+                        <h3 class="subtitle">Validating forms using JavaScript</h3>
+                        <p>You must use JavaScript if you want to take control over the look and feel of native error messages.</p>
 
-                    <h4>Implementing a customized error message |
-                        <a href="indexW10Ex02.html" target="_blank">Detail Example</a>
-                    </h4>
+                        <h4>The Constraint Validation API | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation" class="reference" target="_blank">mdn Constraint validation API</a></h4>
+                        <p>Most browsers support the Constraint Validation API, which consists of a set of methods and properties available on the following form element DOM interfaces:</p>
+                        <ul>
+                            <li><i>HTMLButtonElement</i> (represents a <i>&lt;button&gt;</i> element)</li>
+                            <li><i>HTMLFieldSetElement</i> (represents a <i>&lt;fieldset&gt;</i> element)</li>
+                            <li><i>HTMLInputElement</i> (represents an <i>&lt;input&gt;</i> element)</li>
+                            <li><i>HTMLOutputElement</i> (represents an <i>&lt;output&gt;</i> element)</li>
+                            <li><i>HTMLSelectElement</i> (represents a <i>&lt;select&gt;</i> element)</li>
+                            <li><i>HTMLTextAreaElement</i> (represents a <i>&lt;textarea&gt;</i> element)</li>
+                        </ul>
+                        <p>The Constraint validation API makes the following properties available on the above elements.</p>
+                        <ul>
+                            <li><i>validationMessage</i>: Returns a localized message describing the validation constraints that the control doesn't satisfy (if any). If the control is not a candidate for constraint validation (willValidate is false) or the
+                                element's value satisfies its constraints (is valid), this will return an empty string.</li>
+                            <li><i>validity</i>: Returns a ValidityState object that contains several properties describing the validity state of the element. You can find full details of all the available properties in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ValidityState"
+                                    target="_blank">ValidityState</a> reference page.</li>
+                            <li><i>willValidate</i>: Returns true if the element will be validated when the form is submitted; false otherwise.</li>
+                        </ul>
+                        <p>The Constraint Validation API also makes the following methods available on the above elements and the <i>form</i> element.</p>
+                        <ul>
+                            <li><i>checkValidity()</i>: Returns true if the element's value has no validity problems; false otherwise. If the element is invalid, this method also fires an invalid event on the element.</li>
+                            <li><i>reportValidity()</i>: Reports invalid field(s) using events. Useful in combination with preventDefault() in an onSubmit event handler</li>
+                            <li><i>setCustomValidity(message)</i>: Adds a custom error message to the element; if you set a custom error message, the element is considered to be invalid, and the specified error is displayed. This lets you use JavaScript code
+                                to establish a validation failure other than those offered by the standard HTML validation constraints. The message is shown to the user when reporting the problem.</li>
+                        </ul>
 
-                    <h4>Validating forms without a built-in API</h4>
-                    <p>In some cases, such as <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_build_custom_form_controls" target="_blank">custom controls</a> , you won't be able to or won't want to use the Constraint Validation API.
-                        To validate a form, ask yourself a few questions: 1) What kind of validation should I perform? 2) What should I do if the form doesn't validate? 3) How can I help the user to correct invalid data?</p>
-                    <a href="indexW10Ex03.html" target="_blank">An example that doesn't use the constraint validation API</a>
+                        <h4>Implementing a customized error message |
+                            <a href="indexW10Ex02.html" target="_blank">Detail Example</a>
+                        </h4>
 
+                        <h4>Validating forms without a built-in API</h4>
+                        <p>In some cases, such as <a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/How_to_build_custom_form_controls" target="_blank">custom controls</a> , you won't be able to or won't want to use the Constraint Validation API.
+                            To validate a form, ask yourself a few questions: 1) What kind of validation should I perform? 2) What should I do if the form doesn't validate? 3) How can I help the user to correct invalid data?</p>
+                        <a href="indexW10Ex03.html" target="_blank">An example that doesn't use the constraint validation API</a>
+
+                    </div>
+                </div>
+
+                <!-------------------------------------- Using Fetch --------------------------------------------------->
+
+                <div class="dropdown">
+                    <h2>&#9660 Using Fetch</h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">Using Fetch <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" class="reference" target="_blank">mdn Using the Fetch API</a> <a style="padding-left: 40px" href="https://fetch.spec.whatwg.org/#fetch-method"
+                                class="reference" target="_blank">Fetch (living Standard)</a></h2>
+                        <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch API</a> provides a JavaScript interface for accessing and manipulating parts of the protocol, such as requests and responses. It also
+                            provides a global <i>fetch()</i> method that provides an easy, logical way to fetch resources asynchronously across the network. A basic fetch request is really simple to set up:</p>
+                        <dl class="example">
+                            <dt>fetch('http://example.com/movies.json')</dt>
+                            <dd>.then((response) => response.json())</dd>
+                            <dd>.then((data) => console.log(data));</dd>
+                        </dl>
+                        <p>Here we are fetching a JSON file across the network and printing it to the console. The simplest use of <i>fetch()</i> takes one argument — the path to the resource you want to fetch — and does not directly return the JSON response
+                            body but instead returns a promise that resolves with a Response object. The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So,
+                            to extract the JSON body content from the Response object, we use the <i>json()</i> method, which returns a second promise that resolves with the result of parsing the response body text as JSON.</p>
+
+                        <!------------------------------------------- Supplying request options ------------------------------>
+                        <h3 class="subtitle">Supplying request options</h3>
+                        <p>The <i>fetch()</i> method can optionally accept a second parameter, an init object that allows you to control a number of different settings:</p>
+                        <dl class="example">
+                            <dt>// Example POST method implementation:</dt>
+                            <dt>async function postData(url = '', data = {}) {</dt>
+                            <dd>// Default options are marked with *</dd>
+                            <dd>const response = await fetch(url, {</dd>
+                            <dd style="padding-left: 40px;">method: 'POST', // *GET, POST, PUT, DELETE, etc.</dd>
+                            <dd style="padding-left: 40px;">mode: 'cors', // no-cors, *cors, same-origin</dd>
+                            <dd style="padding-left: 40px;">cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached</dd>
+                            <dd style="padding-left: 40px;">credentials: 'same-origin', // include, *same-origin, omit</dd>
+                            <dd style="padding-left: 40px;">headers: {</dd>
+                            <dd style="padding-left: 80px;">'Content-Type': 'application/json'</dd>
+                            <dd style="padding-left: 80px;">// 'Content-Type': 'application/x-www-form-urlencoded',</dd>
+                            <dd style="padding-left: 40px;">},</dd>
+                            <dd style="padding-left: 40px;">redirect: 'follow', // manual, *follow, error</dd>
+                            <dd style="padding-left: 40px;">referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url</dd>
+                            <dd style="padding-left: 40px;">body: JSON.stringify(data) // body data type must match "Content-Type" header</dd>
+                            <dd>});</dd>
+                            <dd>return response.json(); // parses JSON response into native JavaScript objects</dd>
+                            <dt>}</dt>
+                            <dt>postData('https://example.com/answer', { answer: 42 })</dt>
+                            <dd>.then((data) => {</dd>
+                            <dd style="padding-left: 40px;">console.log(data); // JSON data parsed by `data.json()` call</dd>
+                            <dd>});</dd>
+                        </dl>
+
+                        <!------------------------------------ Sending a request with credentials included ----------------------------------->
+                        <h3 class="subtitle">Sending a request with credentials included</h3>
+                        <p>To cause browsers to send a request with credentials included on both same-origin and cross-origin calls, add <i>credentials: 'include'</i> to the <i>init</i> object you pass to the <i>fetch()</i> method.</p>
+                        <dl class="example">
+                            <dt>fetch('https://example.com', {</dt>
+                            <dd>credentials: 'include'</dd>
+                            <dt>});</dt>
+                        </dl>
+
+                        <!--------------------------------------------------- Uploading JSON data ------------------------------------------------>
+                        <h3 class="subtitle">Uploading JSON data</h3>
+                        <p>Use <i>fetch()</i> to POST JSON-encoded data.</p>
+
+                        <!----------------------------------------------------- Uploading a file ------------------------------------------------->
+                        <h3 class="subtitle">Uploading a file</h3>
+                        <p>Files can be uploaded using an HTML <i>&lt;input type="file" /&gt;</i> input element, <i>FormData()</i> and <i>fetch()</i>.</p>
+
+                        <!------------------------------------------------ Uploading multiple files ---------------------------------------------->
+                        <h3 class="subtitle">Uploading multiple files</h3>
+                        <p>Files can be uploaded using an HTML <i>&lt;input type="file" multiple /&gt;</i> input element, <i>FormData()</i> and <i>fetch()</i>.</p>
+
+                        <!-------------------------------------------- Processing a text file line by line --------------------------------------->
+                        <h3 class="subtitle">Processing a text file line by line</h3>
+                        <p>The chunks that are read from a response are not broken neatly at line boundaries and are Uint8Arrays, not strings. If you want to fetch a text file and process it line by line, it is up to you to handle these complications.</p>
+
+                        <!------------------------------------------- Checking that the fetch was successful ------------------------------------->
+                        <h3 class="subtitle">Checking that the fetch was successful</h3>
+                        <p>A <i>fetch()</i> promise will reject with a <i>TypeError</i> when a network error is encountered or CORS is misconfigured on the server-side, although this usually means permission issues or similar — a 404 does not constitute
+                            a network error, for example. An accurate check for a successful <i>fetch()</i> would include checking that the promise resolved, then checking that the <i>Response.ok</i> property has a value of true.</p>
+
+                        <!--------------------------------------------- Supplying your own request object ---------------------------------------->
+                        <h3 class="subtitle">Supplying your own request object | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/Request" class="reference" target="_blank"> mdn Request()</a></h3>
+                        <p>Instead of passing a path to the resource you want to request into the <i>fetch()</i> call, you can create a request object using the <i>Request()</i> constructor, and pass that in as a <i>fetch()</i> method argument
+                            <br><i>Request()</i> accepts exactly the same parameters as the <i>fetch()</i> method. You can even pass in an existing request object to create a copy of it</p>
+
+                        <!---------------------------------------------------------- Headers ----------------------------------------------------->
+                        <h3 class="subtitle">Headers |
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Headers" class="reference" target="_blank"></a> mdn Headers</h3>
+                        <p>The <i>Headers</i> interface allows you to create your own headers object via the <i>Headers()</i> constructor. A headers object is a simple multi-map of names to values</p>
+
+                        <!------------------------------------------------------ Response objects ------------------------------------------------>
+                        <h3 class="subtitle">Response objects | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" class="reference" target="_blank"> mdn Response</a></h3>
+                        <p>As you have seen above, <i>Response</i> instances are returned when <i>fetch()</i> promises are resolved.
+                            <br>The most common response properties you'll use are:</p>
+                        <dl>
+                            <dd><i>Response.status</i> — An integer (default value 200) containing the response status code.</dd>
+                            <dd><i>Response.statusText</i> — A string (default value ""), which corresponds to the HTTP status code message. Note that HTTP/2 does not support status messages.</dd>
+                            <dd><i>Response.ok</i> — This is a shorthand for checking that status is in the range 200-299 inclusive. This returns a boolean value.</dd>
+                        </dl>
+
+                        <!------------------------------------------------------------ Body ------------------------------------------------------>
+                        <h3 class="subtitle">Body</h3>
+                        <p>Both requests and responses may contain body data. A body is an instance of any of the following types : <i>ArrayBuffer,, TypedArray (Uint8Array and friends), DataView, Blob, File, String (or a string literal), URLSearchParams, FormData</i>
+                            <br>The <i>Request</i> and <i>Response</i> interfaces share the following methods to extract a body. These all return a promise that is eventually resolved with the actual content.</p>
+                        <dl>
+                            <dd><i>Request.arrayBuffer() / Response.arrayBuffer()</i></dd>
+                            <dd><i>Request.blob() / Response.blob()</i></dd>
+                            <dd><i>Request.formData() / Response.formData()</i></dd>
+                            <dd><i>Request.json() / Response.json()</i></dd>
+                            <dd><i>Request.text() / Response.text()</i></dd>
+                        </dl>
+
+                        <!---------------------------------------------------- Feature detection -------------------------------------------------->
+                        <h3 class="subtitle">Feature detection</h3>
+                        <p>Fetch API support can be detected by checking for the existence of <i>Headers, Request, Response or fetch() on the Window or Worker</i> scope</p>
+
+                        <!----------------------------------------------------- Specifications ---------------------------------------------------->
+                        <h3 class="subtitle">Specifications</h3>
+                        <a href="https://fetch.spec.whatwg.org/#fetch-method" class="reference" target="_blank">Fetch Standard # fetch-method</a>
+
+                    </div>
+                </div>
+                <div class="week-flip">
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW09.html" class="flip">
+                        <ion-icon name="chevron-back-outline"></ion-icon> Week 09</a>
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW01.html" class="flip">Week 01 <ion-icon name="chevron-forward-outline"></ion-icon></a>
                 </div>
             </div>
 
-            <!-------------------------------------- Using Fetch --------------------------------------------------->
+            <div class="sidebar">
+                <h2>Code of the Week</h2>
 
-            <div class="dropdown">
-                <h2>&#9660 Using Fetch</h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">Using Fetch <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" class="reference" target="_blank">mdn Using the Fetch API</a> <a style="padding-left: 40px" href="https://fetch.spec.whatwg.org/#fetch-method"
-                            class="reference" target="_blank">Fetch (living Standard)</a></h2>
-                    <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch API</a> provides a JavaScript interface for accessing and manipulating parts of the protocol, such as requests and responses. It also provides
-                        a global <i>fetch()</i> method that provides an easy, logical way to fetch resources asynchronously across the network. A basic fetch request is really simple to set up:</p>
-                    <dl class="example">
-                        <dt>fetch('http://example.com/movies.json')</dt>
-                        <dd>.then((response) => response.json())</dd>
-                        <dd>.then((data) => console.log(data));</dd>
-                    </dl>
-                    <p>Here we are fetching a JSON file across the network and printing it to the console. The simplest use of <i>fetch()</i> takes one argument — the path to the resource you want to fetch — and does not directly return the JSON response
-                        body but instead returns a promise that resolves with a Response object. The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to
-                        extract the JSON body content from the Response object, we use the <i>json()</i> method, which returns a second promise that resolves with the result of parsing the response body text as JSON.</p>
-
-                    <!------------------------------------------- Supplying request options ------------------------------>
-                    <h3 class="subtitle">Supplying request options</h3>
-                    <p>The <i>fetch()</i> method can optionally accept a second parameter, an init object that allows you to control a number of different settings:</p>
-                    <dl class="example">
-                        <dt>// Example POST method implementation:</dt>
-                        <dt>async function postData(url = '', data = {}) {</dt>
-                        <dd>// Default options are marked with *</dd>
-                        <dd>const response = await fetch(url, {</dd>
-                        <dd style="padding-left: 40px;">method: 'POST', // *GET, POST, PUT, DELETE, etc.</dd>
-                        <dd style="padding-left: 40px;">mode: 'cors', // no-cors, *cors, same-origin</dd>
-                        <dd style="padding-left: 40px;">cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached</dd>
-                        <dd style="padding-left: 40px;">credentials: 'same-origin', // include, *same-origin, omit</dd>
-                        <dd style="padding-left: 40px;">headers: {</dd>
-                        <dd style="padding-left: 80px;">'Content-Type': 'application/json'</dd>
-                        <dd style="padding-left: 80px;">// 'Content-Type': 'application/x-www-form-urlencoded',</dd>
-                        <dd style="padding-left: 40px;">},</dd>
-                        <dd style="padding-left: 40px;">redirect: 'follow', // manual, *follow, error</dd>
-                        <dd style="padding-left: 40px;">referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url</dd>
-                        <dd style="padding-left: 40px;">body: JSON.stringify(data) // body data type must match "Content-Type" header</dd>
-                        <dd>});</dd>
-                        <dd>return response.json(); // parses JSON response into native JavaScript objects</dd>
-                        <dt>}</dt>
-                        <dt>postData('https://example.com/answer', { answer: 42 })</dt>
-                        <dd>.then((data) => {</dd>
-                        <dd style="padding-left: 40px;">console.log(data); // JSON data parsed by `data.json()` call</dd>
-                        <dd>});</dd>
-                    </dl>
-
-                    <!------------------------------------ Sending a request with credentials included ----------------------------------->
-                    <h3 class="subtitle">Sending a request with credentials included</h3>
-                    <p>To cause browsers to send a request with credentials included on both same-origin and cross-origin calls, add <i>credentials: 'include'</i> to the <i>init</i> object you pass to the <i>fetch()</i> method.</p>
-                    <dl class="example">
-                        <dt>fetch('https://example.com', {</dt>
-                        <dd>credentials: 'include'</dd>
-                        <dt>});</dt>
-                    </dl>
-
-                    <!--------------------------------------------------- Uploading JSON data ------------------------------------------------>
-                    <h3 class="subtitle">Uploading JSON data</h3>
-                    <p>Use <i>fetch()</i> to POST JSON-encoded data.</p>
-
-                    <!----------------------------------------------------- Uploading a file ------------------------------------------------->
-                    <h3 class="subtitle">Uploading a file</h3>
-                    <p>Files can be uploaded using an HTML <i>&lt;input type="file" /&gt;</i> input element, <i>FormData()</i> and <i>fetch()</i>.</p>
-
-                    <!------------------------------------------------ Uploading multiple files ---------------------------------------------->
-                    <h3 class="subtitle">Uploading multiple files</h3>
-                    <p>Files can be uploaded using an HTML <i>&lt;input type="file" multiple /&gt;</i> input element, <i>FormData()</i> and <i>fetch()</i>.</p>
-
-                    <!-------------------------------------------- Processing a text file line by line --------------------------------------->
-                    <h3 class="subtitle">Processing a text file line by line</h3>
-                    <p>The chunks that are read from a response are not broken neatly at line boundaries and are Uint8Arrays, not strings. If you want to fetch a text file and process it line by line, it is up to you to handle these complications.</p>
-
-                    <!------------------------------------------- Checking that the fetch was successful ------------------------------------->
-                    <h3 class="subtitle">Checking that the fetch was successful</h3>
-                    <p>A <i>fetch()</i> promise will reject with a <i>TypeError</i> when a network error is encountered or CORS is misconfigured on the server-side, although this usually means permission issues or similar — a 404 does not constitute a network
-                        error, for example. An accurate check for a successful <i>fetch()</i> would include checking that the promise resolved, then checking that the <i>Response.ok</i> property has a value of true.</p>
-
-                    <!--------------------------------------------- Supplying your own request object ---------------------------------------->
-                    <h3 class="subtitle">Supplying your own request object | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/Request" class="reference" target="_blank"> mdn Request()</a></h3>
-                    <p>Instead of passing a path to the resource you want to request into the <i>fetch()</i> call, you can create a request object using the <i>Request()</i> constructor, and pass that in as a <i>fetch()</i> method argument
-                        <br><i>Request()</i> accepts exactly the same parameters as the <i>fetch()</i> method. You can even pass in an existing request object to create a copy of it</p>
-
-                    <!---------------------------------------------------------- Headers ----------------------------------------------------->
-                    <h3 class="subtitle">Headers |
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Headers" class="reference" target="_blank"></a> mdn Headers</h3>
-                    <p>The <i>Headers</i> interface allows you to create your own headers object via the <i>Headers()</i> constructor. A headers object is a simple multi-map of names to values</p>
-
-                    <!------------------------------------------------------ Response objects ------------------------------------------------>
-                    <h3 class="subtitle">Response objects | <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response" class="reference" target="_blank"> mdn Response</a></h3>
-                    <p>As you have seen above, <i>Response</i> instances are returned when <i>fetch()</i> promises are resolved.
-                        <br>The most common response properties you'll use are:</p>
-                    <dl>
-                        <dd><i>Response.status</i> — An integer (default value 200) containing the response status code.</dd>
-                        <dd><i>Response.statusText</i> — A string (default value ""), which corresponds to the HTTP status code message. Note that HTTP/2 does not support status messages.</dd>
-                        <dd><i>Response.ok</i> — This is a shorthand for checking that status is in the range 200-299 inclusive. This returns a boolean value.</dd>
-                    </dl>
-
-                    <!------------------------------------------------------------ Body ------------------------------------------------------>
-                    <h3 class="subtitle">Body</h3>
-                    <p>Both requests and responses may contain body data. A body is an instance of any of the following types : <i>ArrayBuffer,, TypedArray (Uint8Array and friends), DataView, Blob, File, String (or a string literal), URLSearchParams, FormData</i>
-                        <br>The <i>Request</i> and <i>Response</i> interfaces share the following methods to extract a body. These all return a promise that is eventually resolved with the actual content.</p>
-                    <dl>
-                        <dd><i>Request.arrayBuffer() / Response.arrayBuffer()</i></dd>
-                        <dd><i>Request.blob() / Response.blob()</i></dd>
-                        <dd><i>Request.formData() / Response.formData()</i></dd>
-                        <dd><i>Request.json() / Response.json()</i></dd>
-                        <dd><i>Request.text() / Response.text()</i></dd>
-                    </dl>
-
-                    <!---------------------------------------------------- Feature detection -------------------------------------------------->
-                    <h3 class="subtitle">Feature detection</h3>
-                    <p>Fetch API support can be detected by checking for the existence of <i>Headers, Request, Response or fetch() on the Window or Worker</i> scope</p>
-
-                    <!----------------------------------------------------- Specifications ---------------------------------------------------->
-                    <h3 class="subtitle">Specifications</h3>
-                    <a href="https://fetch.spec.whatwg.org/#fetch-method" class="reference" target="_blank">Fetch Standard # fetch-method</a>
-
-                </div>
+                <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
             </div>
-            <div class="week-flip">
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW09.html" class="flip"><strong>&lt;</strong> Week 09</a>
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW01.html" class="flip">Week 01 <strong>&gt;</strong></a>
+        </section>
+
+        <br>
+        <div class="ressources">
+            <h2>Ressources :</h2>
+            <div class="references">
+                <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
+                <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
+                <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
+                <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
+                <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
+                <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
+            </div>
+            <h2><q>Pratice is the Secret of Success.</q></h2>
+            <div class="references">
+                <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
+                <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
+                <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
+                <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
             </div>
         </div>
 
-        <div class="sidebar">
-            <h2>Code of the Week</h2>
-
-            <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
+        <div class="footer">
+            <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+            <hr>
+            <h2>Teacher : Johan Baer</h2>
+            <hr>
         </div>
-    </section>
+    </main>
 
-    <br>
-    <div class="ressources">
-        <h2>Ressources :</h2>
-        <div class="references">
-            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
-            <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
-            <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
-            <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
-            <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
-            <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
-        </div>
-        <h2><q>Pratice is the Secret of Success.</q></h2>
-        <div class="references">
-            <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
-            <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
-            <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
-            <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
-        </div>
-    </div>
-
-    <div class="footer">
-        <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
-        <hr>
-        <h2>Teacher : Johan Baer</h2>
-        <hr>
-    </div>
+    <script src="../js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,9 @@
 body {
-    width: 1050px;
+    width: 1200px;
+    height: 100vh;
     margin: 0 auto;
     background-color: darkblue;
+    /* overflow: hidden; */
     position: relative;
 }
 
@@ -123,7 +125,7 @@ a:hover {
 }
 
 
-/* header */
+/*========================================= Header ======================================= */
 
 h1,
 h2,
@@ -139,10 +141,6 @@ h3 {
     margin-top: 50px;
 }
 
-h2 a {
-    color: white;
-}
-
 .button {
     background-color: azure;
     color: blue;
@@ -152,51 +150,37 @@ h2 a {
     border-radius: 4px;
 }
 
+.btnWeek:hover,
 .button:hover {
     background-color: orange;
     color: darkblue;
 }
 
-.code {
-    color: white;
-    padding-bottom: 10px;
-}
 
-.personal_project {
-    margin: 0 auto;
-    margin-top: 20px;
-    width: 1050px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 10px;
-}
+/* ===================================== Central part ======================================= */
 
-.project {
-    background-color: blue;
-    border: solid 2px blue;
+.weekButtons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 10px;
+    flex-wrap: wrap;
+    padding: 25px;
+    justify-content: space-evenly;
 }
 
-img {
-    width: 250px;
-    height: 250px;
-    border: solid 1px blue;
-}
-
-.subtitle {
-    background-color: blue;
-    color: lightyellow;
+.btnWeek {
+    background-color: aqua;
+    color: darkblue;
+    width: 180px;
+    font-size: x-large;
+    text-decoration: none;
     text-align: center;
+    border: none;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 10px;
 }
 
-.footer {
-    color: lightyellow;
-    text-align: center;
-    margin-bottom: 20px;
-}
+
+/* ======================================= Footer ============================================ */
 
 .ressources {
     background-color: lightblue;
@@ -212,4 +196,10 @@ img {
 
 q {
     color: blue;
+}
+
+.footer {
+    color: lightyellow;
+    text-align: center;
+    margin-bottom: 20px;
 }

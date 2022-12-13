@@ -10,192 +10,230 @@
 </head>
 
 <body>
-    <header class="header">
-        <h1>WDD 330 Development: Web Frontend Development II</h1>
-        <h2>Reading Notes | Week 05</h2>
-        <div class="navigation">
-            <a href="../index.html" class="button" target="_blank">Home</a>
-            <a href="./index.html" class="button" target="_blank">Reading Notes</a>
-            <a href="../Project/index.html" class="button" target="_blank">Projects</a>
-            <a href="../Challenge/index.html" class="button" target="_blank">Challenges</a>
+    <!-- Navigation Latteral -->
+    <div id="nav-latteral">
+        <div id="nav-close" class="nav-button">
+            <ion-icon name="close"></ion-icon>
         </div>
-    </header>
-    <h2 class="book-title">From "Novice to Ninja"</h2>
-    <section class="main">
-        <div class="notes">
+        <div class="nav-links">
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/" target="_blank">
+                    <ion-icon name="home"></ion-icon>Home</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/index.html" target="_blank">
+                    <ion-icon name="create"></ion-icon>Reading Notes</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/TeamActivity/index.html" target="_blank">
+                    <ion-icon name="people"></ion-icon>Team Activity</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Project/index.html" target="_blank">
+                    <ion-icon name="construct"></ion-icon>
+                    </ion-icon>Projects</a>
+            </div>
+            <div class="nav-link">
+                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/Challenge/index.html" target="_blank">
+                    <ion-icon name="barbell"></ion-icon>Challenges</a>
+            </div>
+        </div>
+    </div>
+    <div id="nav-wrapper"></div>
+    <nav>
+        <div id="nav-open" class="nav-button">
+            <ion-icon name="reorder-three"></ion-icon>
+        </div>
+    </nav>
+    <!-- Navigation Latteral -->
 
-            <!--------------------------- Chapter 10 | Testing and Debugging -------------------------------->
+    <main>
+        <header class="header">
+            <h1>WDD 330 Development: Web Frontend Development II</h1>
+            <h2>Reading Notes | Week 05</h2>
+        </header>
+        <h2 class="book-title">From "Novice to Ninja"</h2>
+        <section class="main">
+            <div class="notes">
 
-            <div class="dropdown">
-                <h2 class="start">&#9660 Chapter 10 | Testing and Debugging</h2>
-                <div class="dropdown-content">
-                    <h2 class="dropdown-cont-title">Testing and Debugging</h2>
-                    <!-------------------------------------------- Errors, Exceptions, and Warnings ------------------------------------------------------------->
-                    <h3 class="subtitle">Errors, Exceptions, and Warnings</h3>
+                <!--------------------------- Chapter 10 | Testing and Debugging -------------------------------->
 
-                    <h4>Errors</h4>
-                    <p>Errors are caused when something goes wrong in a program. They are usually caused by one of the following:</p>
-                    <ul>
-                        <li>System error ― there’s a problem with the system or external devices with which the program is interacting.</li>
-                        <li>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.</li>
-                        <li>User error ― the user has entered data incorrectly, which the program is unable to handle.</li>
-                    </ul>
-                    <p>Programmer errors are our responsibility, so we must ensure they are minimized as much as possible and fixed promptly. We also should try to limit user errors by predicting any possible interactions that may throw an error, and ensure
-                        they are dealt with in a way that doesn’t negatively affect the user experience.</p>
+                <div class="dropdown">
+                    <h2 class="start">&#9660 Chapter 10 | Testing and Debugging</h2>
+                    <div class="dropdown-content">
+                        <h2 class="dropdown-cont-title">Testing and Debugging</h2>
+                        <!-------------------------------------------- Errors, Exceptions, and Warnings ------------------------------------------------------------->
+                        <h3 class="subtitle">Errors, Exceptions, and Warnings</h3>
 
-                    <h4>Exceptions</h4>
-                    <p>An exception is an error that produces a return value that can then be used by the program to deal with the error.</p>
+                        <h4>Errors</h4>
+                        <p>Errors are caused when something goes wrong in a program. They are usually caused by one of the following:</p>
+                        <ul>
+                            <li>System error ― there’s a problem with the system or external devices with which the program is interacting.</li>
+                            <li>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.</li>
+                            <li>User error ― the user has entered data incorrectly, which the program is unable to handle.</li>
+                        </ul>
+                        <p>Programmer errors are our responsibility, so we must ensure they are minimized as much as possible and fixed promptly. We also should try to limit user errors by predicting any possible interactions that may throw an error, and
+                            ensure they are dealt with in a way that doesn’t negatively affect the user experience.</p>
 
-                    <h4>Stack Traces</h4>
-                    <p>An exception will also produce a stack trace. This is a sequence of functions or method calls that lead to the point where the error occurred. It’s often not just a single function or method call that causes an error. A stack trace
-                        will work backwards from the point at which the error occurred to identify the original function or method that started the sequence.</p>
+                        <h4>Exceptions</h4>
+                        <p>An exception is an error that produces a return value that can then be used by the program to deal with the error.</p>
 
-                    <h4>Warnings</h4>
-                    <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash. This means the program will continue to run after a warning. This might sound good, but it can be problematic, since the issue that
-                        produced the warning may cause the program to continue running incorrectly.</p>
+                        <h4>Stack Traces</h4>
+                        <p>An exception will also produce a stack trace. This is a sequence of functions or method calls that lead to the point where the error occurred. It’s often not just a single function or method call that causes an error. A stack trace
+                            will work backwards from the point at which the error occurred to identify the original function or method that started the sequence.</p>
 
-                    <!----------------------------------------- The Importance of Testing and Debugging ------------------------------------------------------------->
-                    <h3 class="subtitle">The Importance of Testing and Debugging</h3>
-                    <p>JavaScript is a fairly forgiving language when it comes to errors; it didn’t implement exceptions at all until ECMAScript version 3. Instead of alerting a user to an error in a program, it just failed silently in the background. Failing
-                        silently makes errors difficult to spot and longer to track down.</p>
-                    <p>For this reason, a ninja programmer should ensure that the code they write fails loudly in development so any errors can be identified and fixed quickly. In production, a ninja programmer should try to make the code fail gracefully,
-                        so the user experience is not affected, if possible. This is achieved by making sure exceptions are caught and dealt with, and code is tested rigorously.</p>
+                        <h4>Warnings</h4>
+                        <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash. This means the program will continue to run after a warning. This might sound good, but it can be problematic, since the issue
+                            that produced the warning may cause the program to continue running incorrectly.</p>
 
-                    <!----------------------------------------------------- Strict Mode ------------------------------------------------------------->
-                    <h3 class="subtitle">Strict Mode</h3>
-                    <p>ECMAScript 5 introduced a strict mode that produces more exceptions and warnings and prohibits the use of some deprecated features. This is due to the fact that strict mode considers coding practices that were previously accepted as
-                        just being 'poor style' as actual errors.</p>
-                    <p>Increasing the chance of errors might seem like a bad idea at first, but it’s much better to spot errors early on, rather than have them cause problems later. Writing code in strict mode can also help improve its clarity and speed,
-                        since it follows conventions and will throw exceptions if any sloppy code practices are used.</p>
-                    <p>The recommended way to invoke strict mode is to place all your code into a self-invoking function (covered in more detail in <a href="indexW04.html" target="_blank">Chapter 12</a>), like so:</p>
-                    <dl class="example">
-                        <dt>(function() {</dt>
-                        <dd>'use strict';</dd>
-                        <br>
-                        <dd>// All your code would go inside this function</dd>
-                        <br>
-                        <dt>}());</dt>
-                    </dl>
+                        <!----------------------------------------- The Importance of Testing and Debugging ------------------------------------------------------------->
+                        <h3 class="subtitle">The Importance of Testing and Debugging</h3>
+                        <p>JavaScript is a fairly forgiving language when it comes to errors; it didn’t implement exceptions at all until ECMAScript version 3. Instead of alerting a user to an error in a program, it just failed silently in the background.
+                            Failing silently makes errors difficult to spot and longer to track down.</p>
+                        <p>For this reason, a ninja programmer should ensure that the code they write fails loudly in development so any errors can be identified and fixed quickly. In production, a ninja programmer should try to make the code fail gracefully,
+                            so the user experience is not affected, if possible. This is achieved by making sure exceptions are caught and dealt with, and code is tested rigorously.</p>
 
-                    <h4>Linting Tools</h4>
-                    <p>Linting tools such as <a href="https://jshint.com" target="_blank">JS Lint,JS Hint</a> , and <a href="https://eslint.org" target="_blank">ES Lint</a> can be used to test the quality of JavaScript code, beyond simply using strict mode.
-                        They are designed to highlight any sloppy programming practices or syntax errors, and will complain if certain style conventions are not followed, such as how code is indented. </p>
-                    <p>More can be read about how to use ESLint in <a href="https://www.sitepoint.com/up-and-running-with-eslint-the-pluggable-javascript-linter/" target="_blank">this article on SitePoint</a>.</p>
+                        <!----------------------------------------------------- Strict Mode ------------------------------------------------------------->
+                        <h3 class="subtitle">Strict Mode</h3>
+                        <p>ECMAScript 5 introduced a strict mode that produces more exceptions and warnings and prohibits the use of some deprecated features. This is due to the fact that strict mode considers coding practices that were previously accepted
+                            as just being 'poor style' as actual errors.</p>
+                        <p>Increasing the chance of errors might seem like a bad idea at first, but it’s much better to spot errors early on, rather than have them cause problems later. Writing code in strict mode can also help improve its clarity and speed,
+                            since it follows conventions and will throw exceptions if any sloppy code practices are used.</p>
+                        <p>The recommended way to invoke strict mode is to place all your code into a self-invoking function (covered in more detail in <a href="indexW04.html" target="_blank">Chapter 12</a>), like so:</p>
+                        <dl class="example">
+                            <dt>(function() {</dt>
+                            <dd>'use strict';</dd>
+                            <br>
+                            <dd>// All your code would go inside this function</dd>
+                            <br>
+                            <dt>}());</dt>
+                        </dl>
 
-                    <!-------------------------------------------------- Feature Detection ------------------------------------------------------------->
-                    <h3 class="subtitle">Feature Detection</h3>
+                        <h4>Linting Tools</h4>
+                        <p>Linting tools such as <a href="https://jshint.com" target="_blank">JS Lint,JS Hint</a> , and <a href="https://eslint.org" target="_blank">ES Lint</a> can be used to test the quality of JavaScript code, beyond simply using strict
+                            mode. They are designed to highlight any sloppy programming practices or syntax errors, and will complain if certain style conventions are not followed, such as how code is indented. </p>
+                        <p>More can be read about how to use ESLint in <a href="https://www.sitepoint.com/up-and-running-with-eslint-the-pluggable-javascript-linter/" target="_blank">this article on SitePoint</a>.</p>
 
-                    <!---------------------------------------------- Debugging in the Browser ------------------------------------------------------------->
-                    <h3 class="subtitle">Debugging in the Browser</h3>
-                    <p>Debugging is the process of finding out where bugs occur in the code and then dealing with them. In many cases, the point at which an error occurs is not always where it originated, so you’ll need to run through the program to see
-                        what’s happening at different stages of its execution. When doing this, <strong>it can be useful to create what are known as breakpoints</strong>, which halt the progress of the code and allow us to view the value of different
-                        variables at that point in the program. There are a number of options for debugging JavaScript code in the browser.</p>
+                        <!-------------------------------------------------- Feature Detection ------------------------------------------------------------->
+                        <h3 class="subtitle">Feature Detection</h3>
 
-                    <h4>The trusty Alert</h4>
-                    <p>The most basic form of debugging is to use the <i>alert()</i> method to show a dialog at certain points in the code. Because <i>alert()</i> stops a program from running until OK is clicked, it allows us to effectively put breakpoints
-                        in the code that let us check the value of variables at that point to see if they’re what we expect them to be.</p>
+                        <!---------------------------------------------- Debugging in the Browser ------------------------------------------------------------->
+                        <h3 class="subtitle">Debugging in the Browser</h3>
+                        <p>Debugging is the process of finding out where bugs occur in the code and then dealing with them. In many cases, the point at which an error occurs is not always where it originated, so you’ll need to run through the program to
+                            see what’s happening at different stages of its execution. When doing this, <strong>it can be useful to create what are known as breakpoints</strong>, which halt the progress of the code and allow us to view the value of different
+                            variables at that point in the program. There are a number of options for debugging JavaScript code in the browser.</p>
 
-                    <h4>Using the Console</h4>
-                    <p>Most modern JavaScript environments have a console object that provides a number of methods for logging information and debugging. It's not officially part of the ECMAScript specification, but is well supported in all the major browsers
-                        and Node.js.</p>
-                    <ul>
-                        <li>The <i>console.log()</i> method can be used to log the value of variables at different stages of the program, although it will not actually stop the execution of the program in the same way as <i>alert()</i> does.</li>
-                        <li>The <i>console.trace()</i> method will log an interactive stack trace in the console. This will show the functions that were called in the lead up to an exception occurring while the code is running.</li>
-                    </ul>
-                    <p>This <a href="https://www.sitepoint.com/three-little-known-development-console-api-methods/">SitePoint post</a> also lists a few other useful but little-known methods of the <i>console</i> object.</p>
+                        <h4>The trusty Alert</h4>
+                        <p>The most basic form of debugging is to use the <i>alert()</i> method to show a dialog at certain points in the code. Because <i>alert()</i> stops a program from running until OK is clicked, it allows us to effectively put breakpoints
+                            in the code that let us check the value of variables at that point to see if they’re what we expect them to be.</p>
 
-                    <h4>Debugging Tools</h4>
-                    <p>Most modern browsers also have a debugging tool that allows you to set breakpoints in your code that will pause it at certain points. You can then see the values of all the variables at those points and modify them. This can be very
-                        useful when trying to track down bugs. Here are the links to the debugger documentation for each of the major browsers: &#183; <a href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html" target="_blank">Firefox</a>                        &#183; <a href="https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/" target="_blank">Edge</a> &#183;
-                        <a href="https://developer.chrome.com/docs/devtools/" target="_blank">Chrome</a> &#183; <a href="https://support.apple.com/guide/safari-developer/welcome/mac" target="_blank">Safari</a></p>
-                    <p>One of the most useful commands is the <i>debugger</i> keyword. This will create a breakpoint in your code that will pause the execution of the code and allow you to see where the program is currently up to. You can also hover over
-                        any variables to see what value they hold at that point. The program can then be restarted by clicking on the 'play' button.</p>
-                    <p class="warning">&#9888; Warning: Remember to remove any references to the debugger command before shipping any code, otherwise the program will appear to freeze when people try to use it!</p>
+                        <h4>Using the Console</h4>
+                        <p>Most modern JavaScript environments have a console object that provides a number of methods for logging information and debugging. It's not officially part of the ECMAScript specification, but is well supported in all the major
+                            browsers and Node.js.</p>
+                        <ul>
+                            <li>The <i>console.log()</i> method can be used to log the value of variables at different stages of the program, although it will not actually stop the execution of the program in the same way as <i>alert()</i> does.</li>
+                            <li>The <i>console.trace()</i> method will log an interactive stack trace in the console. This will show the functions that were called in the lead up to an exception occurring while the code is running.</li>
+                        </ul>
+                        <p>This <a href="https://www.sitepoint.com/three-little-known-development-console-api-methods/">SitePoint post</a> also lists a few other useful but little-known methods of the <i>console</i> object.</p>
 
-                    <!---------------------------------------------------- Error Objects ------------------------------------------------------------->
-                    <h3 class="subtitle">Error Objects</h3>
-                    <p>An <i>error</i> object can be created by the host environment when an exception occurs, or it can be created in the code using a constructor function</p>
-                    <p>There are seven more error objects used for specific errors:</p>
-                    <ul>
-                        <li><i>EvalError</i> is not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the global <i>eval()</i> function.</li>
-                        <li><i>RangeError</i> is thrown when a number is outside an allowable range of values.</li>
-                        <li><i>ReferenceError</i> is thrown when a reference is made to an item that doesn’t exist. For example, calling a function that hasn't been defined.</li>
-                        <li><i>SyntaxError</i> is thrown when there’s an error in the code’s syntax.</li>
-                        <li><i>TypeError</i> is thrown when there’s an error in the type of value used; for example, a string is used when a number is expected.</li>
-                        <li><i>URIError</i> is thrown when there’s a problem encoding or decoding the URI.</li>
-                        <li><i>InternalError</i> is a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this too much recursion.</li>
-                    </ul>
-                    <p>All error objects have a number of properties, but they’re often used inconsistently across browsers. The only properties that are generally safe to use are:</p>
-                    <ul>
-                        <li>The <i>name</i> property returns the name of the error constructor function used as a string, such as 'Error' or 'ReferenceError'.</li>
-                        <li>The <i>message</i> property returns a description of the error and should be provided as an argument to the Error constructor function.</li>
-                        <li>The <i>stack</i> property will return a stack trace for that error. This is a non-standard property and it’s recommended that it is not safe to use in production sites.</li>
-                    </ul>
+                        <h4>Debugging Tools</h4>
+                        <p>Most modern browsers also have a debugging tool that allows you to set breakpoints in your code that will pause it at certain points. You can then see the values of all the variables at those points and modify them. This can be
+                            very useful when trying to track down bugs. Here are the links to the debugger documentation for each of the major browsers: &#183; <a href="https://firefox-source-docs.mozilla.org/devtools-user/debugger/index.html" target="_blank">Firefox</a>                            &#183; <a href="https://learn.microsoft.com/en-us/archive/microsoft-edge/legacy/developer/" target="_blank">Edge</a> &#183;
+                            <a href="https://developer.chrome.com/docs/devtools/" target="_blank">Chrome</a> &#183; <a href="https://support.apple.com/guide/safari-developer/welcome/mac" target="_blank">Safari</a></p>
+                        <p>One of the most useful commands is the <i>debugger</i> keyword. This will create a breakpoint in your code that will pause the execution of the code and allow you to see where the program is currently up to. You can also hover
+                            over any variables to see what value they hold at that point. The program can then be restarted by clicking on the 'play' button.</p>
+                        <p class="warning">&#9888; Warning: Remember to remove any references to the debugger command before shipping any code, otherwise the program will appear to freeze when people try to use it!</p>
 
-                    <h4>Throwing Exceptions</h4>
-                    <p>It’s also possible to <i>throw</i> your own exceptions using the throw statement. This will allow for any problems in your code to be highlighted and dealt with, rather than lurk quietly in the background. The <i>throw</i> statement
-                        can be applied to any JavaScript expression, causing the execution of the program to stop. It is best practice, however, to throw an <i>error</i> object</p>
+                        <!---------------------------------------------------- Error Objects ------------------------------------------------------------->
+                        <h3 class="subtitle">Error Objects</h3>
+                        <p>An <i>error</i> object can be created by the host environment when an exception occurs, or it can be created in the code using a constructor function</p>
+                        <p>There are seven more error objects used for specific errors:</p>
+                        <ul>
+                            <li><i>EvalError</i> is not used in the current ECMAScript specification and only retained for backwards compatibility. It was used to identify errors when using the global <i>eval()</i> function.</li>
+                            <li><i>RangeError</i> is thrown when a number is outside an allowable range of values.</li>
+                            <li><i>ReferenceError</i> is thrown when a reference is made to an item that doesn’t exist. For example, calling a function that hasn't been defined.</li>
+                            <li><i>SyntaxError</i> is thrown when there’s an error in the code’s syntax.</li>
+                            <li><i>TypeError</i> is thrown when there’s an error in the type of value used; for example, a string is used when a number is expected.</li>
+                            <li><i>URIError</i> is thrown when there’s a problem encoding or decoding the URI.</li>
+                            <li><i>InternalError</i> is a non-standard error that is thrown when an error occurs in the JavaScript engine. A common cause of this too much recursion.</li>
+                        </ul>
+                        <p>All error objects have a number of properties, but they’re often used inconsistently across browsers. The only properties that are generally safe to use are:</p>
+                        <ul>
+                            <li>The <i>name</i> property returns the name of the error constructor function used as a string, such as 'Error' or 'ReferenceError'.</li>
+                            <li>The <i>message</i> property returns a description of the error and should be provided as an argument to the Error constructor function.</li>
+                            <li>The <i>stack</i> property will return a stack trace for that error. This is a non-standard property and it’s recommended that it is not safe to use in production sites.</li>
+                        </ul>
 
-                    <!-------------------------------------------------------- Tests ------------------------------------------------------------->
-                    <h3 class="subtitle">Tests</h3>
-                    <p>Testing is an important part of programming that can often be overlooked. Writing good tests means your code will be less brittle as it develops, and any errors will be identified early on. A test can simply be a function that tests
-                        a piece of code runs as it should.</p>
+                        <h4>Throwing Exceptions</h4>
+                        <p>It’s also possible to <i>throw</i> your own exceptions using the throw statement. This will allow for any problems in your code to be highlighted and dealt with, rather than lurk quietly in the background. The <i>throw</i> statement
+                            can be applied to any JavaScript expression, causing the execution of the program to stop. It is best practice, however, to throw an <i>error</i> object</p>
 
-                    <h4>Test-driven Development</h4>
-                    <p>Test-driven development (TDD) is the process of writing tests before any actual code. This is often referred to as the “red-green-refactor” cycle of TDD, as failing tests usually show up as red, and tests that pass show as green. Test-driven
-                        development is considered to be best practice, but in reality you'll find most developers tend to be more pragmatic when it comes to writing tests.</p>
+                        <!-------------------------------------------------------- Tests ------------------------------------------------------------->
+                        <h3 class="subtitle">Tests</h3>
+                        <p>Testing is an important part of programming that can often be overlooked. Writing good tests means your code will be less brittle as it develops, and any errors will be identified early on. A test can simply be a function that
+                            tests a piece of code runs as it should.</p>
 
-                    <h4>Testing Frameworks</h4>
-                    <p>It is possible to write your own tests, but this can be a laborious process. Testing frameworks provide a structure to write meaningful tests and then run them. There are a large number of frameworks available for JavaScript, but we’ll
-                        be focusing on the Jest framework.</p>
+                        <h4>Test-driven Development</h4>
+                        <p>Test-driven development (TDD) is the process of writing tests before any actual code. This is often referred to as the “red-green-refactor” cycle of TDD, as failing tests usually show up as red, and tests that pass show as green.
+                            Test-driven development is considered to be best practice, but in reality you'll find most developers tend to be more pragmatic when it comes to writing tests.</p>
 
-                    <h4>Jest</h4>
-                    <p> <a href="https://jestjs.io" target="_blank">Jest</a> is a TDD framework, created by Facebook, that has gained a lot of popularity recently. It makes it easy to create and run tests by providing helper methods for common test assertions.
-                        To use Jest, first we need to install it using npm.</p>
+                        <h4>Testing Frameworks</h4>
+                        <p>It is possible to write your own tests, but this can be a laborious process. Testing frameworks provide a structure to write meaningful tests and then run them. There are a large number of frameworks available for JavaScript, but
+                            we’ll be focusing on the Jest framework.</p>
 
+                        <h4>Jest</h4>
+                        <p> <a href="https://jestjs.io" target="_blank">Jest</a> is a TDD framework, created by Facebook, that has gained a lot of popularity recently. It makes it easy to create and run tests by providing helper methods for common test assertions.
+                            To use Jest, first we need to install it using npm.</p>
+
+                    </div>
+                </div>
+                <div class="week-flip">
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW04.html" class="flip">
+                        <ion-icon name="chevron-back-outline"></ion-icon> Week 04</a>
+                    <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW06.html" class="flip">Week 06 <ion-icon name="chevron-forward-outline"></ion-icon></a>
                 </div>
             </div>
-            <div class="week-flip">
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW04.html" class="flip"><strong>&lt;</strong> Week 04</a>
-                <a href="https://sokanred.github.io/DenisPoussard-WDD330.github.io/ReadingNotes/indexW06.html" class="flip">Week 06 <strong>&gt;</strong></a>
+
+            <div class="sidebar">
+                <h2>Code of the Week</h2>
+                <a href="../Project/DigitalClock/index.html" class="button" target="_blank">Digital Clock</a>
+                <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/DigitalClock" class="code" target="_blank">Code Pages on GitHub</a>
+                <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
+            </div>
+        </section>
+
+        <br>
+        <div class="ressources">
+            <h2>Ressources :</h2>
+            <div class="references">
+                <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
+                <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
+                <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
+                <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
+                <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
+                <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
+            </div>
+            <h2><q>Pratice is the Secret of Success.</q></h2>
+            <div class="references">
+                <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
+                <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
+                <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
+                <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
             </div>
         </div>
 
-        <div class="sidebar">
-            <h2>Code of the Week</h2>
-            <a href="../Project/DigitalClock/index.html" class="button" target="_blank">Digital Clock</a>
-            <a href="https://github.com/SokanRed/DenisPoussard-WDD330.github.io/tree/main/Project/DigitalClock" class="code" target="_blank">Code Pages on GitHub</a>
-            <a href="https://www.w3resource.com/javascript-exercises/" class="practice" target="_blank">JavaScript Practice</a>
+        <div class="footer">
+            <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
+            <hr>
+            <h2>Teacher : Johan Baer</h2>
+            <hr>
         </div>
-    </section>
+    </main>
 
-    <br>
-    <div class="ressources">
-        <h2>Ressources :</h2>
-        <div class="references">
-            <a href="https://www.sitepoint.com/premium/books/javascript-novice-to-ninja-2nd-edition/read/1/" class="button" target="_blank">JavaScript : Novice to Ninja</a>
-            <a href="https://eloquentjavascript.net/index.html" class="button" target="_blank">Eloquent JavaScript EJS</a>
-            <a href="https://github.com/getify/You-Dont-Know-JS" class="button" target="_blank">You Don't Know JS</a>
-            <a href="https://exploringjs.com/es6/index.html#toc_ch_overviews" class="button" target="_blank">Exploring ES6</a>
-            <a href="https://www.w3schools.com/js/default.asp" class="button" target="_blank">W3 Schools</a>
-            <a href="https://developer.mozilla.org/en-US/" class="button" target="_blank">MDN Web Docs</a>
-        </div>
-        <h2><q>Pratice is the Secret of Success.</q></h2>
-        <div class="references">
-            <a href="https://www.w3resource.com/javascript-exercises/" class="button" target="_blank">JavaScript Practice</a>
-            <a href="https://eloquentjavascript.net/code/" class="button" target="_blank">Code Sandbox</a>
-            <a href="https://waytolearnx.com/category/exercice-javascript-corrige" class="button" target="_blank">WayToLearnX</a>
-            <a href="https://pdfprof.com/PDF_Doc_Telecharger_Gratuits.php?q=tp+javascript+corrig%C3%A9+pdf/-18PDF68765-doc1" class="button" target="_blank">Exercises</a>
-        </div>
-    </div>
 
-    <div class="footer">
-        <h3>Denis PC Poussard | Bachelor's of Applied Technology | France</h3>
-        <hr>
-        <h2>Teacher : Johan Baer</h2>
-        <hr>
-    </div>
-
+    <script src="../js/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
