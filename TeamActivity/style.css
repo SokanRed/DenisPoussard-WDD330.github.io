@@ -187,11 +187,11 @@ section {
 }
 
 .week01 {
-    background-image: url(jackalope.jpg);
+    background-image: url(./Image/jackalope.jpg);
 }
 
 .week06 {
-    background-image: url(benjamin.jpg);
+    background-image: url(./Image/benjamin.jpg);
 }
 
 img {
