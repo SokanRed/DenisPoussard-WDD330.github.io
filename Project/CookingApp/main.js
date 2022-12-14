@@ -42,7 +42,7 @@ function mealsDisplay() {
                 return `
                     <li class="card">
                         <h2>${meal.strMeal}</h2>
-                        <p>${meal.strArea}</p>
+                        <p>Country of Origin : ${meal.strArea}</p>
                         <img src=${meal.strMealThumb} alt="photo ${meal.strMeal}">
                         <ul>${ingredients.join("")}</ul>
                         <ul></ul>

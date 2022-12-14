@@ -78,6 +78,7 @@ main::-webkit-scrollbar-thumb {
 
 a {
     text-decoration: none;
+    padding: 5px;
 }
 
 a:hover {
@@ -140,13 +141,8 @@ h3 {
     margin-top: 50px;
 }
 
-h2,
-a {
+h2 {
     color: white;
-}
-
-a {
-    padding: 5px;
 }
 
 .button {
@@ -192,12 +188,6 @@ section {
 
 .week06 {
     background-image: url(./Image/benjamin.jpg);
-}
-
-img {
-    width: 250px;
-    height: 250px;
-    border: solid 1px blue;
 }
 
 .subtitle {

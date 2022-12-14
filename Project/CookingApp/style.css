@@ -1,39 +1,23 @@
 * {
     background-color: darkblue;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     list-style-type: none;
+    text-align: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    overflow: hidden;
-    position: relative;
-}
-
-main {
-    width: 400px;
-    /* min-height: 100vh; */
-    height: 600px;
-    text-align: center;
-    background-image: url(joshua.jpg);
-    border: solid 2px azure;
-    border-radius: 5px;
-    margin: 20px auto;
-    overflow: auto;
-}
-
-main::-webkit-scrollbar {
-    background-color: aquamarine;
-    width: 4px;
-}
-
-main::-webkit-scrollbar-thumb {
-    background-color: blue;
+    min-height: 100vh;
+    background: rgb(235, 244, 242);
+    background-image: url(maarten.jpg);
+    width: 100%;
 }
 
 .app {
+    background-image: url(maarten.jpg);
+    width: 100%;
     padding-bottom: 15px;
 }
 
@@ -44,14 +28,9 @@ a {
 form {
     position: fixed;
     left: 50%;
-    top: 550px;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     transform: translateX(-50%);
-    background: blue;
+    background-color: aquamarine;
     padding: 6px 20px;
     border-radius: 6px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.054);
@@ -67,7 +46,6 @@ input {
     margin: 10px 0 5px;
     width: 270px;
     font-size: 1.2rem;
-    text-align: center;
     transition: 0.2s;
 }
 
@@ -83,23 +61,24 @@ input:focus {
 #result {
     display: flex;
     flex-wrap: wrap;
-    /* padding-top: 110px; */
+    padding-top: 110px;
 }
 
 #result>li {
     flex: 1 0 25%;
     min-width: 280px;
-    border: 1px solid #16d9e7;
-    background: coral;
+    /* border: 1px solid #16d9e7; */
+    background: aqua;
     margin: 10px;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 20px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.084);
 }
 
 h1 {
     color: azure;
     padding: 10px;
+    ;
 }
 
 h2 {
