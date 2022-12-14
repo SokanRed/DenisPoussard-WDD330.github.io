@@ -190,6 +190,10 @@ h3 {
     text-align: center;
 }
 
+.ressources h2 {
+    color: darkblue;
+}
+
 .references {
     display: flex;
     justify-content: space-evenly;

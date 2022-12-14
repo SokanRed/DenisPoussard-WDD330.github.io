@@ -140,6 +140,11 @@ h3 {
     margin-top: 50px;
 }
 
+.main h2,
+.ressources h2 {
+    color: darkblue;
+}
+
 .button {
     background-color: azure;
     color: blue;
