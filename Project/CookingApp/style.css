@@ -71,7 +71,7 @@ input:focus {
     background: aqua;
     margin: 10px;
     border-radius: 5px;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.084);
 }
 
@@ -102,4 +102,5 @@ li>ul>li {
     text-align: left;
     color: azure;
     padding: 5px;
+    padding-left: 15px;
 }
